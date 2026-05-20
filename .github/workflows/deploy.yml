@@ -37,6 +37,12 @@ jobs:
           npx hexo clean
           npx hexo generate
 
+      - name: Override homepage with custom index.html
+        run: |
+          echo "Overriding public/index.html with custom homepage..."
+          cp source/index.html public/index.html
+          echo "Done. Custom homepage applied."
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

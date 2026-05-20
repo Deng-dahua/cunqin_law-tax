@@ -1,0 +1,356 @@
+# fluid theme configuration
+# https://fluid.dev/
+
+# 全局样式配置
+custom_css: /css/custom.css
+
+# 导航栏配置
+navbar:
+  blog_title: 存勤法税
+  enable: true
+ fixed: true
+  transparent: true
+  brand_color: "#c93756"
+  links:
+    首页:
+      path: /
+      icon: fas fa-home
+    服务:
+      path: /services/
+      icon: fas fa-handshake
+    案例:
+      path: /cases/
+      icon: fas fa-briefcase
+    文章:
+      path: /archives/
+      icon: fas fa-book
+    关于:
+      path: /about/
+      icon: fas fa-user
+    联系:
+      path: /contact/
+      icon: fas fa-envelope
+
+# 滚动条
+scrollbar:
+  enable: true
+  size: 6px
+  color: "#c93756"
+  slider_color: "#c93756"
+
+# 页面加载动画
+loading:
+  enable: true
+  color: "#c93756"
+  height: 3px
+
+# 首页配置
+index:
+  enable: true
+  banner:
+    enable: true
+    title: 业财法税管五维融合
+    subtitle: 甲乙双视角 · 18年实战派
+    description: 专注为企业提供涉税风险检查、税务危机应对、ODI备案、企业重组税务规划等专业服务
+    background: /images/banner-bg.jpg
+    cdn_css: /css/index-banner.css
+    # 官方示例：https://tva1.sinaimg.cn/large/e6c9d24egy1h2elfc3m4aj22tc1kw1ky.jpg
+  slogan:
+    enable: true
+    text: 30+城市 | 14大行业 | 1000+企业服务经验
+  about:
+    enable: true
+    title: 关于存勤法税
+    description: |
+      存勤法税服务（广州）有限公司，由18年财税法实战专家邓达华先生创立。
+
+      我们是「业财法税管五维融合」的践行者，凭借甲乙双视角的独特优势，为成长型企业、出海企业、成熟企业提供「看得见的风险，说得清的方案，做得到的结果」。
+    button:
+      text: 了解更多
+      path: /about/
+  services:
+    enable: true
+    title: 十大核心服务
+    description: 覆盖企业全生命周期的专业财税法服务
+    list:
+      - title: 涉税风险检查
+        icon: fas fa-search
+        description: 全面体检企业税务风险
+        path: /services/#risk-check
+      - title: 税务危机应对
+        icon: fas fa-fire-extinguisher
+        description: 专业处理税务稽查与争议
+        path: /services/#tax-crisis
+      - title: ODI备案咨询
+        icon: fas fa-globe
+        description: 境外直接投资合规备案
+        path: /services/#odi
+      - title: 企业重组税务规划
+        icon: fas fa-building
+        description: 并购重组全程税务筹划
+        path: /services/#restructuring
+      - title: 财税内训课程
+        icon: fas fa-chalkboard-teacher
+        description: 企业定制化培训服务
+        path: /services/#training
+      - title: 常年税务顾问
+        icon: fas fa-clipboard-check
+        description: 持续合规保驾护航
+        path: /services/#advisor
+  cases:
+    enable: true
+    title: 客户案例
+    description: 来自各行业客户的真实服务反馈
+    see_more:
+      text: 查看更多案例
+      path: /cases/
+  # 最新文章（博客）模块
+  post_list:
+    enable: true
+    title: 最新GEO文章
+    description: 深度解读财税政策与实操要点
+    see_more:
+      text: 阅读更多文章
+      path: /archives/
+  stats:
+    enable: true
+    title: 服务数据
+    list:
+      - title: "18"
+        unit: 年
+        description: 行业经验
+      - title: "30+"
+        unit: 城市
+        description: 服务覆盖
+      - title: "14"
+        unit: 大行业
+        description: 深度服务
+      - title: "1000+"
+        unit: 家
+        description: 企业信赖
+
+# 文章页配置
+post:
+  enable: true
+  # 文章头图
+  banner_img: /images/post-banner.jpg
+  banner_img_height: 400
+  # 作者信息
+  author_info:
+    enable: true
+    name: 邓达华
+    description: 18年财税法实战专家
+    avatar: /images/founder.jpg
+    social:
+      - name: 微信
+        icon: fab fa-weixin
+        link: /images/wechat-qrcode.jpg
+  # 打赏
+  reward:
+    enable: true
+    text: 原创不易，若有帮助，欢迎打赏
+    qrcodes:
+      - name: 微信
+        img: /images/wechat-reward.jpg
+  # 版权信息
+  copyright:
+    enable: true
+    author: 邓达华
+    license: CC BY-NC-SA 4.0
+    license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# 文章列表页配置
+post_list:
+  enable: true
+  # 每页文章数
+  per_page: 10
+  # 分页模式：pagination（页码）/ more（加载更多）/ false（无限滚动）
+  mode: pagination
+  # 文章卡片排序方式：0:最新优先 1:自定义（置顶+最新）
+  order_by: 1
+  # 是否截取文章摘要
+  excerpt: true
+  # 摘取字数
+  excerpt_length: 200
+  # 强制显示封面
+  force_highlight: true
+
+# 归档页配置
+archive:
+  enable: true
+  # 封面
+  banner_img: /images/archive-banner.jpg
+  # 每页文章数
+  per_page: 20
+  # 按年份分组
+  order_by: -date
+  # 显示文章数量
+  count: true
+
+# 标签页配置
+tag:
+  enable: true
+  # 封面
+  banner_img: /images/tag-banner.jpg
+
+# 分类页配置
+category:
+  enable: true
+  # 封面
+  banner_img: /images/category-banner.jpg
+
+# 关于页配置
+about:
+  enable: true
+  # 封面
+  banner_img: /images/about-banner.jpg
+  # 页面内容（支持Markdown）
+  content: |
+    ## 关于我们
+
+    存勤法税服务（广州）有限公司，由18年财税法实战专家**邓达华**先生创立于广州。
+
+    ### 创始人简介
+
+    **邓达华**
+    - 前某大型企业集团税务总监（14年甲方视角）
+    - 前头部会计师事务所高级合伙人（4年乙方视角）
+    - 注册税务师、律师资格
+    - 中国注册税务师协会特聘讲师
+    - 多家知名企业常年税务顾问
+
+    ### 我们的优势
+
+    **「业财法税管五维融合」**
+
+    我们不只是财税顾问，更是企业发展的战略伙伴。从业务模式设计、到财务合规落地、到法律风险防范、到税务最优筹划、到管理体系建设——五维一体，系统解决。
+
+    **「甲乙双视角」**
+
+    14年甲方实战经验告诉我们老板真正担心什么，4年乙方专业训练让我们懂得如何专业表达。两重视角，无缝切换。
+
+    ### 核心价值观
+
+    - **看得见的风险**：用专业语言量化企业风险
+    - **说得清的方案**：用商业逻辑包装专业方案
+    - **做得到的结果**：用实战经验确保落地效果
+
+    ### 联系我们
+
+    📞 电话/微信：13556116691
+    📍 地址：广州市
+  # 技能/标签展示
+  skills:
+    enable: true
+    title: 核心能力
+    list:
+      - name: 税务筹划
+        description: 合法合规的税务优化方案
+        progress: 98
+      - name: 涉税风险
+        description: 全方位税务风险排查与应对
+        progress: 95
+      - name: 跨境合规
+        description: ODI/FDI海外投资合规服务
+        progress: 92
+      - name: 企业重组
+        description: 并购重组全程税务规划
+        progress: 90
+
+# 404页面
+404:
+  enable: true
+  # 404页面内容
+  content: |
+    ## 页面不存在
+
+    抱歉，您访问的页面不存在或已被删除。
+
+    [返回首页](/)
+  # 背景图
+  background: /images/404-bg.jpg
+
+# 页脚配置
+footer:
+  enable: true
+  # 背景色
+  background: "#1a1a1a"
+  # 文字颜色
+  color: "#999"
+  # 版权信息
+  copyright: |
+    © 2024-2026 存勤法税服务（广州）有限公司 | 创始人：邓达华
+  # 备案号
+  beian:粤ICP备XXXXXXXX号 | © 2024-2026 存勤法税服务（广州）有限公司
+  # 社交链接
+  social:
+    - name: 微信公众号
+      icon: fab fa-weixin
+      link: /images/wechat-qrcode.jpg
+    - name: 知乎专栏
+      icon: fab fa-zhihu
+      link: https://zhuanlan.zhihu.com/cunqin
+    - name: 微博
+      icon: fab fa-weibo
+      link: https://weibo.com/cunqin
+
+# SEO 配置
+seo:
+  # 百度统计ID（可选）
+  baidu_tongji_id: ""
+  # Google Analytics ID（可选）
+  google_analytics_id: "G-XXXXXXXXXX"
+  # 网站地图
+  sitemap:
+    enable: true
+  # Google Search Console 验证
+  google_verification: ""
+  # 百度搜索资源平台验证
+  baidu_verification: ""
+
+# 评论区配置（可选）
+# 如果需要评论功能，可配置以下选项
+# comments:
+#   enable: true
+#   type: utterances  # utterances | disqus | gitalk | valine
+#   repo: your-org/your-repo
+#   issue_term: pathname
+#   label: comment
+
+# 搜索配置
+search:
+  enable: true
+  type: local
+  placeholder: 输入关键词搜索...
+
+# 鼠标点击效果
+click_effect:
+  enable: true
+
+# 滚动效果
+scroll:
+  # 回到顶部按钮
+  top_arrow:
+    enable: true
+  # 阅读进度条
+  progress_bar:
+    enable: true
+    color: "#c93756"
+
+# 代码高亮
+highlight:
+  enable: false  # Hexo默认使用highlight，这里用false由fluid主题处理
+
+# 数学公式支持
+math:
+  enable: false
+
+# CDN配置
+cdn:
+  enable: true
+  # 使用CDN的CSS
+  css:
+    - https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css
+  # 使用CDN的JS
+  js:
+    - https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/all.min.js

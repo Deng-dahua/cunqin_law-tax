@@ -1,25 +1,420 @@
-/* custom.css - 存勤法税自定义样式 */
+/* custom.css - 存勤法税简约商务风自定义样式 */
 
-/* 品牌主色 */
+/* ========== 品牌色变量 ========== */
 :root {
-  --cunqin-primary: #c93756;
-  --cunqin-dark: #1a1a1a;
-  --cunqin-light: #f8f9fa;
+  --cq-primary: #1a365d;      /* 深蓝 - 专业、可信 */
+  --cq-primary-light: #2a4a7f;
+  --cq-accent: #c9a96e;       /* 金色 - 高端、商务 */
+  --cq-accent-light: #d4b87a;
+  --cq-text: #2d3748;
+  --cq-text-light: #718096;
+  --cq-bg: #ffffff;
+  --cq-bg-light: #f7fafc;
+  --cq-border: #e2e8f0;
 }
 
-/* 首页标语区域增强 */
+/* ========== 全局排版 ========== */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  color: var(--cq-text);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+/* ========== 导航栏 - 简约商务 ========== */
+.navbar {
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: var(--cq-primary) !important;
+  letter-spacing: 0.05em;
+}
+
+.navbar-nav a {
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  color: var(--cq-text) !important;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+}
+
+.navbar-nav a:hover,
+.navbar-nav a.active {
+  color: var(--cq-accent) !important;
+}
+
+/* ========== 首页 Banner - 简约大气 ========== */
 .index-banner {
-  background: linear-gradient(135deg, #c93756 0%, #a01e3d 100%) !important;
+  background: linear-gradient(135deg, #1a365d 0%, #2a4a7f 50%, #1a365d 100%) !important;
+  min-height: 60vh !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* 服务卡片悬停效果 */
+.index-banner .content {
+  padding: 2rem 1rem !important;
+}
+
+.index-banner .title {
+  font-size: 2.8rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 0.8rem !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.index-banner .subtitle {
+  font-size: 1.2rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.15em !important;
+  opacity: 0.9;
+  margin-bottom: 1.2rem !important;
+}
+
+.index-banner .description {
+  font-size: 1rem !important;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto 2rem !important;
+  line-height: 1.8;
+}
+
+/* Slogan */
+.index-banner .slogan {
+  font-size: 0.95rem !important;
+  letter-spacing: 0.1em;
+  color: var(--cq-accent) !important;
+  opacity: 1 !important;
+  margin-top: 1.5rem !important;
+}
+
+/* ========== 按钮 - 商务简约 ========== */
+.btn {
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em;
+  padding: 0.7rem 2rem !important;
+  transition: all 0.25s ease !important;
+  text-transform: none !important;
+}
+
+.btn-primary, .btn[style*="primary"] {
+  background: var(--cq-accent) !important;
+  border-color: var(--cq-accent) !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background: var(--cq-accent-light) !important;
+  border-color: var(--cq-accent-light) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(201, 169, 110, 0.3);
+}
+
+.btn-outline {
+  border: 2px solid var(--cq-primary) !important;
+  color: var(--cq-primary) !important;
+  background: transparent !important;
+}
+
+.btn-outline:hover {
+  background: var(--cq-primary) !important;
+  color: #fff !important;
+}
+
+/* ========== 区块标题 ========== */
+.section-title {
+  font-size: 1.8rem !important;
+  font-weight: 700 !important;
+  color: var(--cq-primary) !important;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem !important;
+}
+
+.section-subtitle {
+  font-size: 0.95rem !important;
+  color: var(--cq-text-light) !important;
+  letter-spacing: 0.05em;
+}
+
+/* ========== 数据区块 ========== */
+.stats-section {
+  background: var(--cq-bg-light) !important;
+  padding: 4rem 0 !important;
+}
+
+.stat-item .stat-number {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: var(--cq-primary) !important;
+  line-height: 1.1;
+}
+
+.stat-item .stat-unit {
+  font-size: 1rem !important;
+  color: var(--cq-accent) !important;
+  font-weight: 600;
+}
+
+.stat-item .stat-desc {
+  font-size: 0.85rem !important;
+  color: var(--cq-text-light) !important;
+  letter-spacing: 0.05em;
+}
+
+/* ========== 服务卡片 - 简约商务 ========== */
+.service-card {
+  border: 1px solid var(--cq-border) !important;
+  border-radius: 8px !important;
+  padding: 2rem 1.5rem !important;
+  transition: all 0.25s ease !important;
+  background: var(--cq-bg) !important;
+}
+
 .service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(201, 55, 86, 0.15);
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(26, 54, 93, 0.1) !important;
+  border-color: var(--cq-accent) !important;
 }
 
-/* 数字统计区 */
-.stats-number {
-  color: #c93756;
+.service-card .service-icon {
+  font-size: 2rem !important;
+  color: var(--cq-accent) !important;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: var(--cq-primary) !important;
+  letter-spacing: 0.03em;
+}
+
+.service-card p {
+  font-size: 0.9rem !important;
+  color: var(--cq-text-light) !important;
+  line-height: 1.6;
+}
+
+.service-link {
+  color: var(--cq-accent) !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* ========== 关于区块 ========== */
+.about-section {
+  padding: 4rem 0 !important;
+}
+
+.about-image img {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+.about-content h3 {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: var(--cq-primary) !important;
+  margin-top: 1.5rem !important;
+}
+
+.founder-highlights {
+  list-style: none !important;
+  padding: 0 !important;
+}
+
+.founder-highlights li {
+  padding: 0.5rem 0 0.5rem 1.5rem !important;
+  position: relative;
+  color: var(--cq-text);
+  font-size: 0.95rem;
+}
+
+.founder-highlights li::before {
+  content: "▸" !important;
+  color: var(--cq-accent) !important;
+  position: absolute;
+  left: 0;
   font-weight: 700;
+}
+
+/* ========== 案例卡片 ========== */
+.case-card {
+  border: 1px solid var(--cq-border) !important;
+  border-radius: 8px !important;
+  padding: 1.5rem !important;
+  transition: all 0.25s ease !important;
+}
+
+.case-card:hover {
+  border-color: var(--cq-primary) !important;
+  box-shadow: 0 4px 16px rgba(26, 54, 93, 0.08) !important;
+}
+
+.case-header .case-icon {
+  font-size: 1.5rem !important;
+  color: var(--cq-primary) !important;
+}
+
+.case-card h3 {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: var(--cq-text) !important;
+}
+
+.case-tags span {
+  background: var(--cq-bg-light) !important;
+  color: var(--cq-text-light) !important;
+  font-size: 0.8rem !important;
+  padding: 0.2rem 0.8rem !important;
+  border-radius: 20px !important;
+  border: 1px solid var(--cq-border);
+}
+
+/* ========== 文章卡片 ========== */
+.blog-card {
+  padding: 1.5rem 0 !important;
+  border-bottom: 1px solid var(--cq-border) !important;
+}
+
+.blog-card:last-child {
+  border-bottom: none !important;
+}
+
+.blog-meta {
+  font-size: 0.8rem !important;
+  color: var(--cq-text-light) !important;
+  letter-spacing: 0.05em;
+}
+
+.blog-card h3 a {
+  color: var(--cq-primary) !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.5;
+}
+
+.blog-card h3 a:hover {
+  color: var(--cq-accent) !important;
+}
+
+.read-more {
+  color: var(--cq-accent) !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* ========== 文章页 - 减小Banner高度 ========== */
+.post-banner {
+  height: 200px !important;
+  min-height: 200px !important;
+}
+
+.post-banner .content {
+  padding: 2rem 1rem !important;
+}
+
+.post-banner .title {
+  font-size: 1.6rem !important;
+}
+
+/* ========== 联系区块 ========== */
+.contact-section {
+  background: var(--cq-bg-light) !important;
+  padding: 4rem 0 !important;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-item i {
+  font-size: 1.2rem;
+  color: var(--cq-accent) !important;
+  margin-top: 0.2rem;
+}
+
+.contact-item h4 {
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  color: var(--cq-primary) !important;
+  margin-bottom: 0.2rem !important;
+}
+
+.wechat-qrcode img {
+  border-radius: 8px !important;
+  max-width: 200px;
+}
+
+/* ========== 页脚 - 深蓝商务 ========== */
+.site-footer {
+  background: var(--cq-primary) !important;
+  color: #cbd5e0 !important;
+  padding: 3rem 0 1.5rem !important;
+}
+
+.site-footer h3,
+.site-footer h4 {
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+.site-footer a {
+  color: #cbd5e0 !important;
+  transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+  color: var(--cq-accent) !important;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding-top: 1.5rem !important;
+  margin-top: 2rem !important;
+  font-size: 0.85rem;
+}
+
+/* ========== 进度条 - 金色 ========== */
+.scroll-progress-bar {
+  background: var(--cq-accent) !important;
+}
+
+/* ========== 回到顶部 ========== */
+.back-to-top {
+  background: var(--cq-primary) !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+}
+
+.back-to-top:hover {
+  background: var(--cq-accent) !important;
+}
+
+/* ========== 响应式优化 ========== */
+@media (max-width: 768px) {
+  .index-banner .title {
+    font-size: 1.8rem !important;
+  }
+  .index-banner .subtitle {
+    font-size: 1rem !important;
+  }
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+  .stat-item .stat-number {
+    font-size: 2rem !important;
+  }
 }

@@ -12,7 +12,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://dengdahua.github.io/cunqin_law-tax
+url: https://Deng-dahua.github.io/cunqin_law-tax
 root: /cunqin_law-tax/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -94,7 +94,6 @@ feed:
 # Sitemap
 sitemap:
   path: sitemap.xml
-  template: ./themes/fluid/layout/sitemap.tpl
   rel: true
   tags: true
   categories: true
@@ -109,14 +108,6 @@ markdown:
     - markdown-it-emoji
     - markdown-it-task-lists
     - markdown-it-mark
-
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: git@github.com:dengdahua/cunqin_law-tax.git
-  branch: gh-pages
-  token: ${GITHUB_TOKEN}
 
 # Theme
 theme: fluid

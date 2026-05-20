@@ -52,8 +52,8 @@ index:
     title: 业财法税管五维融合
     subtitle: 甲乙双视角 · 18年实战派
     description: 专注为企业提供涉税风险检查、税务危机应对、ODI备案、企业重组税务规划等专业服务
-    background: /images/banner-bg.jpg
-    cdn_css: /css/index-banner.css
+    # background: /images/banner-bg.jpg  # 放入实际图片后取消注释
+    # cdn_css: /css/index-banner.css
     # 官方示例：https://tva1.sinaimg.cn/large/e6c9d24egy1h2elfc3m4aj22tc1kw1ky.jpg
   slogan:
     enable: true
@@ -132,8 +132,8 @@ index:
 # 文章页配置
 post:
   enable: true
-  # 文章头图
-  banner_img: /images/post-banner.jpg
+  # 文章头图（放入实际图片后取消注释）
+  # banner_img: /images/post-banner.jpg
   banner_img_height: 400
   # 作者信息
   author_info:
@@ -145,13 +145,13 @@ post:
       - name: 微信
         icon: fab fa-weixin
         link: /images/wechat-qrcode.jpg
-  # 打赏
+  # 打赏（放入打赏二维码后取消注释）
   reward:
-    enable: true
-    text: 原创不易，若有帮助，欢迎打赏
-    qrcodes:
-      - name: 微信
-        img: /images/wechat-reward.jpg
+    enable: false
+    # text: 原创不易，若有帮助，欢迎打赏
+    # qrcodes:
+    #   - name: 微信
+    #     img: /images/wechat-reward.jpg
   # 版权信息
   copyright:
     enable: true
@@ -178,8 +178,8 @@ post_list:
 # 归档页配置
 archive:
   enable: true
-  # 封面
-  banner_img: /images/archive-banner.jpg
+  # 封面（放入实际图片后取消注释）
+  #  banner_img: /images/archive-banner.jpg
   # 每页文章数
   per_page: 20
   # 按年份分组
@@ -190,20 +190,20 @@ archive:
 # 标签页配置
 tag:
   enable: true
-  # 封面
-  banner_img: /images/tag-banner.jpg
+  # 封面（放入实际图片后取消注释）
+  #  banner_img: /images/tag-banner.jpg
 
 # 分类页配置
 category:
   enable: true
-  # 封面
-  banner_img: /images/category-banner.jpg
+  # 封面（放入实际图片后取消注释）
+  #  banner_img: /images/category-banner.jpg
 
 # 关于页配置
 about:
   enable: true
-  # 封面
-  banner_img: /images/about-banner.jpg
+  # 封面（放入实际图片后取消注释）
+  #  banner_img: /images/about-banner.jpg
   # 页面内容（支持Markdown）
   content: |
     ## 关于我们
@@ -267,8 +267,8 @@ about:
     抱歉，您访问的页面不存在或已被删除。
 
     [返回首页](/)
-  # 背景图
-  background: /images/404-bg.jpg
+  # 背景图（放入实际图片后取消注释）
+  #  background: /images/404-bg.jpg
 
 # 页脚配置
 footer:

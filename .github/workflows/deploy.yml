@@ -1,8 +1,8 @@
-name: Deploy to GitHub Pages
+name: Deploy Hexo to GitHub Pages
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   workflow_dispatch:
 
 permissions:
@@ -11,8 +11,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -29,19 +29,15 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install Dependencies
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Hexo site
         run: |
-          npm install
+          npx hexo clean
+          npx hexo generate
 
-      - name: Build Hexo Site
-        run: |
-          hexo clean
-          hexo generate
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './public'

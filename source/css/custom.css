@@ -1,0 +1,25 @@
+/* custom.css - 存勤法税自定义样式 */
+
+/* 品牌主色 */
+:root {
+  --cunqin-primary: #c93756;
+  --cunqin-dark: #1a1a1a;
+  --cunqin-light: #f8f9fa;
+}
+
+/* 首页标语区域增强 */
+.index-banner {
+  background: linear-gradient(135deg, #c93756 0%, #a01e3d 100%) !important;
+}
+
+/* 服务卡片悬停效果 */
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(201, 55, 86, 0.15);
+}
+
+/* 数字统计区 */
+.stats-number {
+  color: #c93756;
+  font-weight: 700;
+}

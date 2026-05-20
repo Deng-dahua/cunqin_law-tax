@@ -1,20 +1,24 @@
 {
-  "name": "2026-05-20-21-20-24",
+  "name": "cunqin-law-tax-website",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "存勤法税服务（广州）有限公司官网",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "server": "hexo server"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "hexo": {
+    "version": "7.3.0"
+  },
   "dependencies": {
+    "hexo": "^7.3.0",
     "hexo-cli": "^4.3.2",
     "hexo-generator-feed": "^4.0.0",
     "hexo-generator-sitemap": "^3.0.1",
-    "hexo-renderer-pandoc": "^0.5.0",
+    "hexo-pagination": "^4.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^6.3.0",
+    "hexo-renderer-stylus": "^3.0.1",
     "hexo-theme-fluid": "^1.9.9"
   }
 }

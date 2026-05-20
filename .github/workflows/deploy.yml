@@ -31,8 +31,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          npm ci
-          npm install hexo-cli -g
+          npm install
 
       - name: Build Hexo Site
         run: |

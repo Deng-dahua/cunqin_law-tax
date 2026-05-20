@@ -8,7 +8,7 @@ custom_css: /css/custom.css
 navbar:
   blog_title: 存勤法税
   enable: true
- fixed: true
+  fixed: true
   transparent: true
   brand_color: "#c93756"
   links:
@@ -281,7 +281,7 @@ footer:
   copyright: |
     © 2024-2026 存勤法税服务（广州）有限公司 | 创始人：邓达华
   # 备案号
-  beian:粤ICP备XXXXXXXX号 | © 2024-2026 存勤法税服务（广州）有限公司
+  beian: "粤ICP备XXXXXXXX号 | © 2024-2026 存勤法税服务（广州）有限公司"
   # 社交链接
   social:
     - name: 微信公众号

@@ -26,5 +26,8 @@ public/
 # Misc
 *.bak
 
+# WorkBuddy
+.workbuddy/
+
 # Hexo
 db.json

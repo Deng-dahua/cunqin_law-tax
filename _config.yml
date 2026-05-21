@@ -33,6 +33,16 @@ skip_render:
   - "cases/index.html"
   - "archives/index.html"
   - "contact/index.html"
+  - "services/s01-tax-risk-check.html"
+  - "services/s02-tax-crisis-response.html"
+  - "services/s03-odi-outbound-investment.html"
+  - "services/s04-restructuring-tax-planning.html"
+  - "services/s05-cross-border-legal-tax.html"
+  - "services/s06-revenue-growth-strategy.html"
+  - "services/s07-profit-growth-system.html"
+  - "services/s08-budget-management-system.html"
+  - "services/s09-fiscal-internal-control.html"
+  - "services/s10-custom-tax-training.html"
 
 # Writing
 new_post_name: :title.md

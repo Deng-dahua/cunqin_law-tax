@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>涉税风险检查 - 存勤法税服务（广州）有限公司</title>
+  <meta name="description" content="存勤法税涉税风险检查服务：涉税风险检查是存勤法税为企业提供的税务健康体检服务。通过对企业涉税业务进行全面、系统的梳理，识别潜在的税务风险点，出具专业的风险评估报告，并提出切实可行的整改建...">
+  <link rel="icon" href="../images/logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <style>
+    :root {
+      --dt-primary: #003f6c;
+      --dt-primary-light: #1a5f7a;
+      --dt-accent: #00a19c;
+      --dt-accent-hover: #008a85;
+      --dt-text: #333;
+      --dt-text-light: #666;
+      --dt-border: #e8e8e8;
+      --dt-bg: #fff;
+      --dt-bg-light: #f8f9fa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                   "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+      color: var(--dt-text); line-height: 1.8; letter-spacing: 0.02em;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    .container-dt { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+    .navbar-dt { background: rgba(255,255,255,0.98); box-shadow: 0 1px 4px rgba(0,0,0,0.06); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; backdrop-filter: blur(10px); }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 0.5rem 0 0; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-brand { display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; flex-shrink: 0; }
+    .nav-logo { height: 34px; width: auto; }
+    .nav-menu { display: flex; align-items: center; gap: 0.3rem; }
+    .nav-menu a { display: block; padding: 0.5rem 1rem; font-size: 0.92rem; font-weight: 500; color: var(--dt-text); letter-spacing: 0.03em; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+    .nav-menu a:hover, .nav-menu a.active { color: var(--dt-accent); background: rgba(0,161,156,0.06); }
+    .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; font-size: 1.3rem; color: var(--dt-primary); }
+    .page-hero { background: linear-gradient(135deg, #003f6c 0%, #1a5f7a 100%); color: #fff; padding: 120px 0 60px; text-align: center; }
+    .page-hero .service-badge { display: inline-block; background: rgba(255,255,255,0.15); color: var(--dt-accent); padding: 6px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.1em; }
+    .page-hero h1 { font-size: 2.6rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .page-hero .hero-subtitle { font-size: 1.2rem; opacity: 0.85; max-width: 600px; margin: 0 auto 1.5rem; font-style: italic; }
+    .page-hero .hero-desc { font-size: 1rem; opacity: 0.8; max-width: 700px; margin: 0 auto; line-height: 1.9; }
+    .breadcrumb { background: var(--dt-bg-light); padding: 1rem 0; font-size: 0.85rem; color: var(--dt-text-light); border-bottom: 1px solid var(--dt-border); }
+    .breadcrumb a { color: var(--dt-accent); }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .section-dt { padding: 60px 0; }
+    .section-dt:nth-child(even) { background: var(--dt-bg-light); }
+    .section-title { font-size: 1.6rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--dt-accent); display: inline-block; }
+    .section-subtitle { font-size: 1.2rem; font-weight: 700; color: var(--dt-primary); margin: 2rem 0 1rem; padding-left: 0.8rem; border-left: 3px solid var(--dt-accent); }
+    .scope-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-top: 1.5rem; }
+    .scope-item { background: var(--dt-bg-light); padding: 1rem 1.2rem; border-radius: 6px; font-size: 0.92rem; border-left: 3px solid var(--dt-accent); line-height: 1.6; }
+    .pain-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .pain-item { background: #fff; border: 1px solid var(--dt-border); padding: 1.2rem 1.5rem; border-radius: 8px; position: relative; }
+    .pain-item::before { content: '\201C'; position: absolute; top: -12px; left: 12px; font-size: 2rem; color: var(--dt-accent); opacity: 0.3; line-height: 1; }
+    .pain-item p { font-size: 0.92rem; color: var(--dt-text); line-height: 1.7; font-style: italic; }
+    .flow-steps { display: flex; flex-direction: column; gap: 1.5rem; }
+    .flow-step { background: #fff; border: 1px solid var(--dt-border); border-radius: 8px; padding: 1.5rem; position: relative; }
+    .flow-step .step-num { position: absolute; top: -15px; left: 20px; background: var(--dt-primary); color: #fff; padding: 4px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; }
+    .flow-step h4 { color: var(--dt-primary); margin-bottom: 0.5rem; margin-top: 0.3rem; font-size: 1.05rem; }
+    .flow-step p { color: var(--dt-text-light); font-size: 0.9rem; line-height: 1.7; }
+    .value-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .value-table th { background: var(--dt-primary); color: #fff; padding: 0.8rem 1.2rem; text-align: left; font-size: 0.9rem; }
+    .value-table td { padding: 0.8rem 1.2rem; border-bottom: 1px solid var(--dt-border); font-size: 0.9rem; }
+    .value-table tr:nth-child(even) td { background: var(--dt-bg-light); }
+    .scenario-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+    .scenario-tag { background: var(--dt-bg-light); border: 1px solid var(--dt-border); padding: 0.8rem 1rem; border-radius: 6px; text-align: center; font-size: 0.88rem; color: var(--dt-text); transition: all 0.2s; }
+    .scenario-tag:hover { border-color: var(--dt-accent); color: var(--dt-accent); }
+    .deliverable-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+    .deliverable-item { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.8rem 1rem; background: var(--dt-bg-light); border-radius: 6px; font-size: 0.9rem; }
+    .deliverable-item .dl-icon { color: var(--dt-accent); font-size: 1rem; flex-shrink: 0; margin-top: 0.15rem; }
+    .course-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
+    .course-table th { background: var(--dt-primary); color: #fff; padding: 0.7rem 1rem; text-align: left; }
+    .course-table td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--dt-border); }
+    .course-table tr:nth-child(even) td { background: var(--dt-bg-light); }
+    .cta-section { background: var(--dt-primary); color: #fff; text-align: center; padding: 60px 0; }
+    .cta-section h2 { font-size: 1.8rem; margin-bottom: 0.75rem; }
+    .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+    .btn-dt-primary { display: inline-block; background: var(--dt-accent); color: #fff; padding: 14px 36px; border-radius: 4px; font-weight: 600; font-size: 1rem; transition: all 0.3s; border: none; cursor: pointer; }
+    .btn-dt-primary:hover { background: var(--dt-accent-hover); transform: translateY(-2px); }
+    .footer-dt { background: #002a4a; color: #a0b4c8; padding: 60px 0 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem; margin-bottom: 40px; }
+    .footer-brand p { margin-top: 1rem; font-size: 0.9rem; line-height: 1.8; color: #8aa0b8; }
+    .footer-links h4 { color: #fff; font-size: 1rem; margin-bottom: 1.2rem; }
+    .footer-links li { margin-bottom: 0.6rem; }
+    .footer-links a { color: #8aa0b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--dt-accent); }
+    .footer-bottom { border-top: 1px solid #1a4a6e; padding-top: 20px; display: flex; justify-content: space-between; font-size: 0.85rem; color: #6a8aaa; }
+    @media (max-width: 768px) {
+      .nav-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 1.5rem; gap: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+      .nav-menu.active { display: flex; }
+      .nav-mobile-btn { display: block; }
+      .page-hero h1 { font-size: 1.8rem; }
+      .scope-list, .pain-list, .scenario-grid, .deliverable-list { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar-dt">
+  <div class="nav-container">
+    <a href="../" class="nav-brand">
+      <img src="../images/nav-logo.png" alt="存勤法税" class="nav-logo">
+      <span>-存勤<span style="color:#ff8c00;">法税</span>-</span>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../">首页</a></li>
+      <li><a href="../about/">关于我们</a></li>
+      <li><a href="./" class="active">核心服务</a></li>
+      <li><a href="../cases/">客户案例</a></li>
+      <li><a href="../archives/">法税洞察</a></li>
+      <li><a href="../contact/">联系我们</a></li>
+    </ul>
+    <div class="nav-mobile-btn" onclick="document.getElementById('navMenu').classList.toggle('active')">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container-dt">
+    <div class="service-badge">NO.01 · 核心服务</div>
+    <h1>涉税风险检查</h1>
+    <p class="hero-subtitle">防患于未然，让企业财税合规成为竞争优势</p>
+    <p class="hero-desc">涉税风险检查是存勤法税为企业提供的税务健康体检服务。通过对企业涉税业务进行全面、系统的梳理，识别潜在的税务风险点，出具专业的风险评估报告，并提出切实可行的整改建议。</p>
+  </div>
+</section>
+<div class="breadcrumb">
+  <div class="container-dt">
+    <a href="../">首页</a> &rsaquo; <a href="./">核心服务</a> &rsaquo; 涉税风险检查
+  </div>
+</div>
+<section class="section-dt">
+  <div class="container-dt">
+    <h2 class="section-title">服务范围</h2>
+    <div class="scope-list">
+      <div class="scope-item">增值税：进项抵扣合规性、销项税额确认时点</div>
+      <div class="scope-item">企业所得税：成本费用税前扣除、税收优惠备案</div>
+      <div class="scope-item">个人所得税：工资薪金、劳务报酬代扣代缴</div>
+      <div class="scope-item">其他税种：印花税、土地增值税等合规审查</div>
+      <div class="scope-item">跨境税务：转让定价、境外所得申报</div>
+    </div>
+  </div>
+</section>
+<section class="section-dt">
+  <div class="container-dt">
+    <h2 class="section-title">客户痛点</h2>
+    <div class="pain-list">
+      <div class="pain-item"><p>税务局一查就是一大堆问题，财务说没问题但税局说有问题</p></div>
+      <div class="pain-item"><p>老板只关心少交税不关心风险，业务乱拿发票财务背锅</p></div>
+      <div class="pain-item"><p>供应商不要发票价格便宜但成本无法税前扣除</p></div>
+      <div class="pain-item"><p>促销返利税务处理不统一引发少缴税风险</p></div>
+      <div class="pain-item"><p>跨境关联交易定价不合理被税局调整补税</p></div>
+    </div>
+  </div>
+</section>
+<section class="section-dt">
+  <div class="container-dt">
+    <h2 class="section-title">解决方案</h2>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="step-num">01</div>
+        <h4>阶段一：进场调研（1-2周）</h4>
+        <p>了解组织架构与业务模式，收集财务报表、申报表，梳理涉税关键节点</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">02</div>
+        <h4>阶段二：风险识别（2-3周）</h4>
+        <p>逐税种逐业务线排查风险点，比对账簿与申报数据，检查发票合规性</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">03</div>
+        <h4>阶段三：报告出具（1周）</h4>
+        <p>出具《税务风险检查报告》，标注高危/中危/低危等级，列明法规依据</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">04</div>
+        <h4>阶段四：整改建议（1-2周）</h4>
+        <p>针对每个风险点提出整改方案，区分立即整改与逐步整改，提供操作指引</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">05</div>
+        <h4>阶段五：整改跟踪（1-3个月）</h4>
+        <p>协助完成关键整改事项，提供复检服务</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-dt">
+  <div class="container-dt">
+    <h2 class="section-title">核心价值</h2>
+    <table class="value-table">
+      <thead><tr><th style="width:25%">价值维度</th><th>具体体现</th></tr></thead>
+      <tbody>
+        <tr><td><strong>避免补税罚款</strong></td><td>早发现早整改，避免被税局查处</td></tr>
+        <tr><td><strong>降低税务成本</strong></td><td>合规前提下的税负优化</td></tr>
+        <tr><td><strong>提升内部管理</strong></td><td>完善发票管理、报销规范等内控流程</td></tr>
+        <tr><td><strong>防范老板风险</strong></td><td>让老板了解个人行为的税务后果</td></tr>
+        <tr><td><strong>从容应对检查</strong></td><td>建立税务自查机制</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="section-dt">
+  <div class="container-dt">
+    <h2 class="section-title">适用场景</h2>
+    <div class="scenario-grid">
+      <div class="scenario-tag">年度常规体检</div>
+      <div class="scenario-tag">重大变化前后（业务调整/融资前）</div>
+      <div class="scenario-tag">迎接税务检查</div>
+      <div class="scenario-tag">新业务开展</div>
+      <div class="scenario-tag">高管离任审计</div>
+      <div class="scenario-tag">IPO筹备期</div>
+    </div>
+  </div>
+</section>
+<section class="section-dt">
+  <div class="container-dt">
+    <h2 class="section-title">服务成果</h2>
+    <div class="deliverable-list">
+      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《税务风险检查报告》</span></div>
+      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《风险整改建议书》</span></div>
+      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《常用税务合规指引》</span></div>
+      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>关键岗位税务培训（可选）</span></div>
+      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>后续整改跟踪服务</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container-dt">
+    <h2>需要定制化的服务方案？</h2>
+    <p>具体服务方案将根据企业实际情况定制，欢迎联系我们的专业顾问</p>
+    <a href="../contact/" class="btn-dt-primary">立即咨询</a>
+  </div>
+</section>
+<footer class="footer-dt">
+  <div class="container-dt">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong style="color:#fff;font-size:1.1rem;display:flex;align-items:center;gap:0.5rem;"><img src="../images/footer-logo.png" alt="存勤法税" style="height:32px;width:auto;border-radius:4px;"><span style="color:#fff;">-存勤法税-</span></strong>
+        <p>「业管财税法」五维融合 · 甲乙双视角实战派<br>为企业提供专业、可落地的财税法解决方案</p>
+      </div>
+      <div class="footer-links">
+        <h4>快速链接</h4>
+        <ul><li><a href="../about/">关于我们</a></li><li><a href="./">核心服务</a></li><li><a href="../cases/">客户案例</a></li><li><a href="../archives/">法税洞察</a></li></ul>
+      </div>
+      <div class="footer-links">
+        <h4>服务项目</h4>
+        <ul><li><a href="./">涉税风险检查</a></li><li><a href="./">税务危机应对</a></li><li><a href="./">税务争议解决</a></li><li><a href="./">企业重组税务规划</a></li><li><a href="./">跨境投资与并购</a></li></ul>
+      </div>
+      <div class="footer-links">
+        <h4>联系我们</h4>
+        <ul><li>电话：13556116691</li><li>地址：广东省广州市天河区</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2024-2026 存勤法税服务（广州）有限公司 | 创始人：邓达华</div>
+      <div><span style="color:#5a7a9a;">粤ICP备XXXXXXXX号</span></div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

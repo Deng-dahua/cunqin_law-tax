@@ -29,7 +29,7 @@
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
     img { max-width: 100%; display: block; }
-    .container-dt { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .container-dt { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
 
     /* 导航栏 */
     .navbar-dt {
@@ -38,14 +38,13 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       backdrop-filter: blur(10px);
     }
-    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
-    .nav-brand { display: flex; align-items: center; gap: 12px; font-size: 1.25rem; font-weight: 700; color: var(--dt-primary); }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-brand { display: flex; align-items: center; gap: 0.6rem; font-size: 1.15rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; }
     .nav-logo { height: 36px; width: auto; }
-    .nav-menu { display: flex; gap: 2.5rem; }
-    .nav-menu a { font-size: 0.95rem; color: var(--dt-text); font-weight: 500; transition: color 0.2s; position: relative; }
-    .nav-menu a:hover, .nav-menu a.active { color: var(--dt-accent); }
-    .nav-menu a.active::after { content: ''; position: absolute; bottom: -6px; left: 0; right: 0; height: 2px; background: var(--dt-accent); border-radius: 1px; }
-    .nav-mobile-btn { display: none; font-size: 1.5rem; color: var(--dt-primary); cursor: pointer; }
+    .nav-menu { display: flex; align-items: center; gap: 0.3rem; }
+    .nav-menu a { display: block; padding: 0.5rem 1rem; font-size: 0.92rem; font-weight: 500; color: var(--dt-text); letter-spacing: 0.03em; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+    .nav-menu a:hover, .nav-menu a.active { color: var(--dt-accent); background: rgba(0,161,156,0.06); }
+    .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; font-size: 1.3rem; color: var(--dt-primary); }
 
     /* 页面标题区 */
     .page-hero {
@@ -105,7 +104,7 @@
     .footer-bottom { border-top: 1px solid #1a4a6e; padding-top: 20px; display: flex; justify-content: space-between; font-size: 0.85rem; color: #6a8aaa; }
 
     @media (max-width: 768px) {
-      .nav-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 1.5rem; gap: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+      .nav-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 1.5rem; gap: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
       .nav-menu.active { display: flex; }
       .nav-mobile-btn { display: block; }
       .page-hero h1 { font-size: 2rem; }

@@ -71,20 +71,32 @@
     .nav-tools {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.3rem;
       margin-left: 0.5rem;
     }
-    .nav-tools a {
-      color: var(--dt-text-light);
-      font-size: 0.9rem;
-      padding: 0.35rem 0.5rem;
-      border-radius: 4px;
+    .nav-dropdown { position: relative; }
+    .nav-tool-btn {
+      background: none; border: none; cursor: pointer;
+      color: var(--dt-text-light); font-size: 0.88rem;
+      padding: 0.35rem 0.5rem; border-radius: 4px;
+      display: flex; align-items: center; gap: 0.3rem;
+      font-family: inherit; white-space: nowrap;
       transition: color 0.2s, background 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
     }
-    .nav-tools a:hover { color: var(--dt-accent); background: rgba(0,161,156,0.06); }
+    .nav-tool-btn:hover { color: var(--dt-accent); background: rgba(0,161,156,0.06); }
+    .dropdown-menu {
+      display: none; position: absolute; top: 100%; right: 0;
+      background: #fff; border: 1px solid var(--dt-border);
+      border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      min-width: 180px; max-height: 320px; overflow-y: auto;
+      z-index: 1001; padding: 0.4rem 0;
+    }
+    .dropdown-menu.open { display: block; }
+    .dropdown-menu a {
+      display: block; padding: 0.5rem 1rem; font-size: 0.88rem;
+      color: var(--dt-text); transition: background 0.15s;
+    }
+    .dropdown-menu a:hover { background: rgba(0,161,156,0.06); color: var(--dt-accent); }
     .nav-menu {
       display: flex;
       align-items: center;
@@ -242,17 +254,17 @@
     .about-grid-dt { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
     .about-img-dt img { width: 100%; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
     .logo-circle {
-      width: 180px; height: 180px;
+      width: 270px; height: 270px;
       border-radius: 50%;
-      background: #fff;
+      background: transparent;
       border: 3px solid var(--dt-accent);
-      box-shadow: inset 0 2px 8px rgba(0,0,0,0.08), 0 0 0 8px rgba(0,161,156,0.12), 0 8px 24px rgba(0,0,0,0.1);
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.08), 0 0 0 10px rgba(0,161,156,0.12), 0 8px 24px rgba(0,0,0,0.1);
       display: flex; align-items: center; justify-content: center;
       padding: 1.5rem;
       margin: 0 auto;
       overflow: hidden;
     }
-    .logo-circle img { display: block; max-width: 100%; max-height: 100%; }
+    .logo-circle img { display: block; max-width: 100%; max-height: 100%; mix-blend-mode: multiply; }
     .about-txt-dt h2 { font-size: 2rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; margin-bottom: 1.2rem; }
     .about-lead { font-size: 1.05rem; color: var(--dt-text); line-height: 1.9; margin-bottom: 1.5rem; }
     .about-tag { font-size: 0.95rem; color: var(--dt-accent); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 1.2rem; }
@@ -306,6 +318,51 @@
     .footer-bottom-dt { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; }
     .footer-bottom-dt a { color: #b0c4d8; transition: color 0.2s; }
     .footer-bottom-dt a:hover { color: var(--dt-accent); }
+
+    /* ========== 搜索覆盖层 ========== */
+    .search-overlay {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5); z-index: 2000;
+      align-items: flex-start; justify-content: center;
+      padding-top: 120px;
+    }
+    .search-overlay.open { display: flex; }
+    .search-box {
+      background: #fff; border-radius: 8px;
+      width: 90%; max-width: 600px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+    .search-box-header {
+      display: flex; align-items: center; padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--dt-border);
+    }
+    .search-box-header input {
+      flex: 1; border: none; outline: none; font-size: 1.1rem;
+      font-family: inherit; color: var(--dt-text);
+    }
+    .search-box-header input::placeholder { color: #bbb; }
+    .search-box-header button {
+      background: none; border: none; cursor: pointer;
+      color: #999; font-size: 1.2rem; padding: 0.3rem;
+      margin-left: 0.5rem;
+    }
+    .search-box-header button:hover { color: var(--dt-accent); }
+    .search-results { max-height: 400px; overflow-y: auto; padding: 0.5rem 0; }
+    .search-result-item {
+      display: block; padding: 0.7rem 1.2rem; font-size: 0.92rem;
+      color: var(--dt-text); cursor: pointer; border-bottom: 1px solid var(--dt-bg-light);
+      transition: background 0.15s;
+    }
+    .search-result-item:hover { background: rgba(0,161,156,0.04); }
+    .search-result-item:last-child { border-bottom: none; }
+    .search-no-result { padding: 2rem; text-align: center; color: #999; }
+
+    /* ========== 区块分隔线 ========== */
+    .section-divider {
+      height: 0; border: none; border-top: 1px solid var(--dt-border);
+      max-width: 1200px; margin: 0 auto;
+    }
 
     /* ========== 四个不一样 ========== */
     .diff-section { padding: 5rem 0; }
@@ -411,9 +468,50 @@
       <li><a href="contact/">联系我们</a></li>
     </ul>
     <div class="nav-tools">
-      <a href="#" title="选择地区"><i class="fas fa-globe"></i></a>
-      <a href="#" title="切换语言"><i class="fas fa-language"></i></a>
-      <a href="#" title="搜索"><i class="fas fa-search"></i></a>
+      <div class="nav-dropdown">
+        <button class="nav-tool-btn" onclick="toggleDropdown('regionDropdown')"><i class="fas fa-globe"></i> <span id="currentRegion">中国</span></button>
+        <div class="dropdown-menu" id="regionDropdown">
+          <a href="#" onclick="selectRegion('中国',event)">中国</a>
+          <a href="#" onclick="selectRegion('美国',event)">美国</a>
+          <a href="#" onclick="selectRegion('英国',event)">英国</a>
+          <a href="#" onclick="selectRegion('日本',event)">日本</a>
+          <a href="#" onclick="selectRegion('韩国',event)">韩国</a>
+          <a href="#" onclick="selectRegion('新加坡',event)">新加坡</a>
+          <a href="#" onclick="selectRegion('德国',event)">德国</a>
+          <a href="#" onclick="selectRegion('法国',event)">法国</a>
+          <a href="#" onclick="selectRegion('澳大利亚',event)">澳大利亚</a>
+          <a href="#" onclick="selectRegion('加拿大',event)">加拿大</a>
+          <a href="#" onclick="selectRegion('印度',event)">印度</a>
+          <a href="#" onclick="selectRegion('巴西',event)">巴西</a>
+          <a href="#" onclick="selectRegion('俄罗斯',event)">俄罗斯</a>
+          <a href="#" onclick="selectRegion('阿联酋',event)">阿联酋</a>
+          <a href="#" onclick="selectRegion('泰国',event)">泰国</a>
+          <a href="#" onclick="selectRegion('越南',event)">越南</a>
+          <a href="#" onclick="selectRegion('马来西亚',event)">马来西亚</a>
+          <a href="#" onclick="selectRegion('印度尼西亚',event)">印度尼西亚</a>
+          <a href="#" onclick="selectRegion('香港',event)">香港</a>
+          <a href="#" onclick="selectRegion('台湾',event)">台湾</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-tool-btn" onclick="toggleDropdown('langDropdown')"><i class="fas fa-language"></i> 翻译</button>
+        <div class="dropdown-menu" id="langDropdown">
+          <a href="#" onclick="translateTo('zh-CN',event)">中文（简体）</a>
+          <a href="#" onclick="translateTo('zh-TW',event)">中文（繁體）</a>
+          <a href="#" onclick="translateTo('en',event)">English</a>
+          <a href="#" onclick="translateTo('ja',event)">日本語</a>
+          <a href="#" onclick="translateTo('ko',event)">한국어</a>
+          <a href="#" onclick="translateTo('de',event)">Deutsch</a>
+          <a href="#" onclick="translateTo('fr',event)">Français</a>
+          <a href="#" onclick="translateTo('es',event)">Español</a>
+          <a href="#" onclick="translateTo('pt',event)">Português</a>
+          <a href="#" onclick="translateTo('ru',event)">Русский</a>
+          <a href="#" onclick="translateTo('ar',event)">العربية</a>
+          <a href="#" onclick="translateTo('th',event)">ไทย</a>
+          <a href="#" onclick="translateTo('vi',event)">Tiếng Việt</a>
+        </div>
+      </div>
+      <button class="nav-tool-btn" onclick="openSearch()" title="搜索"><i class="fas fa-search"></i></button>
     </div>
   </div>
 </nav>
@@ -431,6 +529,8 @@
     </div>
   </div>
 </section>
+
+<hr class="section-divider">
 
 <!-- ============ 数据条 ============ -->
 <section class="stats-dt">
@@ -460,6 +560,8 @@
   </div>
 </section>
 
+<hr class="section-divider">
+
 <!-- ============ 关于存勤法税 ============ -->
 <section class="section-dt">
   <div class="container-dt">
@@ -484,6 +586,8 @@
     </div>
   </div>
 </section>
+
+<hr class="section-divider">
 
 <!-- ============ 四个不一样 ============ -->
 <section class="diff-section">
@@ -524,6 +628,8 @@
     </div>
   </div>
 </section>
+
+<hr class="section-divider">
 
 <!-- ============ 核心服务 ============ -->
 <section class="section-dt bg-light-dt">
@@ -576,6 +682,8 @@
   </div>
 </section>
 
+<hr class="section-divider">
+
 <!-- ============ E-E-A-T 权威性背书 ============ -->
 <section class="eat-section">
   <div class="container-dt">
@@ -627,6 +735,8 @@
   </div>
 </section>
 
+<hr class="section-divider">
+
 <!-- ============ 客户案例 ============ -->
 <section class="section-dt bg-light-dt">
   <div class="container-dt">
@@ -675,6 +785,8 @@
   </div>
 </section>
 
+<hr class="section-divider">
+
 <!-- ============ 服务城市覆盖 ============ -->
 <section class="cities-section">
   <div class="container-dt">
@@ -711,6 +823,8 @@
   </div>
 </section>
 
+<hr class="section-divider">
+
 <!-- ============ 最新文章 ============ -->
 <section class="section-dt">
   <div class="container-dt">
@@ -740,6 +854,8 @@
     </div>
   </div>
 </section>
+
+<hr class="section-divider">
 
 <!-- ============ 联系我们 ============ -->
 <section class="section-dt bg-light-dt">
@@ -825,6 +941,95 @@
     </div>
   </div>
 </footer>
+
+<!-- ============ 搜索覆盖层 ============ -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <div class="search-box-header">
+      <input type="text" id="searchInput" placeholder="输入关键词搜索...">
+      <button onclick="closeSearch()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<script>
+// ============ 下拉菜单 ============
+function toggleDropdown(id) {
+  var e = window.event;
+  var menu = document.getElementById(id);
+  var isOpen = menu.classList.contains('open');
+  document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('open'); });
+  if (!isOpen) { menu.classList.add('open'); }
+  if (e) { e.stopPropagation(); }
+}
+document.addEventListener('click', function() {
+  document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('open'); });
+});
+
+// ============ 地区选择 ============
+function selectRegion(region, e) {
+  e.preventDefault();
+  document.getElementById('currentRegion').textContent = region;
+  document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('open'); });
+}
+
+// ============ 翻译功能 ============
+function translateTo(lang, e) {
+  e.preventDefault();
+  document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('open'); });
+  window.open('https://translate.google.com/translate?hl=' + lang + '&sl=auto&u=' + encodeURIComponent(window.location.href), '_blank');
+}
+
+// ============ 搜索功能 ============
+function openSearch() {
+  document.getElementById('searchOverlay').classList.add('open');
+  document.getElementById('searchInput').focus();
+}
+function closeSearch() {
+  document.getElementById('searchOverlay').classList.remove('open');
+  document.getElementById('searchInput').value = '';
+  document.getElementById('searchResults').innerHTML = '';
+}
+document.getElementById('searchInput').addEventListener('input', function() {
+  var q = this.value.trim().toLowerCase();
+  var container = document.getElementById('searchResults');
+  if (q.length < 1) { container.innerHTML = ''; return; }
+  var sections = document.querySelectorAll('section, .hero-dt, .diff-section, .eat-section, .cities-section');
+  var results = [];
+  sections.forEach(function(sec) {
+    var text = sec.textContent || sec.innerText;
+    var heading = sec.querySelector('h1, h2, h3, h4');
+    var title = heading ? heading.textContent.trim() : '';
+    if (text.toLowerCase().indexOf(q) > -1) {
+      results.push({ el: sec, title: title, text: text.replace(/\s+/g,' ').substring(0, 120) });
+    }
+  });
+  var footer = document.querySelector('footer');
+  if (footer && footer.textContent.toLowerCase().indexOf(q) > -1) {
+    results.push({ el: footer, title: '页脚信息', text: footer.textContent.replace(/\s+/g,' ').substring(0, 120) });
+  }
+  if (results.length === 0) {
+    container.innerHTML = '<div class="search-no-result">未找到与「' + q + '」相关的内容</div>';
+  } else {
+    container.innerHTML = results.map(function(r, i) {
+      return '<div class="search-result-item" onclick="goToResult(' + i + ')"><strong>' +
+        (r.title || '相关内容') + '</strong><br><small style="color:#999">' + r.text + '…</small></div>';
+    }).join('');
+    window._searchResults = results;
+  }
+});
+function goToResult(index) {
+  var result = window._searchResults[index];
+  if (result) {
+    result.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    closeSearch();
+  }
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeSearch();
+});
+</script>
 
 </body>
 </html>

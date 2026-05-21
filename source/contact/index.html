@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>联系我们 - 存勤法税服务（广州）有限公司</title>
+  <meta name="description" content="联系存勤法税，获取专业财税法咨询服务 - 电话：13556116691（微信同号）">
+  <link rel="icon" href="../images/logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <style>
+    :root {
+      --dt-primary: #003f6c;
+      --dt-primary-light: #1a5f7a;
+      --dt-accent: #00a19c;
+      --dt-accent-hover: #008a85;
+      --dt-text: #333;
+      --dt-text-light: #666;
+      --dt-border: #e8e8e8;
+      --dt-bg: #fff;
+      --dt-bg-light: #f8f9fa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                   "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+      color: var(--dt-text); line-height: 1.8; letter-spacing: 0.02em;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    .container-dt { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* 导航栏 */
+    .navbar-dt {
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .nav-brand { display: flex; align-items: center; gap: 12px; font-size: 1.25rem; font-weight: 700; color: var(--dt-primary); }
+    .nav-logo { height: 36px; width: auto; }
+    .nav-menu { display: flex; gap: 2.5rem; }
+    .nav-menu a { font-size: 0.95rem; color: var(--dt-text); font-weight: 500; transition: color 0.2s; position: relative; }
+    .nav-menu a:hover, .nav-menu a.active { color: var(--dt-accent); }
+    .nav-menu a.active::after { content: ''; position: absolute; bottom: -6px; left: 0; right: 0; height: 2px; background: var(--dt-accent); border-radius: 1px; }
+    .nav-mobile-btn { display: none; font-size: 1.5rem; color: var(--dt-primary); cursor: pointer; }
+
+    /* 页面标题区 */
+    .page-hero {
+      background: linear-gradient(135deg, #003f6c 0%, #1a5f7a 100%);
+      color: #fff; padding: 140px 0 80px; text-align: center;
+    }
+    .page-hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem; }
+    .page-hero p { font-size: 1.15rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+    /* 内容 */
+    .section-dt { padding: 80px 0; }
+    .section-dt:nth-child(even) { background: var(--dt-bg-light); }
+    .section-title { font-size: 2rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 3rem; text-align: center; }
+    .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--dt-accent); margin: 1rem auto 0; border-radius: 2px; }
+    .section-intro { text-align: center; max-width: 700px; margin: 0 auto 3rem; color: var(--dt-text-light); font-size: 1.05rem; }
+
+    /* 联系网格 */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto; align-items: start; }
+    .contact-info h3 { font-size: 1.3rem; color: var(--dt-primary); margin-bottom: 1.5rem; }
+    .contact-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+    .contact-icon { width: 48px; height: 48px; background: var(--dt-primary); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .contact-detail h4 { font-size: 0.95rem; color: var(--dt-text-light); margin-bottom: 0.25rem; font-weight: 500; }
+    .contact-detail p { font-size: 1.1rem; color: var(--dt-primary); font-weight: 600; }
+    .qrcode-box { background: var(--dt-bg); border: 1px solid var(--dt-border); border-radius: 8px; padding: 2rem; text-align: center; }
+    .qrcode-box h3 { font-size: 1.2rem; color: var(--dt-primary); margin-bottom: 1.5rem; }
+    .qrcode-box img { max-width: 200px; margin: 0 auto 1rem; border-radius: 8px; }
+    .qrcode-box p { color: var(--dt-text-light); font-size: 0.9rem; }
+
+    /* 服务响应 */
+    .response-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; }
+    .response-card { background: var(--dt-bg); border: 1px solid var(--dt-border); border-radius: 8px; padding: 2rem; text-align: center; }
+    .response-card i { font-size: 2rem; color: var(--dt-accent); margin-bottom: 1rem; }
+    .response-card h4 { font-size: 1.1rem; color: var(--dt-primary); margin-bottom: 0.5rem; }
+    .response-card p { color: var(--dt-text-light); font-size: 0.9rem; }
+
+    /* 免责声明 */
+    .disclaimer { background: var(--dt-bg-light); border-left: 4px solid var(--dt-accent); padding: 1.5rem; border-radius: 0 8px 8px 0; max-width: 800px; margin: 0 auto; }
+    .disclaimer h4 { color: var(--dt-primary); margin-bottom: 0.5rem; }
+    .disclaimer p { color: var(--dt-text-light); font-size: 0.9rem; }
+
+    /* 页脚 */
+    .footer-dt { background: #002a4a; color: #a0b4c8; padding: 60px 0 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem; margin-bottom: 40px; }
+    .footer-brand p { margin-top: 1rem; font-size: 0.9rem; line-height: 1.8; color: #8aa0b8; }
+    .footer-links h4 { color: #fff; font-size: 1rem; margin-bottom: 1.2rem; }
+    .footer-links li { margin-bottom: 0.6rem; }
+    .footer-links a { color: #8aa0b8; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--dt-accent); }
+    .footer-bottom { border-top: 1px solid #1a4a6e; padding-top: 20px; display: flex; justify-content: space-between; font-size: 0.85rem; color: #6a8aaa; }
+
+    @media (max-width: 768px) {
+      .nav-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 1.5rem; gap: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+      .nav-menu.active { display: flex; }
+      .nav-mobile-btn { display: block; }
+      .page-hero h1 { font-size: 2rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .response-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar-dt">
+  <div class="nav-container">
+    <a href="../" class="nav-brand">
+      <img src="../images/logo.png" alt="存勤法税" class="nav-logo">
+      <span>存勤法税</span>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../">首页</a></li>
+      <li><a href="../about/">关于我们</a></li>
+      <li><a href="../services/">核心服务</a></li>
+      <li><a href="../cases/">客户案例</a></li>
+      <li><a href="../archives/">法税洞察</a></li>
+      <li><a href="./" class="active">联系我们</a></li>
+    </ul>
+    <div class="nav-mobile-btn" onclick="document.getElementById('navMenu').classList.toggle('active')">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container-dt">
+    <h1>联系我们</h1>
+    <p>专业的事交给专业的人，欢迎随时联系存勤法税团队</p>
+  </div>
+</section>
+
+<section class="section-dt">
+  <div class="container-dt">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>联系方式</h3>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-detail">
+            <h4>电话</h4>
+            <p>13556116691（微信同号）</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-clock"></i></div>
+          <div class="contact-detail">
+            <h4>服务时间</h4>
+            <p>周一至周五 9:00 - 18:00</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-detail">
+            <h4>地址</h4>
+            <p>广东省广州市天河区</p>
+          </div>
+        </div>
+      </div>
+      <div class="qrcode-box">
+        <h3>微信咨询</h3>
+        <img src="../images/wechat-qrcode.jpg" alt="微信二维码">
+        <p>扫码添加微信，获取专业咨询</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dt" style="background: var(--dt-bg-light);">
+  <div class="container-dt">
+    <h2 class="section-title">服务响应</h2>
+    <div class="response-grid">
+      <div class="response-card">
+        <i class="fas fa-bolt"></i>
+        <h4>紧急咨询</h4>
+        <p>如遇税务危机等紧急情况，请直接拨打手机，我们将第一时间响应</p>
+      </div>
+      <div class="response-card">
+        <i class="fas fa-envelope-open-text"></i>
+        <h4>常规咨询</h4>
+        <p>工作时间内24小时内回复，为您提供专业的解答和建议</p>
+      </div>
+      <div class="response-card">
+        <i class="fas fa-handshake"></i>
+        <h4>预约面谈</h4>
+        <p>可预约广州地区线下沟通，面对面深入交流您的需求</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dt">
+  <div class="container-dt">
+    <div class="disclaimer">
+      <h4><i class="fas fa-info-circle"></i> 免责声明</h4>
+      <p>本网站上发布的内容仅供一般信息参考，不构成任何形式的专业建议或服务邀约。具体税务问题请咨询专业顾问并结合企业实际情况判断。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-dt">
+  <div class="container-dt">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong style="color:#fff;font-size:1.1rem;">存勤法税</strong>
+        <p>业财法税管五维融合 · 甲乙双视角实战派<br>为企业提供专业、可落地的财税法解决方案</p>
+      </div>
+      <div class="footer-links">
+        <h4>快速链接</h4>
+        <ul>
+          <li><a href="../about/">关于我们</a></li>
+          <li><a href="../services/">核心服务</a></li>
+          <li><a href="../cases/">客户案例</a></li>
+          <li><a href="../archives/">法税洞察</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>服务项目</h4>
+        <ul>
+          <li><a href="../services/">涉税风险检查</a></li>
+          <li><a href="../services/">税务危机应对</a></li>
+          <li><a href="../services/">ODI备案咨询</a></li>
+          <li><a href="../services/">企业重组税务规划</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>联系我们</h4>
+        <ul>
+          <li>电话：13556116691（微信同号）</li>
+          <li>地址：广东省广州市天河区</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2024-2026 存勤法税服务（广州）有限公司 | 创始人：邓达华</div>
+      <div><span style="color:#5a7a9a;">粤ICP备XXXXXXXX号</span></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

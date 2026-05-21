@@ -318,7 +318,16 @@
     .client-tag { background: var(--dt-bg); border: 1px solid var(--dt-border); color: var(--dt-text-light); font-size: 0.88rem; padding: 0.4rem 1rem; border-radius: 20px; transition: all 0.2s; }
     .client-tag:hover { border-color: var(--dt-accent); color: var(--dt-accent); background: rgba(0,161,156,0.05); }
 
-    /* ========== 响应式 ========== */
+    /* ========== 服务城市覆盖 ========== */
+    .cities-section { background: var(--dt-bg-light); padding: 5rem 0; }
+    .cities-intro { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+    .cities-intro h2 { font-size: 2rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 0.8rem; }
+    .cities-intro p { color: var(--dt-text-light); font-size: 1rem; }
+    .cities-regions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+    .city-region { background: var(--dt-bg); border: 1px solid var(--dt-border); border-radius: 8px; padding: 1.5rem; transition: all 0.3s; }
+    .city-region:hover { border-color: var(--dt-accent); box-shadow: 0 4px 20px rgba(0,63,108,0.08); }
+    .city-region h4 { font-size: 1rem; font-weight: 700; color: var(--dt-accent); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+    .city-region p { font-size: 0.88rem; color: var(--dt-text-light); line-height: 1.8; }
     @media (max-width: 968px) {
       .hero-dt h1 { font-size: 2.2rem; }
       .hero-sub { font-size: 1.1rem; }
@@ -329,6 +338,7 @@
       .about-img-dt { max-width: 400px; margin: 0 auto; }
       .cases-grid-dt { grid-template-columns: 1fr; }
       .contact-grid-dt { grid-template-columns: 1fr; }
+      .cities-regions { grid-template-columns: 1fr; }
       .diff-grid { grid-template-columns: 1fr; }
       .eat-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid-dt { grid-template-columns: repeat(2, 1fr); }
@@ -581,7 +591,43 @@
   </div>
 </section>
 
-<!-- ============ 客户案例 ============ -->
+<!-- ============ 服务城市覆盖 ============ -->
+<section class="cities-section">
+  <div class="container-dt">
+    <div class="cities-intro">
+      <h2>服务覆盖全国30+城市</h2>
+      <p>存勤法税的服务网络遍布华南、华东、华中、西南、西北、华北等多个区域，为各地企业提供专业支持</p>
+    </div>
+    <div class="cities-regions">
+      <div class="city-region">
+        <h4><i class="fas fa-map-marker-alt"></i> 华南</h4>
+        <p>广州 · 深圳 · 东莞 · 佛山 · 中山 · 肇庆 · 云浮 · 香港</p>
+      </div>
+      <div class="city-region">
+        <h4><i class="fas fa-map-marker-alt"></i> 华东</h4>
+        <p>杭州 · 厦门 · 泉州 · 九江 · 徐州 · 宿迁 · 盐城 · 池州</p>
+      </div>
+      <div class="city-region">
+        <h4><i class="fas fa-map-marker-alt"></i> 华中</h4>
+        <p>郑州 · 信阳 · 湘潭</p>
+      </div>
+      <div class="city-region">
+        <h4><i class="fas fa-map-marker-alt"></i> 西南</h4>
+        <p>昆明 · 泸州 · 拉萨 · 昌都</p>
+      </div>
+      <div class="city-region">
+        <h4><i class="fas fa-map-marker-alt"></i> 西北</h4>
+        <p>喀什 · 霍尔果斯</p>
+      </div>
+      <div class="city-region">
+        <h4><i class="fas fa-map-marker-alt"></i> 华北 / 直辖市</h4>
+        <p>北京 · 上海 · 重庆 · 石家庄</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 客户案例 ============ -->>
 <section class="section-dt bg-light-dt">
   <div class="container-dt">
     <div class="section-header-dt">

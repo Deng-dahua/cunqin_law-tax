@@ -204,6 +204,73 @@ img { max-width: 100%; display: block; }
   color: var(--dt-accent-hover);
 }
 
+/* ===== 文章目录（侧边栏） ===== */
+.article-layout {
+  display: flex;
+  gap: 2.5rem;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  align-items: flex-start;
+}
+.article-toc {
+  flex: 0 0 240px;
+  position: sticky;
+  top: 84px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  padding: 1.2rem 1rem;
+  background: var(--dt-bg-light);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  z-index: 10;
+}
+.article-toc-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--dt-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--dt-accent);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.article-toc-list { list-style: none; padding: 0; margin: 0; }
+.article-toc-item { margin-bottom: 0.2rem; }
+.article-toc-item.toc-sub { padding-left: 1rem; }
+.article-toc-link {
+  display: block; padding: 0.35rem 0.6rem;
+  color: var(--dt-text-light); border-left: 3px solid transparent;
+  border-radius: 0 4px 4px 0; transition: all 0.2s;
+  font-size: 0.83rem; line-height: 1.5;
+}
+.article-toc-link:hover {
+  color: var(--dt-accent); background: rgba(0,161,156,0.05);
+  border-left-color: var(--dt-accent); text-decoration: none;
+}
+.article-toc-link.active {
+  color: var(--dt-primary); border-left-color: var(--dt-primary);
+  background: rgba(0,63,108,0.06); font-weight: 600;
+}
+.article-toc-link.toc-h3 { font-size: 0.8rem; padding-left: 1.5rem; }
+.article-main { flex: 1; min-width: 0; }
+.article-main .article-body { max-width: none; }
+.article-main .article-notice { max-width: none !important; }
+.article-toc::-webkit-scrollbar { width: 4px; }
+.article-toc::-webkit-scrollbar-thumb { background: var(--dt-border); border-radius: 4px; }
+
+@media (max-width: 900px) {
+  .article-layout { flex-direction: column; gap: 1.5rem; }
+  .article-toc { position: static; flex: none; width: 100%; max-height: none; border-radius: 8px; }
+  .article-toc-list { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .article-toc-item { margin-bottom: 0; }
+  .article-toc-item.toc-sub { padding-left: 0; }
+  .article-toc-link { font-size: 0.78rem; padding: 0.25rem 0.6rem; border-left: none; border-radius: 4px; background: #fff; }
+  .article-toc-link.active { border-left: none; }
+  .article-toc-link.toc-h3 { padding-left: 0.6rem; }
+}
+
 /* ===== 更多文章 ===== */
 .more-section {
   background: var(--dt-bg-light);
@@ -392,6 +459,14 @@ img { max-width: 100%; display: block; }
     </div>
   </div>
 </section>
+
+<!-- ===== 文章布局（目录 + 正文） ===== -->
+<div class="article-layout">
+  <aside class="article-toc">
+    <div class="article-toc-title"><i class="fas fa-list"></i> 目录</div>
+    <ul class="article-toc-list" id="article-toc-list"></ul>
+  </aside>
+  <div class="article-main">
 
 <!-- ===== 面包屑 ===== -->
 <div style="max-width:860px;margin:0 auto;padding:0.8rem 1rem;font-size:0.85rem;color:var(--dt-text-light);">
@@ -763,6 +838,9 @@ img { max-width: 100%; display: block; }
   <p><strong style="color:var(--dt-primary);">版权声明：</strong>未经书面授权，禁止任何形式的转载、摘编或使用。</p>
 </div>
 
+  </div><!-- .article-main -->
+</div><!-- .article-layout -->
+
 <!-- ===== 更多文章 ===== -->
 <section class="more-section">
   <div class="container-dt">
@@ -890,7 +968,54 @@ img { max-width: 100%; display: block; }
 </footer>
 
 <script>
-  // 搜索功能
+    // ===== 文章目录生成与滚动监听 =====
+  (function() {
+    var tocList = document.getElementById('article-toc-list');
+    var articleBody = document.querySelector('.article-body');
+    if (!tocList || !articleBody) return;
+
+    var headings = articleBody.querySelectorAll('h2, h3');
+    if (headings.length === 0) return;
+
+    headings.forEach(function(h, i) {
+      if (!h.id) { h.id = 'section-' + i; }
+      var li = document.createElement('li');
+      li.className = 'article-toc-item' + (h.tagName === 'H3' ? ' toc-sub' : '');
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.className = 'article-toc-link' + (h.tagName === 'H3' ? ' toc-h3' : '');
+      a.textContent = h.textContent.replace(/^\d+\.?\s*/, '');
+      a.setAttribute('data-target', h.id);
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.getElementById(this.getAttribute('data-target'));
+        if (target) {
+          var offset = 80;
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    // Scroll spy
+    var tocLinks = document.querySelectorAll('.article-toc-link');
+    var observerOptions = { rootMargin: '-80px 0px -65% 0px' };
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(function(link) { link.classList.remove('active'); });
+          var activeLink = document.querySelector('.article-toc-link[data-target="' + entry.target.id + '"]');
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    headings.forEach(function(h) { observer.observe(h); });
+  })();
+
+// 搜索功能
   const searchIndex = [
     {"title":"企业税务风险管控：如何建立\"看得见、防得住\"的税务风险体系","desc":"系统讲解企业税务风险管理体系的建立方法，包括风险识别、评估、控制和预警，帮助企业实现税务风险可视化、可管控","url":"qiye-shuiwu-fengxian.html","cat":"行业洞察"},
     {"title":"甲乙双视角：为什么企业需要\"双重人格\"的税务顾问","desc":"深度分析\"甲乙双视角\"的独特价值，探讨为什么企业需要同时具备甲方实战经验和乙方专业能力的税务顾问","url":"jiayi-shuangshijing.html","cat":"专业洞察"},

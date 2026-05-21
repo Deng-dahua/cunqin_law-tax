@@ -297,9 +297,14 @@
     .qrcode-dt img { width: 180px; border-radius: 6px; margin: 0 auto; }
 
     /* CTA */
-    .cta-section { background: var(--dt-primary-light); color: #fff; text-align: center; padding: 60px 0; }
+    .cta-section { background: var(--dt-primary-light); color: #fff; padding: 60px 0; }
+    .cta-inner { display: flex; align-items: center; justify-content: center; gap: 4rem; }
+    .cta-text { text-align: center; flex: 1; }
     .cta-section h2 { font-size: 1.8rem; margin-bottom: 0.75rem; }
     .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+    .cta-qrcode { flex-shrink: 0; margin-right: 40px; text-align: center; }
+    .cta-qrcode img { width: 180px; height: auto; display: block; margin: 0 auto 0.8rem; }
+    .cta-qrcode p { color: rgba(255,255,255,0.9); font-size: 0.95rem; margin: 0; }
     .qr-section { background: var(--dt-bg-light); padding: 3rem 0 4rem; }
     .qr-section img { display: block; margin: 0 auto 1rem; }
 
@@ -860,13 +865,17 @@
 
 <!-- ============ CTA ============ -->
 <section class="cta-section">
-  <div class="container-dt" style="text-align:center;">
-    <h2>准备好开启专业财税法服务？</h2>
-    <p>具体服务方案将根据企业实际情况定制，欢迎联系我们的专业顾问</p>
-    <a href="contact/" class="btn-dt-primary">立即咨询</a>
-    <div style="margin-top:2rem;padding-top:38px;">
-      <img src="images/wechat-qrcode-white.png" alt="微信二维码" style="width:280px;height:auto;margin:0 auto 1rem;">
-      <p style="color:rgba(255,255,255,0.9);font-size:0.95rem;">扫码添加微信一对一咨询</p>
+  <div class="container-dt">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>准备好开启专业财税法服务？</h2>
+        <p>具体服务方案将根据企业实际情况定制，欢迎联系我们的专业顾问</p>
+        <a href="contact/" class="btn-dt-primary">立即咨询</a>
+      </div>
+      <div class="cta-qrcode">
+        <img src="images/wechat-qrcode-white.png" alt="微信二维码">
+        <p>扫码添加微信一对一咨询</p>
+      </div>
     </div>
   </div>
 </section>

@@ -86,16 +86,6 @@
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
-    .embedded-logo-area {
-      background: linear-gradient(135deg, #f0f7fa 0%, #e8f4f8 100%);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      border-bottom: 1px solid var(--dt-border);
-    }
-    .embedded-logo-area img {
-      max-width: 340px;
-      height: auto;
-    }
     .embedded-content-area {
       padding: 2.5rem 3rem;
       background: var(--dt-bg);
@@ -103,12 +93,10 @@
 
     /* 公司简介文字 */
     .about-intro { font-size: 1.05rem; color: var(--dt-text); max-width: 800px; margin: 0 auto; text-align: left; line-height: 2; }
-    .about-intro p { text-indent: 2em; margin-bottom: 1rem; }
+    .about-intro p { text-indent: 2.25em; margin-bottom: 1rem; }
 
     /* 创始人 */
     .founder-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; max-width: 1000px; margin: 0 auto; }
-    .founder-img { border-radius: 8px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,63,108,0.15); }
-    .founder-img img { width: 100%; height: auto; object-fit: cover; }
     .founder-info h3 { font-size: 1.5rem; color: var(--dt-primary); margin-bottom: 0.5rem; }
     .founder-info .role { color: var(--dt-accent); font-weight: 600; margin-bottom: 1.5rem; font-size: 1.05rem; }
     .founder-info ul { list-style: none; }
@@ -215,9 +203,6 @@
 <section class="section-dt">
   <div class="container-dt">
     <div class="embedded-card">
-      <div class="embedded-logo-area">
-        <img src="../images/company-logo.png" alt="存勤法税">
-      </div>
       <div class="embedded-content-area">
         <div class="about-intro">
           <p>　存勤法税服务（广州）有限公司，由拥有18年财税法实战专家<strong>邓达华</strong>先生于2022年创立于广州。公司专注于「业管财税法」五维融合咨询服务，为企业提供涉税风险检查、税务危机应对与争议解决、跨境投资与并购（企业出海ODI备案）、企业重组与重大交易税务规划、跨境法律及税务规划、营收增长战略咨询、利润增长体系建设、财税内控体系建设、全面预算管理体系建设、财税内训课程定制等十大核心专业服务。</p>
@@ -233,10 +218,7 @@
 <section class="section-dt" style="background: var(--dt-bg-light);">
   <div class="container-dt">
     <h2 class="section-title">创始人</h2>
-    <div class="founder-grid">
-      <div class="founder-img">
-        <img src="../images/founder.png" alt="邓达华">
-      </div>
+    <div class="founder-grid" style="grid-template-columns:1fr;">
       <div class="founder-info">
         <h3>邓达华</h3>
         <div class="role">18年财、税、法领域深耕者</div>
@@ -272,7 +254,7 @@
 <section class="section-dt">
   <div class="container-dt">
     <h2 class="section-title">服务理念：四维一体</h2>
-    <p style="text-align:center;max-width:700px;margin:0 auto 3rem;color:var(--dt-text-light);font-size:1rem;line-height:1.8;">存勤法税擅长对企业的经营行为进行涉税剖析<br>以四项思维为核心，为企业提供全方位咨询：</p>
+    <p style="text-align:center;max-width:700px;margin:0 auto 3rem;color:var(--dt-text-light);font-size:1rem;line-height:1.8;">存勤法税擅长对企业的经营行为进行涉税剖析，以四项思维为核心，为企业提供全方位咨询：</p>
     <div class="four-dim-grid">
       <div class="four-dim-card">
         <div class="four-dim-icon"><i class="fas fa-calculator"></i></div>

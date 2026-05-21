@@ -735,7 +735,7 @@
 <section class="section-dt">
   <div class="container-dt">
     <div class="section-header-dt">
-      <h2>法税洞察</h2>
+      <h2>法税洞察 <span id="insight-count" style="font-size:0.9rem; font-weight:400; color:var(--dt-text-light); margin-left:0.5rem;"></span></h2>
       <p>深度解读财税政策与实操要点</p>
     </div>
     <div class="posts-list-dt">
@@ -915,6 +915,14 @@ function goToResult(index) {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeSearch();
 });
+
+// === 法税洞察文章计数 ===
+(function(){
+  var posts = document.querySelectorAll('.posts-list-dt .post-item-dt');
+  var count = posts.length;
+  var el = document.getElementById('insight-count');
+  if(el && count > 0) el.textContent = '（共'+count+'篇）';
+})();
 </script>
 
 </body>

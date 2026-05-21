@@ -81,6 +81,29 @@
     .response-card h4 { font-size: 1.1rem; color: var(--dt-primary); margin-bottom: 0.5rem; }
     .response-card p { color: var(--dt-text-light); font-size: 0.9rem; }
 
+    /* 客户留资表单 */
+    .lead-form { background: var(--dt-bg); border: 1px solid var(--dt-border); border-radius: 8px; padding: 2.5rem; max-width: 900px; margin: 0 auto; }
+    .lead-form h3 { font-size: 1.4rem; color: var(--dt-primary); margin-bottom: 0.5rem; text-align: center; }
+    .lead-form .form-subtitle { text-align: center; color: var(--dt-text-light); font-size: 0.95rem; margin-bottom: 2rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group.full-width { grid-column: 1 / -1; }
+    .form-group label { font-size: 0.9rem; color: var(--dt-primary); font-weight: 600; margin-bottom: 0.5rem; }
+    .form-group label .required { color: #e74c3c; margin-left: 0.2rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 0.8rem 1rem; border: 1px solid var(--dt-border); border-radius: 6px;
+      font-size: 0.95rem; font-family: inherit; color: var(--dt-text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--dt-accent); box-shadow: 0 0 0 3px rgba(0,161,156,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit { grid-column: 1 / -1; text-align: center; margin-top: 0.5rem; }
+    .form-submit button { background: var(--dt-accent); color: #fff; border: none; padding: 1rem 3rem; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+    .form-submit button:hover { background: var(--dt-accent-hover); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,161,156,0.3); }
+    .form-note { text-align: center; color: #999; font-size: 0.85rem; margin-top: 1rem; }
+
     /* 免责声明 */
     .disclaimer { background: var(--dt-bg-light); border-left: 4px solid var(--dt-accent); padding: 1.5rem; border-radius: 0 8px 8px 0; max-width: 800px; margin: 0 auto; }
     .disclaimer h4 { color: var(--dt-primary); margin-bottom: 0.5rem; }
@@ -137,7 +160,55 @@
   </div>
 </section>
 
+<!-- 客户留资表单 -->
 <section class="section-dt">
+  <div class="container-dt">
+    <div class="lead-form">
+      <h3>留下您的需求</h3>
+      <p class="form-subtitle">填写以下信息，我们将在24小时内与您联系</p>
+      <form action="mailto:contact@cunqin.cn" method="post" enctype="text/plain">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>您的姓名<span class="required">*</span></label>
+            <input type="text" name="姓名" placeholder="请输入您的姓名" required>
+          </div>
+          <div class="form-group">
+            <label>联系电话<span class="required">*</span></label>
+            <input type="tel" name="电话" placeholder="请输入手机号码" required>
+          </div>
+          <div class="form-group">
+            <label>公司名称</label>
+            <input type="text" name="公司" placeholder="请输入公司名称">
+          </div>
+          <div class="form-group">
+            <label>咨询类型<span class="required">*</span></label>
+            <select name="咨询类型" required>
+              <option value="">请选择咨询类型</option>
+              <option value="涉税风险检查">涉税风险检查</option>
+              <option value="税务危机应对">税务危机应对</option>
+              <option value="ODI备案咨询">ODI备案咨询</option>
+              <option value="企业重组税务规划">企业重组税务规划</option>
+              <option value="财税合规体系搭建">财税合规体系搭建</option>
+              <option value="常年税务顾问">常年税务顾问</option>
+              <option value="财税内训课程">财税内训课程</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label>需求描述</label>
+            <textarea name="需求描述" placeholder="请简要描述您的需求或遇到的问题，方便我们提前准备..."></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit">提交咨询</button>
+          </div>
+        </div>
+        <p class="form-note">提交后我们将尽快通过电话或微信与您联系，您的信息将严格保密</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section-dt" style="background: var(--dt-bg-light);">
   <div class="container-dt">
     <div class="contact-grid">
       <div class="contact-info">
@@ -209,7 +280,7 @@
   <div class="container-dt">
     <div class="footer-grid">
       <div class="footer-brand">
-        <strong style="color:#fff;font-size:1.1rem;">存勤法税</strong>
+        <strong style="color:#fff;font-size:1.1rem;display:flex;align-items:center;gap:0.5rem;"><img src="../images/logo.png" alt="存勤法税" style="height:32px;width:auto;border-radius:4px;"><span>存勤法税</span></strong>
         <p>业财法税管五维融合 · 甲乙双视角实战派<br>为企业提供专业、可落地的财税法解决方案</p>
       </div>
       <div class="footer-links">

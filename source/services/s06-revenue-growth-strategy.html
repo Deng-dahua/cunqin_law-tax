@@ -56,6 +56,7 @@
     .pain-item { background: #fff; border: 1px solid var(--dt-border); padding: 1.2rem 1.5rem; border-radius: 8px; position: relative; }
     .pain-item::before { content: '\201C'; position: absolute; top: -12px; left: 12px; font-size: 2rem; color: var(--dt-accent); opacity: 0.3; line-height: 1; }
     .pain-item p { font-size: 0.92rem; color: var(--dt-text); line-height: 1.7; font-style: italic; }
+    .pain-list-wide { grid-template-columns: repeat(3, 1fr); }
     .flow-steps { display: flex; flex-direction: column; gap: 1.5rem; }
     .flow-step { background: #fff; border: 1px solid var(--dt-border); border-radius: 8px; padding: 1.5rem; position: relative; }
     .flow-step .step-num { position: absolute; top: -15px; left: 20px; background: var(--dt-primary); color: #fff; padding: 4px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; }
@@ -101,7 +102,7 @@
       .nav-menu.active { display: flex; }
       .nav-mobile-btn { display: block; }
       .page-hero h1 { font-size: 1.8rem; }
-      .scope-list, .pain-list, .scenario-grid, .deliverable-list { grid-template-columns: 1fr; }
+      .scope-list, .pain-list, .pain-list-wide, .scenario-grid, .deliverable-list { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
@@ -155,13 +156,17 @@
 <section class="section-dt">
   <div class="container-dt">
     <h2 class="section-title">客户痛点</h2>
-    <div class="pain-list">
+    <div class="pain-list pain-list-wide">
       <div class="pain-item"><p>营收好像到了一个天花板怎么都增长不动</p></div>
       <div class="pain-item"><p>竞争对手越做越大我们市场份额在萎缩</p></div>
       <div class="pain-item"><p>做了很多营销活动但营收就是不见涨</p></div>
-      <div class="pain-item"><p>营收数据好看但利润薄增量不增利</p></div>
-      <div class="pain-item"><p>价格战打不动不打又没量</p></div>
+      <div class="pain-item"><p>老板想增长团队说做不到到底谁的问题</p></div>
       <div class="pain-item"><p>定的增长目标年年完不成不知道该怎么分解</p></div>
+      <div class="pain-item"><p>营收数据好看但利润薄增量不增利</p></div>
+      <div class="pain-item"><p>渠道越来越多但各自为政内部竞争</p></div>
+      <div class="pain-item"><p>价格战打不动不打又没量</p></div>
+      <div class="pain-item"><p>新业务做了几年始终做不起来</p></div>
+      <div class="pain-item"><p>目标分解到部门说做不到分解到个人说资源不够</p></div>
     </div>
   </div>
 </section>
@@ -234,7 +239,8 @@
       <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《渠道结构调整建议》</span></div>
       <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《定价策略升级方案》</span></div>
       <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《营收增长路线图（3年）》</span></div>
-      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>实施辅导及定期复盘</span></div>
+      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《行动计划执行模板》</span></div>
+      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>实施辅导及定期复盘（按需）</span></div>
     </div>
   </div>
 </section>
@@ -260,6 +266,7 @@
   <div class="container-dt">
     <h2>需要定制化的服务方案？</h2>
     <p>具体服务方案将根据企业实际情况定制，欢迎联系我们的专业顾问</p>
+    <p style="max-width:700px; margin:0 auto 1.5rem; opacity:0.85; font-size:0.92rem; line-height:1.8;">存勤法税的增长咨询不仅关注营收数字，更关注增长的质量和税务成本。真正帮企业做到「营收增长 → 利润增长 → 企业价值增长」的良性循环。</p>
     <a href="../contact/" class="btn-dt-primary">立即咨询</a>
   </div>
 </section>

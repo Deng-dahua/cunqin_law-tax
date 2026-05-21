@@ -56,6 +56,7 @@
     .pain-item { background: #fff; border: 1px solid var(--dt-border); padding: 1.2rem 1.5rem; border-radius: 8px; position: relative; }
     .pain-item::before { content: '\201C'; position: absolute; top: -12px; left: 12px; font-size: 2rem; color: var(--dt-accent); opacity: 0.3; line-height: 1; }
     .pain-item p { font-size: 0.92rem; color: var(--dt-text); line-height: 1.7; font-style: italic; }
+    .pain-list-wide { grid-template-columns: repeat(3, 1fr); }
     .flow-steps { display: flex; flex-direction: column; gap: 1.5rem; }
     .flow-step { background: #fff; border: 1px solid var(--dt-border); border-radius: 8px; padding: 1.5rem; position: relative; }
     .flow-step .step-num { position: absolute; top: -15px; left: 20px; background: var(--dt-primary); color: #fff; padding: 4px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; }
@@ -101,7 +102,7 @@
       .nav-menu.active { display: flex; }
       .nav-mobile-btn { display: block; }
       .page-hero h1 { font-size: 1.8rem; }
-      .scope-list, .pain-list, .scenario-grid, .deliverable-list { grid-template-columns: 1fr; }
+      .scope-list, .pain-list, .pain-list-wide, .scenario-grid, .deliverable-list { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
@@ -155,12 +156,16 @@
 <section class="section-dt">
   <div class="container-dt">
     <h2 class="section-title">客户痛点</h2>
-    <div class="pain-list">
+    <div class="pain-list pain-list-wide">
       <div class="pain-item"><p>做了十几年预算但感觉就是财务在编数字业务部门不认</p></div>
       <div class="pain-item"><p>预算定完就完了执行没人管到年底才发现差太多</p></div>
+      <div class="pain-item"><p>老板拍脑袋定目标团队说做不到最后变成了讨价还价</p></div>
+      <div class="pain-item"><p>预算编制要三四个月太慢了等预算做完市场都变了</p></div>
+      <div class="pain-item"><p>预算分析做了但分析完没有下文预算成了走形式</p></div>
       <div class="pain-item"><p>预算与实际差距超过30%预算失去指导意义</p></div>
       <div class="pain-item"><p>各部门报预算时漫天要价争取资源</p></div>
       <div class="pain-item"><p>预算执行超支但没有预警机制发现时已太晚</p></div>
+      <div class="pain-item"><p>预算调整频繁变成实际执行完再倒推编预算</p></div>
       <div class="pain-item"><p>预算考核与奖惩脱节员工不关注预算执行</p></div>
     </div>
   </div>
@@ -209,7 +214,7 @@
       <thead><tr><th style="width:25%">价值维度</th><th>具体体现</th></tr></thead>
       <tbody>
         <tr><td><strong>战略落地</strong></td><td>战略目标转化为可执行的预算目标</td></tr>
-        <tr><td><strong>资源聚焦</strong></td><td>预算资源向战略重点倾斜</td></tr>
+        <tr><td><strong>资源聚焦</strong></td><td>预算资源向战略重点倾斜，避免撒胡椒面</td></tr>
         <tr><td><strong>风险预警</strong></td><td>过程管控早发现问题早调整</td></tr>
         <tr><td><strong>效率提升</strong></td><td>优化编制流程缩短预算编制周期</td></tr>
         <tr><td><strong>考核有据</strong></td><td>预算执行有考核奖惩有依据</td></tr>
@@ -237,9 +242,11 @@
       <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《全面预算管理诊断报告》</span></div>
       <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《预算管理组织架构及职责手册》</span></div>
       <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《预算编制模型及模板》</span></div>
+      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《预算编制操作指引》</span></div>
       <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《预算执行跟踪报表体系》</span></div>
       <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《预算预警规则设置》</span></div>
       <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《预算执行考核方案》</span></div>
+      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>预算管理培训及实施辅导</span></div>
     </div>
   </div>
 </section>
@@ -265,6 +272,7 @@
   <div class="container-dt">
     <h2>需要定制化的服务方案？</h2>
     <p>具体服务方案将根据企业实际情况定制，欢迎联系我们的专业顾问</p>
+    <p style="max-width:700px; margin:0 auto 1.5rem; opacity:0.85; font-size:0.92rem; line-height:1.8;">我们的全面预算管理体系建设不仅关注预算本身，更关注预算背后的管理逻辑。把预算管理做成财务游戏是没有意义的，真正的预算管理是为业务服务的工具。</p>
     <a href="../contact/" class="btn-dt-primary">立即咨询</a>
   </div>
 </section>

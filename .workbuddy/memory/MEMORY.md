@@ -13,6 +13,13 @@
 - **部署**：GitHub Actions（自动部署到GitHub Pages）
 - **推送方式**：SSH（国内网络更稳定）
 
+## SEO/GEO 配置
+- **Base URL**: `https://deng-dahua.github.io/cunqin_law-tax`
+- **全站 24 页均已配置**: Schema.org JSON-LD, Open Graph, Canonical URL, Twitter Card, Meta Keywords, hreflang, Apple Touch Icon, PWA Meta, time datetime
+- **Sitemap**: `source/sitemap.xml` (24 URLs), `source/robots.txt` 已引用
+- **Atom Feed**: `source/atom.xml` (8 entries)
+- **Schema 类型分布**: Homepage(WebSite+Organization), Articles(Article+BreadcrumbList+FAQPage), Services(Service), About(AboutPage+Person), Contact(ContactPage), Archives/Cases(CollectionPage)
+
 ## 关键配置
 - `_config.yml`：Hexo主配置（站点信息、URL、插件）
 - `_config.fluid.yml`：Fluid主题配置（根目录放置，Hexo 5+标准）

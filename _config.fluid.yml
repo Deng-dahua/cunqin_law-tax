@@ -254,6 +254,7 @@ seo:
     enable: true
   google_verification: ""
   baidu_verification: ""
+  bing_verification: "643F9F9C5376BCE8168CB8533417070C"
 
 # ========== Open Graph / Twitter Card ==========
 open_graph:

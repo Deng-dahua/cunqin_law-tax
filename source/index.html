@@ -237,9 +237,12 @@
     .svc-card-dt a:hover { gap: 0.6rem; }
 
     /* ========== 关于区块 ========== */
-    .about-grid-dt { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
-    .about-img-dt { display: flex; align-items: center; justify-content: center; }
-    .about-img-dt img { max-width: 100%; height: auto; }
+    .about-grid-dt { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; max-width: 800px; margin: 0 auto; }
+    .about-img-dt { display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem; }
+    .about-img-dt img { max-width: 200px; height: auto; }
+    .about-txt-dt { text-align: center; }
+    .about-txt-dt .about-lead,
+    .about-txt-dt .about-highlights { text-align: left; }
     .about-txt-dt h2 { font-size: 2rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; margin-bottom: 1.2rem; }
     .about-lead { font-size: 1.05rem; color: var(--dt-text); line-height: 1.9; margin-bottom: 1.5rem; }
     .about-tag { font-size: 0.95rem; color: var(--dt-accent); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 1.2rem; }
@@ -391,8 +394,7 @@
       .stats-grid-dt { grid-template-columns: repeat(2, 1fr); }
       .stat-item-dt:nth-child(2)::after { display: none; }
       .services-grid-dt { grid-template-columns: repeat(2, 1fr); }
-      .about-grid-dt { grid-template-columns: 1fr; gap: 2rem; }
-      .about-img-dt { max-width: 400px; margin: 0 auto; }
+      .about-img-dt img { max-width: 160px; }
       .cases-grid-dt { grid-template-columns: 1fr; }
       .contact-grid-dt { grid-template-columns: 1fr; }
       .cities-regions { grid-template-columns: 1fr; }

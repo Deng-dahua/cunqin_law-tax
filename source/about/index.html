@@ -97,6 +97,8 @@
 
     /* 创始人 */
     .founder-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; max-width: 1000px; margin: 0 auto; }
+    .founder-img { display: flex; align-items: center; justify-content: center; }
+    .founder-img img { max-width: 100%; height: auto; border-radius: 8px; }
     .founder-info h3 { font-size: 1.5rem; color: var(--dt-primary); margin-bottom: 0.5rem; }
     .founder-info .role { color: var(--dt-accent); font-weight: 600; margin-bottom: 1.5rem; font-size: 1.05rem; }
     .founder-info ul { list-style: none; }
@@ -218,7 +220,10 @@
 <section class="section-dt" style="background: var(--dt-bg-light);">
   <div class="container-dt">
     <h2 class="section-title">创始人</h2>
-    <div class="founder-grid" style="grid-template-columns:1fr;">
+    <div class="founder-grid">
+      <div class="founder-img">
+        <img src="../images/founder-new.png" alt="邓达华">
+      </div>
       <div class="founder-info">
         <h3>邓达华</h3>
         <div class="role">18年财、税、法领域深耕者</div>

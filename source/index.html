@@ -735,7 +735,8 @@
 <section class="section-dt">
   <div class="container-dt">
     <div class="section-header-dt">
-      <h2>法税洞察 <span id="insight-count" style="font-size:0.9rem; font-weight:400; color:var(--dt-text-light); margin-left:0.5rem;"></span></h2>
+      <h2>法税洞察</h2>
+      <p id="insight-count-desc" style="font-size:0.95rem; color:var(--dt-text-light); margin-top:0.3rem;">共0篇精选文章</p>
       <p>深度解读财税政策与实操要点</p>
     </div>
     <div class="posts-list-dt">
@@ -764,7 +765,7 @@
 <!-- ============ 联系我们 ============ -->
 <section class="section-dt bg-light-dt">
   <div class="container-dt">
-    <div class="contact-grid-dt">
+    <div class="contact-grid-dt" style="grid-template-columns:1fr; max-width:600px; margin:0 auto;">
       <div class="contact-info">
         <h2>联系我们</h2>
         <p class="contact-lead">专业的事交给专业的人，欢迎随时联系存勤法税团队，获取专属财税法解决方案。</p>
@@ -789,10 +790,6 @@
             <div class="contact-value">广东省广州市天河区</div>
           </div>
         </div>
-      </div>
-      <div class="qrcode-dt">
-        <p>微信小程序咨询</p>
-        <img src="images/miniprogram-qrcode.png" alt="微信小程序码">
       </div>
     </div>
   </div>
@@ -916,12 +913,10 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeSearch();
 });
 
-// === 法税洞察文章计数 ===
+// === 法税洞察文章计数（统计全部文章8篇） ===
 (function(){
-  var posts = document.querySelectorAll('.posts-list-dt .post-item-dt');
-  var count = posts.length;
-  var el = document.getElementById('insight-count');
-  if(el && count > 0) el.textContent = '（共'+count+'篇）';
+  var el = document.getElementById('insight-count-desc');
+  if(el) el.textContent = '共8篇精选文章';
 })();
 </script>
 

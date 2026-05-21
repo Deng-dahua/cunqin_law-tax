@@ -297,14 +297,11 @@
     .qrcode-dt img { width: 180px; border-radius: 6px; margin: 0 auto; }
 
     /* CTA */
-    .cta-section { background: var(--dt-primary-light); color: #fff; padding: 60px 0; }
-    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 3rem; max-width: 1000px; margin: 0 auto; }
-    .cta-text { text-align: left; flex: 1; }
-    .cta-text h2 { font-size: 1.8rem; margin-bottom: 0.75rem; }
-    .cta-text p { opacity: 0.9; margin-bottom: 1.5rem; }
-    .cta-qr { text-align: center; flex-shrink: 0; }
-    .cta-qr img { width: 160px; height: 160px; border-radius: 8px; }
-    .cta-qr p { font-size: 0.85rem; margin-top: 0.75rem; opacity: 0.9; }
+    .cta-section { background: var(--dt-primary-light); color: #fff; text-align: center; padding: 60px 0; }
+    .cta-section h2 { font-size: 1.8rem; margin-bottom: 0.75rem; }
+    .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+    .qr-section { background: var(--dt-bg-light); padding: 3rem 0 4rem; }
+    .qr-section img { display: block; margin: 0 auto 1rem; }
 
     /* ========== 页脚 ========== */
     .footer-dt { background: var(--dt-primary); color: #b0c4d8; padding: 4rem 0 2rem; }
@@ -864,17 +861,17 @@
 <!-- ============ CTA ============ -->
 <section class="cta-section">
   <div class="container-dt">
-    <div class="cta-inner">
-      <div class="cta-text">
-        <h2>准备好开启专业财税法服务？</h2>
-        <p>具体服务方案将根据企业实际情况定制，欢迎联系我们的专业顾问</p>
-        <a href="contact/" class="btn-dt-primary">立即咨询</a>
-      </div>
-      <div class="cta-qr">
-        <img src="images/wechat-qrcode-white.png" alt="微信二维码">
-        <p>扫码添加微信一对一咨询</p>
-      </div>
-    </div>
+    <h2>准备好开启专业财税法服务？</h2>
+    <p>具体服务方案将根据企业实际情况定制，欢迎联系我们的专业顾问</p>
+    <a href="contact/" class="btn-dt-primary">立即咨询</a>
+  </div>
+</section>
+
+<!-- ============ 微信二维码 ============ -->
+<section class="qr-section">
+  <div class="container-dt" style="text-align:center;">
+    <img src="images/wechat-qrcode-final.png" alt="微信二维码" style="width:280px;height:auto;margin:0 auto 1rem;">
+    <p style="color:#666;font-size:0.95rem;">扫码添加微信一对一咨询</p>
   </div>
 </section>
 

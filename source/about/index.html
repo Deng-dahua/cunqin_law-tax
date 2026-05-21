@@ -76,8 +76,33 @@
     .section-title { font-size: 2rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 3rem; text-align: center; }
     .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--dt-accent); margin: 1rem auto 0; border-radius: 2px; }
 
-    /* 公司简介 */
-    .about-intro { font-size: 1.05rem; color: var(--dt-text); max-width: 800px; margin: 0 auto 3rem; text-align: left; line-height: 2; }
+    /* 嵌入式公司卡片 */
+    .embedded-card {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--dt-bg);
+      border: 1px solid var(--dt-border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .embedded-logo-area {
+      background: linear-gradient(135deg, #f0f7fa 0%, #e8f4f8 100%);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--dt-border);
+    }
+    .embedded-logo-area img {
+      max-width: 340px;
+      height: auto;
+    }
+    .embedded-content-area {
+      padding: 2.5rem 3rem;
+      background: var(--dt-bg);
+    }
+
+    /* 公司简介文字 */
+    .about-intro { font-size: 1.05rem; color: var(--dt-text); max-width: 800px; margin: 0 auto; text-align: left; line-height: 2; }
     .about-intro p { text-indent: 2em; margin-bottom: 1rem; }
 
     /* 创始人 */
@@ -142,6 +167,8 @@
       .nav-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 1.5rem; gap: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
       .nav-menu.active { display: flex; }
       .nav-mobile-btn { display: block; }
+      .embedded-card { max-width: 100%; margin: 0 1rem; }
+      .embedded-content-area { padding: 1.5rem 1.5rem; }
       .page-hero h1 { font-size: 2rem; padding-top: 100px; }
       .founder-grid { grid-template-columns: 1fr; gap: 2rem; }
       .founder-grid, .advantage-grid, .values-grid, .four-dim-grid, .stats-bar { grid-template-columns: 1fr; }
@@ -179,7 +206,7 @@
 <!-- 页面标题 -->
 <section class="page-hero">
   <div class="container-dt">
-    <h1>关于我们</h1>
+    <h1>公司介绍</h1>
     <p>「业管财税法」五维融合 · 甲乙双视角实战派</p>
   </div>
 </section>
@@ -187,13 +214,17 @@
 <!-- 公司简介 -->
 <section class="section-dt">
   <div class="container-dt">
-    <div style="text-align:center;margin-bottom:3rem;">
-      <img src="../images/company-logo.png" alt="存勤法税" style="max-width:360px;height:auto;">
-    </div>
-    <div class="about-intro">
-      <p>　存勤法税服务（广州）有限公司，由拥有18年财税法实战专家<strong>邓达华</strong>先生于2022年创立于广州。公司专注于「业管财税法」五维融合咨询服务，为企业提供涉税风险检查、税务危机应对与争议解决、跨境投资与并购（企业出海ODI备案）、企业重组与重大交易税务规划、跨境法律及税务规划、营收增长战略咨询、利润增长体系建设、财税内控体系建设、全面预算管理体系建设、财税内训课程定制等十大核心专业服务。</p>
-      <p>　凭借甲方14年实战积累与乙方4年专业沉淀的双重视角，存勤法税深谙企业在不同发展阶段面临的财税法痛点。从业务模式设计、管理体系建设、财务合规落地、法律风险防范到税务最优筹划——五维一体，系统解决。我们不只是财税顾问，更是企业发展的战略伙伴。</p>
-      <p>　公司服务覆盖广州、深圳、北京、上海、杭州、成都等30余座城市，深耕电商、制造、科技、跨境贸易、生物医药、建筑工程、现代服务业等14大行业，已为80余家企业提供专业财税法咨询服务，累计帮助企业节税超5000万元，成功化解多起税务危机事件。</p>
+    <div class="embedded-card">
+      <div class="embedded-logo-area">
+        <img src="../images/company-logo.png" alt="存勤法税">
+      </div>
+      <div class="embedded-content-area">
+        <div class="about-intro">
+          <p>　存勤法税服务（广州）有限公司，由拥有18年财税法实战专家<strong>邓达华</strong>先生于2022年创立于广州。公司专注于「业管财税法」五维融合咨询服务，为企业提供涉税风险检查、税务危机应对与争议解决、跨境投资与并购（企业出海ODI备案）、企业重组与重大交易税务规划、跨境法律及税务规划、营收增长战略咨询、利润增长体系建设、财税内控体系建设、全面预算管理体系建设、财税内训课程定制等十大核心专业服务。</p>
+          <p>　凭借甲方14年实战积累与乙方4年专业沉淀的双重视角，存勤法税深谙企业在不同发展阶段面临的财税法痛点。从业务模式设计、管理体系建设、财务合规落地、法律风险防范到税务最优筹划——五维一体，系统解决。我们不只是财税顾问，更是企业发展的战略伙伴。</p>
+          <p>　公司服务覆盖广州、深圳、北京、上海、杭州、成都等30余座城市，深耕电商、制造、科技、跨境贸易、生物医药、建筑工程、现代服务业等14大行业，已为80余家企业提供专业财税法咨询服务，累计帮助企业节税超5000万元，成功化解多起税务危机事件。</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -204,7 +235,7 @@
     <h2 class="section-title">创始人</h2>
     <div class="founder-grid">
       <div class="founder-img">
-        <img src="../images/founder.jpg" alt="邓达华">
+        <img src="../images/founder.png" alt="邓达华">
       </div>
       <div class="founder-info">
         <h3>邓达华</h3>
@@ -241,11 +272,11 @@
 <section class="section-dt">
   <div class="container-dt">
     <h2 class="section-title">服务理念：四维一体</h2>
-    <p style="text-align:center;max-width:700px;margin:0 auto 3rem;color:var(--dt-text-light);font-size:1rem;line-height:1.8;">存勤法税擅长对企业的经营行为进行涉税剖析，以以下四个维度为核心，为企业提供全方位咨询：</p>
+    <p style="text-align:center;max-width:700px;margin:0 auto 3rem;color:var(--dt-text-light);font-size:1rem;line-height:1.8;">存勤法税擅长对企业的经营行为进行涉税剖析<br>以四项思维为核心，为企业提供全方位咨询：</p>
     <div class="four-dim-grid">
       <div class="four-dim-card">
         <div class="four-dim-icon"><i class="fas fa-calculator"></i></div>
-        <h3>财务维度</h3>
+        <h3>财务思维</h3>
         <ul>
           <li>财税系统建设落地</li>
           <li>内部控制及风险管理</li>
@@ -255,7 +286,7 @@
       </div>
       <div class="four-dim-card">
         <div class="four-dim-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-        <h3>税务维度</h3>
+        <h3>税务思维</h3>
         <ul>
           <li>税务合规体系建设</li>
           <li>税务筹划与优化</li>
@@ -265,7 +296,7 @@
       </div>
       <div class="four-dim-card">
         <div class="four-dim-icon"><i class="fas fa-gavel"></i></div>
-        <h3>法律维度</h3>
+        <h3>法律思维</h3>
         <ul>
           <li>合规体系建设</li>
           <li>合同法务支持</li>
@@ -275,7 +306,7 @@
       </div>
       <div class="four-dim-card">
         <div class="four-dim-icon"><i class="fas fa-chart-line"></i></div>
-        <h3>经营模式维度</h3>
+        <h3>经营模式思维</h3>
         <ul>
           <li>利润增长体系设计</li>
           <li>战略规划与落地</li>
@@ -284,7 +315,7 @@
         </ul>
       </div>
     </div>
-    <p style="text-align:center;max-width:700px;margin:2.5rem auto 0;font-size:0.95rem;color:var(--dt-accent);font-weight:600;font-style:italic;">核心理念：每一个财务决策都有税务影响，每一个税务安排都有法律风险，每一个法律问题都连着经营模式。</p>
+    <p style="text-align:center;max-width:900px;margin:2.5rem auto 0;font-size:0.95rem;color:#005050;font-weight:600;font-style:italic;white-space:nowrap;overflow:visible;">核心理念：每一个财务决策都有税务影响，每一个税务安排都有法律风险，每一个法律问题都连着经营模式。</p>
   </div>
 </section>
 

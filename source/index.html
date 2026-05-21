@@ -241,6 +241,18 @@
     /* ========== 关于区块 ========== */
     .about-grid-dt { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
     .about-img-dt img { width: 100%; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .logo-circle {
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--dt-accent);
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.08), 0 0 0 8px rgba(0,161,156,0.12), 0 8px 24px rgba(0,0,0,0.1);
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.5rem;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .logo-circle img { display: block; max-width: 100%; max-height: 100%; }
     .about-txt-dt h2 { font-size: 2rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; margin-bottom: 1.2rem; }
     .about-lead { font-size: 1.05rem; color: var(--dt-text); line-height: 1.9; margin-bottom: 1.5rem; }
     .about-tag { font-size: 0.95rem; color: var(--dt-accent); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 1.2rem; }
@@ -448,6 +460,31 @@
   </div>
 </section>
 
+<!-- ============ 关于存勤法税 ============ -->
+<section class="section-dt">
+  <div class="container-dt">
+    <div class="about-grid-dt">
+      <div class="about-img-dt">
+        <div class="logo-circle">
+          <img src="images/logo.png" alt="存勤法税">
+        </div>
+      </div>
+      <div class="about-txt-dt">
+        <h2>关于存勤法税</h2>
+        <p class="about-lead">由拥有18年财税法实战专家<strong>邓达华先生</strong>创立，是「业管财税法」五维融合的践行者。凭借<strong>甲乙双视角</strong>的独特优势，为企业提供专业、可落地的财税法解决方案。</p>
+        <p class="about-tag">创始人：邓达华</p>
+        <ul class="about-highlights">
+          <li>曾任德尔惠运动、酷狗音乐集团、侨银环保股份、绿瘦健康集团财务税务核心岗位（14年甲方视角）</li>
+          <li>北京市盈科（广州）律师事务所法税服务团队组建者（乙方视角）</li>
+          <li>存勤法税服务（广州）有限公司 创始人/总经理</li>
+          <li>中税网金牌讲师，深耕财税法培训与咨询</li>
+        </ul>
+        <a href="about/" class="btn-dt-primary">了解更多</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 四个不一样 ============ -->
 <section class="diff-section">
   <div class="container-dt">
@@ -510,7 +547,7 @@
       </div>
       <div class="svc-card-dt">
         <div class="svc-icon"><i class="fas fa-globe"></i></div>
-        <h3>ODI备案咨询</h3>
+        <h3>跨境投资与并购咨询</h3>
         <p>境外直接投资合规备案，助力企业稳健出海。</p>
         <a href="services/#odi">了解更多 <span>→</span></a>
       </div>
@@ -535,29 +572,6 @@
     </div>
     <div class="text-center-dt mt-4-dt">
       <a href="services/" class="btn-dt-secondary">查看全部服务</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 关于我们 ============ -->
-<section class="section-dt">
-  <div class="container-dt">
-    <div class="about-grid-dt">
-      <div class="about-img-dt">
-        <img src="images/logo.png" alt="存勤法税" style="border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.12);background:#fff;padding:2rem;">
-      </div>
-      <div class="about-txt-dt">
-        <h2>关于存勤法税</h2>
-        <p class="about-lead">由拥有18年财税法实战专家<strong>邓达华先生</strong>创立，是「业管财税法」五维融合的践行者。凭借<strong>甲乙双视角</strong>的独特优势，为企业提供专业、可落地的财税法解决方案。</p>
-        <p class="about-tag">创始人：邓达华</p>
-        <ul class="about-highlights">
-          <li>曾任德尔惠运动、酷狗音乐集团、侨银环保股份、绿瘦健康集团财务税务核心岗位（14年甲方视角）</li>
-          <li>北京市盈科（广州）律师事务所法税服务团队组建者（乙方视角）</li>
-          <li>存勤法税服务（广州）有限公司 创始人/总经理</li>
-          <li>中税网金牌讲师，深耕财税法培训与咨询</li>
-        </ul>
-        <a href="about/" class="btn-dt-primary">了解更多</a>
-      </div>
     </div>
   </div>
 </section>
@@ -613,43 +627,7 @@
   </div>
 </section>
 
-<!-- ============ 服务城市覆盖 ============ -->
-<section class="cities-section">
-  <div class="container-dt">
-    <div class="cities-intro">
-      <h2>服务覆盖全国30+城市</h2>
-      <p>存勤法税的服务网络遍布华南、华东、华中、西南、西北、华北等多个区域，为各地企业提供专业支持</p>
-    </div>
-    <div class="cities-regions">
-      <div class="city-region">
-        <h4><i class="fas fa-map-marker-alt"></i> 华南</h4>
-        <p>广州 · 深圳 · 东莞 · 佛山 · 中山 · 肇庆 · 云浮 · 香港</p>
-      </div>
-      <div class="city-region">
-        <h4><i class="fas fa-map-marker-alt"></i> 华东</h4>
-        <p>杭州 · 厦门 · 泉州 · 九江 · 徐州 · 宿迁 · 盐城 · 池州</p>
-      </div>
-      <div class="city-region">
-        <h4><i class="fas fa-map-marker-alt"></i> 华中</h4>
-        <p>郑州 · 信阳 · 湘潭</p>
-      </div>
-      <div class="city-region">
-        <h4><i class="fas fa-map-marker-alt"></i> 西南</h4>
-        <p>昆明 · 泸州 · 拉萨 · 昌都</p>
-      </div>
-      <div class="city-region">
-        <h4><i class="fas fa-map-marker-alt"></i> 西北</h4>
-        <p>喀什 · 霍尔果斯</p>
-      </div>
-      <div class="city-region">
-        <h4><i class="fas fa-map-marker-alt"></i> 华北 / 直辖市</h4>
-        <p>北京 · 上海 · 重庆 · 石家庄</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 客户案例 ============ -->>
+<!-- ============ 客户案例 ============ -->
 <section class="section-dt bg-light-dt">
   <div class="container-dt">
     <div class="section-header-dt">
@@ -693,6 +671,42 @@
     </div>
     <div class="text-center-dt mt-4-dt">
       <a href="cases/" class="btn-dt-secondary">查看更多案例</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 服务城市覆盖 ============ -->
+<section class="cities-section">
+  <div class="container-dt">
+    <div class="cities-intro">
+      <h2>服务覆盖全国30+城市</h2>
+      <p>存勤法税的服务网络遍布华南、华东、华中、西南、西北、华北等多个区域，为各地企业提供专业支持</p>
+    </div>
+    <div class="cities-regions">
+      <div class="city-region">
+        <h4><i class="fas fa-map-marker-alt"></i> 华南</h4>
+        <p>广州 · 深圳 · 东莞 · 佛山 · 中山 · 肇庆 · 云浮 · 香港</p>
+      </div>
+      <div class="city-region">
+        <h4><i class="fas fa-map-marker-alt"></i> 华东</h4>
+        <p>杭州 · 厦门 · 泉州 · 九江 · 徐州 · 宿迁 · 盐城 · 池州</p>
+      </div>
+      <div class="city-region">
+        <h4><i class="fas fa-map-marker-alt"></i> 华中</h4>
+        <p>郑州 · 信阳 · 湘潭</p>
+      </div>
+      <div class="city-region">
+        <h4><i class="fas fa-map-marker-alt"></i> 西南</h4>
+        <p>昆明 · 泸州 · 拉萨 · 昌都</p>
+      </div>
+      <div class="city-region">
+        <h4><i class="fas fa-map-marker-alt"></i> 西北</h4>
+        <p>喀什 · 霍尔果斯</p>
+      </div>
+      <div class="city-region">
+        <h4><i class="fas fa-map-marker-alt"></i> 华北 / 直辖市</h4>
+        <p>北京 · 上海 · 重庆 · 石家庄</p>
+      </div>
     </div>
   </div>
 </section>

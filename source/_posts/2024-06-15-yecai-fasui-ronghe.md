@@ -1,6 +1,7 @@
 ---
 title: 业财法税融合：企业合规管理的五维一体新范式
 date: 2024-06-15 10:00:00
+permalink: 2024/06/15/yecai-fasui-ronghe/
 tags:
   - 业财法税融合
   - 企业合规

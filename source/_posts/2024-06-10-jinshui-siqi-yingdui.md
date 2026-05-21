@@ -1,6 +1,7 @@
 ---
 title: 金税四期全面解读：企业如何从容应对"以数治税"新时代
 date: 2024-06-10 10:00:00
+permalink: 2024/06/10/jinshui-siqi-yingdui/
 tags:
   - 金税四期
   - 以数治税

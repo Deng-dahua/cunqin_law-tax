@@ -1,6 +1,7 @@
 ---
 title: 跨境电商税务合规指南：2024年最新政策与实操要点
 date: 2024-06-01 10:00:00
+permalink: 2024/06/01/kuajing-dianshang-shuiwu/
 tags:
   - 跨境电商
   - 税务合规

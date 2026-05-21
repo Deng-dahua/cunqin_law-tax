@@ -1,6 +1,7 @@
 ---
 title: ODI境外投资备案全流程指南：从申请到落地的实战手册
 date: 2024-06-05 10:00:00
+permalink: 2024/06/05/odi-beian-quanliucheng/
 tags:
   - ODI备案
   - 境外投资

@@ -238,7 +238,8 @@
 
     /* ========== 关于区块 ========== */
     .about-grid-dt { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
-    .about-img-dt img { width: 100%; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .about-img-dt { display: flex; align-items: center; justify-content: center; }
+    .about-img-dt img { max-width: 100%; height: auto; }
     .about-txt-dt h2 { font-size: 2rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; margin-bottom: 1.2rem; }
     .about-lead { font-size: 1.05rem; color: var(--dt-text); line-height: 1.9; margin-bottom: 1.5rem; }
     .about-tag { font-size: 0.95rem; color: var(--dt-accent); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 1.2rem; }
@@ -489,7 +490,7 @@
   <div class="container-dt">
     <div class="about-grid-dt">
       <div class="about-img-dt">
-        <img src="images/cover-banner.png" alt="存勤法税" style="width:100%;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.12);">
+        <img src="images/company-logo.png" alt="存勤法税">
       </div>
       <div class="about-txt-dt">
         <h2>关于存勤法税</h2>

@@ -75,6 +75,14 @@
     .course-table th { background: var(--dt-primary); color: #fff; padding: 0.7rem 1rem; text-align: left; }
     .course-table td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--dt-border); }
     .course-table tr:nth-child(even) td { background: var(--dt-bg-light); }
+    /* 更多服务 */
+    .more-services { padding: 60px 0; background: var(--dt-bg-light); }
+    .more-services .section-title { font-size: 1.6rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--dt-accent); display: inline-block; }
+    .more-services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; max-width: 900px; margin: 0 auto; }
+    .more-services-grid a { display: block; padding: 1rem 1.2rem; background: #fff; border: 1px solid var(--dt-border); border-radius: 6px; color: var(--dt-text); transition: all 0.2s; font-size: 0.92rem; text-decoration: none; }
+    .more-services-grid a:hover { border-color: var(--dt-accent); color: var(--dt-accent); background: rgba(0,161,156,0.03); }
+    .more-services-grid a.current { border-color: var(--dt-accent); background: rgba(0,161,156,0.06); color: var(--dt-accent); font-weight: 600; pointer-events: none; cursor: default; }
+    .more-services-grid a .svc-num { color: var(--dt-accent); font-size: 0.75rem; margin-right: 0.5rem; font-weight: 600; }
     .cta-section { background: var(--dt-primary); color: #fff; text-align: center; padding: 60px 0; }
     .cta-section h2 { font-size: 1.8rem; margin-bottom: 0.75rem; }
     .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
@@ -232,6 +240,23 @@
   </div>
 </section>
 
+<section class="more-services">
+  <div class="container-dt">
+    <h2 class="section-title">更多服务</h2>
+    <div class="more-services-grid">
+      <a href="s01-tax-risk-check.html"><span class="svc-num">01</span>涉税风险检查</a>
+      <a href="s02-tax-crisis-response.html"><span class="svc-num">02</span>税务危机应对与争议解决</a>
+      <a href="s03-odi-outbound-investment.html"><span class="svc-num">03</span>跨境投资与并购（企业出海ODI备案）</a>
+      <a href="s04-restructuring-tax-planning.html"><span class="svc-num">04</span>企业重组与重大交易税务规划</a>
+      <a href="s05-cross-border-legal-tax.html" class="current"><span class="svc-num">05</span>跨境法律及税务规划</a>
+      <a href="s06-revenue-growth-strategy.html"><span class="svc-num">06</span>营收增长战略咨询</a>
+      <a href="s07-profit-growth-system.html"><span class="svc-num">07</span>利润增长体系建设</a>
+      <a href="s08-budget-management-system.html"><span class="svc-num">08</span>全面预算管理体系建设</a>
+      <a href="s09-fiscal-internal-control.html"><span class="svc-num">09</span>财税内控体系建设</a>
+      <a href="s10-custom-tax-training.html"><span class="svc-num">10</span>财税内训课程定制</a>
+    </div>
+  </div>
+</section>
 <section class="cta-section">
   <div class="container-dt">
     <h2>需要定制化的服务方案？</h2>

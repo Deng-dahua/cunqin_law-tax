@@ -407,6 +407,56 @@ img { max-width: 100%; display: block; }
   }
 }
 
+
+/* ===== 延伸阅读卡片 ===== */
+.related-reading { max-width:860px; margin:3rem auto 0; }
+.related-heading { margin-bottom:1.2rem; }
+.related-heading span {
+  font-size:1.15rem; font-weight:700; color:var(--dt-primary);
+  padding-bottom:0.5rem; border-bottom:3px solid var(--dt-accent);
+}
+.related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.related-card {
+  display:flex; flex-direction:column; background:var(--dt-bg-light);
+  border:1px solid var(--dt-border); border-radius:10px; padding:1.2rem;
+  transition:all .25s ease; cursor:pointer; position:relative;
+}
+.related-card:hover {
+  border-color:var(--dt-accent); box-shadow:0 6px 24px rgba(0,161,156,.12);
+  transform:translateY(-3px);
+}
+.related-cat {
+  display:inline-block; font-size:0.72rem; font-weight:600; padding:0.2rem 0.7rem;
+  border-radius:50px; margin-bottom:0.8rem; width:fit-content;
+  background:rgba(0,161,156,.1); color:var(--dt-accent);
+}
+.related-info h4 {
+  font-size:0.92rem; color:var(--dt-text); margin-bottom:0.4rem;
+  line-height:1.5; display:-webkit-box; -webkit-line-clamp:2;
+  -webkit-box-orient:vertical; overflow:hidden;
+}
+.related-info p {
+  font-size:0.78rem; color:var(--dt-text-light); line-height:1.5;
+  display:-webkit-box; -webkit-line-clamp:2;
+  -webkit-box-orient:vertical; overflow:hidden; margin-bottom:0.6rem;
+}
+.related-arrow {
+  margin-top:auto; align-self:flex-end; color:var(--dt-accent);
+  font-size:0.85rem; transition:transform .25s;
+}
+.related-card:hover .related-arrow { transform:translateX(4px); }
+.related-cta {
+  max-width:860px; margin:1.5rem auto 0; padding:1rem 1.5rem;
+  background:linear-gradient(135deg,rgba(0,161,156,.06),rgba(0,63,108,.04));
+  border-radius:10px; font-size:0.88rem; color:var(--dt-text-light); line-height:1.8;
+}
+.related-cta p { margin-bottom:0.25rem; }
+.related-cta p:last-child { margin-bottom:0; }
+
+@media (max-width:768px) {
+  .related-grid { grid-template-columns:1fr; }
+}
+
   </style>
 </head>
 <body>
@@ -455,7 +505,7 @@ img { max-width: 100%; display: block; }
     <div class="art-meta">
       <span><i class="fas fa-calendar-alt"></i> 2026-02-12</span>
       <span><i class="fas fa-user-edit"></i> 邓达华丨存勤法税服务（广州）有限公司</span>
-      <span><i class="fas fa-eye"></i> 658 阅读</span>
+      <span class="art-view-counter" data-slug="gaoxin-qiye-shuiwu"><i class="fas fa-eye"></i> <span class="view-num" id="view-gaoxin-qiye-shuiwu">658</span> 阅读</span>
     </div>
   </div>
 </section>
@@ -951,15 +1001,39 @@ img { max-width: 100%; display: block; }
 <li><strong>专业支持</strong>：选择有实战经验的专业机构保驾护航</li>
 </ol>
 <hr>
-<p><strong>延伸阅读</strong>：</p>
-<ul>
-<li><a href="articles/jinshui-siqi-yingdui.html">金税四期企业合规指南</a></li>
-<li><a href="articles/qiye-shuiwu-fengxian.html">企业税务风险管控全攻略</a></li>
-<li><a href="articles/jiayi-shuangshijing.html">个人所得税筹划要点</a></li>
-</ul>
-<hr>
-<p><em>如需了解更多高新技术企业税务筹划方案，欢迎联系存勤法税。</em></p>
-<p>📞 <strong>咨询热线</strong>：13556116691（微信同号）</p>
+<div class="related-reading">
+    <h3 class="related-heading"><span>延伸阅读</span></h3>
+    <div class="related-grid">
+      <a href="jinshui-siqi-yingdui.html" class="related-card">
+        <span class="related-cat">政策解读</span>
+        <div class="related-info">
+          <h4>金税四期企业合规指南</h4>
+          <p>全面解读金税四期核心变化，提供可落地的应对方案</p>
+        </div>
+        <span class="related-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="qiye-shuiwu-fengxian.html" class="related-card">
+        <span class="related-cat">实操指南</span>
+        <div class="related-info">
+          <h4>企业税务风险管控全攻略</h4>
+          <p>建立系统性税务风险防控体系的关键路径</p>
+        </div>
+        <span class="related-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="jiayi-shuangshijing.html" class="related-card">
+        <span class="related-cat">行业洞察</span>
+        <div class="related-info">
+          <h4>甲乙双视角：为什么企业需要双重人格的税务顾问</h4>
+          <p>从甲方和乙方双重视角，解读企业税务顾问的服务逻辑</p>
+        </div>
+        <span class="related-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+  <div class="related-cta">
+    <p><em>如需了解更多高新技术企业税务筹划方案，欢迎联系存勤法税。</em></p>
+    <p>📞 <strong>咨询热线</strong>：13556116691（微信同号）</p>
+  </div>
 
 </article>
 
@@ -1190,5 +1264,30 @@ img { max-width: 100%; display: block; }
   });
 </script>
 
+<script>
+  /* ===== 动态阅读量计数 ===== */
+  (function(){
+    var slug = 'gaoxin-qiye-shuiwu';
+    var base = 658;
+    var storageKey = 'cq_view_' + slug;
+    var sessionKey = 'cq_sess_' + slug;
+    var el = document.getElementById('view-' + slug);
+    if (!el) return;
+
+    // 从localStorage获取当前计数
+    var stored = localStorage.getItem(storageKey);
+    var count = stored ? parseInt(stored, 10) : base;
+
+    // 新会话则递增
+    if (!sessionStorage.getItem(sessionKey)) {
+      count += 1;
+      localStorage.setItem(storageKey, count);
+      sessionStorage.setItem(sessionKey, '1');
+    }
+
+    // 格式化并显示
+    el.textContent = count.toLocaleString();
+  })();
+</script>
 </body>
 </html>

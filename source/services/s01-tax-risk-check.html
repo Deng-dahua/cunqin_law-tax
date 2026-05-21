@@ -160,6 +160,12 @@
       .nav-toggle { display: block; }
       .nav-tools { display: none; }
     }
+    /* ========== 置顶/置底按钮 ========== */
+    .scroll-btn { position: fixed; right: 45px; width: 44px; height: 44px; border-radius: 50%; background: var(--dt-accent); color: #fff; border: none; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,161,156,0.35); z-index: 999; transition: all 0.3s ease; opacity: 0; visibility: hidden; }
+    .scroll-btn.visible { opacity: 1; visibility: visible; }
+    .scroll-btn:hover { background: var(--dt-accent-hover); transform: scale(1.1); box-shadow: 0 6px 20px rgba(0,161,156,0.5); }
+    #btnScrollTop { bottom: 100px; }
+    #btnScrollBtm { bottom: 45px; }
   </style>
 
 <script type="application/ld+json">
@@ -525,6 +531,37 @@ function goToResult(index) {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeSearch();
 });
+</script>
+
+<!-- ============ 置顶/置底按钮 ============ -->
+<button class="scroll-btn" id="btnScrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="返回顶部">↑</button>
+<button class="scroll-btn" id="btnScrollBtm" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})" title="前往底部">↓</button>
+<script>
+// 置顶/置底按钮显隐逻辑
+(function(){
+  var btnTop = document.getElementById('btnScrollTop');
+  var btnBtm = document.getElementById('btnScrollBtm');
+  function updateBtns() {
+    var scrollY = window.scrollY || document.documentElement.scrollTop;
+    var winH = window.innerHeight;
+    var docH = document.documentElement.scrollHeight;
+    // 置顶按钮：滚动超过一屏后显示
+    if (scrollY > winH * 0.5) {
+      btnTop.classList.add('visible');
+    } else {
+      btnTop.classList.remove('visible');
+    }
+    // 置底按钮：不在底部时显示
+    if (scrollY + winH < docH - 100) {
+      btnBtm.classList.add('visible');
+    } else {
+      btnBtm.classList.remove('visible');
+    }
+  }
+  window.addEventListener('scroll', updateBtns);
+  window.addEventListener('resize', updateBtns);
+  updateBtns();
+})();
 </script>
 
 </body>

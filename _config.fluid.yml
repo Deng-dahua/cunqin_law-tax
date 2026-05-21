@@ -255,6 +255,15 @@ seo:
   google_verification: ""
   baidu_verification: ""
 
+# ========== Open Graph / Twitter Card ==========
+open_graph:
+  enable: true
+  twitter_card: summary_large_image
+  twitter_id: ""
+  twitter_site: ""
+  fb_app_id: ""
+  fb_admins: ""
+
 # ========== 搜索 ==========
 search:
   enable: true

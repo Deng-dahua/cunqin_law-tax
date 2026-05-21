@@ -82,11 +82,22 @@
     .advantage-card p { color: var(--dt-text-light); line-height: 1.8; }
 
     /* 价值观 */
-    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+    .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto; }
     .value-item { text-align: center; padding: 2rem; }
     .value-icon { width: 60px; height: 60px; background: var(--dt-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.5rem; }
     .value-item h4 { font-size: 1.2rem; color: var(--dt-primary); margin-bottom: 0.75rem; }
     .value-item p { color: var(--dt-text-light); font-size: 0.95rem; }
+
+    /* 四维一体 */
+    .four-dim-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+    .four-dim-card { background: var(--dt-bg); border: 1px solid var(--dt-border); border-radius: 10px; padding: 2.5rem 2rem; text-align: center; transition: all 0.3s; position: relative; overflow: hidden; }
+    .four-dim-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--dt-primary), var(--dt-accent)); }
+    .four-dim-card:hover { border-color: var(--dt-accent); box-shadow: 0 8px 30px rgba(0,63,108,0.1); transform: translateY(-4px); }
+    .four-dim-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--dt-primary), var(--dt-accent)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; margin: 0 auto 1.5rem; }
+    .four-dim-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 1rem; }
+    .four-dim-card ul { text-align: left; }
+    .four-dim-card li { font-size: 0.9rem; color: var(--dt-text-light); line-height: 1.7; padding: 0.3rem 0 0.3rem 1.2rem; position: relative; }
+    .four-dim-card li::before { content: '▸'; position: absolute; left: 0; color: var(--dt-accent); font-weight: 700; }
 
     /* 数据条 */
     .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; }
@@ -117,7 +128,7 @@
       .nav-mobile-btn { display: block; }
       .page-hero h1 { font-size: 2rem; padding-top: 100px; }
       .founder-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .advantage-grid, .values-grid, .stats-bar { grid-template-columns: 1fr; }
+      .founder-grid, .advantage-grid, .values-grid, .four-dim-grid, .stats-bar { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
@@ -203,6 +214,57 @@
         <p>14年甲方实战经验告诉我们老板真正担心什么，4年乙方专业训练让我们懂得如何专业表达。两重视角，无缝切换。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- 服务理念：四维一体 -->
+<section class="section-dt">
+  <div class="container-dt">
+    <h2 class="section-title">服务理念：四维一体</h2>
+    <p style="text-align:center;max-width:700px;margin:0 auto 3rem;color:var(--dt-text-light);font-size:1rem;line-height:1.8;">存勤法税擅长对企业的经营行为进行涉税剖析，以以下四个维度为核心，为企业提供全方位咨询：</p>
+    <div class="four-dim-grid">
+      <div class="four-dim-card">
+        <div class="four-dim-icon"><i class="fas fa-calculator"></i></div>
+        <h3>财务维度</h3>
+        <ul>
+          <li>财税系统建设落地</li>
+          <li>内部控制及风险管理</li>
+          <li>全面预算管理体系</li>
+          <li>财务合规性梳理</li>
+        </ul>
+      </div>
+      <div class="four-dim-card">
+        <div class="four-dim-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <h3>税务维度</h3>
+        <ul>
+          <li>税务合规体系建设</li>
+          <li>税务筹划与优化</li>
+          <li>税务争议解决</li>
+          <li>税收优惠政策应用</li>
+        </ul>
+      </div>
+      <div class="four-dim-card">
+        <div class="four-dim-icon"><i class="fas fa-gavel"></i></div>
+        <h3>法律维度</h3>
+        <ul>
+          <li>合规体系建设</li>
+          <li>合同法务支持</li>
+          <li>企业重组法律安排</li>
+          <li>法律风险防范</li>
+        </ul>
+      </div>
+      <div class="four-dim-card">
+        <div class="four-dim-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>经营模式维度</h3>
+        <ul>
+          <li>利润增长体系设计</li>
+          <li>战略规划与落地</li>
+          <li>业务模式优化</li>
+          <li>价值链成本管控</li>
+        </ul>
+      </div>
+    </div>
+    <p style="text-align:center;max-width:700px;margin:2.5rem auto 0;font-size:0.95rem;color:var(--dt-accent);font-weight:600;font-style:italic;">核心理念：每一个财务决策都有税务影响，每一个税务安排都有法律风险，每一个法律问题都连着经营模式。</p>
   </div>
 </section>
 

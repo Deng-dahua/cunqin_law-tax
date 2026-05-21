@@ -277,6 +277,47 @@
     .footer-bottom-dt a { color: #b0c4d8; transition: color 0.2s; }
     .footer-bottom-dt a:hover { color: var(--dt-accent); }
 
+    /* ========== 四个不一样 ========== */
+    .diff-section { padding: 5rem 0; }
+    .diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; }
+    .diff-card {
+      background: var(--dt-bg);
+      border: 1px solid var(--dt-border);
+      border-radius: 10px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .diff-card:hover { border-color: var(--dt-accent); box-shadow: 0 8px 30px rgba(0,63,108,0.1); transform: translateY(-3px); }
+    .diff-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--dt-primary), var(--dt-accent)); }
+    .diff-num { font-size: 3rem; font-weight: 800; color: rgba(0,161,156,0.12); position: absolute; top: 1rem; right: 1.5rem; line-height: 1; }
+    .diff-icon { width: 52px; height: 52px; background: linear-gradient(135deg, var(--dt-primary), var(--dt-accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.4rem; margin-bottom: 1.5rem; }
+    .diff-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 0.8rem; letter-spacing: 0.03em; }
+    .diff-card .highlight { font-size: 1rem; color: var(--dt-accent); font-weight: 700; margin-bottom: 0.6rem; }
+    .diff-card p { font-size: 0.92rem; color: var(--dt-text-light); line-height: 1.8; }
+
+    /* ========== E-E-A-T ========== */
+    .eat-section { background: linear-gradient(135deg, var(--dt-primary) 0%, var(--dt-primary-light) 100%); padding: 5rem 0; color: #fff; }
+    .eat-section .section-header-dt h2 { color: #fff; }
+    .eat-section .section-header-dt p { color: rgba(255,255,255,0.75); }
+    .eat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+    .eat-item { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 2rem 1.5rem; text-align: center; backdrop-filter: blur(10px); transition: all 0.3s; }
+    .eat-item:hover { background: rgba(255,255,255,0.18); transform: translateY(-4px); }
+    .eat-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+    .eat-letter { font-size: 2.5rem; font-weight: 800; color: var(--dt-accent); margin-bottom: 0.5rem; line-height: 1; }
+    .eat-item h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
+    .eat-item ul { text-align: left; padding: 0 0.5rem; }
+    .eat-item li { font-size: 0.85rem; color: rgba(255,255,255,0.85); line-height: 1.7; padding: 0.2rem 0; position: relative; padding-left: 1rem; }
+    .eat-item li::before { content: '✓'; position: absolute; left: 0; color: var(--dt-accent); font-size: 0.8rem; }
+
+    /* ========== 客户名录标签云 ========== */
+    .client-directory { padding: 4rem 0 0; }
+    .client-directory h3 { font-size: 1rem; font-weight: 700; color: var(--dt-primary); text-align: center; margin-bottom: 1.5rem; letter-spacing: 0.05em; }
+    .client-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; max-width: 900px; margin: 0 auto; }
+    .client-tag { background: var(--dt-bg); border: 1px solid var(--dt-border); color: var(--dt-text-light); font-size: 0.88rem; padding: 0.4rem 1rem; border-radius: 20px; transition: all 0.2s; }
+    .client-tag:hover { border-color: var(--dt-accent); color: var(--dt-accent); background: rgba(0,161,156,0.05); }
+
     /* ========== 响应式 ========== */
     @media (max-width: 968px) {
       .hero-dt h1 { font-size: 2.2rem; }
@@ -288,6 +329,8 @@
       .about-img-dt { max-width: 400px; margin: 0 auto; }
       .cases-grid-dt { grid-template-columns: 1fr; }
       .contact-grid-dt { grid-template-columns: 1fr; }
+      .diff-grid { grid-template-columns: 1fr; }
+      .eat-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid-dt { grid-template-columns: repeat(2, 1fr); }
       .nav-menu { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 1rem; }
       .nav-menu.active { display: flex; }
@@ -372,6 +415,46 @@
   </div>
 </section>
 
+<!-- ============ 四个不一样 ============ -->
+<section class="diff-section">
+  <div class="container-dt">
+    <div class="section-header-dt">
+      <h2>四个「不一样」</h2>
+      <p>存勤法税的差异化核心竞争力</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-num">01</div>
+        <div class="diff-icon"><i class="fas fa-user-tie"></i></div>
+        <h3>视角不一样 — 14年甲方经验</h3>
+        <div class="highlight">大多数咨询师只有乙方经验</div>
+        <p>曾任职德尔惠、酷狗音乐、侨银环保、绿瘦健康等百亿级上市企业，经历过IPO审计、税务稽查、重大并购重组。真正知道老板担心什么、财务部门为什么"知道但做不到"、什么方案能真正落地。</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-num">02</div>
+        <div class="diff-icon"><i class="fas fa-cubes"></i></div>
+        <h3>方法不一样 — 业财法税管五维一体</h3>
+        <div class="highlight">打破壁垒，从全局出发</div>
+        <p>传统咨询：财务公司只管账，律师事务所只管法，税务师只管税。存勤法税：打破壁垒，从企业经营全局出发分析问题。每一个财务决策都有税务影响，每一个税务安排都有法律风险，每一个法律问题都连着经营模式。</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-num">03</div>
+        <div class="diff-icon"><i class="fas fa-hammer"></i></div>
+        <h3>风格不一样 — 实战派，拒绝空洞理论</h3>
+        <div class="highlight">每个建议回答三个问题</div>
+        <p>不给企业堆砌法规条文，不做"听起来很专业但落地不了"的方案。每个建议必须回答：怎么做（操作步骤）、谁来执行（职责分工）、怎么检查（效果衡量）。以企业经营成果为导向，不做无用功。</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-num">04</div>
+        <div class="diff-icon"><i class="fas fa-handshake"></i></div>
+        <h3>责任不一样 — 不只是给方案，还帮落地</h3>
+        <div class="highlight">项目结束，陪伴继续</div>
+        <p>驻场辅导：关键节点驻场协助推进；持续跟进：项目结束后36个月跟踪答疑；定期复盘：协助企业定期检视执行效果。不只是给方案，还帮落地，以企业经营成果为最终衡量标准。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 核心服务 ============ -->
 <section class="section-dt bg-light-dt">
   <div class="container-dt">
@@ -441,6 +524,58 @@
           <li>实战派专家，不仅能做，还能讲——深耕财税法培训与咨询，善于将复杂问题简单化</li>
         </ul>
         <a href="about/" class="btn-dt-primary">了解更多</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ E-E-A-T 权威性背书 ============ -->
+<section class="eat-section">
+  <div class="container-dt">
+    <div class="section-header-dt">
+      <h2>为什么选择存勤法税</h2>
+      <p>18年财税法实战积累，构建专业可信的服务能力</p>
+    </div>
+    <div class="eat-grid">
+      <div class="eat-item">
+        <div class="eat-letter">E</div>
+        <h3>Experience · 实战经验</h3>
+        <ul>
+          <li>18年财税法领域连续从业</li>
+          <li>14年百亿级上市企业管理实践</li>
+          <li>数十个乙方咨询案例交付</li>
+          <li>经历IPO审计、税务稽查、重大并购重组</li>
+        </ul>
+      </div>
+      <div class="eat-item">
+        <div class="eat-letter">E</div>
+        <h3>Expertise · 专业能力</h3>
+        <ul>
+          <li>财务（CFO视角）+ 税务（CTA视角）</li>
+          <li>+ 法律（律师视角）三重能力</li>
+          <li>横跨互联网/制造/环保/大健康/电商</li>
+          <li>从战略规划到执行落地全链路</li>
+        </ul>
+      </div>
+      <div class="eat-item">
+        <div class="eat-letter">A</div>
+        <h3>Authoritativeness · 权威背书</h3>
+        <ul>
+          <li>曾任职4家知名大型企业集团</li>
+          <li>盈科律师事务所法税团队组建者</li>
+          <li>广东省电商协会等协会合作</li>
+          <li>全国30+城市服务覆盖能力</li>
+        </ul>
+      </div>
+      <div class="eat-item">
+        <div class="eat-letter">T</div>
+        <h3>Trustworthiness · 诚信可靠</h3>
+        <ul>
+          <li>基于真实实战经验，非理论堆砌</li>
+          <li>明确告知方案边界与局限</li>
+          <li>项目后36个月持续跟踪</li>
+          <li>以经营成果为导向的务实风格</li>
+        </ul>
       </div>
     </div>
   </div>

@@ -82,9 +82,20 @@
     .case-results li { color: var(--dt-text); font-weight: 500; }
 
     /* 行业覆盖 */
-    .industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 800px; margin: 0 auto; }
-    .industry-item { background: var(--dt-bg); border: 1px solid var(--dt-border); border-radius: 6px; padding: 1rem 1.5rem; text-align: center; color: var(--dt-text-light); font-size: 0.9rem; transition: all 0.2s; }
+    .industry-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1rem; max-width: 1000px; margin: 0 auto; }
+    .industry-item { background: var(--dt-bg); border: 1px solid var(--dt-border); border-radius: 6px; padding: 1rem 1rem; text-align: center; color: var(--dt-text-light); font-size: 0.88rem; transition: all 0.2s; }
     .industry-item:hover { border-color: var(--dt-accent); color: var(--dt-primary); }
+
+    /* 客户名录 */
+    .client-dir { background: var(--dt-bg); border: 1px solid var(--dt-border); border-radius: 10px; padding: 3rem; margin-top: 0; }
+    .client-dir h3 { font-size: 1.3rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 0.5rem; text-align: center; }
+    .client-dir-sub { text-align: center; font-size: 0.9rem; color: var(--dt-text-light); margin-bottom: 2rem; }
+    .client-category { margin-bottom: 2rem; }
+    .client-category:last-child { margin-bottom: 0; }
+    .client-cat-title { font-size: 0.9rem; font-weight: 700; color: var(--dt-accent); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+    .client-cat-title i { font-size: 1rem; }
+    .client-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .client-name { background: var(--dt-bg-light); border: 1px solid var(--dt-border); color: var(--dt-text); font-size: 0.88rem; padding: 0.35rem 1rem; border-radius: 20px; }
 
     /* CTA */
     .cta-section { background: var(--dt-primary); color: #fff; text-align: center; padding: 60px 0; }
@@ -109,7 +120,7 @@
       .nav-mobile-btn { display: block; }
       .page-hero h1 { font-size: 2rem; }
       .case-body { grid-template-columns: 1fr; }
-      .industry-grid { grid-template-columns: repeat(2, 1fr); }
+      .industry-grid { grid-template-columns: repeat(3, 1fr); }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
@@ -351,18 +362,96 @@
   </div>
 </section>
 
+<!-- 服务客户名录 -->
+<section class="section-dt">
+  <div class="container-dt">
+    <h2 class="section-title">服务客户名录</h2>
+    <div class="client-dir">
+      <p class="client-dir-sub">部分合作客户展示（排名不分先后）</p>
+      <div class="client-category">
+        <div class="client-cat-title"><i class="fas fa-building"></i> 行业协会与平台</div>
+        <div class="client-list">
+          <span class="client-name">广东省电子商务协会</span>
+          <span class="client-name">佛山市南海区跨境电商协会</span>
+          <span class="client-name">上海临港新片区走出去综合服务平台</span>
+          <span class="client-name">广州融资租赁产业联盟</span>
+        </div>
+      </div>
+      <div class="client-category">
+        <div class="client-cat-title"><i class="fas fa-film"></i> 传媒广告</div>
+        <div class="client-list">
+          <span class="client-name">海更传媒</span>
+          <span class="client-name">笨鸟传媒</span>
+        </div>
+      </div>
+      <div class="client-category">
+        <div class="client-cat-title"><i class="fas fa-gamepad"></i> 游戏</div>
+        <div class="client-list">
+          <span class="client-name">弘贯游戏</span>
+        </div>
+      </div>
+      <div class="client-category">
+        <div class="client-cat-title"><i class="fas fa-tree"></i> 物业管理</div>
+        <div class="client-list">
+          <span class="client-name">巨象物业股份</span>
+        </div>
+      </div>
+      <div class="client-category">
+        <div class="client-cat-title"><i class="fas fa-industry"></i> 建材 / 外贸</div>
+        <div class="client-list">
+          <span class="client-name">零度建材</span>
+          <span class="client-name">高登铝业</span>
+          <span class="client-name">诺森五金</span>
+        </div>
+      </div>
+      <div class="client-category">
+        <div class="client-cat-title"><i class="fas fa-plane"></i> 互联网旅游</div>
+        <div class="client-list">
+          <span class="client-name">驴迹股份</span>
+        </div>
+      </div>
+      <div class="client-category">
+        <div class="client-cat-title"><i class="fas fa-leaf"></i> 农产品</div>
+        <div class="client-list">
+          <span class="client-name">毅苑生态</span>
+          <span class="client-name">粤阔供应链</span>
+        </div>
+      </div>
+      <div class="client-category">
+        <div class="client-cat-title"><i class="fas fa-tshirt"></i> 服饰 / 直播电商</div>
+        <div class="client-list">
+          <span class="client-name">合和千喜服饰</span>
+          <span class="client-name">美誉严选服饰</span>
+        </div>
+      </div>
+      <div class="client-category">
+        <div class="client-cat-title"><i class="fas fa-university"></i> 金融机构</div>
+        <div class="client-list">
+          <span class="client-name">农业银行</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section-dt" style="background: var(--dt-bg-light);">
   <div class="container-dt">
-    <h2 class="section-title">行业覆盖</h2>
+    <h2 class="section-title">服务行业覆盖</h2>
     <div class="industry-grid">
+      <div class="industry-item">货架电商</div>
+      <div class="industry-item">直播电商</div>
       <div class="industry-item">跨境电商</div>
-      <div class="industry-item">精密制造</div>
-      <div class="industry-item">软件开发</div>
-      <div class="industry-item">房地产开发</div>
-      <div class="industry-item">餐饮连锁</div>
-      <div class="industry-item">进出口贸易</div>
-      <div class="industry-item">金融科技</div>
-      <div class="industry-item">医疗健康</div>
+      <div class="industry-item">环保</div>
+      <div class="industry-item">大健康</div>
+      <div class="industry-item">建材</div>
+      <div class="industry-item">传媒</div>
+      <div class="industry-item">游戏</div>
+      <div class="industry-item">旅游</div>
+      <div class="industry-item">园林景观</div>
+      <div class="industry-item">外贸</div>
+      <div class="industry-item">农产品</div>
+      <div class="industry-item">珠宝玉石</div>
+      <div class="industry-item">更多行业…</div>
     </div>
   </div>
 </section>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>存勤法税服务（广州）有限公司 — 业财法税管五维融合</title>
-  <meta name="description" content="业财法税管五维融合 — 甲乙双视角实战派。专注为企业提供涉税风险检查、税务危机应对、ODI备案、企业重组税务规划等专业服务">
+  <title>存勤法税服务（广州）有限公司 — 「业•管•财•税•法」五维融合</title>
+  <meta name="description" content="「业•管•财•税•法」五维融合 — 甲乙双视角实战派。拥有18年财•税•法实战经验，专注为企业提供涉税风险检查、税务危机应对与争议解决、跨境投资与并购（企业出海ODI备案）、企业重组税务规划等专业服务">
   <link rel="icon" href="images/logo.png" type="image/png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
   <style>
@@ -50,7 +50,7 @@
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 0 0.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -59,14 +59,32 @@
     .nav-brand {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
       font-size: 1.15rem;
       font-weight: 700;
       color: var(--dt-primary);
       letter-spacing: 0.05em;
+      flex-shrink: 0;
     }
     .nav-brand:hover { color: var(--dt-primary); }
-    .nav-logo { height: 36px; width: auto; }
+    .nav-logo { height: 34px; width: auto; }
+    .nav-tools {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-left: 0.5rem;
+    }
+    .nav-tools a {
+      color: var(--dt-text-light);
+      font-size: 0.9rem;
+      padding: 0.35rem 0.5rem;
+      border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .nav-tools a:hover { color: var(--dt-accent); background: rgba(0,161,156,0.06); }
     .nav-menu {
       display: flex;
       align-items: center;
@@ -183,7 +201,7 @@
     .btn-dt-secondary:hover { background: #002a4a; border-color: #002a4a; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,63,108,0.2); color: #fff; }
 
     /* ========== 数据条 ========== */
-    .stats-dt { background: var(--dt-bg); border-bottom: 1px solid var(--dt-border); padding: 3.5rem 0; }
+    .stats-dt { background: var(--dt-bg); border-bottom: 1px solid var(--dt-border); padding: 2rem 0; }
     .stats-grid-dt { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
     .stat-item-dt { text-align: center; padding: 1rem; position: relative; }
     .stat-item-dt:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 10%; height: 80%; width: 1px; background: var(--dt-border); }
@@ -380,16 +398,21 @@
       <li><a href="archives/">法税洞察</a></li>
       <li><a href="contact/">联系我们</a></li>
     </ul>
+    <div class="nav-tools">
+      <a href="#" title="选择地区"><i class="fas fa-globe"></i></a>
+      <a href="#" title="切换语言"><i class="fas fa-language"></i></a>
+      <a href="#" title="搜索"><i class="fas fa-search"></i></a>
+    </div>
   </div>
 </nav>
 
 <!-- ============ Hero 首屏 ============ -->
 <section class="hero-dt">
   <div class="hero-inner">
-    <div class="hero-label">专业财税法服务</div>
-    <h1>业财法税管五维融合</h1>
+    <div class="hero-label">财•税•法服务</div>
+    <h1>「业•管•财•税•法」五维融合</h1>
     <p class="hero-sub">甲乙双视角 · 18年实战派</p>
-    <p class="hero-desc">由18年财税法实战专家邓达华先生创立，凭借甲方乙方双重视角，为企业提供涉税风险检查、税务危机应对、ODI备案、企业重组税务规划等专业服务。</p>
+    <p class="hero-desc">拥有18年财•税•法实战经验，凭借甲方、乙方双重视角，将财务、税务、法务融入业务的管理理念，为企业提供涉税风险检查、税务危机应对与争议解决、企业重组与重大交易税务规划、跨境投资与并购（企业出海ODI备案）、跨境法律及税务规划、营收增长战略咨询、利润增长体系建设、财税内控体系建设、全面预算管理体系建设、财税内训课程定制等专业服务。</p>
     <div class="hero-actions">
       <a href="services/" class="btn-dt-primary">了解我们的服务</a>
       <a href="contact/" class="btn-dt-outline">联系我们</a>
@@ -436,30 +459,30 @@
       <div class="diff-card">
         <div class="diff-num">01</div>
         <div class="diff-icon"><i class="fas fa-user-tie"></i></div>
-        <h3>视角不一样 — 14年甲方经验</h3>
+        <h3>视角不一样：14年甲方经验</h3>
         <div class="highlight">大多数咨询师只有乙方经验</div>
         <p>曾任职德尔惠、酷狗音乐、侨银环保、绿瘦健康等百亿级上市企业，经历过IPO审计、税务稽查、重大并购重组。真正知道老板担心什么、财务部门为什么"知道但做不到"、什么方案能真正落地。</p>
       </div>
       <div class="diff-card">
         <div class="diff-num">02</div>
         <div class="diff-icon"><i class="fas fa-cubes"></i></div>
-        <h3>方法不一样 — 业财法税管五维一体</h3>
+        <h3>方法不一样：业财法税管五维一体</h3>
         <div class="highlight">打破壁垒，从全局出发</div>
         <p>传统咨询：财务公司只管账，律师事务所只管法，税务师只管税。存勤法税：打破壁垒，从企业经营全局出发分析问题。每一个财务决策都有税务影响，每一个税务安排都有法律风险，每一个法律问题都连着经营模式。</p>
       </div>
       <div class="diff-card">
         <div class="diff-num">03</div>
         <div class="diff-icon"><i class="fas fa-hammer"></i></div>
-        <h3>风格不一样 — 实战派，拒绝空洞理论</h3>
+        <h3>风格不一样：实战派，拒绝空洞理论</h3>
         <div class="highlight">每个建议回答三个问题</div>
         <p>不给企业堆砌法规条文，不做"听起来很专业但落地不了"的方案。每个建议必须回答：怎么做（操作步骤）、谁来执行（职责分工）、怎么检查（效果衡量）。以企业经营成果为导向，不做无用功。</p>
       </div>
       <div class="diff-card">
         <div class="diff-num">04</div>
         <div class="diff-icon"><i class="fas fa-handshake"></i></div>
-        <h3>责任不一样 — 不只是给方案，还帮落地</h3>
+        <h3>责任不一样：不只是给方案，还帮落地</h3>
         <div class="highlight">项目结束，陪伴继续</div>
-        <p>驻场辅导：关键节点驻场协助推进；持续跟进：项目结束后36个月跟踪答疑；定期复盘：协助企业定期检视执行效果。不只是给方案，还帮落地，以企业经营成果为最终衡量标准。</p>
+        <p>驻场辅导：关键节点驻场协助推进；持续跟进：项目结束后18个月跟踪答疑；定期复盘：协助企业定期检视执行效果。不只是给方案，还帮落地，以企业经营成果为最终衡量标准。</p>
       </div>
     </div>
   </div>
@@ -525,7 +548,7 @@
       </div>
       <div class="about-txt-dt">
         <h2>关于存勤法税</h2>
-        <p class="about-lead">由<strong>18年财税法实战专家邓达华先生</strong>创立，是「业财法税管五维融合」的践行者。凭借<strong>甲乙双视角</strong>的独特优势，为企业提供专业、可落地的财税法解决方案。</p>
+        <p class="about-lead">由<strong>18年财•税•法实战专家邓达华先生</strong>创立，是「业•管•财•税•法」五维融合的践行者。凭借<strong>甲乙双视角</strong>的独特优势，为企业提供专业、可落地的财税法解决方案。</p>
         <p class="about-tag">创始人：邓达华</p>
         <ul class="about-highlights">
           <li>曾任德尔惠运动、酷狗音乐集团、侨银环保股份、绿瘦健康集团财务税务核心岗位（14年甲方视角）</li>
@@ -583,7 +606,7 @@
         <ul>
           <li>基于真实实战经验，非理论堆砌</li>
           <li>明确告知方案边界与局限</li>
-          <li>项目后36个月持续跟踪</li>
+          <li>项目后18个月持续跟踪</li>
           <li>以经营成果为导向的务实风格</li>
         </ul>
       </div>
@@ -686,7 +709,7 @@
       <div class="post-item-dt">
         <div class="post-meta-dt">2024-06-15 · 行业洞察</div>
         <h3><a href="2024/06/15/yecai-fasui-ronghe/">业财法税融合：企业合规管理的五维一体新范式</a></h3>
-        <p class="post-excerpt">深度解读「业财法税管五维融合」理念，探索企业合规管理的新范式。从业务、财务、法律、税务、管理五个维度，系统解决企业合规难题。</p>
+        <p class="post-excerpt">深度解读「业•管•财•税•法」五维融合理念，探索企业合规管理的新范式。从业务、管理、财务、税务、法律五个维度，系统解决企业合规难题。</p>
       </div>
       <div class="post-item-dt">
         <div class="post-meta-dt">2024-06-10 · 政策解读</div>
@@ -747,8 +770,8 @@
   <div class="container-dt">
     <div class="footer-grid-dt">
       <div class="footer-brand-dt">
-        <h3 style="display:flex;align-items:center;gap:0.6rem;"><img src="images/logo.png" alt="存勤法税" style="height:36px;width:auto;border-radius:4px;"><span>存勤法税</span></h3>
-        <p>业财法税管五维融合 · 甲乙双视角实战派<br>为企业提供专业、可落地的财税法解决方案</p>
+        <h3 style="display:flex;align-items:center;gap:0.6rem;"><img src="images/logo.png" alt="存勤法税" style="height:36px;width:auto;border-radius:4px;"><span>-存勤<span style="color:#ff8c00;">法税</span></span></h3>
+        <p>「业•管•财•税•法」五维融合 · 甲乙双视角实战派<br>为企业提供专业、可落地的财税法解决方案</p>
       </div>
       <div class="footer-links-dt">
         <h4>快速链接</h4>

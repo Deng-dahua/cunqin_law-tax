@@ -38,9 +38,12 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       backdrop-filter: blur(10px);
     }
-    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .nav-brand { display: flex; align-items: center; gap: 0.6rem; font-size: 1.15rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; }
-    .nav-logo { height: 36px; width: auto; }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 0.5rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-brand { display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; flex-shrink: 0; }
+    .nav-logo { height: 34px; width: auto; }
+    .nav-tools { display: flex; align-items: center; gap: 0.6rem; margin-left: 0.5rem; }
+    .nav-tools a { color: var(--dt-text-light); font-size: 0.9rem; padding: 0.35rem 0.5rem; border-radius: 4px; transition: color 0.2s, background 0.2s; display: flex; align-items: center; gap: 0.3rem; }
+    .nav-tools a:hover { color: var(--dt-accent); background: rgba(0,161,156,0.06); }
     .nav-menu { display: flex; align-items: center; gap: 0.3rem; }
     .nav-menu a { display: block; padding: 0.5rem 1rem; font-size: 0.92rem; font-weight: 500; color: var(--dt-text); letter-spacing: 0.03em; border-radius: 4px; transition: color 0.2s, background 0.2s; }
     .nav-menu a:hover, .nav-menu a.active { color: var(--dt-accent); background: rgba(0,161,156,0.06); }
@@ -139,6 +142,11 @@
       <li><a href="../archives/">法税洞察</a></li>
       <li><a href="../contact/">联系我们</a></li>
     </ul>
+    <div class="nav-tools">
+      <a href="#" title="选择地区"><i class="fas fa-globe"></i></a>
+      <a href="#" title="切换语言"><i class="fas fa-language"></i></a>
+      <a href="#" title="搜索"><i class="fas fa-search"></i></a>
+    </div>
     <div class="nav-mobile-btn" onclick="document.getElementById('navMenu').classList.toggle('active')">
       <i class="fas fa-bars"></i>
     </div>
@@ -154,7 +162,7 @@
 
 <section class="section-dt">
   <div class="container-dt">
-    <p class="section-intro">存勤法税擅长对企业的经营行为进行涉税剖析，以「业、财、法、税、管」四维融合为核心，提供以下十大专业服务：</p>
+    <p class="section-intro">存勤法税擅长对企业的经营行为进行涉税剖析，以「业•管•财•税•法」五维融合为核心，提供以下十大专业服务：</p>
 
     <!-- 服务特点 -->
     <div class="feat-grid">
@@ -201,32 +209,6 @@
       <div class="service-card">
         <div class="service-header">
           <div class="service-num">02</div>
-          <h3>财税内控体系建设</h3>
-        </div>
-        <p>诊断企业财税管理流程漏洞，建立销售、采购、资金、费用等关键业务的内控流程；完善发票管理、报销规范、审计对接等制度；形成合规、高效、可追溯的财税运营体系。</p>
-        <div class="service-tags">
-          <span class="service-tag">内控流程</span>
-          <span class="service-tag">制度建立</span>
-          <span class="service-tag">合规运营</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-header">
-          <div class="service-num">03</div>
-          <h3>全面预算管理体系建设</h3>
-        </div>
-        <p>基于企业战略目标编制年度预算模型；建立收入、成本、费用、现金流的动态管控体系；设计预算执行偏差分析与考核激励机制，实现战略到执行的全链条贯通。</p>
-        <div class="service-tags">
-          <span class="service-tag">预算编制</span>
-          <span class="service-tag">动态管控</span>
-          <span class="service-tag">绩效考核</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-header">
-          <div class="service-num">04</div>
           <h3>税务危机应对与争议解决</h3>
         </div>
         <p>税务稽查、纳税评估、税务约谈的全程应对；代理税务行政复议、听证及行政诉讼；协助企业化解重大税务争议，降低罚款、补税及声誉损失。</p>
@@ -239,46 +221,7 @@
 
       <div class="service-card">
         <div class="service-header">
-          <div class="service-num">05</div>
-          <h3>营收增长战略咨询</h3>
-        </div>
-        <p>从业务模式、渠道结构、定价策略维度诊断营收增长瓶颈；设计线上线下融合、全渠道协同的商业模式；制定营收增长路线图并分解落地执行。</p>
-        <div class="service-tags">
-          <span class="service-tag">战略咨询</span>
-          <span class="service-tag">商业模式</span>
-          <span class="service-tag">渠道协同</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-header">
-          <div class="service-num">06</div>
-          <h3>利润增长体系建设</h3>
-        </div>
-        <p>梳理企业价值链各环节的成本结构，识别隐性浪费与税负优化空间；运用税收优惠（高新、研发费加计扣除、小微等）降低综合税负；建立利润持续增长的经营机制。</p>
-        <div class="service-tags">
-          <span class="service-tag">利润优化</span>
-          <span class="service-tag">高新优惠</span>
-          <span class="service-tag">税负降低</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-header">
-          <div class="service-num">07</div>
-          <h3>跨境投资与并购（ODI备案）</h3>
-        </div>
-        <p>企业境外直接投资（ODI）备案合规指导；跨境并购架构设计与税务尽职调查；境外利润汇回路径规划；红筹/VIE架构搭建与拆除的税务安排。</p>
-        <div class="service-tags">
-          <span class="service-tag">跨境服务</span>
-          <span class="service-tag">ODI备案</span>
-          <span class="service-tag">海外并购</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-header">
-          <div class="service-num">08</div>
+          <div class="service-num">03</div>
           <h3>企业重组与重大交易税务规划</h3>
         </div>
         <p>股权转让、资产收购、合并分立、股权激励等重大交易的税务方案设计；上市前税务整改与合规性梳理；重组各环节税负优化与成本测算。</p>
@@ -291,7 +234,20 @@
 
       <div class="service-card">
         <div class="service-header">
-          <div class="service-num">09</div>
+          <div class="service-num">04</div>
+          <h3>跨境投资与并购（企业出海ODI备案）</h3>
+        </div>
+        <p>企业境外直接投资（ODI）备案合规指导；跨境并购架构设计与税务尽职调查；境外利润汇回路径规划；红筹/VIE架构搭建与拆除的税务安排。</p>
+        <div class="service-tags">
+          <span class="service-tag">跨境服务</span>
+          <span class="service-tag">ODI备案</span>
+          <span class="service-tag">海外并购</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-num">05</div>
           <h3>跨境法律及税务规划</h3>
         </div>
         <p>境外子公司或分支机构设立的法律税务合规；跨境关联交易转让定价策略与同期资料准备；海外架构的税务风险评估；国际税收协定待遇申请。</p>
@@ -299,6 +255,58 @@
           <span class="service-tag">转让定价</span>
           <span class="service-tag">国际税收</span>
           <span class="service-tag">合规落地</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-num">06</div>
+          <h3>营收增长战略咨询</h3>
+        </div>
+        <p>从业务模式、渠道结构、定价策略维度诊断营收增长瓶颈；设计线上线下融合、全渠道协同的商业模式；制定营收增长路线图并分解落地执行。</p>
+        <div class="service-tags">
+          <span class="service-tag">战略咨询</span>
+          <span class="service-tag">商业模式</span>
+          <span class="service-tag">渠道协同</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-num">07</div>
+          <h3>利润增长体系建设</h3>
+        </div>
+        <p>梳理企业价值链各环节的成本结构，识别隐性浪费与税负优化空间；运用税收优惠（高新、研发费加计扣除、小微等）降低综合税负；建立利润持续增长的经营机制。</p>
+        <div class="service-tags">
+          <span class="service-tag">利润优化</span>
+          <span class="service-tag">高新优惠</span>
+          <span class="service-tag">税负降低</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-num">08</div>
+          <h3>财税内控体系建设</h3>
+        </div>
+        <p>诊断企业财税管理流程漏洞，建立销售、采购、资金、费用等关键业务的内控流程；完善发票管理、报销规范、审计对接等制度；形成合规、高效、可追溯的财税运营体系。</p>
+        <div class="service-tags">
+          <span class="service-tag">内控流程</span>
+          <span class="service-tag">制度建立</span>
+          <span class="service-tag">合规运营</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <div class="service-num">09</div>
+          <h3>全面预算管理体系建设</h3>
+        </div>
+        <p>基于企业战略目标编制年度预算模型；建立收入、成本、费用、现金流的动态管控体系；设计预算执行偏差分析与考核激励机制，实现战略到执行的全链条贯通。</p>
+        <div class="service-tags">
+          <span class="service-tag">预算编制</span>
+          <span class="service-tag">动态管控</span>
+          <span class="service-tag">绩效考核</span>
         </div>
       </div>
 
@@ -360,8 +368,8 @@
   <div class="container-dt">
     <div class="footer-grid">
       <div class="footer-brand">
-        <strong style="color:#fff;font-size:1.1rem;display:flex;align-items:center;gap:0.5rem;"><img src="../images/logo.png" alt="存勤法税" style="height:32px;width:auto;border-radius:4px;"><span>存勤法税</span></strong>
-        <p>业财法税管五维融合 · 甲乙双视角实战派<br>为企业提供专业、可落地的财税法解决方案</p>
+        <strong style="color:#fff;font-size:1.1rem;display:flex;align-items:center;gap:0.5rem;"><img src="../images/logo.png" alt="存勤法税" style="height:32px;width:auto;border-radius:4px;"><span>-存勤<span style="color:#ff8c00;">法税</span></span></strong>
+        <p>「业•管•财•税•法」五维融合 · 甲乙双视角实战派<br>为企业提供专业、可落地的财税法解决方案</p>
       </div>
       <div class="footer-links">
         <h4>快速链接</h4>

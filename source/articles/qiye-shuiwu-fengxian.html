@@ -381,6 +381,9 @@ img { max-width: 100%; display: block; }
   background: var(--dt-primary-light);
   padding: 60px 0;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
 }
 .cta-section h2 {
@@ -1392,9 +1395,17 @@ img { max-width: 100%; display: block; }
 <!-- ===== CTA ===== -->
 <section class="cta-section">
   <div class="container-dt">
-    <h2>需要了解更多服务详情？</h2>
-    <p>我们提供一对一的免费专业咨询，帮您找到最适合的解决方案</p>
-    <a href="../contact/" class="btn-dt-primary">立即咨询</a>
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>需要了解更多服务详情？</h2>
+        <p>我们提供一对一的免费专业咨询，帮您找到最适合的解决方案</p>
+        <a href="../contact/" class="btn-dt-primary">立即咨询</a>
+      </div>
+      <div class="cta-qrcode">
+        <img src="../images/wechat-qrcode-white.png" alt="微信二维码">
+        <p>扫码添加微信一对一咨询</p>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -159,9 +159,14 @@
     .stat-label { color: var(--dt-accent); font-weight: 600; margin-top: 0.5rem; }
 
     /* CTA */
-    .cta-section { background: var(--dt-primary-light); color: #fff; text-align: center; padding: 60px 0; }
+    .cta-section { background: var(--dt-primary-light); color: #fff; padding: 60px 0; display: flex; align-items: center; justify-content: center; }
+    .cta-inner { display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+    .cta-text { text-align: center; flex-shrink: 0; }
     .cta-section h2 { font-size: 1.8rem; margin-bottom: 0.75rem; }
     .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+    .cta-qrcode { flex-shrink: 0; text-align: center; }
+    .cta-qrcode img { width: 130px; height: auto; display: block; margin: 0 auto 0.5rem; }
+    .cta-qrcode p { color: rgba(255,255,255,0.9); font-size: 0.88rem; margin: 0; }
     .btn-dt-primary { display: inline-block; background: var(--dt-accent); color: #fff; padding: 14px 36px; border-radius: 4px; font-weight: 600; font-size: 1rem; transition: all 0.3s; border: none; cursor: pointer; }
     .btn-dt-primary:hover { background: var(--dt-accent-hover); transform: translateY(-2px); }
 
@@ -435,9 +440,17 @@
 <!-- CTA -->
 <section class="cta-section">
   <div class="container-dt">
-    <h2>需要专业的财税法服务？</h2>
-    <p>具体服务方案将根据企业实际情况定制，欢迎联系我们的专业顾问</p>
-    <a href="../contact/" class="btn-dt-primary">联系我们</a>
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>需要专业的财税法服务？</h2>
+        <p>具体服务方案将根据企业实际情况定制，欢迎联系我们的专业顾问</p>
+        <a href="../contact/" class="btn-dt-primary">联系我们</a>
+      </div>
+      <div class="cta-qrcode">
+        <img src="../images/wechat-qrcode-white.png" alt="微信二维码">
+        <p>扫码添加微信一对一咨询</p>
+      </div>
+    </div>
   </div>
 </section>
 

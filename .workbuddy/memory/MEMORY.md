@@ -17,7 +17,7 @@
 - `_config.yml`：Hexo主配置（站点信息、URL、插件）
 - `_config.fluid.yml`：Fluid主题配置（根目录放置，Hexo 5+标准）
 - `.github/workflows/deploy.yml`：部署工作流
-- 图片路径：`source/images/`（logo.png, founder.jpg, wechat-qrcode.jpg）
+- 图片路径：`source/images/`（logo.png, founder.jpg, wechat-qrcode.png（透明背景））
 
 ## 部署注意事项
 1. 必须设置GitHub Pages Source为 **GitHub Actions**（不是Deploy from a branch）
@@ -25,6 +25,7 @@
 3. `db.json` 已加入 `.gitignore`，不应提交
 4. `_config.fluid.yml` 中的图片引用如果文件不存在必须注释掉，否则破图
 5. `source/images/` 目录下不要放 `README.md` 等非图片文件（Hexo会尝试处理）
+6. **Hexo permalink 陷阱**：`:title` token 使用完整文件名（含日期前缀）作为 slug，不是仅文件名的标题部分。若文件名含 `YYYY-MM-DD-slug.md` 格式，`:title` 会输出 `YYYY-MM-DD-slug`。修正方法：在每篇 post frontmatter 中显式指定 `permalink`（优先级最高）
 
 ## 待办事项
 - [ ] 替换所有不存在的banner图片（取消注释对应配置行并放入实际图片）

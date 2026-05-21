@@ -95,12 +95,13 @@
     .article-item:hover .article-arrow { opacity: 1; }
 
     /* 筛选栏 */
-    .filter-bar { display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto 2rem; padding-bottom: 1.2rem; border-bottom: 2px solid var(--dt-border); }
-    .filter-bar-label { font-size: 0.85rem; color: var(--dt-text-light); font-weight: 500; }
-    .filter-bar-buttons { display: flex; gap: 0.4rem; }
-    .filter-btn { padding: 0.5rem 1.2rem; border: 1px solid var(--dt-border); border-radius: 4px; background: #fff; color: var(--dt-text-light); font-size: 0.88rem; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+    .filter-bar { display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto 2rem; padding-bottom: 1.2rem; border-bottom: 2px solid var(--dt-border); flex-wrap: wrap; gap: 0.8rem; }
+    .filter-bar-label { font-size: 0.85rem; color: var(--dt-text-light); font-weight: 500; white-space: nowrap; }
+    .filter-bar-buttons { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; }
+    .filter-btn { padding: 0.5rem 1.2rem; border: 1px solid var(--dt-border); border-radius: 4px; background: #fff; color: var(--dt-text-light); font-size: 0.88rem; cursor: pointer; font-family: inherit; transition: all 0.2s; white-space: nowrap; }
     .filter-btn:hover { border-color: var(--dt-accent); color: var(--dt-accent); }
     .filter-btn.active { background: var(--dt-accent); color: #fff; border-color: var(--dt-accent); }
+    .article-views { font-size: 0.78rem; color: #aaa; display: inline-flex; align-items: center; gap: 0.3rem; }
     @media (max-width: 768px) {
       .filter-bar { flex-direction: column; gap: 0.8rem; align-items: flex-start; }
     }
@@ -167,7 +168,7 @@
 <section class="page-hero">
   <div class="container-dt">
     <h1>法税洞察</h1>
-    <p>专业视角，深度解析财税法热点话题 · <span id="article-count-desc">共0篇精选文章</span></p>
+    <p>专业视角，深度解析财税法热点话题</p>
   </div>
 </section>
 
@@ -176,13 +177,19 @@
     <div class="filter-bar">
       <span class="filter-bar-label" id="filter-count">共 0 篇文章</span>
       <div class="filter-bar-buttons">
-        <button class="filter-btn active" data-sort="newest" onclick="sortArticles('newest')">最新</button>
-        <button class="filter-btn" data-sort="hottest" onclick="sortArticles('hottest')">最热</button>
+        <span class="filter-bar-label">排序：</span>
+        <button class="filter-btn active" data-sort="newest" onclick="setSort('newest')">最新</button>
+        <button class="filter-btn" data-sort="hottest" onclick="setSort('hottest')">最热</button>
+        <span class="filter-bar-label" style="margin-left:1rem;">文章分类：</span>
+        <button class="filter-btn filter-cat active" data-cat="all" onclick="setCategory('all')">全部</button>
+        <button class="filter-btn filter-cat" data-cat="实操指南" onclick="setCategory('实操指南')">实操指南</button>
+        <button class="filter-btn filter-cat" data-cat="政策解读" onclick="setCategory('政策解读')">政策解读</button>
+        <button class="filter-btn filter-cat" data-cat="行业洞察" onclick="setCategory('行业洞察')">行业洞察</button>
       </div>
     </div>
     <div class="article-list" id="articleList">
 
-      <a href="../articles/yecai-fasui-ronghe.html" class="article-item" data-date="2026-05-05" data-hot="95" data-category="行业洞察">
+      <a href="../articles/yecai-fasui-ronghe.html" class="article-item" data-date="2026-05-05" data-hot="95" data-views="1523" data-category="行业洞察">
         <div class="article-date">
           <div class="day">05</div>
           <div class="month">2026.05</div>
@@ -191,11 +198,12 @@
           <h3>业财法税融合：企业合规管理的五维一体新范式</h3>
           <p>从业务模式设计到管理体系建设，五维一体系统解决企业合规难题。</p>
           <span class="article-tag">行业洞察</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 1,523</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/jinshui-siqi-yingdui.html" class="article-item" data-date="2026-04-15" data-hot="88" data-category="政策解读">
+      <a href="../articles/jinshui-siqi-yingdui.html" class="article-item" data-date="2026-04-15" data-hot="88" data-views="1208" data-category="政策解读">
         <div class="article-date">
           <div class="day">15</div>
           <div class="month">2026.04</div>
@@ -204,11 +212,12 @@
           <h3>金税四期全面解读：企业如何从容应对"以数治税"新时代</h3>
           <p>金税四期核心变化解析，企业合规应对策略与实操指南。</p>
           <span class="article-tag">政策解读</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 1,208</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/odi-beian-quanliucheng.html" class="article-item" data-date="2026-03-30" data-hot="82" data-category="实操指南">
+      <a href="../articles/odi-beian-quanliucheng.html" class="article-item" data-date="2026-03-30" data-hot="82" data-views="986" data-category="实操指南">
         <div class="article-date">
           <div class="day">30</div>
           <div class="month">2026.03</div>
@@ -217,11 +226,12 @@
           <h3>ODI境外投资备案全流程指南：从申请到落地的实战手册</h3>
           <p>境外直接投资备案的完整流程、材料清单与常见问题解答。</p>
           <span class="article-tag">实操指南</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 986</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/kuajing-dianshang-shuiwu.html" class="article-item" data-date="2026-03-15" data-hot="78" data-category="实操指南">
+      <a href="../articles/kuajing-dianshang-shuiwu.html" class="article-item" data-date="2026-03-15" data-hot="78" data-views="875" data-category="实操指南">
         <div class="article-date">
           <div class="day">15</div>
           <div class="month">2026.03</div>
@@ -230,11 +240,12 @@
           <h3>跨境电商税务合规指南：2024年最新政策与实操要点</h3>
           <p>跨境电商企业税务合规要点，出口退税优化与海外仓税务规划。</p>
           <span class="article-tag">实操指南</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 875</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/qiye-zhongzu-shuiwu.html" class="article-item" data-date="2026-02-28" data-hot="72" data-category="实操指南">
+      <a href="../articles/qiye-zhongzu-shuiwu.html" class="article-item" data-date="2026-02-28" data-hot="72" data-views="732" data-category="实操指南">
         <div class="article-date">
           <div class="day">28</div>
           <div class="month">2026.02</div>
@@ -243,11 +254,12 @@
           <h3>企业重组税务规划：并购重组中的税务成本优化与风险防控</h3>
           <p>并购重组过程中的税务规划策略，降低税务成本，规避潜在风险。</p>
           <span class="article-tag">实操指南</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 732</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/gaoxin-qiye-shuiwu.html" class="article-item" data-date="2026-02-12" data-hot="68" data-category="政策解读">
+      <a href="../articles/gaoxin-qiye-shuiwu.html" class="article-item" data-date="2026-02-12" data-hot="68" data-views="658" data-category="政策解读">
         <div class="article-date">
           <div class="day">12</div>
           <div class="month">2026.02</div>
@@ -256,11 +268,12 @@
           <h3>高新技术企业税务筹划：如何用好用足高新税收优惠政策</h3>
           <p>高新技术企业资格申请要点，研发费用加计扣除实操技巧。</p>
           <span class="article-tag">政策解读</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 658</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/jiayi-shuangshijing.html" class="article-item" data-date="2026-01-28" data-hot="65" data-category="行业洞察">
+      <a href="../articles/jiayi-shuangshijing.html" class="article-item" data-date="2026-01-28" data-hot="65" data-views="591" data-category="行业洞察">
         <div class="article-date">
           <div class="day">28</div>
           <div class="month">2026.01</div>
@@ -269,11 +282,12 @@
           <h3>甲乙双视角：为什么企业需要"双重人格"的税务顾问</h3>
           <p>甲方实战经验与乙方专业训练的完美结合，为企业提供更全面的税务服务。</p>
           <span class="article-tag">行业洞察</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 591</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/qiye-shuiwu-fengxian.html" class="article-item" data-date="2026-01-15" data-hot="60" data-category="实操指南">
+      <a href="../articles/qiye-shuiwu-fengxian.html" class="article-item" data-date="2026-01-15" data-hot="60" data-views="524" data-category="实操指南">
         <div class="article-date">
           <div class="day">15</div>
           <div class="month">2026.01</div>
@@ -282,6 +296,7 @@
           <h3>企业税务风险管控：如何建立"看得见、防得住"的税务风险体系</h3>
           <p>企业税务风险识别与防控体系建设，从源头降低税务风险。</p>
           <span class="article-tag">实操指南</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 524</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
@@ -362,42 +377,58 @@ function closeSearch(){document.getElementById('searchOverlay').classList.remove
 document.getElementById('searchInput').addEventListener('input',function(){var q=this.value.trim().toLowerCase(),container=document.getElementById('searchResults');if(q.length<1){container.innerHTML='';return}var results=[];document.querySelectorAll('section, .page-header, .hero-dt, .eat-section').forEach(function(sec){var t=sec.textContent||sec.innerText,h=sec.querySelector('h1,h2,h3,h4'),title=h?h.textContent.trim():'';if(t.toLowerCase().indexOf(q)>-1)results.push({el:sec,title:title,text:t.replace(/\s+/g,' ').substring(0,120)})});var footer=document.querySelector('footer');if(footer&&footer.textContent.toLowerCase().indexOf(q)>-1)results.push({el:footer,title:'页脚信息',text:footer.textContent.replace(/\s+/g,' ').substring(0,120)});if(results.length===0){container.innerHTML='<div class="search-no-result">未找到与「'+q+'」相关的内容</div>'}else{container.innerHTML=results.map(function(r,i){return'<div class="search-result-item" onclick="window._srs['+i+'].el.scrollIntoView({behavior:\'smooth\',block:\'start\'});closeSearch()"><strong>'+(r.title||'相关内容')+'</strong><br><small style="color:#999">'+r.text+'…</small></div>'}).join('');window._srs=results}});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch()});
 
-// === 文章计数与排序 ===
+// === 文章筛选与排序 ===
 (function(){
   var list = document.getElementById('articleList');
   var items = list.querySelectorAll('.article-item');
-  var count = items.length;
-  var desc = document.getElementById('article-count-desc');
   var filterCount = document.getElementById('filter-count');
-  if(desc) desc.textContent = '共'+count+'篇精选文章';
-  if(filterCount) filterCount.textContent = '共 '+count+' 篇文章';
+  filterCount.textContent = '共 '+items.length+' 篇文章';
 
-  // 存储初始顺序 (最新 = DOM顺序)
-  var newestOrder = [];
-  items.forEach(function(item,i){ newestOrder.push(item); });
+  window.setSort = function(mode){
+    document.querySelectorAll('.filter-btn:not(.filter-cat)').forEach(function(b){ b.classList.remove('active'); });
+    var btn = document.querySelector('.filter-btn:not(.filter-cat)[data-sort="'+mode+'"]');
+    if(btn) btn.classList.add('active');
+    applyFilters();
+  };
 
-  window.sortArticles = function(mode){
-    var btns = document.querySelectorAll('.filter-btn');
-    btns.forEach(function(b){ b.classList.remove('active'); });
-    var activeBtn = document.querySelector('.filter-btn[data-sort="'+mode+'"]');
-    if(activeBtn) activeBtn.classList.add('active');
+  window.setCategory = function(cat){
+    document.querySelectorAll('.filter-btn.filter-cat').forEach(function(b){ b.classList.remove('active'); });
+    var btn = document.querySelector('.filter-btn.filter-cat[data-cat="'+cat+'"]');
+    if(btn) btn.classList.add('active');
+    applyFilters();
+  };
+
+  window.applyFilters = function(){
+    var sortBtn = document.querySelector('.filter-btn:not(.filter-cat).active');
+    var currentSort = sortBtn ? sortBtn.getAttribute('data-sort') : 'newest';
+    var catBtn = document.querySelector('.filter-btn.filter-cat.active');
+    var currentCat = catBtn ? catBtn.getAttribute('data-cat') : 'all';
 
     var all = list.querySelectorAll('.article-item');
-    var sorted = [];
-    all.forEach(function(item){ sorted.push(item); });
+    var filtered = [];
+    all.forEach(function(item){
+      if(currentCat === 'all' || item.getAttribute('data-category') === currentCat){
+        filtered.push(item);
+      }
+    });
 
-    if(mode === 'newest'){
-      sorted.sort(function(a,b){
+    if(currentSort === 'newest'){
+      filtered.sort(function(a,b){
         return (b.getAttribute('data-date')||'').localeCompare(a.getAttribute('data-date')||'');
       });
-    } else if(mode === 'hottest'){
-      sorted.sort(function(a,b){
+    } else if(currentSort === 'hottest'){
+      filtered.sort(function(a,b){
         return (parseInt(b.getAttribute('data-hot'))||0) - (parseInt(a.getAttribute('data-hot'))||0);
       });
     }
 
-    // 重新排列 DOM
-    sorted.forEach(function(item){ list.appendChild(item); });
+    all.forEach(function(item){ item.style.display = 'none'; });
+    filtered.forEach(function(item){
+      item.style.display = '';
+      list.appendChild(item);
+    });
+
+    filterCount.textContent = '共 '+filtered.length+' 篇文章';
   };
 })();
 </script>

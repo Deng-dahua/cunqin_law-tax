@@ -32,6 +32,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Patch theme (comment out missing _links import)
+        run: |
+          sed -i 's|@import "_links/\*"|// @import "_links/*"|' node_modules/hexo-theme-fluid/source/css/_pages/pages.styl
+
       - name: Build Hexo site
         run: |
           npx hexo clean

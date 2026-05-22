@@ -33,7 +33,6 @@ skip_render:
   - "cases/index.html"
   - "archives/index.html"
   - "contact/index.html"
-  - "articles/*.html"
   - "services/s01-tax-risk-check.html"
   - "services/s02-tax-crisis-response.html"
   - "services/s03-odi-outbound-investment.html"

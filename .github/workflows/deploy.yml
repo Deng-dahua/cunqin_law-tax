@@ -37,37 +37,13 @@ jobs:
           npx hexo clean
           npx hexo generate
 
-      - name: Override homepage with custom home.html
+      - name: Override homepage and fix asset paths
         run: |
           echo "Overriding public/index.html with custom homepage..."
           cp source/首页(source).html public/index.html
-          echo "Done. Custom homepage applied."
-
-      - name: Restore original filenames for deployment
-        run: |
-          echo "Restoring articles filenames..."
-          mv "public/articles/高新技术企业税务规划.html" "public/articles/gaoxin-qiye-shuiwu.html"
-          mv "public/articles/甲乙双视角税务顾问.html" "public/articles/jiayi-shuangshijing.html"
-          mv "public/articles/金税四期全面解读.html" "public/articles/jinshui-siqi-yingdui.html"
-          mv "public/articles/跨境电商税务合规.html" "public/articles/kuajing-dianshang-shuiwu.html"
-          mv "public/articles/ODI境外投资备案全流程.html" "public/articles/odi-beian-quanliucheng.html"
-          mv "public/articles/企业税务风险管控.html" "public/articles/qiye-shuiwu-fengxian.html"
-          mv "public/articles/企业重组税务规划.html" "public/articles/qiye-zhongzu-shuiwu.html"
-          mv "public/articles/业管财税法五维融合.html" "public/articles/yecai-fasui-ronghe.html"
-          echo "Restoring services filenames..."
-          mv "public/services/涉税风险检查.html" "public/services/s01-tax-risk-check.html"
-          mv "public/services/税务危机应对与争议解决.html" "public/services/s02-tax-crisis-response.html"
-          mv "public/services/跨境投资与并购.html" "public/services/s03-odi-outbound-investment.html"
-          mv "public/services/企业重组与重大交易税务规划.html" "public/services/s04-restructuring-tax-planning.html"
-          mv "public/services/跨境法律及税务规划.html" "public/services/s05-cross-border-legal-tax.html"
-          mv "public/services/营收增长战略咨询.html" "public/services/s06-revenue-growth-strategy.html"
-          mv "public/services/利润增长体系建设.html" "public/services/s07-profit-growth-system.html"
-          mv "public/services/全面预算管理体系建设.html" "public/services/s08-budget-management-system.html"
-          mv "public/services/财税内控体系建设.html" "public/services/s09-fiscal-internal-control.html"
-          mv "public/services/财税内训课程定制.html" "public/services/s10-custom-tax-training.html"
-          echo "Restoring custom CSS..."
-          mv "public/css/自定义样式.css" "public/css/custom.css"
-          echo "All filenames restored."
+          echo "Renaming custom CSS..."
+          mv "public/css/自定义样式(source).css" "public/css/custom.css"
+          echo "Done."
 
 
       - name: Upload Pages artifact

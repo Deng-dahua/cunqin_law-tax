@@ -160,6 +160,7 @@ layout: false
       padding: 3.2rem 1rem 2rem;
       position: relative;
       z-index: 1;
+      transform: translateY(3.5rem);
     }
     .hero-label {
       display: inline-block;
@@ -229,8 +230,8 @@ layout: false
     .stats-grid-dt { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
     .stat-item-dt { text-align: center; padding: 0.75rem; position: relative; }
     .stat-item-dt:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 10%; height: 80%; width: 1px; background: var(--dt-border); }
-    .stat-num { font-size: 2.8rem; font-weight: 800; color: var(--dt-primary); line-height: 1.1; margin-bottom: 0.3rem; }
-    .stat-unit { font-size: 1rem; color: var(--dt-accent); font-weight: 600; margin-bottom: 0.3rem; }
+    .stat-num { font-size: 2.8rem; font-weight: 800; color: var(--dt-primary); line-height: 1.1; margin-bottom: 0.2rem; }
+    .stat-unit { font-size: 1rem; color: var(--dt-accent); font-weight: 600; margin-left: 0.15rem; vertical-align: baseline; }
     .stat-label { font-size: 0.88rem; color: var(--dt-text-light); letter-spacing: 0.05em; }
 
     /* ========== 通用区块 ========== */
@@ -562,23 +563,19 @@ layout: false
   <div class="container-dt">
     <div class="stats-grid-dt">
       <div class="stat-item-dt">
-        <div class="stat-num">18</div>
-        <div class="stat-unit">年</div>
+        <div class="stat-num">18<span class="stat-unit">年</span></div>
         <div class="stat-label">行业经验</div>
       </div>
       <div class="stat-item-dt">
-        <div class="stat-num">30+</div>
-        <div class="stat-unit">城市</div>
+        <div class="stat-num">30+<span class="stat-unit">城市</span></div>
         <div class="stat-label">服务覆盖</div>
       </div>
       <div class="stat-item-dt">
-        <div class="stat-num">14</div>
-        <div class="stat-unit">大行业</div>
+        <div class="stat-num">14<span class="stat-unit">大行业</span></div>
         <div class="stat-label">深度服务</div>
       </div>
       <div class="stat-item-dt">
-        <div class="stat-num">80+</div>
-        <div class="stat-unit">家</div>
+        <div class="stat-num">80+<span class="stat-unit">家</span></div>
         <div class="stat-label">企业信赖</div>
       </div>
     </div>

@@ -113,7 +113,8 @@ layout: false
     /* 联系网格 */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1400px; margin: 0 auto; align-items: start; }
     .contact-info h3 { font-size: 1.3rem; color: var(--dt-primary); margin-bottom: 0; }
-    .contact-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 0; }
+    .contact-list { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .contact-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 0; }
     .contact-icon { width: 48px; height: 48px; background: var(--dt-primary); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
     .contact-detail h4 { font-size: 0.95rem; color: var(--dt-text-light); margin-bottom: 0.25rem; font-weight: 500; }
     .contact-detail p { font-size: 1.1rem; color: var(--dt-primary); font-weight: 600; }
@@ -337,9 +338,10 @@ layout: false
 
 <section class="section-dt" style="background: var(--dt-bg-light);">
   <div class="container-dt">
-    <div class="contact-grid" style="grid-template-columns:1fr; max-width:600px; margin:0 auto;">
+    <div class="contact-grid" style="grid-template-columns:1fr; max-width:860px; margin:0 auto;">
       <div class="contact-info">
         <h2>联系方式</h2>
+        <div class="contact-list">
         <div class="contact-item">
           <div class="contact-icon"><i class="fas fa-phone"></i></div>
           <div class="contact-detail">
@@ -357,6 +359,7 @@ layout: false
           <div class="contact-detail">
             <p>广东省广州市天河区</p>
           </div>
+        </div>
         </div>
       </div>
     </div>

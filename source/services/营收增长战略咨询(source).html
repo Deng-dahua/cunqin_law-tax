@@ -155,10 +155,11 @@ layout: false
     .footer-links-dt ul li { margin-bottom: 0.6rem; }
     .footer-links-dt ul li a { color: #b0c4d8; font-size: 0.88rem; transition: color 0.2s; }
     .footer-links-dt ul li a:hover { color: var(--dt-accent); }
-    .footer-logo-dt { height: 40px; width: auto; margin: 0 auto 0.6rem; display: block; }
-    .footer-bottom-dt { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.6rem; font-size: 0.85rem; }
+    .footer-logo-dt { height: 36px; width: auto; flex-shrink: 0; }
+    .footer-bottom-dt { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1rem; font-size: 0.85rem; }
     .footer-bottom-dt a { color: #b0c4d8; transition: color 0.2s; }
     .footer-bottom-dt a:hover { color: var(--dt-accent); }
+    .footer-info-dt { display: flex; flex-direction: column; gap: 0.3rem; }
     @media (max-width: 768px) {
       .nav-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 1.5rem; gap: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
       .nav-menu.active { display: flex; }
@@ -166,8 +167,9 @@ layout: false
       .page-hero h1 { font-size: 1.8rem; }
       .scope-list, .pain-list, .pain-list-wide, .scenario-grid, .deliverable-list { grid-template-columns: 1fr; }
       .footer-grid-dt { grid-template-columns: 1fr; }
-      .footer-logo-dt { height: 40px; width: auto; margin: 0 auto 0.6rem; display: block; }
+      .footer-logo-dt { height: 36px; width: auto; flex-shrink: 0; }
     .footer-bottom-dt { flex-direction: column; gap: 0.6rem; text-align: center; align-items: center; }
+    .footer-info-dt { align-items: center; }
     }
 
     /* ========== 搜索覆盖层 ========== */
@@ -468,11 +470,13 @@ layout: false
     </div>
     <div class="footer-bottom-dt">
       <img src="../images/footer-logo.png" alt="存勤法税" class="footer-logo-dt">
-      <div>© 2024-2026 存勤法税服务（广州）有限公司 | 创始人：邓达华</div>
-      <div>
+      <div class="footer-info-dt">
+        <div>© 2024-2026 存勤法税服务（广州）有限公司 | 创始人：邓达华</div>
+        <div>
         <a href="../privacy/">隐私政策</a> ·
         <a href="../terms/">使用条款</a> ·
         <span style="color:#5a7a9a;">粤ICP备XXXXXXXX号</span>
+      </div>
       </div>
     </div>
   </div>

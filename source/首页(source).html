@@ -296,9 +296,10 @@ layout: false
     .post-excerpt { font-size: 0.92rem; color: var(--dt-text-light); line-height: 1.7; }
 
     /* ========== 联系区块 ========== */
-    .contact-grid-dt { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
-    .contact-info-dt h2 { font-size: 2rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; margin-bottom: 1rem; }
-    .contact-lead { font-size: 1rem; color: var(--dt-text-light); line-height: 1.8; margin-bottom: 2rem; }
+    .contact-grid-dt { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 600px; margin: 0 auto; }
+    .contact-info-dt h2 { font-size: 2rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; margin-bottom: 1rem; text-align: center; }
+    .contact-info-dt h2::after { content: ''; display: block; width: 60px; height: 3px; background: var(--dt-accent); margin: 1rem auto 1.5rem; border-radius: 2px; }
+    .contact-lead { font-size: 1rem; color: var(--dt-text-light); line-height: 1.8; margin-bottom: 2rem; text-align: center; }
     .contact-lines { display: flex; flex-direction: column; gap: 0.8rem; }
     .contact-lines p { font-size: 1rem; color: #555; margin: 0; display: flex; align-items: baseline; }
     .contact-lines p i { color: var(--dt-accent); margin-right: 0.7rem; width: 18px; text-align: center; flex-shrink: 0; }
@@ -306,6 +307,10 @@ layout: false
     .qrcode-dt { text-align: center; padding: 2rem; background: var(--dt-bg); border-radius: 8px; border: 1px solid var(--dt-border); }
     .qrcode-dt p { font-size: 0.92rem; color: var(--dt-text-light); margin-bottom: 1rem; }
     .qrcode-dt img { width: 180px; border-radius: 6px; margin: 0 auto; }
+    .contact-section-outer { position: relative; }
+    .contact-qrcode-right { position: absolute; right: 5.9rem; top: 50%; transform: translateY(-50%); text-align: center; }
+    .contact-qrcode-right img { width: 200px; height: 200px; border-radius: 8px; padding: 6px; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.10); }
+    .contact-qrcode-right p { font-size: 0.85rem; margin-top: 0.5rem; color: var(--dt-text-light); }
 
     /* CTA */
     .cta-section {
@@ -860,9 +865,9 @@ layout: false
 </section>
 
 <!-- ============ 联系我们 ============ -->
-<section class="section-dt bg-light-dt">
+<section class="section-dt bg-light-dt contact-section-outer">
   <div class="container-dt">
-    <div class="contact-grid-dt" style="grid-template-columns:1fr; max-width:600px; margin:0 auto;">
+    <div class="contact-grid-dt">
       <div class="contact-info">
         <h2>联系我们</h2>
         <p class="contact-lead">专业的事交给专业的人，欢迎随时联系存勤法税团队，获取专属财税法解决方案。</p>
@@ -873,6 +878,10 @@ layout: false
         </div>
       </div>
     </div>
+  </div>
+  <div class="contact-qrcode-right">
+    <img src="images/wechat-qrcode-blue.png" alt="微信二维码">
+    <p>扫码添加微信</p>
   </div>
 </section>
 

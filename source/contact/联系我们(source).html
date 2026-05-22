@@ -111,7 +111,8 @@ layout: false
     .section-intro { text-align: center; max-width: 700px; margin: 0 auto 3rem; color: var(--dt-text-light); font-size: 1.05rem; }
 
     /* 联系网格 */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1400px; margin: 0 auto; align-items: start; }
+    .contact-grid { display: flex; justify-content: center; gap: 0; max-width: 1300px; margin: 0 auto; align-items: center; }
+    .contact-info { text-align: center; }
     .contact-info h2 { font-size: 2rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 0; text-align: center; }
     .contact-info h2::after { content: ''; display: block; width: 60px; height: 3px; background: var(--dt-accent); margin: 1rem auto 1.5rem; border-radius: 2px; }
     .contact-info h3 { font-size: 1.3rem; color: var(--dt-primary); margin-bottom: 0; }
@@ -120,10 +121,10 @@ layout: false
     .contact-icon { width: 48px; height: 48px; background: var(--dt-primary); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
     .contact-detail h4 { font-size: 0.95rem; color: var(--dt-text-light); margin-bottom: 0.25rem; font-weight: 500; }
     .contact-detail p { font-size: 1.1rem; color: var(--dt-primary); font-weight: 600; white-space: nowrap; }
-    .qrcode-box { background: var(--dt-bg); border: 1px solid var(--dt-border); border-radius: 8px; padding: 2rem; text-align: center; }
-    .qrcode-box h3 { font-size: 1.2rem; color: var(--dt-primary); margin-bottom: 0; }
-    .qrcode-box img { max-width: 200px; margin: 0 auto 1rem; border-radius: 8px; }
-    .qrcode-box p { color: var(--dt-text-light); font-size: 0.9rem; }
+    .contact-section-outer { position: relative; }
+    .contact-qrcode-right { position: absolute; right: 5.9rem; top: 50%; transform: translateY(-50%); text-align: center; }
+    .contact-qrcode-right img { width: 200px; height: 200px; border-radius: 8px; padding: 6px; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.10); }
+    .contact-qrcode-right p { font-size: 0.85rem; margin-top: 0.5rem; color: var(--dt-text-light); }
 
     /* 服务响应 */
     .response-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; }
@@ -338,9 +339,9 @@ layout: false
   </div>
 </section>
 
-<section class="section-dt" style="background: var(--dt-bg-light);">
+<section class="section-dt contact-section-outer" style="background: var(--dt-bg-light);">
   <div class="container-dt">
-    <div class="contact-grid" style="grid-template-columns:1fr; max-width:1300px; margin:0 auto;">
+    <div class="contact-grid">
       <div class="contact-info">
         <h2>联系方式</h2>
         <div class="contact-list">
@@ -397,6 +398,23 @@ layout: false
       <h3><i class="fas fa-info-circle"></i> 免责声明</h3>
       <p>本网站上发布的内容仅供一般信息参考，不构成任何形式的专业建议或服务邀约。具体税务问题请咨询专业顾问并结合企业实际情况判断。</p>
     </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container-dt">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>准备好开启专业财税法服务？</h2>
+        <p>具体服务方案将根据企业实际情况定制，欢迎联系我们的专业顾问</p>
+        <a href="./" class="btn-dt-primary">立即咨询</a>
+      </div>
+    </div>
+  </div>
+  <div class="cta-qrcode" style="position: absolute; right: 5.9rem; top: calc(50% + 1rem); transform: translateY(-50%); text-align: center;">
+    <img src="../images/wechat-qrcode-orange.png" alt="微信二维码" style="width: 240px; height: 240px; border-radius: 8px; padding: 6px;">
+    <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.88;">扫码添加微信</p>
   </div>
 </section>
 

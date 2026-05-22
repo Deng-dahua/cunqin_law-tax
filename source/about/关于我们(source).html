@@ -163,11 +163,10 @@ layout: false
     .four-dim-card li { font-size: 0.9rem; color: var(--dt-text-light); line-height: 1.7; padding: 0.3rem 0 0.3rem 1.2rem; position: relative; }
     .four-dim-card li::before { content: '▸'; position: absolute; left: 0; color: var(--dt-accent); font-weight: 700; }
 
-    /* 数据条 */
-    .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; }
-    .stat-item { text-align: center; padding: 2rem; background: var(--dt-bg); border-radius: 8px; border: 1px solid var(--dt-border); }
-    .stat-number { font-size: 2.5rem; font-weight: 700; color: var(--dt-primary); }
-    .stat-label { color: var(--dt-accent); font-weight: 600; margin-top: 0.5rem; }
+    /* 服务覆盖城市 */
+    .city-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 130px 1fr; gap: 1.2rem 2rem; align-items: baseline; }
+    .city-region { font-weight: 700; color: var(--dt-primary); font-size: 0.95rem; text-align: right; }
+    .city-list { color: var(--dt-text-light); font-size: 0.95rem; line-height: 1.9; }
 
     /* CTA */
     .cta-section {
@@ -214,7 +213,7 @@ layout: false
       .embedded-content-area { padding: 1.5rem 1.5rem; }
       .page-hero h1 { font-size: 2rem; padding-top: 100px; }
       .founder-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .founder-grid, .advantage-grid, .values-grid, .four-dim-grid, .stats-bar { grid-template-columns: 1fr; }
+      .founder-grid, .advantage-grid, .values-grid, .four-dim-grid, .city-grid { grid-template-columns: 1fr; }
       .footer-grid-dt { display: flex; flex-direction: column; gap: 0.6rem; align-items: center; }
       .footer-logo-dt { height: 44px; width: auto; flex-shrink: 0; }
     .footer-bottom-dt { flex-direction: column; gap: 0.6rem; text-align: center; align-items: center; }
@@ -329,7 +328,7 @@ layout: false
     <h2 class="section-title">创始人</h2>
     <div class="founder-grid">
       <div class="founder-img">
-        <img src="/images/founder-new.png" alt="邓达华">
+        <img src="../images/founder-new.png" alt="邓达华">
       </div>
       <div class="founder-info">
         <h3>邓达华</h3>
@@ -442,27 +441,23 @@ layout: false
   </div>
 </section>
 
-<!-- 数据 -->
+<!-- 服务覆盖 -->
 <section class="section-dt">
   <div class="container-dt">
     <h2 class="section-title">服务覆盖</h2>
-    <div class="stats-bar">
-      <div class="stat-item">
-        <div class="stat-number">18</div>
-        <div class="stat-label">年 行业经验</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">30+</div>
-        <div class="stat-label">城市 服务覆盖</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">14</div>
-        <div class="stat-label">大行业 深度服务</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">80+</div>
-        <div class="stat-label">家企业信赖</div>
-      </div>
+    <div class="city-grid">
+      <div class="city-region">华南</div>
+      <div class="city-list">广州、深圳、东莞、中山、佛山、肇庆、云浮、香港</div>
+      <div class="city-region">华东</div>
+      <div class="city-list">杭州、厦门、泉州、九江、徐州、宿迁、盐城、池州</div>
+      <div class="city-region">华中</div>
+      <div class="city-list">郑州、信阳、湘潭</div>
+      <div class="city-region">西南</div>
+      <div class="city-list">昆明、泸州、拉萨、昌都</div>
+      <div class="city-region">西北</div>
+      <div class="city-list">喀什、霍尔果斯</div>
+      <div class="city-region">华北/直辖市</div>
+      <div class="city-list">北京、上海、重庆、石家庄</div>
     </div>
   </div>
 </section>

@@ -41,12 +41,10 @@ jobs:
           npx hexo clean
           npx hexo generate
 
-      - name: Override homepage and fix asset paths
+      - name: Override homepage
         run: |
           echo "Overriding public/index.html with custom homepage..."
           cp source/首页(source).html public/index.html
-          echo "Renaming custom CSS..."
-          mv "public/css/自定义样式(source).css" "public/css/custom.css"
           echo "Done."
 
 

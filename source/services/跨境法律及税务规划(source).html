@@ -135,20 +135,17 @@ layout: false
 }
 .cta-text { text-align: center; flex-shrink: 0; }
     .cta-section h2 { font-size: 1.8rem; margin-bottom: 0.75rem; }
-    .cta-section p { opacity: 0.9; margin-bottom: 1.5rem; }
+    .cta-section p { opacity: 0.9; margin-bottom: 0; }
 
 .btn-dt-primary { display: inline-block; background: var(--dt-accent); color: #fff; padding: 14px 36px; border-radius: 4px; font-weight: 600; font-size: 1rem; transition: all 0.3s; border: none; cursor: pointer; }
     .btn-dt-primary:hover { background: var(--dt-accent-hover); transform: translateY(-2px); }
     .footer-dt {
   background: var(--dt-primary);
   color: #b0c4d8;
-  padding: 2.5rem 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 2.5rem 0 2rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;
   box-sizing: border-box;
 }
-    .footer-grid-dt { display: grid; grid-template-columns: auto auto auto; gap: 80px; margin-bottom: 1.5rem; justify-content: center; }
+    .footer-grid-dt { display: grid; grid-template-columns: auto auto auto; gap: 80px; margin-bottom: 0; justify-content: center; }
     .footer-links-dt h4 { color: #fff; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1.2rem; }
     .footer-links-dt ul { padding: 0; }
     .footer-grid-dt > .footer-links-dt:nth-child(2) ul { column-count: 2; column-gap: 1rem; }
@@ -157,8 +154,8 @@ layout: false
     .footer-links-dt ul li a { color: #b0c4d8; font-size: 0.88rem; transition: color 0.2s; }
     .footer-links-dt ul li a:hover { color: var(--dt-accent); }
     .footer-logo-dt { height: 44px; width: auto; flex-shrink: 0; }
-    .footer-bottom-dt { background: #fff; color: var(--dt-text); border-top: 1px solid #e0e0e0; width: 100%; padding: 0.8rem 0; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1rem; font-size: 0.85rem; }
-    .footer-bottom-dt a { color: var(--dt-primary); transition: color 0.2s; }
+    .footer-bottom-dt { border-top: 1px solid rgba(255,255,255,0.15); margin-top: 0.5rem; padding-top: 1rem; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1rem; font-size: 0.85rem; color: #b0c4d8; }
+    .footer-bottom-dt a { color: #fff; transition: color 0.2s; }
     .footer-bottom-dt a:hover { color: var(--dt-accent); }
     .footer-info-dt { display: flex; flex-direction: column; gap: 0.3rem; }
     @media (max-width: 768px) {
@@ -466,8 +463,7 @@ layout: false
         </ul>
       </div>
     </div>
-  </div>
-  <div class="footer-bottom-dt">
+    <div class="footer-bottom-dt">
       <img src="../images/footer-logo.png" alt="存勤法税" class="footer-logo-dt">
       <div class="footer-info-dt">
         <div>© 2024-2026 存勤法税服务（广州）有限公司 | 创始人：邓达华</div>
@@ -478,6 +474,7 @@ layout: false
       </div>
       </div>
     </div>
+  </div>
 </footer>
 
 <!-- ============ 搜索覆盖层 ============ -->

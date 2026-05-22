@@ -185,7 +185,7 @@ layout: false
       font-weight: 400;
       color: rgba(255,255,255,0.9);
       letter-spacing: 0.12em;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0;
     }
     .hero-desc {
       font-size: 1.05rem;
@@ -270,7 +270,7 @@ layout: false
     .about-txt-dt .about-lead,
     .about-txt-dt .about-highlights { text-align: left; }
     .about-txt-dt h2 { font-size: 2rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; margin-bottom: 1.2rem; }
-    .about-lead { font-size: 1.05rem; color: var(--dt-text); line-height: 1.9; margin-bottom: 1.5rem; }
+    .about-lead { font-size: 1.05rem; color: var(--dt-text); line-height: 1.9; margin-bottom: 0; }
     .about-tag { font-size: 0.95rem; color: var(--dt-accent); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 1.2rem; }
     .about-highlights { padding: 0; margin-bottom: 2rem; }
     .about-highlights li { padding: 0.6rem 0 0.6rem 1.5rem; position: relative; font-size: 0.92rem; color: #555; line-height: 1.7; }
@@ -301,7 +301,7 @@ layout: false
     .contact-grid-dt { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
     .contact-info-dt h2 { font-size: 2rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; margin-bottom: 1rem; }
     .contact-lead { font-size: 1rem; color: var(--dt-text-light); line-height: 1.8; margin-bottom: 2rem; }
-    .contact-item-dt { display: flex; gap: 1.2rem; align-items: flex-start; margin-bottom: 1.5rem; }
+    .contact-item-dt { display: flex; gap: 1.2rem; align-items: flex-start; margin-bottom: 0; }
     .contact-icon { font-size: 1.1rem; color: var(--dt-accent); margin-top: 0.2rem; width: 24px; text-align: center; }
     .contact-label { font-size: 0.82rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; margin-bottom: 0.2rem; }
     .contact-value { font-size: 0.95rem; color: #555; }
@@ -329,13 +329,10 @@ layout: false
     .footer-dt {
   background: var(--dt-primary);
   color: #b0c4d8;
-  padding: 2.5rem 0 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 2.5rem 0 2rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;
   box-sizing: border-box;
 }
-    .footer-grid-dt { display: grid; grid-template-columns: auto auto auto; gap: 80px; margin-bottom: 1.5rem; justify-content: center; }
+    .footer-grid-dt { display: grid; grid-template-columns: auto auto auto; gap: 80px; margin-bottom: 0; justify-content: center; }
     .footer-links-dt h4 { color: #fff; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
     .footer-links-dt ul { padding: 0; }
     .footer-grid-dt > .footer-links-dt:nth-child(2) ul { column-count: 2; column-gap: 1rem; }
@@ -344,8 +341,8 @@ layout: false
     .footer-links-dt ul li a { color: #b0c4d8; font-size: 0.85rem; transition: color 0.2s; }
     .footer-links-dt ul li a:hover { color: var(--dt-accent); }
     .footer-logo-dt { height: 44px; width: auto; flex-shrink: 0; }
-    .footer-bottom-dt { background: #fff; color: var(--dt-text); border-top: 1px solid #e0e0e0; width: 100%; padding: 0.8rem 0; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1rem; font-size: 0.85rem; }
-    .footer-bottom-dt a { color: var(--dt-primary); transition: color 0.2s; }
+    .footer-bottom-dt { border-top: 1px solid rgba(255,255,255,0.15); margin-top: 0.5rem; padding-top: 1rem; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1rem; font-size: 0.85rem; color: #b0c4d8; }
+    .footer-bottom-dt a { color: #fff; transition: color 0.2s; }
     .footer-bottom-dt a:hover { color: var(--dt-accent); }
     .footer-info-dt { display: flex; flex-direction: column; gap: 0.3rem; }
 
@@ -403,7 +400,7 @@ layout: false
     .diff-card:hover { border-color: var(--dt-accent); box-shadow: 0 8px 30px rgba(0,63,108,0.1); transform: translateY(-3px); }
     .diff-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--dt-primary), var(--dt-accent)); }
     .diff-num { font-size: 3rem; font-weight: 800; color: rgba(0,161,156,0.12); position: absolute; top: 1rem; right: 1.5rem; line-height: 1; }
-    .diff-icon { width: 52px; height: 52px; background: linear-gradient(135deg, var(--dt-primary), var(--dt-accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.4rem; margin-bottom: 1.5rem; }
+    .diff-icon { width: 52px; height: 52px; background: linear-gradient(135deg, var(--dt-primary), var(--dt-accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.4rem; margin-bottom: 0; }
     .diff-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 0.8rem; letter-spacing: 0.03em; }
     .diff-card .highlight { font-size: 1rem; color: var(--dt-accent); font-weight: 700; margin-bottom: 0.75rem; }
     .diff-card p { font-size: 0.92rem; color: var(--dt-text-light); line-height: 1.8; }
@@ -424,7 +421,7 @@ layout: false
 
     /* ========== 客户名录标签云 ========== */
     .client-directory { padding: 4rem 0 0; }
-    .client-directory h3 { font-size: 1rem; font-weight: 700; color: var(--dt-primary); text-align: center; margin-bottom: 1.5rem; letter-spacing: 0.05em; }
+    .client-directory h3 { font-size: 1rem; font-weight: 700; color: var(--dt-primary); text-align: center; margin-bottom: 0; letter-spacing: 0.05em; }
     .client-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; max-width: 900px; margin: 0 auto; }
     .client-tag { background: var(--dt-bg); border: 1px solid var(--dt-border); color: var(--dt-text-light); font-size: 0.88rem; padding: 0.4rem 1rem; border-radius: 20px; transition: all 0.2s; }
     .client-tag:hover { border-color: var(--dt-accent); color: var(--dt-accent); background: rgba(0,161,156,0.05); }
@@ -938,8 +935,7 @@ layout: false
         </ul>
       </div>
     </div>
-  </div>
-  <div class="footer-bottom-dt">
+    <div class="footer-bottom-dt">
       <img src="images/footer-logo.png" alt="存勤法税" class="footer-logo-dt">
       <div class="footer-info-dt">
         <div>© 2024-2026 存勤法税服务（广州）有限公司 | 创始人：邓达华</div>
@@ -950,6 +946,7 @@ layout: false
       </div>
       </div>
     </div>
+  </div>
 </footer>
 
 <!-- ============ 搜索覆盖层 ============ -->

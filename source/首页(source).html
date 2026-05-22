@@ -148,7 +148,7 @@ layout: false
     /* ========== Hero 首屏 ========== */
     .hero-dt {
   background: linear-gradient(135deg, var(--dt-primary) 0%, var(--dt-primary-light) 50%, var(--dt-primary) 100%);
-  height: calc(500px + 6rem);
+  height: calc(500px + 10.5rem);
   display: flex;
   align-items: center;
   position: relative;
@@ -225,9 +225,9 @@ layout: false
     .btn-dt-secondary:hover { background: #002a4a; border-color: #002a4a; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,63,108,0.2); color: #fff; }
 
     /* ========== 数据条 ========== */
-    .stats-dt { background: var(--dt-bg); border-bottom: 1px solid var(--dt-border); padding: 2rem 0; }
+    .stats-dt { background: var(--dt-bg); border-bottom: 1px solid var(--dt-border); padding: 0 0; }
     .stats-grid-dt { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-    .stat-item-dt { text-align: center; padding: 1rem; position: relative; }
+    .stat-item-dt { text-align: center; padding: 0.75rem; position: relative; }
     .stat-item-dt:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 10%; height: 80%; width: 1px; background: var(--dt-border); }
     .stat-num { font-size: 2.8rem; font-weight: 800; color: var(--dt-primary); line-height: 1.1; margin-bottom: 0.3rem; }
     .stat-unit { font-size: 1rem; color: var(--dt-accent); font-weight: 600; margin-bottom: 0.3rem; }
@@ -333,6 +333,8 @@ layout: false
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 0.5rem;
+  box-sizing: border-box;
 }
     .footer-grid-dt { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
     .footer-brand-dt h3 { color: #fff; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; }

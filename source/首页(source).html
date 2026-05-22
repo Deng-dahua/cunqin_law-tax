@@ -300,8 +300,9 @@ layout: false
     .contact-info-dt h2 { font-size: 2rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; margin-bottom: 1rem; }
     .contact-lead { font-size: 1rem; color: var(--dt-text-light); line-height: 1.8; margin-bottom: 2rem; }
     .contact-lines { display: flex; flex-direction: column; gap: 0.8rem; }
-    .contact-lines p { font-size: 1rem; color: #555; margin: 0; }
-    .contact-key { font-weight: 700; color: var(--dt-primary); }
+    .contact-lines p { font-size: 1rem; color: #555; margin: 0; display: flex; align-items: baseline; }
+    .contact-lines p i { color: var(--dt-accent); margin-right: 0.7rem; width: 18px; text-align: center; flex-shrink: 0; }
+    .contact-key { font-weight: 700; color: var(--dt-primary); display: inline-block; min-width: 4.5em; }
     .qrcode-dt { text-align: center; padding: 2rem; background: var(--dt-bg); border-radius: 8px; border: 1px solid var(--dt-border); }
     .qrcode-dt p { font-size: 0.92rem; color: var(--dt-text-light); margin-bottom: 1rem; }
     .qrcode-dt img { width: 180px; border-radius: 6px; margin: 0 auto; }
@@ -859,9 +860,9 @@ layout: false
         <h2>联系我们</h2>
         <p class="contact-lead">专业的事交给专业的人，欢迎随时联系存勤法税团队，获取专属财税法解决方案。</p>
         <div class="contact-lines">
-          <p><span class="contact-key">电话</span>丨13556116691</p>
-          <p><span class="contact-key">服务时间</span>丨周一至周五 9:00 - 18:00</p>
-          <p><span class="contact-key">地址</span>丨广东省广州市天河区</p>
+          <p><i class="fas fa-phone"></i><span class="contact-key">电 话</span>丨13556116691</p>
+          <p><i class="fas fa-clock"></i><span class="contact-key">服务时间</span>丨周一至周五 9:00 - 18:00</p>
+          <p><i class="fas fa-map-marker-alt"></i><span class="contact-key">地 址</span>丨广东省广州市天河区</p>
         </div>
       </div>
     </div>

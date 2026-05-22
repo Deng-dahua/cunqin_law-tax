@@ -30,10 +30,9 @@
 - `_config.yml`：Hexo主配置（站点信息、URL、插件）
 - `_config.fluid.yml`：Fluid主题配置（根目录放置，Hexo 5+标准）
 - `.github/workflows/deploy.yml`：部署工作流（已精简，仅保留首页覆盖+CSS重命名）
-- 图片路径：`source/images/` 现有 1 个：`nav-logo.png`（导航栏 LOGO，197KB）
+- 图片路径：`source/images/` 现有 2 个：`nav-logo.png`（导航栏 LOGO）、`footer-logo.png`（页脚 LOGO）
 - 微信二维码图片全部删除（2026-05-22），CTA 区块不再展示二维码
-- 页脚 LOGO（footer-logo.png）已删除，用户将重新提供新 LOGO
-- 导航栏统一使用 `nav-logo.png`
+- 导航栏统一使用 `nav-logo.png`，页脚统一使用 `footer-logo.png`
 
 ## 文件命名规则（2026-05-22 确立）
 - **source/ 源文件**：中文描述名 + `(source)` 后缀，如 `首页(source).html`、`高新技术企业税务规划(source).html`

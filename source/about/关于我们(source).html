@@ -172,15 +172,16 @@ layout: false
     .cta-section {
   background: var(--dt-primary-light);
   color: #fff;
-  height: 284px;
+  min-height: 284px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  position: relative;
 }
+.cta-inner { display: flex; align-items: center; justify-content: center; width: 100%; gap: 2rem; position: relative; }
 .cta-text { text-align: center; flex-shrink: 0; }
     .cta-section .container-dt { height: 100%; display: flex; align-items: center; justify-content: center; }
     .cta-section h2 { font-size: 1.8rem; font-weight: 700; line-height: 1.65; margin-bottom: 1.5rem; letter-spacing: 0.03em; }
-    .cta-section p { font-size: 1.05rem; opacity: 0.88; line-height: 2.0; margin-bottom: 2rem; }
+    .cta-section p { font-size: 1.05rem; margin-bottom: 2rem; opacity: 0.88; line-height: 2.0; }
 
 .btn-dt-primary { display: inline-block; background: var(--dt-accent); color: #fff; padding: 14px 36px; border-radius: 4px; font-weight: 600; font-size: 1rem; transition: all 0.3s; border: none; cursor: pointer; }
     .btn-dt-primary:hover { background: var(--dt-accent-hover); transform: translateY(-2px); }
@@ -470,6 +471,10 @@ layout: false
         <h2>准备好开启专业财税法服务？</h2>
         <p>具体服务方案将根据企业实际情况定制，欢迎联系我们的专业顾问</p>
         <a href="../contact/" class="btn-dt-primary">立即咨询</a>
+      </div>
+      <div class="cta-qrcode" style="position: absolute; right: 4.7rem; top: 50%; transform: translateY(-50%); text-align: center;">
+        <img src="../images/wechat-qrcode.png" alt="微信二维码" style="width: 120px; height: 120px; border-radius: 8px; background: #fff; padding: 6px;">
+        <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.88;">扫码添加微信</p>
       </div>
     </div>
   </div>

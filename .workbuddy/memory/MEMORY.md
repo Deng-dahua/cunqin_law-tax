@@ -1,5 +1,23 @@
 # 存勤法税项目长期记忆
 
+## ⚠️ 批量编辑铁律（2026-05-22）
+- **严禁用 PowerShell 批量编辑含中文的 UTF-8 文件**——会导致中文乱码
+- 需要批量编辑时，用 Python 脚本（`encoding="utf-8"`），绝不用 PowerShell
+
+## ⚠️ CSS 布局修改铁律（2026-05-23）
+- **改一个值，检查连锁影响**：修改 gap/margin/padding/font-size 时，必须同时检查容器宽度是否兜得住、相邻元素是否错位、响应式是否崩
+- **心算校验**：改动前先估算 `容器宽度 < 内容宽度 + 间距总和` 是否成立，不成立就同时调整容器
+- **一改到底**：不要等用户提醒"放不下了"才改容器宽度，一次性做完关联修改
+- **视觉效果先于执行**：每次布局修改前先问自己——改完好看吗？比例协调吗？留白舒服吗？主动建议优化，不只是机械执行数值变更
+
+## ⚠️ 固定宽度拼图法（2026-05-23 确立）
+水平排列多项内容时的标准方法，**严禁用 flex gap / justify-content 凭感觉调间距**：
+1. **选锚点**：以中间项为基准，左右对称放置
+2. **定容器固定宽度**：每个信息区设统一的 `width`（如 10rem），不用弹性值
+3. **内部三要素等式**：`padding-left + 内容宽度 + 剩余空白 = 容器宽度`，三个数加起来正好填满
+4. **gap = 0 紧挨排列**：项与项之间 gap 设为 0，间距全靠各容器固定宽度自然产生
+5. **先裸后穿**：先摆纯图标定位置确认间距，再逐层加文字内容
+
 ## 项目概览
 - **公司**：存勤法税服务（广州）有限公司
 - **创始人**：邓达华，18年财税法实战经验（14年甲方+4年乙方）
@@ -30,9 +48,20 @@
 - `_config.yml`：Hexo主配置（站点信息、URL、插件）
 - `_config.fluid.yml`：Fluid主题配置（根目录放置，Hexo 5+标准）
 - `.github/workflows/deploy.yml`：部署工作流（已精简，仅保留首页覆盖+CSS重命名）
-- 图片路径：`source/images/` 现有 2 个：`nav-logo.png`（导航栏 LOGO）、`footer-logo.png`（页脚 LOGO）
+- 图片路径：`source/images/` 现有 4 个：
+  - `nav-logo.png`（导航栏 LOGO）
+  - `footer-logo.png`（页脚 LOGO）
+  - `company-logo.png`（公司 LOGO）
+  - `founder-new.png`（创始人照片，2026-05-22 添加）
 - 微信二维码图片全部删除（2026-05-22），CTA 区块不再展示二维码
 - 导航栏统一使用 `nav-logo.png`，页脚统一使用 `footer-logo.png`
+
+## ⚠️ 导航链接铁律（2026-05-22）
+- **严禁在非首页使用绝对路径**：GitHub Pages 托管在 `deng-dahua.github.io/cunqin_law-tax/` 子目录下
+- 首页（`source/` 根）：使用相对路径如 `about/`、`services/`、`contact/`
+- 深度 1 页面（`source/about/`、`source/services/` 等）：使用 `../about/`、`../services/`、`../`（首页）
+- 深度 2 页面（`source/articles/`）：使用 `../../about/`、`../../services/`、`../../`（首页）
+- 绝对路径 `/about/` 会被解析为 `deng-dahua.github.io/about/` → 404
 
 ## 文件命名规则（2026-05-22 确立）
 - **source/ 源文件**：中文描述名 + `(source)` 后缀，如 `首页(source).html`、`高新技术企业税务规划(source).html`
@@ -47,7 +76,14 @@
 3. `db.json` 已加入 `.gitignore`，不应提交
 4. `_config.fluid.yml` 中的图片引用如果文件不存在必须注释掉，否则破图
 5. `source/images/` 目录下不要放 `README.md` 等非图片文件（Hexo会尝试处理）
-6. **Hexo permalink 陷阱**：`:title` token 使用完整文件名（含日期前缀）作为 slug，不是仅文件名的标题部分。若文件名含 `YYYY-MM-DD-slug.md` 格式，`:title` 会输出 `YYYY-MM-DD-slug`。修正方法：在每篇 post frontmatter 中显式指定 `permalink`（优先级最高）
+6. **自动部署铁律**：修改完代码后自动 `git add source/ && git commit && git push`，不询问用户
+7. **Hexo permalink 陷阱**：`:title` token 使用完整文件名（含日期前缀）作为 slug，不是仅文件名的标题部分。若文件名含 `YYYY-MM-DD-slug.md` 格式，`:title` 会输出 `YYYY-MM-DD-slug`。修正方法：在每篇 post frontmatter 中显式指定 `permalink`（优先级最高）
+
+## 文章写作规范（2026-05-22 确立）
+- **深度优先**：每篇文章必须有实质性的专业深度，不下于2000字
+- 避免浅尝辄止的介绍性内容，要涵盖政策背景、实操要点、风险提示、案例分析
+- 结构要清晰：至少包含 3-4 个 H2 章节，每个章节下设 H3 子节
+- 面向企业主/财务总监的实际需求，提供可操作的指导
 
 ## 待办事项
 - [ ] 替换所有不存在的banner图片（取消注释对应配置行并放入实际图片）

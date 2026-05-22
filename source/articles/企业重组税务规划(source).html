@@ -492,6 +492,7 @@ img { max-width: 100%; display: block; }
 
     /* ===== CTA（与首页完全一致） ===== */
     .cta-section {
+  position: relative;
   background: var(--dt-primary-light);
   color: #fff;
   height: 284px;
@@ -1162,6 +1163,11 @@ img { max-width: 100%; display: block; }
       </div>
     </div>
   </div>
+      <!-- 微信二维码 -->
+      <div class="cta-qrcode" style="position: absolute; right: 4.7rem; top: 50%; transform: translateY(-50%); text-align: center;">
+        <img src="images/wechat-qrcode.png" alt="微信二维码" style="width: 120px; height: 120px; border-radius: 8px; background: #fff; padding: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+        <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.88; color: #fff;">扫码添加微信</p>
+      </div>
 </section>
 
 <!-- ===== 页脚 ===== -->

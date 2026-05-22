@@ -63,7 +63,7 @@ layout: false
     ul { list-style: none; }
     img { max-width: 100%; display: block; }
 
-    .container-dt { max-width: 1380px; margin: 0 auto; padding: 0 1rem; }
+    .container-dt { max-width: 1400px; margin: 0 auto; padding: 0 1rem; }
 
     /* ========== 导航栏 ========== */
     .navbar-dt {
@@ -80,7 +80,7 @@ layout: false
   align-items: center;
 }
     .nav-container {
-      max-width: 1380px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 0 0.5rem 0 0;
       display: flex;
@@ -119,7 +119,10 @@ layout: false
     .nav-menu {
       display: flex;
       align-items: center;
-      gap: 0.3rem;
+      flex: 1;
+      justify-content: space-between;
+      max-width: 560px;
+      margin: 0 auto;
     }
     .nav-menu a {
       display: block;
@@ -152,7 +155,7 @@ layout: false
   overflow: hidden;
 }
     .hero-inner {
-      max-width: 1380px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 3.2rem 1rem 2rem;
       position: relative;
@@ -431,7 +434,7 @@ layout: false
     .cities-intro { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
     .cities-intro h2 { font-size: 2rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 0.8rem; }
     .cities-intro p { color: var(--dt-text-light); font-size: 1rem; }
-    .cities-regions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1380px; margin: 0 auto; }
+    .cities-regions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1400px; margin: 0 auto; }
     .city-region { background: var(--dt-bg); border: 1px solid var(--dt-border); border-radius: 8px; padding: 1.5rem; transition: all 0.3s; }
     .city-region:hover { border-color: var(--dt-accent); box-shadow: 0 4px 20px rgba(0,63,108,0.08); }
     .city-region h4 { font-size: 1rem; font-weight: 700; color: var(--dt-accent); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }

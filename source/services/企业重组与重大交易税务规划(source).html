@@ -145,11 +145,11 @@ layout: false
   box-sizing: border-box;
 }
     .footer-copyright-dt { background: #fff; padding: 1rem 0; }
-    .footer-grid-dt { display: grid; grid-template-columns: auto auto auto; gap: 80px; margin-bottom: 0; justify-content: center; }
-    .footer-links-dt h4 { color: #fff; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1.2rem; }
-    .footer-links-dt ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; column-gap: 1.2rem; row-gap: 0.4rem; color: #b0c4d8; font-size: 0.88rem; }
-    .footer-links-dt ul li a { color: #b0c4d8; font-size: 0.88rem; transition: color 0.2s; }
-    .footer-links-dt ul li a:hover { color: var(--dt-accent); }
+    .footer-grid-dt { display: flex; flex-direction: column; gap: 0.6rem; align-items: center; max-width: 900px; margin: 0 auto; }
+    .footer-links-dt p { line-height: 1.9; color: #b0c4d8; font-size: 0.88rem; margin: 0; }
+    .footer-links-dt p a { color: #b0c4d8; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-links-dt p a:hover { color: var(--dt-accent); }
+    .footer-label { color: #fff; font-weight: 600; }
     .footer-logo-dt { height: 44px; width: auto; flex-shrink: 0; }
     .footer-bottom-dt { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1rem; font-size: 0.85rem; color: var(--dt-text-light); }
     .footer-bottom-dt a { color: var(--dt-primary); transition: color 0.2s; }
@@ -162,7 +162,7 @@ layout: false
       .nav-toggle { display: block; }
       .page-hero h1 { font-size: 1.8rem; }
       .scope-list, .pain-list, .pain-list-wide, .scenario-grid, .deliverable-list { grid-template-columns: 1fr; }
-      .footer-grid-dt { grid-template-columns: 1fr; }
+      .footer-grid-dt { display: flex; flex-direction: column; gap: 0.6rem; align-items: center; }
       .footer-logo-dt { height: 44px; width: auto; flex-shrink: 0; }
     .footer-bottom-dt { flex-direction: column; gap: 0.6rem; text-align: center; align-items: center; }
     .footer-info-dt { align-items: center; }
@@ -459,32 +459,9 @@ layout: false
   <div class="container-dt">
     <div class="footer-grid-dt">
       <div class="footer-links-dt">
-        <h4>蹇€熼摼鎺?/h4>
-        <ul>
-          <li><a href="../about/">鍏充簬鎴戜滑</a></li>
-          <li><a href="../services/">鏍稿績鏈嶅姟</a></li>
-          <li><a href="../cases/">瀹㈡埛妗堜緥</a></li>
-          <li><a href="../archives/">娉曠◣娲炲療</a></li>
-        </ul>
-      </div>
-      <div class="footer-links-dt">
-        <h4>鏈嶅姟椤圭洰</h4>
-        <ul>
-          <li><a href="../services/">娑夌◣椋庨櫓妫€鏌?/a></li>
-          <li><a href="../services/">绋庡姟鍗辨満搴斿</a></li>
-          <li><a href="../services/">绋庡姟浜夎瑙ｅ喅</a></li>
-          <li><a href="../services/">浼佷笟閲嶇粍绋庡姟瑙勫垝</a></li>
-          <li><a href="../services/">璺ㄥ鎶曡祫涓庡苟璐?/a></li>
-          <li><a href="../services/">璺ㄥ娉曞緥鍙婄◣鍔¤鍒?/a></li>
-          <li><a href="../services/">甯稿勾娉曠◣椤鹃棶</a></li>
-        </ul>
-      </div>
-      <div class="footer-links-dt">
-        <h4>鑱旂郴鎴戜滑</h4>
-        <ul>
-          <li>鐢佃瘽锛?3556116691</li>
-          <li>鍦板潃锛氬箍涓滅渷骞垮窞甯傚ぉ娌冲尯</li>
-        </ul>
+        <p><span class="footer-label">快速链接</span>丨<a href="/about/">关于我们</a> <a href="/services/">核心服务</a> <a href="/cases/">客户案例</a> <a href="/archives/">法税洞察</a></p>
+        <p><span class="footer-label">服务项目</span>丨<a href="/services/">涉税风险检查</a> <a href="/services/">税务危机应对</a> <a href="/services/">税务争议解决</a> <a href="/services/">企业重组税务规划</a> <a href="/services/">跨境投资与并购</a> <a href="/services/">跨境法律及税务规划</a> <a href="/services/">常年法税顾问</a></p>
+        <p><span class="footer-label">联系我们</span>丨电话：13556116691 地址：广东省广州市天河区</p>
       </div>
     </div>
   </div>

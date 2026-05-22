@@ -52,7 +52,19 @@
     ul { list-style: none; }
     img { max-width: 100%; display: block; }
     .container-dt { max-width: 1380px; margin: 0 auto; padding: 0 1rem; }
-    .navbar-dt { background: rgba(255,255,255,0.98); box-shadow: 0 1px 4px rgba(0,0,0,0.06); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; backdrop-filter: blur(10px); }
+    .navbar-dt {
+  background: rgba(255,255,255,0.98);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
     .nav-container { max-width: 1380px; margin: 0 auto; padding: 0 0.5rem 0 0; display: flex; align-items: center; justify-content: space-between; height: 64px; }
     .nav-brand { display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; flex-shrink: 0; }
     .nav-logo { height: 34px; width: auto; }
@@ -63,7 +75,7 @@
     .nav-tools { display: flex; align-items: center; gap: 0.3rem; margin-left: 0.5rem; }
     .nav-tool-btn { background: none; border: none; cursor: pointer; color: var(--dt-text-light); font-size: 0.88rem; padding: 0.35rem 0.5rem; border-radius: 4px; display: flex; align-items: center; gap: 0.3rem; font-family: inherit; white-space: nowrap; transition: color 0.2s, background 0.2s; }
     .nav-tool-btn:hover { color: var(--dt-accent); background: rgba(0,161,156,0.06); }
-    .page-hero { background: linear-gradient(135deg, #003f6c 0%, #1a5f7a 100%); color: #fff; padding: 120px 0 80px; text-align: center; min-height: 400px; height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .page-hero { background: linear-gradient(135deg, var(--dt-primary) 0%, var(--dt-primary-light) 100%); color: #fff; padding: 120px 0 80px; text-align: center; min-height: 400px; height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
     .page-hero .service-badge { display: inline-block; background: rgba(255,255,255,0.15); color: var(--dt-accent); padding: 6px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; letter-spacing: 0.1em; }
     .page-hero h1 { font-size: 2.6rem; font-weight: 700; margin-bottom: 0.75rem; }
     .page-hero .hero-subtitle { font-size: 1.2rem; opacity: 0.85; max-width: 600px; margin: 0 auto 1.5rem; font-style: italic; }
@@ -109,7 +121,14 @@
     .more-services-grid a:hover { border-color: var(--dt-accent); color: var(--dt-accent); background: rgba(0,161,156,0.03); }
     .more-services-grid a.current { border-color: var(--dt-accent); background: rgba(0,161,156,0.06); color: var(--dt-accent); font-weight: 600; pointer-events: none; cursor: default; }
     .more-services-grid a .svc-num { color: var(--dt-accent); font-size: 0.75rem; margin-right: 0.5rem; font-weight: 600; }
-    .footer-dt { background: var(--dt-primary); color: #b0c4d8; padding: 4rem 0 2rem; }
+    .footer-dt {
+  background: var(--dt-primary);
+  color: #b0c4d8;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
     .footer-grid-dt { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
     .footer-brand-dt h3 { color: #fff; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; }
     .footer-brand-dt p { font-size: 0.9rem; line-height: 1.8; color: #b0c4d8; }
@@ -162,13 +181,13 @@
 
     /* ===== CTA（与首页完全一致） ===== */
     .cta-section {
-      background: var(--dt-primary);
-      color: #fff;
-      padding: 60px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  background: var(--dt-primary-light);
+  color: #fff;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
     .cta-inner {
       display: flex;
       align-items: center;

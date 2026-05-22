@@ -60,8 +60,15 @@ img { max-width: 100%; display: block; }
 .navbar-dt {
   background: rgba(255,255,255,0.98);
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   backdrop-filter: blur(10px);
+  height: 64px;
+  display: flex;
+  align-items: center;
 }
 .nav-container { max-width: 1380px; margin: 0 auto; padding: 0 0.5rem 0 0; display: flex; align-items: center; justify-content: space-between; height: 64px; }
 .nav-brand { display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; flex-shrink: 0; }
@@ -384,7 +391,14 @@ img { max-width: 100%; display: block; }
 
 
     /* ===== Footer ===== */
-    .footer-dt { background: var(--dt-primary); color: #b0c4d8; padding: 4rem 0 2rem; }
+    .footer-dt {
+  background: var(--dt-primary);
+  color: #b0c4d8;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
     .footer-grid-dt { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
     .footer-brand-dt h3 { color: #fff; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; }
     .footer-brand-dt p { font-size: 0.9rem; line-height: 1.8; color: #b0c4d8; }
@@ -479,13 +493,13 @@ img { max-width: 100%; display: block; }
 
     /* ===== CTA（与首页完全一致） ===== */
     .cta-section {
-      background: var(--dt-primary);
-      color: #fff;
-      padding: 60px 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  background: var(--dt-primary-light);
+  color: #fff;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
     .cta-inner {
       display: flex;
       align-items: center;

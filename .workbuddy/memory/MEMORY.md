@@ -20,11 +20,20 @@
 - **Atom Feed**: `source/atom.xml` (8 entries)
 - **Schema 类型分布**: Homepage(WebSite+Organization), Articles(Article+BreadcrumbList+FAQPage), Services(Service), About(AboutPage+Person), Contact(ContactPage), Archives/Cases(CollectionPage)
 
+## 文件管理铁律（2026-05-22 确立）
+- **相同文件只保留最新版**：功能相同的文件（如多个版本的二维码 `wechat-qrcode.png` / `wechat-qrcode-white.png` / `wechat-qrcode-final.png`），只保留最终使用的那个，旧版、中间版全部删除
+- **唯一性优先**：`source/images/` 中每个用途只存 1 个文件，不得有多版本共存
+- **冗余即删**：备份文件（如 `_posts-backup/`）、空目录、未引用的资源文件，一律清除
+- **每次变更后自查**：确认没有残留旧版本文件
+
 ## 关键配置
 - `_config.yml`：Hexo主配置（站点信息、URL、插件）
 - `_config.fluid.yml`：Fluid主题配置（根目录放置，Hexo 5+标准）
 - `.github/workflows/deploy.yml`：部署工作流
-- 图片路径：`source/images/`（logo.png, founder.jpg, wechat-qrcode.png（透明背景））
+- 图片路径：`source/images/`（共 5 个：company-logo.png, founder-new.png, founder.jpg, logo.png, nav-logo.png）
+- 微信二维码图片全部删除（2026-05-22），CTA 区块不再展示二维码
+- 页脚 LOGO（footer-logo.png）已删除，用户将重新提供新 LOGO
+- 导航栏统一使用 `nav-logo.png`
 
 ## 部署注意事项
 1. 必须设置GitHub Pages Source为 **GitHub Actions**（不是Deploy from a branch）

@@ -165,10 +165,13 @@ archive:
   count: true
 
 tag:
-  enable: true
+  enable: false
 
 category:
-  enable: true
+  enable: false
+
+links:
+  enable: false
 
 about:
   enable: true

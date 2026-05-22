@@ -37,10 +37,10 @@ jobs:
           npx hexo clean
           npx hexo generate
 
-      - name: Override homepage with custom index.html
+      - name: Override homepage with custom home.html
         run: |
           echo "Overriding public/index.html with custom homepage..."
-          cp source/index.html public/index.html
+          cp source/home.html public/index.html
           echo "Done. Custom homepage applied."
 
       - name: Upload Pages artifact

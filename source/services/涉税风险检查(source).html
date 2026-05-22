@@ -94,11 +94,11 @@ layout: false
     .scope-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-top: 1.5rem; }
     .scope-item { background: var(--dt-bg-light); padding: 1rem 1.2rem; border-radius: 6px; font-size: 0.92rem; border-left: 3px solid var(--dt-accent); line-height: 1.6; }
     .pain-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .pain-item { background: #fff; border: 1px solid var(--dt-border); padding: 1.2rem 1.5rem; border-radius: 8px; position: relative; }
+    .pain-item { border: 1px solid var(--dt-border); padding: 1.2rem 1.5rem; border-radius: 8px; position: relative; }
     .pain-item::before { content: '\201C'; position: absolute; top: -12px; left: 12px; font-size: 2rem; color: var(--dt-accent); opacity: 0.3; line-height: 1; }
     .pain-item p { font-size: 0.92rem; color: var(--dt-text); line-height: 1.7; font-style: italic; }
     .flow-steps { display: flex; flex-direction: column; gap: 1.5rem; }
-    .flow-step { background: #fff; border: 1px solid var(--dt-border); border-radius: 8px; padding: 1.5rem; position: relative; }
+    .flow-step { border: 1px solid var(--dt-border); border-radius: 8px; padding: 1.5rem; position: relative; }
     .flow-step .step-num { position: absolute; top: -15px; left: 20px; background: var(--dt-primary); color: #fff; padding: 4px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; }
     .flow-step h3 { color: var(--dt-primary); margin-bottom: 0.5rem; margin-top: 0.3rem; font-size: 1.05rem; }
     .flow-step p { color: var(--dt-text-light); font-size: 0.9rem; line-height: 1.7; }
@@ -120,7 +120,7 @@ layout: false
     .more-services { padding: 60px 0; background: var(--dt-bg-light); }
     .more-services .section-title { font-size: 1.6rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--dt-accent); display: inline-block; }
     .more-services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; max-width: 900px; margin: 0 auto; }
-    .more-services-grid a { display: block; padding: 1rem 1.2rem; background: #fff; border: 1px solid var(--dt-border); border-radius: 6px; color: var(--dt-text); transition: all 0.2s; font-size: 0.92rem; text-decoration: none; }
+    .more-services-grid a { display: block; padding: 1rem 1.2rem; border: 1px solid var(--dt-border); border-radius: 6px; color: var(--dt-text); transition: all 0.2s; font-size: 0.92rem; text-decoration: none; }
     .more-services-grid a:hover { border-color: var(--dt-accent); color: var(--dt-accent); background: rgba(0,161,156,0.03); }
     .more-services-grid a.current { border-color: var(--dt-accent); background: rgba(0,161,156,0.06); color: var(--dt-accent); font-weight: 600; pointer-events: none; cursor: default; }
     .more-services-grid a .svc-num { color: var(--dt-accent); font-size: 0.75rem; margin-right: 0.5rem; font-weight: 600; }
@@ -146,7 +146,7 @@ layout: false
   padding: 0.5rem 0;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;
   box-sizing: border-box;
 }
-    .footer-copyright-dt { background: #fff; padding: 1rem 0; }
+    .footer-copyright-dt { padding: 1rem 0; }
     .footer-grid-dt { display: flex; flex-direction: column; gap: 0.6rem; align-items: center; max-width: 900px; margin: 0 auto; }
     .footer-links-dt p { line-height: 2.85; color: #b0c4d8; font-size: 0.88rem; margin: 0; }
     .footer-links-dt p a { color: #b0c4d8; font-size: 0.88rem; transition: color 0.2s; }
@@ -159,7 +159,7 @@ layout: false
     .footer-info-dt { display: flex; flex-direction: column; gap: 0.3rem; }
     .pain-list-wide { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
     @media (max-width: 768px) {
-      .nav-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 1.5rem; gap: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+      .nav-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; flex-direction: column; padding: 1.5rem; gap: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
       .nav-menu.active { display: flex; }
       .nav-toggle { display: block; }
       .page-hero h1 { font-size: 1.8rem; }
@@ -172,7 +172,7 @@ layout: false
     /* ========== 搜索覆盖层 ========== */
     .search-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 2000; align-items: flex-start; justify-content: center; padding-top: 120px; }
     .search-overlay.open { display: flex; }
-    .search-box { background: #fff; border-radius: 8px; width: 90%; max-width: 600px; box-shadow: 0 16px 48px rgba(0,0,0,0.2); overflow: hidden; }
+    .search-box { border-radius: 8px; width: 90%; max-width: 600px; box-shadow: 0 16px 48px rgba(0,0,0,0.2); overflow: hidden; }
     .search-box-header { display: flex; align-items: center; padding: 1rem 1.2rem; border-bottom: 1px solid var(--dt-border); }
     .search-box-header input { flex: 1; border: none; outline: none; font-size: 1.1rem; font-family: inherit; color: var(--dt-text); }
     .search-box-header input::placeholder { color: #bbb; }
@@ -184,7 +184,7 @@ layout: false
     .search-result-item:last-child { border-bottom: none; }
     .search-no-result { padding: 2rem; text-align: center; color: #999; }
     @media (max-width: 968px) {
-      .nav-menu { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 1rem; }
+      .nav-menu { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 1rem; }
       .nav-menu.active { display: flex; }
       .nav-toggle { display: block; }
       .nav-tools { display: none; }
@@ -450,7 +450,7 @@ layout: false
   </div>
       <!-- 微信二维码 -->
       <div class="cta-qrcode" style="position: absolute; right: 4.7rem; top: 50%; transform: translateY(-50%); text-align: center;">
-        <img src="images/wechat-qrcode.png" alt="微信二维码" style="width: 120px; height: 120px; border-radius: 8px; background: #fff; padding: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+        <img src="images/wechat-qrcode.png" alt="微信二维码" style="width: 240px; height: 240px; border-radius: 8px; padding: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
         <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.88; color: #fff;">扫码添加微信</p>
       </div>
 </section>

@@ -85,7 +85,7 @@ img { max-width: 100%; display: block; }
 .nav-tool-btn:hover { color: var(--dt-accent); background: rgba(0,161,156,0.06); }
 .search-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 2000; align-items: flex-start; justify-content: center; padding-top: 120px; }
 .search-overlay.open { display: flex; }
-.search-box { background: #fff; border-radius: 8px; width: 90%; max-width: 600px; box-shadow: 0 16px 48px rgba(0,0,0,0.2); overflow: hidden; }
+.search-box { border-radius: 8px; width: 90%; max-width: 600px; box-shadow: 0 16px 48px rgba(0,0,0,0.2); overflow: hidden; }
 .search-box-header { display: flex; align-items: center; padding: 1rem 1.2rem; border-bottom: 1px solid var(--dt-border); }
 .search-box-header input { flex: 1; border: none; outline: none; font-size: 1rem; color: var(--dt-text); background: none; padding: 0.3rem 0; }
 .search-box-header button { background: none; border: none; cursor: pointer; font-size: 1rem; color: var(--dt-text-light); padding: 0.3rem; }
@@ -99,7 +99,7 @@ img { max-width: 100%; display: block; }
 .nav-toggle { display: none; background: none; border: none; font-size: 1.4rem; color: var(--dt-primary); cursor: pointer; padding: 0.3rem; }
 @media (max-width: 768px) {
   .nav-toggle { display: block; }
-  .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; padding: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 0.75rem 1rem; width: 100%; }
   .nav-tools { margin-left: auto; }
@@ -309,7 +309,7 @@ img { max-width: 100%; display: block; }
   .article-toc-list { display: flex; flex-wrap: wrap; gap: 0.3rem; }
   .article-toc-item { margin-bottom: 0; }
   .article-toc-item.toc-sub { padding-left: 0; }
-  .article-toc-link { font-size: 0.78rem; padding: 0.25rem 0.6rem; border-left: none; border-radius: 4px; background: #fff; }
+  .article-toc-link { font-size: 0.78rem; padding: 0.25rem 0.6rem; border-left: none; border-radius: 4px; }
   .article-toc-link.active { border-left: none; }
   .article-toc-link.toc-h3 { padding-left: 0.6rem; }
 }
@@ -343,7 +343,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  background: #fff;
+ 
   padding: 1.2rem 1.5rem;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
@@ -398,7 +398,7 @@ img { max-width: 100%; display: block; }
   padding: 0.5rem 0;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;
   box-sizing: border-box;
 }
-    .footer-copyright-dt { background: #fff; padding: 1rem 0; }
+    .footer-copyright-dt { padding: 1rem 0; }
     .footer-grid-dt { display: flex; flex-direction: column; gap: 0.6rem; align-items: center; max-width: 900px; margin: 0 auto; }
     .footer-links-dt p { line-height: 2.85; color: #b0c4d8; font-size: 0.88rem; margin: 0; }
     .footer-links-dt p a { color: #b0c4d8; font-size: 0.88rem; transition: color 0.2s; }
@@ -1102,7 +1102,7 @@ A：可以。在取得备案通知书后，可在有效期内分次汇出，但�
   </div>
       <!-- 微信二维码 -->
       <div class="cta-qrcode" style="position: absolute; right: 4.7rem; top: 50%; transform: translateY(-50%); text-align: center;">
-        <img src="images/wechat-qrcode.png" alt="微信二维码" style="width: 120px; height: 120px; border-radius: 8px; background: #fff; padding: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+        <img src="images/wechat-qrcode.png" alt="微信二维码" style="width: 240px; height: 240px; border-radius: 8px; padding: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
         <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.88; color: #fff;">扫码添加微信</p>
       </div>
 </section>

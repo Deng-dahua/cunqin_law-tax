@@ -308,7 +308,7 @@ layout: false
       <span class="filter-bar-label" id="filter-count">共 0 篇文章</span>
     </div>
     <div class="search-row">
-      <input type="text" id="searchInput" placeholder="搜索文章..." onkeydown="if(event.key=='Enter')doSearch()">
+      <input type="text" id="searchInput" placeholder="搜索文章关键词..." onkeydown="if(event.key=='Enter')doSearch()">
       <button class="search-row-btn" onclick="doSearch()">立即搜索</button>
     </div>
     <div class="article-list" id="articleList">
@@ -472,7 +472,7 @@ layout: false
 window.doSearch = function() {
   var q = document.getElementById('searchInput').value.trim();
   if(!q) return;
-  window.location.href = '/cunqin_law-tax/search.html?q=' + encodeURIComponent(q);
+  window.location.href = '/cunqin_law-tax/search.html?q=' + encodeURIComponent(q) + '&scope=articles';
 };
 </script>
 

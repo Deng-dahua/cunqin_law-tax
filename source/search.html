@@ -51,8 +51,8 @@ title: 搜索结果 - 存勤法税
   </nav>
 
   <div class="search-result-page">
-    <a href="/cunqin_law-tax/" class="search-back"><i class="fas fa-arrow-left"></i> 返回首页</a>
-    <h1>搜索结果<span id="qDisplay" class="q-display"></span></h1>
+    <a href="/cunqin_law-tax/" class="search-back" id="searchBack"><i class="fas fa-arrow-left"></i> 返回首页</a>
+    <h1>搜索结果<span id="qDisplay" class="q-display"></span><span id="scopeLabel" style="font-size:0.85rem;color:#888;font-weight:400;margin-left:0.8rem;"></span></h1>
     <div class="search-input-bar">
       <input type="text" id="searchInput" placeholder="输入关键词搜索...">
       <button onclick="doSearch()">立即搜索</button>
@@ -95,15 +95,20 @@ title: 搜索结果 - 存勤法税
     document.getElementById('searchInput2').value = '';
     document.getElementById('searchResults2').innerHTML = '';
   };
+  var scopeFromUrl = new URLSearchParams(window.location.search).get('scope') || '';
   window.doSearch = function() {
     var q = document.getElementById('searchInput').value.trim();
     if(!q) return;
-    window.location.href = '/cunqin_law-tax/search.html?q=' + encodeURIComponent(q);
+    var url = '/cunqin_law-tax/search.html?q=' + encodeURIComponent(q);
+    if(scopeFromUrl) url += '&scope=' + encodeURIComponent(scopeFromUrl);
+    window.location.href = url;
   };
   window.doSearch2 = function() {
     var q = document.getElementById('searchInput2').value.trim();
     if(!q) return;
-    window.location.href = '/cunqin_law-tax/search.html?q=' + encodeURIComponent(q);
+    var url = '/cunqin_law-tax/search.html?q=' + encodeURIComponent(q);
+    if(scopeFromUrl) url += '&scope=' + encodeURIComponent(scopeFromUrl);
+    window.location.href = url;
   };
   document.getElementById('searchInput').addEventListener('keydown', function(e){ if(e.key==='Enter') window.doSearch(); });
   document.getElementById('searchInput2').addEventListener('keydown', function(e){ if(e.key==='Enter') window.doSearch2(); });
@@ -114,10 +119,23 @@ title: 搜索结果 - 存勤法税
   (function(){
     var params = new URLSearchParams(window.location.search);
     var qOrig = params.get('q') || '';
+    var scope = params.get('scope') || '';
+    // 更新 scope 界面
+    if(scope === 'articles') {
+      document.getElementById('searchBack').setAttribute('href', '/cunqin_law-tax/archives/');
+      document.getElementById('searchBack').innerHTML = '<i class="fas fa-arrow-left"></i> 返回法税洞察';
+      document.getElementById('scopeLabel').textContent = '[法税洞察]';
+    }
     document.getElementById('searchInput').value = qOrig;
     if(!qOrig) { document.getElementById('resultCount').textContent = '请输入搜索关键词'; return; }
     document.getElementById('qDisplay').textContent = '：' + qOrig;
     document.getElementById('noResultQ').textContent = qOrig;
+
+    // 根据 scope 过滤结果
+    var scopePrefixes = [];
+    if(scope === 'articles') {
+      scopePrefixes = ['/cunqin_law-tax/archives/', '/cunqin_law-tax/articles/'];
+    }
 
     var q = qOrig.toLowerCase();
     var escQ = qOrig.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -131,6 +149,14 @@ title: 搜索结果 - 存勤法税
       if(!searchIndex) { setTimeout(render, 100); return; }
       var results = [];
       searchIndex.forEach(function(p){
+        // scope 过滤
+        if(scopePrefixes.length > 0) {
+          var match = false;
+          for(var i = 0; i < scopePrefixes.length; i++) {
+            if(p.url.indexOf(scopePrefixes[i]) === 0) { match = true; break; }
+          }
+          if(!match) return;
+        }
         var s = 0, tl = p.title.toLowerCase(), tx = (p.text||'').toLowerCase();
         if(tl.indexOf(q) > -1) s += 10;
         if(tx.indexOf(q) > -1) s += 5;
@@ -141,7 +167,7 @@ title: 搜索结果 - 存勤法税
         if(s > 0) results.push({page: p, score: s});
       });
       results.sort(function(a,b){ return b.score - a.score; });
-      document.getElementById('resultCount').textContent = '找到 ' + results.length + ' 条结果';
+      document.getElementById('resultCount').textContent = '找到 ' + results.length + ' 条结果' + (scope === 'articles' ? '（搜索范围：法税洞察）' : '');
 
       if(results.length === 0) {
         document.getElementById('noResult').style.display = 'block';

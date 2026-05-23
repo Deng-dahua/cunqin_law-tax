@@ -574,7 +574,7 @@ window.closeSearch = function() {
   document.getElementById('searchResults').innerHTML = '';
 };
 document.getElementById('searchInput').addEventListener('input',function(){
-  var q=this.value.trim().toLowerCase(),c=document.getElementById('searchResults');
+  var qOrig=this.value.trim(),q=qOrig.toLowerCase(),c=document.getElementById('searchResults');
   if(q.length<1){c.innerHTML='';return}
   if(!searchIndex||searchIndex.length===0){c.innerHTML='<div class="search-no-result">搜索索引加载中...</div>';return}
   var results=[];
@@ -586,8 +586,8 @@ document.getElementById('searchInput').addEventListener('input',function(){
     if(s>0)results.push({page:p,score:s})
   });
   results.sort(function(a,b){return b.score-a.score});
-  if(results.length===0){c.innerHTML='<div class="search-no-result">未找到与「'+q+'」相关的内容</div>'}
-  else{c.innerHTML=results.slice(0,12).map(function(r){return'<div class="search-result-item" onclick="window.location.href=\''+r.page.url+'\'" style="text-decoration:none;color:inherit;cursor:pointer"><strong>'+r.page.title+'</strong><div class="search-result-url">'+r.page.url+'</div><small style="color:#999">'+r.page.text.substring(0,100)+'…</small></div>'}).join('')}
+  if(results.length===0){c.innerHTML='<div class="search-no-result">未找到与「'+qOrig+'」相关的内容</div>'}
+  else{var escQ=qOrig.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),hlRegex=new RegExp('('+escQ+')','gi');function hl(t){return hlRegex&&qOrig?t.replace(hlRegex,'<span style="color:#003f6c;font-weight:700">$1</span>'):t}c.innerHTML=results.slice(0,12).map(function(r){return'<div class="search-result-item" onclick="window.location.href=\''+r.page.url+'\'" style="text-decoration:none;color:inherit;cursor:pointer"><strong>'+hl(r.page.title)+'</strong><div class="search-result-url">'+r.page.url+'</div><small style="color:#999">'+hl(r.page.text.substring(0,100))+'…</small></div>'}).join('')}
 });
 document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeSearch()});
 })();

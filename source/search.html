@@ -151,11 +151,11 @@ title: 搜索结果 - 存勤法税
     <div class="filter-bar">
       <div class="filter-bar-buttons">
         <span class="filter-bar-label">时间：</span>
-        <select class="filter-select" id="filterYear" onchange="goToArchives()">
+        <select class="filter-select" id="filterYear" onchange="applyFilters()">
           <option value="all">全部年份</option>
           <option value="2026">2026 年</option>
         </select>
-        <select class="filter-select" id="filterMonth" onchange="goToArchives()">
+        <select class="filter-select" id="filterMonth" onchange="applyFilters()">
           <option value="all">全部月份</option>
           <option value="1">1 月</option>
           <option value="2">2 月</option>
@@ -171,7 +171,7 @@ title: 搜索结果 - 存勤法税
           <option value="12">12 月</option>
         </select>
         <span class="filter-bar-label" style="margin-left:1rem;">分类：</span>
-        <select class="filter-select" id="filterCategory" onchange="goToArchives()">
+        <select class="filter-select" id="filterCategory" onchange="applyFilters()">
           <option value="all">全部分类</option>
           <option value="行业洞察">行业洞察</option>
           <option value="政策解读">政策解读</option>
@@ -217,12 +217,18 @@ window.doSearch = function() {
   window.location.href = url;
 };
 
-window.goToArchives = function() {
+// 应用筛选条件，重新搜索（不跳转页面）
+window.applyFilters = function() {
   var y = document.getElementById('filterYear').value;
   var m = document.getElementById('filterMonth').value;
   var c = document.getElementById('filterCategory').value;
-  var url = '../archives/';
-  window.location.href = url;
+  var params = ['scope=articles'];
+  if(y !== 'all') params.push('year=' + encodeURIComponent(y));
+  if(m !== 'all') params.push('month=' + encodeURIComponent(m));
+  if(c !== 'all') params.push('cat=' + encodeURIComponent(c));
+  var q = document.getElementById('searchInput').value.trim();
+  params.push('q=' + encodeURIComponent(q));
+  window.location.href = '/cunqin_law-tax/search/?' + params.join('&');
 };
 
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') document.getElementById('searchInput').focus(); });

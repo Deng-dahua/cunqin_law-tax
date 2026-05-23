@@ -207,44 +207,7 @@ layout: false
       .footer-bottom-dt { flex-direction: column; gap: 0.6rem; text-align: center; align-items: center; }
       .footer-info-dt { align-items: center; }
     }
-    /* ========== 搜索覆盖层 ========== */
-    .search-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 2000; align-items: flex-start; justify-content: center; padding-top: 120px; }
-    .search-overlay.open { display: flex; }
-    .search-box { background: #fff; border-radius: 8px; width: 90%; max-width: 600px; box-shadow: 0 16px 48px rgba(0,0,0,0.2); overflow: hidden; }
-    .search-box-header { background: #fff; display: flex; align-items: center; padding: 1rem 1.2rem; border-bottom: 1px solid var(--dt-border); }
-    .search-box-header input { flex: 1; border: none; outline: none; font-size: 1.1rem; font-family: inherit; background: #fff; color: #000; }
-    .search-box-header input::placeholder { color: #bbb; }
-    .search-box-header button { background: none; border: none; cursor: pointer; color: #999; font-size: 1.2rem; padding: 0.3rem; }
-    .search-box-header button:hover { color: var(--dt-accent); }
-    .search-go-btn {
-      background: var(--dt-accent);
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1.2rem;
-      font-size: 0.92rem;
-      font-family: inherit;
-      cursor: pointer;
-      border-radius: 0 8px 8px 0;
-      transition: background 0.2s;
-      white-space: nowrap;
-    }
-    .search-go-btn:hover { background: #007a74; }
-    .search-close-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #999;
-      font-size: 1.1rem;
-      padding: 0 0.6rem;
-    }
-    .search-close-btn:hover { color: var(--dt-accent); }
 
-    .search-result-url { font-size: 0.78rem; color: #666; margin-top: 2px; }
-    .search-results { max-height: 469px; overflow-y: auto; padding: 0.5rem 0; }
-    .search-result-item { display: block; padding: 0.7rem 1.2rem; font-size: 0.92rem; color: var(--dt-text); cursor: pointer; border-bottom: 1px solid var(--dt-bg-light); transition: background 0.15s; }
-    .search-result-item:hover { background: rgba(0,161,156,0.04); }
-    .search-result-item:last-child { border-bottom: none; }
-    .search-no-result { padding: 2rem; text-align: center; color: #999; }
     @media (max-width: 968px) {
       .nav-menu { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 1rem; }
       .nav-menu.active { display: flex; }
@@ -341,7 +304,7 @@ layout: false
       <li><a href="../contact/">联系我们</a></li>
     </ul>
     <div class="nav-tools">
-      <button class="nav-tool-btn" onclick="openSearch()"><i class="fas fa-search"></i> 搜索</button>
+      <button class="nav-tool-btn" onclick="window.location.href='/cunqin_law-tax/search.html'"><i class="fas fa-search"></i> 搜索</button>
     </div>
   </div>
 </nav>
@@ -582,52 +545,9 @@ layout: false
   </div>
 </div>
 
-<!-- ============ 搜索覆盖层 ============ -->
-<div class="search-overlay" id="searchOverlay">
-  <div class="search-box">
-    <div class="search-box-header">
-      <input type="text" id="searchInput" placeholder="输入关键词搜索..." onkeydown="if(event.key=='Enter')doSearch()">
-      <button class="search-go-btn" onclick="doSearch()">立即搜索</button>
-      <button class="search-close-btn" onclick="closeSearch()"><i class="fas fa-times"></i></button>
-    </div>
-</div>
-
-<script>
-(function(){
-function loadSearchIndex() {
-  fetch('/cunqin_law-tax/search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
-}
-window.doSearch = function() {
-  var q = document.getElementById('searchInput').value.trim();
-  if(!q) return;
-  window.location.href = '/cunqin_law-tax/search.html?q=' + encodeURIComponent(q);
-};
-
-window.openSearch = function() {
-  document.getElementById('searchOverlay').classList.add('open');
-  document.getElementById('searchInput').focus();
-  };
-window.closeSearch = function() {
-  document.getElementById('searchOverlay').classList.remove('open');
-  document.getElementById('searchInput').value = '';
-  document.getElementById('searchResults').innerHTML = '';
-};
-  var qOrig=this.value.trim(),q=qOrig.toLowerCase(),c=document.getElementById('searchResults');
-  if(q.length<1){c.innerHTML='';return}
-  if(!searchIndex||searchIndex.length===0){c.innerHTML='<div class="search-no-result">搜索索引加载中...</div>';return}
-  var results=[];
-  searchIndex.forEach(function(p){
-    var s=0,tl=p.title.toLowerCase(),tx=p.text.toLowerCase();
-    if(tl.indexOf(q)>-1)s+=10;
-    if(tx.indexOf(q)>-1)s+=5;
-    q.split(/\s+/).forEach(function(w){if(tl.indexOf(w)>-1)s+=3;if(tx.indexOf(w)>-1)s+=1});
-    if(s>0)results.push({page:p,score:s})
-  });
-  results.sort(function(a,b){return b.score-a.score});
-  if(results.length===0){c.innerHTML='<div class="search-no-result">未找到与「'+qOrig+'」相关的内容</div>'}
-  else{var escQ=qOrig.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),hlRegex=new RegExp('('+escQ+')','gi');function hl(t){return hlRegex&&qOrig?t.replace(hlRegex,'<span style="color:#003f6c;font-weight:700">$1</span>'):t}c.innerHTML=results.slice(0,12).map(function(r){return'<div class="search-result-item" onclick="window.location.href=\''+r.page.url+'\'" style="text-decoration:none;color:inherit;cursor:pointer"><strong>'+hl(r.page.title)+'</strong><div class="search-result-url">'+r.page.url+'</div><small style="color:#999">'+hl(r.page.text.substring(0,100))+'…</small></div>'}).join('')}
+'}).join('')}
 });
-document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeSearch()});
+;
 })();
 </script>
 

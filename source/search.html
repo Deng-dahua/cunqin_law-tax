@@ -211,7 +211,11 @@ var scopeFromUrl = new URLSearchParams(window.location.search).get('scope') || '
 
 window.doSearch = function() {
   var q = document.getElementById('searchInput').value.trim();
-  if(!q) return;
+  if(!q) {
+    // 关键词为空时，直接应用筛选条件（按年/月/分类过滤）
+    applyFilters();
+    return;
+  }
   var url = './?q=' + encodeURIComponent(q);
   if(scopeFromUrl) url += '&scope=' + encodeURIComponent(scopeFromUrl);
   window.location.href = url;

@@ -295,9 +295,6 @@ layout: false
         <span class="filter-bar-label" style="margin-left:1rem;">分类：</span>
         <select class="filter-select" id="filterCategory" onchange="applyFilters()">
           <option value="all">全部分类</option>
-          <option value="实操指南">实操指南</option>
-          <option value="政策解读">政策解读</option>
-          <option value="行业洞察">行业洞察</option>
         </select>
         <span class="filter-bar-label" style="margin-left:1rem;">时间：</span>
         <select class="filter-select" id="filterYear" onchange="applyFilters()">
@@ -592,6 +589,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')window.close
   (function initYearMonth(){
     var yearSel = document.getElementById('filterYear');
     var monthSel = document.getElementById('filterMonth');
+    var catSel = document.getElementById('filterCategory');
     // 从文章数据中提取所有出现过的年份
     var years = {};
     items.forEach(function(item){
@@ -609,6 +607,17 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')window.close
       opt.value = String(m); opt.textContent = m + ' 月';
       monthSel.appendChild(opt);
     }
+    // 分类：从文章数据中提取所有出现过的分类
+    var cats = {};
+    items.forEach(function(item){
+      var c = item.getAttribute('data-category') || '';
+      if(c) cats[c] = true;
+    });
+    Object.keys(cats).sort().forEach(function(c){
+      var opt = document.createElement('option');
+      opt.value = c; opt.textContent = c;
+      catSel.appendChild(opt);
+    });
   })();
 })();
 </script>

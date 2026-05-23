@@ -223,10 +223,18 @@ loadSearchIndex();
   var params = new URLSearchParams(window.location.search);
   var qOrig = params.get('q') || '';
   var scope = params.get('scope') || '';
+  var filterYear = params.get('year') || '';
+  var filterMonth = params.get('month') || '';
+  var filterCat = params.get('cat') || '';
 
   // 更新 hero 副标题
   if(scope === 'articles') {
-    document.getElementById('heroSub').textContent = '搜索范围：法税洞察及文章页';
+    var labels = [];
+    if(filterCat) labels.push(filterCat);
+    if(filterYear) labels.push(filterYear + '年');
+    if(filterMonth) labels.push(filterMonth + '月');
+    var label = labels.length > 0 ? labels.join(' · ') + ' — 关键词' : '搜索范围：全部文章';
+    document.getElementById('heroSub').textContent = label;
   }
 
   document.getElementById('searchInput').value = qOrig;
@@ -258,6 +266,10 @@ loadSearchIndex();
         }
         if(!match) return;
       }
+      // 年/月/分类 二次过滤
+      if(filterYear && (p.date||'').substring(0,4) !== filterYear) return;
+      if(filterMonth && (p.date||'').substring(5,7) !== filterMonth.padStart(2,'0')) return;
+      if(filterCat && (p.category||'') !== filterCat) return;
       var s = 0, tl = p.title.toLowerCase(), tx = (p.text||'').toLowerCase();
       if(tl.indexOf(q) > -1) s += 10;
       if(tx.indexOf(q) > -1) s += 5;

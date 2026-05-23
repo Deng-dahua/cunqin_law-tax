@@ -1259,7 +1259,7 @@ img { max-width: 100%; display: block; }
         e.preventDefault();
         var target = document.getElementById(this.getAttribute('data-target'));
         if (target) {
-          var offset = 80;
+          var offset = 120;
           var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
           window.scrollTo({ top: top, behavior: 'smooth' });
         }

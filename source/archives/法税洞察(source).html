@@ -480,7 +480,14 @@ layout: false
 <script>
 window.doSearch = function() {
   var q = document.getElementById('searchInput').value.trim();
-  window.location.href = '/cunqin_law-tax/search/?q=' + encodeURIComponent(q) + '&scope=articles';
+  var y = document.getElementById('filterYear').value;
+  var m = document.getElementById('filterMonth').value;
+  var c = document.getElementById('filterCategory').value;
+  var params = ['q=' + encodeURIComponent(q), 'scope=articles'];
+  if(y !== 'all') params.push('year=' + encodeURIComponent(y));
+  if(m !== 'all') params.push('month=' + encodeURIComponent(m));
+  if(c !== 'all') params.push('cat=' + encodeURIComponent(c));
+  window.location.href = '/cunqin_law-tax/search/?' + params.join('&');
 };
 </script>
 

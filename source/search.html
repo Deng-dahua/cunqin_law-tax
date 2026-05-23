@@ -257,6 +257,10 @@ loadSearchIndex();
   }
 
   document.getElementById('searchInput').value = qOrig;
+  // 下拉框值还原（从 URL 参数还原，确保刷新后选中状态正确）
+  if(filterYear) { var ySel = document.getElementById('filterYear'); if(ySel) ySel.value = filterYear; }
+  if(filterMonth) { var mSel = document.getElementById('filterMonth'); if(mSel) mSel.value = filterMonth; }
+  if(filterCat) { var cSel = document.getElementById('filterCategory'); if(cSel) cSel.value = filterCat; }
   // 高级筛选：必须至少填写一个条件（关键词/年/月/分类）
   var hasAnyFilter = qOrig || filterYear || filterMonth || filterCat;
   if(!hasAnyFilter) {

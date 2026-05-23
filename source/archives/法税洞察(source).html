@@ -114,44 +114,6 @@ layout: false
     .article-arrow { color: var(--dt-accent); font-size: 1.2rem; opacity: 0; transition: opacity 0.2s; align-self: center; }
     .article-item:hover .article-arrow { opacity: 1; }
 
-    /* 分页条 */
-    .pagination { display: flex; justify-content: center; align-items: center; gap: 0.4rem; margin: 2rem 0 1rem; flex-wrap: wrap; }
-    .pagination button { min-width: 2.2rem; height: 2.2rem; border: 1px solid var(--dt-border); border-radius: 4px; background: #fff; color: var(--dt-text); font-size: 0.88rem; font-family: inherit; cursor: pointer; transition: all 0.2s; padding: 0 0.5rem; }
-    .pagination button:hover:not(.active):not(:disabled) { border-color: var(--dt-accent); color: var(--dt-accent); }
-    .pagination button.active { background: var(--dt-accent); color: #fff; border-color: var(--dt-accent); }
-    .pagination button:disabled { opacity: 0.4; cursor: default; }
-    .pagination .page-ellipsis { color: var(--dt-text-light); font-size: 0.85rem; padding: 0 0.2rem; user-select: none; }
-
-    /* 筛选栏 */
-    .filter-bar { display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto 1rem; padding-bottom: 0.7rem; border-bottom: 2px solid var(--dt-border); flex-wrap: wrap; gap: 0.8rem; }
-    .filter-bar-label { font-size: 0.85rem; color: var(--dt-text-light); font-weight: 500; white-space: nowrap; }
-    .filter-bar-buttons { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; }
-    .filter-btn { padding: 0.5rem 1.2rem; border: 1px solid var(--dt-border); border-radius: 4px; color: var(--dt-text-light); font-size: 0.88rem; cursor: pointer; font-family: inherit; transition: all 0.2s; white-space: nowrap; background: transparent; }
-    .filter-btn:hover { border-color: var(--dt-accent); color: var(--dt-accent); }
-    .filter-btn.active:not(.filter-btn-neutral) { background: var(--dt-accent); color: #fff; border-color: var(--dt-accent); }
-    .filter-btn-neutral.active { background: #f0f2f5; color: var(--dt-text); border-color: #d0d4da; }
-    .filter-btn-neutral:hover { border-color: #a0a8b4; color: var(--dt-text); }
-    /* 排序滑动切换 */
-    .sort-toggle { position: relative; display: inline-flex; border-radius: 6px; overflow: hidden; border: 1px solid var(--dt-border); background: var(--dt-bg-light); white-space: nowrap; user-select: none; }
-    .sort-toggle .sort-bg { position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: var(--dt-accent); border-radius: 5px; transition: left 0.3s ease; z-index: 1; }
-    .sort-toggle.right .sort-bg { left: 50%; }
-    .sort-toggle span { position: relative; z-index: 2; padding: 0.5rem 1.4rem; font-size: 0.88rem; color: var(--dt-text-light); cursor: pointer; transition: color 0.3s; }
-    .sort-toggle span.on { color: #fff; }
-    .filter-select { padding: 0.5rem 2rem 0.5rem 0.8rem; border: 1px solid var(--dt-border); border-radius: 4px; color: var(--dt-text); font-size: 0.88rem; font-family: inherit; background: #fff; cursor: pointer; transition: border-color 0.2s; appearance: auto; }
-    .filter-select:hover { border-color: var(--dt-accent); }
-    .filter-select:focus { outline: none; border-color: var(--dt-accent); box-shadow: 0 0 0 2px rgba(0,163,158,0.15); }
-    .article-views { font-size: 0.78rem; color: #aaa; display: inline-flex; align-items: center; gap: 0.3rem; }
-    @media (max-width: 768px) {
-      .filter-bar { flex-direction: column; gap: 0.8rem; align-items: flex-start; }
-    }
-    /* 搜索行 */
-    .search-row { display: flex; align-items: center; max-width: 900px; margin: 0 auto 0.8rem; gap: 0; }
-    .search-row input { flex: 1; border: 1px solid var(--dt-border); border-right: none; border-radius: 4px 0 0 4px; padding: 0.45rem 1rem; font-size: 0.95rem; font-family: inherit; color: var(--dt-text); outline: none; transition: border-color 0.2s; }
-    .search-row input:focus { border-color: var(--dt-accent); }
-    .search-row input::placeholder { color: #bbb; }
-    .search-row-btn { background: var(--dt-accent); color: #fff; border: none; padding: 0.45rem 1.6rem; font-size: 0.95rem; font-family: inherit; cursor: pointer; border-radius: 0 4px 4px 0; transition: background 0.2s; white-space: nowrap; }
-    .search-row-btn:hover { background: #007a74; }
-
     .cta-section {
   background: var(--dt-primary-light);
   color: #fff;
@@ -297,35 +259,9 @@ layout: false
 
 <section class="section-dt">
   <div class="container-dt">
-    <div class="filter-bar">
-      <div class="filter-bar-buttons">
-        <span class="filter-bar-label">时间：</span>
-        <select class="filter-select" id="filterYear" onchange="applyFilters()">
-          <option value="all">全部年份</option>
-        </select>
-        <select class="filter-select" id="filterMonth" onchange="applyFilters()">
-          <option value="all">全部月份</option>
-        </select>
-        <span class="filter-bar-label" style="margin-left:1rem;">分类：</span>
-        <select class="filter-select" id="filterCategory" onchange="applyFilters()">
-          <option value="all">全部分类</option>
-        </select>
-        <span class="filter-bar-label" style="margin-left:1rem;">排序：</span>
-        <div class="sort-toggle" id="sortToggle">
-          <div class="sort-bg"></div>
-          <span class="on" data-sort="newest" onclick="setSort('newest')">最新</span>
-          <span data-sort="hottest" onclick="setSort('hottest')">最热</span>
-        </div>
-      </div>
-      <span class="filter-bar-label" id="filter-count">共 0 篇文章</span>
-    </div>
-    <div class="search-row">
-      <input type="text" id="searchInput" placeholder="搜索文章关键词..." onkeydown="if(event.key=='Enter')doSearch()">
-      <button class="search-row-btn" onclick="doSearch()">立即搜索</button>
-    </div>
     <div class="article-list" id="articleList">
 
-      <a href="../articles/yecai-fasui-ronghe.html" class="article-item" data-date="2026-05-05" data-hot="82" data-views="1328" data-category="行业洞察">
+      <a href="../articles/yecai-fasui-ronghe.html" class="article-item">
         <div class="article-date">
           <div class="day">05</div>
           <div class="month">2026.05</div>
@@ -334,12 +270,11 @@ layout: false
           <h3>业管财税法融合：企业合规管理的五维一体新范式</h3>
           <p>从业务模式设计到管理体系建设，五维一体系统解决企业合规难题。</p>
           <span class="article-tag">行业洞察</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 1,328</span>
-        </div>
+</div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/jinshui-siqi-yingdui.html" class="article-item" data-date="2026-04-15" data-hot="68" data-views="595" data-category="政策解读">
+      <a href="../articles/jinshui-siqi-yingdui.html" class="article-item">
         <div class="article-date">
           <div class="day">15</div>
           <div class="month">2026.04</div>
@@ -348,12 +283,11 @@ layout: false
           <h3>金税四期全面解读：企业如何从容应对"以数治税"新时代</h3>
           <p>金税四期核心变化解析，企业合规应对策略与实操指南。</p>
           <span class="article-tag">政策解读</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 595</span>
-        </div>
+</div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/odi-beian-quanliucheng.html" class="article-item" data-date="2026-03-30" data-hot="97" data-views="1098" data-category="实操指南">
+      <a href="../articles/odi-beian-quanliucheng.html" class="article-item">
         <div class="article-date">
           <div class="day">30</div>
           <div class="month">2026.03</div>
@@ -362,12 +296,11 @@ layout: false
           <h3>ODI境外投资备案全流程指南：从申请到落地的实战手册</h3>
           <p>境外直接投资备案的完整流程、材料清单与常见问题解答。</p>
           <span class="article-tag">实操指南</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 1,098</span>
-        </div>
+</div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/kuajing-dianshang-shuiwu.html" class="article-item" data-date="2026-03-15" data-hot="76" data-views="949" data-category="实操指南">
+      <a href="../articles/kuajing-dianshang-shuiwu.html" class="article-item">
         <div class="article-date">
           <div class="day">15</div>
           <div class="month">2026.03</div>
@@ -376,12 +309,11 @@ layout: false
           <h3>跨境电商税务合规指南：2024年最新政策与实操要点</h3>
           <p>跨境电商企业税务合规要点，出口退税优化与海外仓税务规划。</p>
           <span class="article-tag">实操指南</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 949</span>
-        </div>
+</div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/qiye-zhongzu-shuiwu.html" class="article-item" data-date="2026-02-28" data-hot="73" data-views="630" data-category="实操指南">
+      <a href="../articles/qiye-zhongzu-shuiwu.html" class="article-item">
         <div class="article-date">
           <div class="day">28</div>
           <div class="month">2026.02</div>
@@ -390,12 +322,11 @@ layout: false
           <h3>企业重组税务规划：并购重组中的税务成本优化与风险防控</h3>
           <p>并购重组过程中的税务规划策略，降低税务成本，规避潜在风险。</p>
           <span class="article-tag">实操指南</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 630</span>
-        </div>
+</div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/gaoxin-qiye-shuiwu.html" class="article-item" data-date="2026-02-12" data-hot="65" data-views="1400" data-category="政策解读">
+      <a href="../articles/gaoxin-qiye-shuiwu.html" class="article-item">
         <div class="article-date">
           <div class="day">12</div>
           <div class="month">2026.02</div>
@@ -404,12 +335,11 @@ layout: false
           <h3>高新技术企业税务筹划：如何用好用足高新税收优惠政策</h3>
           <p>高新技术企业资格申请要点，研发费用加计扣除实操技巧。</p>
           <span class="article-tag">政策解读</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 1,400</span>
-        </div>
+</div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/jiayi-shuangshijing.html" class="article-item" data-date="2026-01-28" data-hot="79" data-views="809" data-category="行业洞察">
+      <a href="../articles/jiayi-shuangshijing.html" class="article-item">
         <div class="article-date">
           <div class="day">28</div>
           <div class="month">2026.01</div>
@@ -418,12 +348,11 @@ layout: false
           <h3>甲乙双视角：为什么企业需要"双重人格"的税务顾问</h3>
           <p>甲方实战经验与乙方专业训练的完美结合，为企业提供更全面的税务服务。</p>
           <span class="article-tag">行业洞察</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 809</span>
-        </div>
+</div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/qiye-shuiwu-fengxian.html" class="article-item" data-date="2026-01-15" data-hot="88" data-views="885" data-category="实操指南">
+      <a href="../articles/qiye-shuiwu-fengxian.html" class="article-item">
         <div class="article-date">
           <div class="day">15</div>
           <div class="month">2026.01</div>
@@ -432,14 +361,12 @@ layout: false
           <h3>企业税务风险管控：如何建立"看得见、防得住"的税务风险体系</h3>
           <p>企业税务风险识别与防控体系建设，从源头降低税务风险。</p>
           <span class="article-tag">实操指南</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 885</span>
-        </div>
+</div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
     </div>
-    <div class="pagination" id="pagination"></div>
-  </div>
+</div>
 </section>
 
 <section class="cta-section">
@@ -481,135 +408,6 @@ layout: false
 </div>
 
 
-<script>
-window.doSearch = function() {
-  var q = document.getElementById('searchInput').value.trim();
-  var y = document.getElementById('filterYear').value;
-  var m = document.getElementById('filterMonth').value;
-  var c = document.getElementById('filterCategory').value;
-  var params = ['q=' + encodeURIComponent(q), 'scope=articles'];
-  if(y !== 'all') params.push('year=' + encodeURIComponent(y));
-  if(m !== 'all') params.push('month=' + encodeURIComponent(m));
-  if(c !== 'all') params.push('cat=' + encodeURIComponent(c));
-  window.location.href = '../search/?' + params.join('&');
-};
-</script>
-
-<script>
-  // === 文章筛选与排序（简化版：纯 DOM 显示/隐藏）===
-  (function(){
-    var list = document.getElementById('articleList');
-    var items = list.querySelectorAll('.article-item');
-    var filterCount = document.getElementById('filter-count');
-    filterCount.textContent = '共 '+items.length+' 篇文章';
-
-    // 排序切换
-    window.setSort = function(mode){
-      var toggle = document.getElementById('sortToggle');
-      if(mode === 'hottest'){
-        toggle.classList.add('right');
-        toggle.querySelectorAll('span').forEach(function(s){ s.classList.toggle('on', s.getAttribute('data-sort')==='hottest'); });
-      } else {
-        toggle.classList.remove('right');
-        toggle.querySelectorAll('span').forEach(function(s){ s.classList.toggle('on', s.getAttribute('data-sort')==='newest'); });
-      }
-      applyFilters();
-    };
-
-    // 核心筛选函数（选择后自动执行）
-    window.applyFilters = function(){
-      var onSpan = document.querySelector('#sortToggle span.on');
-      var currentSort = onSpan ? onSpan.getAttribute('data-sort') : 'newest';
-
-      var catSel = document.getElementById('filterCategory');
-      var currentCat = catSel ? catSel.value : 'all';
-      var yearSel = document.getElementById('filterYear');
-      var monthSel = document.getElementById('filterMonth');
-      var currentYear = yearSel ? yearSel.value : 'all';
-      var currentMonth = monthSel ? monthSel.value : 'all';
-
-      // 收集所有符合条件的文章
-      var matched = [];
-      items.forEach(function(item){
-        var itemCat = item.getAttribute('data-category') || '';
-        var itemDate = item.getAttribute('data-date') || '';
-        var itemYear = itemDate ? itemDate.substring(0,4) : '';
-        var itemMonth = itemDate ? itemDate.substring(5,7) : '';  // "03" 格式
-
-        var matchCat = currentCat === 'all' || itemCat === currentCat;
-        var matchYear = currentYear === 'all' || itemYear === currentYear;
-        var matchMonth = currentMonth === 'all' || itemMonth === currentMonth.padStart(2,'0');
-
-        // OR 逻辑：任意一项匹配即保留
-        var hasFilter = currentCat !== 'all' || currentYear !== 'all' || currentMonth !== 'all';
-        var anyMatch = matchCat || matchYear || matchMonth;
-
-        if(!hasFilter || anyMatch){
-          matched.push(item);
-        }
-      });
-
-      // 排序
-      if(currentSort === 'newest'){
-        matched.sort(function(a,b){
-          return (b.getAttribute('data-date')||'').localeCompare(a.getAttribute('data-date')||'');
-        });
-      } else if(currentSort === 'hottest'){
-        matched.sort(function(a,b){
-          return (parseInt(b.getAttribute('data-views'))||0) - (parseInt(a.getAttribute('data-views'))||0);
-        });
-      }
-
-      // 重建 DOM 顺序（按排序结果）
-      matched.forEach(function(item){ list.appendChild(item); });
-
-      // 显示匹配项，隐藏其余
-      items.forEach(function(item){
-        item.style.display = matched.indexOf(item) > -1 ? '' : 'none';
-      });
-
-      filterCount.textContent = '共 '+matched.length+' 篇文章';
-
-      // 隐藏页码条（简化版不分页）
-      var pg = document.getElementById('pagination');
-      if(pg) pg.innerHTML = '';
-    };
-
-    // 初始化年/月/分类下拉选项
-    (function initFilters(){
-      var yearSel = document.getElementById('filterYear');
-      var monthSel = document.getElementById('filterMonth');
-      var catSel = document.getElementById('filterCategory');
-      // 年份：从 2026 年起
-      var curYear = new Date().getFullYear();
-      for(var y = curYear; y >= 2026; y--){
-        var opt = document.createElement('option');
-        opt.value = String(y); opt.textContent = y + ' 年';
-        yearSel.appendChild(opt);
-      }
-      // 月份 1-12
-      for(var m = 1; m <= 12; m++){
-        var opt = document.createElement('option');
-        opt.value = String(m); opt.textContent = m + ' 月';
-        monthSel.appendChild(opt);
-      }
-      // 分类：从 data-category 提取
-      var cats = {};
-      items.forEach(function(item){
-        var c = item.getAttribute('data-category') || '';
-        if(c) cats[c] = true;
-      });
-      Object.keys(cats).sort().forEach(function(c){
-        var opt = document.createElement('option');
-        opt.value = c; opt.textContent = c;
-        catSel.appendChild(opt);
-      });
-    })();
-
-    // 页面加载时默认按"最新"排序显示全部
-    applyFilters();
-  })();
-  </script>
 <!-- ============ 置顶/置底按钮 ============ -->
 <button class="scroll-btn" id="btnScrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="返回顶部">↑</button>
 <button class="scroll-btn" id="btnScrollBtm" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})" title="前往底部">↓</button>

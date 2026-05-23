@@ -178,7 +178,7 @@ title: 搜索结果 - 存勤法税
           <option value="实操指南">实操指南</option>
         </select>
       </div>
-      <span class="filter-bar-label" id="filter-count-link" onclick="location.href='../archives/'" style="cursor:pointer;">浏览全部文章</span>
+      <span class="filter-bar-label" id="filter-count-link" onclick="location.href='/cunqin_law-tax/archives/'" style="cursor:pointer;">浏览全部文章</span>
     </div>
     <div class="search-row">
       <input type="text" id="searchInput" placeholder="输入关键词搜索..." onkeydown="if(event.key=='Enter')doSearch()">
@@ -231,7 +231,8 @@ window.applyFilters = function() {
   if(m !== 'all') params.push('month=' + encodeURIComponent(m));
   if(c !== 'all') params.push('cat=' + encodeURIComponent(c));
   params.push('q=' + encodeURIComponent(q));
-  window.location.href = '/cunqin_law-tax/search/?' + params.join('&');
+  // 使用相对路径，避免绝对路径 /cunqin_law-tax/ 解析错误
+  window.location.href = './?' + params.join('&');
 };
 
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') document.getElementById('searchInput').focus(); });

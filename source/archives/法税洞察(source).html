@@ -132,9 +132,11 @@ layout: false
     .filter-bar { display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto 2rem; padding-bottom: 1.2rem; border-bottom: 2px solid var(--dt-border); flex-wrap: wrap; gap: 0.8rem; }
     .filter-bar-label { font-size: 0.85rem; color: var(--dt-text-light); font-weight: 500; white-space: nowrap; }
     .filter-bar-buttons { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; }
-    .filter-btn { padding: 0.5rem 1.2rem; border: 1px solid var(--dt-border); border-radius: 4px; color: var(--dt-text-light); font-size: 0.88rem; cursor: pointer; font-family: inherit; transition: all 0.2s; white-space: nowrap; }
+    .filter-btn { padding: 0.5rem 1.2rem; border: 1px solid var(--dt-border); border-radius: 4px; color: var(--dt-text-light); font-size: 0.88rem; cursor: pointer; font-family: inherit; transition: all 0.2s; white-space: nowrap; background: transparent; }
     .filter-btn:hover { border-color: var(--dt-accent); color: var(--dt-accent); }
-    .filter-btn.active { background: var(--dt-accent); color: #fff; border-color: var(--dt-accent); }
+    .filter-btn.active:not(.filter-btn-neutral) { background: var(--dt-accent); color: #fff; border-color: var(--dt-accent); }
+    .filter-btn-neutral.active { background: #f0f2f5; color: var(--dt-text); border-color: #d0d4da; }
+    .filter-btn-neutral:hover { border-color: #a0a8b4; color: var(--dt-text); }
     .article-views { font-size: 0.78rem; color: #aaa; display: inline-flex; align-items: center; gap: 0.3rem; }
     @media (max-width: 768px) {
       .filter-bar { flex-direction: column; gap: 0.8rem; align-items: flex-start; }
@@ -285,13 +287,20 @@ layout: false
       <span class="filter-bar-label" id="filter-count">共 0 篇文章</span>
       <div class="filter-bar-buttons">
         <span class="filter-bar-label">排序：</span>
-        <button class="filter-btn active" data-sort="newest" onclick="setSort('newest')">最新</button>
+        <button class="filter-btn filter-btn-neutral active" data-sort="newest" onclick="setSort('newest')">最新</button>
         <button class="filter-btn" data-sort="hottest" onclick="setSort('hottest')">最热</button>
-        <span class="filter-bar-label" style="margin-left:1rem;">文章分类：</span>
-        <button class="filter-btn filter-cat active" data-cat="all" onclick="setCategory('all')">全部</button>
+        <span class="filter-bar-label" style="margin-left:1rem;">分类：</span>
+        <button class="filter-btn filter-cat filter-btn-neutral active" data-cat="all" onclick="setCategory('all')">全部</button>
         <button class="filter-btn filter-cat" data-cat="实操指南" onclick="setCategory('实操指南')">实操指南</button>
         <button class="filter-btn filter-cat" data-cat="政策解读" onclick="setCategory('政策解读')">政策解读</button>
         <button class="filter-btn filter-cat" data-cat="行业洞察" onclick="setCategory('行业洞察')">行业洞察</button>
+        <span class="filter-bar-label" style="margin-left:1rem;">年月：</span>
+        <button class="filter-btn filter-ym filter-btn-neutral active" data-ym="all" onclick="setYearMonth('all')">全部</button>
+        <button class="filter-btn filter-ym" data-ym="2026-05" onclick="setYearMonth('2026-05')">2026.05</button>
+        <button class="filter-btn filter-ym" data-ym="2026-04" onclick="setYearMonth('2026-04')">2026.04</button>
+        <button class="filter-btn filter-ym" data-ym="2026-03" onclick="setYearMonth('2026-03')">2026.03</button>
+        <button class="filter-btn filter-ym" data-ym="2026-02" onclick="setYearMonth('2026-02')">2026.02</button>
+        <button class="filter-btn filter-ym" data-ym="2026-01" onclick="setYearMonth('2026-01')">2026.01</button>
       </div>
     </div>
     <div class="article-list" id="articleList">
@@ -305,7 +314,7 @@ layout: false
           <h3>业管财税法融合：企业合规管理的五维一体新范式</h3>
           <p>从业务模式设计到管理体系建设，五维一体系统解决企业合规难题。</p>
           <span class="article-tag">行业洞察</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 1,523</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 1,328</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
@@ -319,7 +328,7 @@ layout: false
           <h3>金税四期全面解读：企业如何从容应对"以数治税"新时代</h3>
           <p>金税四期核心变化解析，企业合规应对策略与实操指南。</p>
           <span class="article-tag">政策解读</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 1,208</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 595</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
@@ -333,7 +342,7 @@ layout: false
           <h3>ODI境外投资备案全流程指南：从申请到落地的实战手册</h3>
           <p>境外直接投资备案的完整流程、材料清单与常见问题解答。</p>
           <span class="article-tag">实操指南</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 986</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 1,098</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
@@ -347,7 +356,7 @@ layout: false
           <h3>跨境电商税务合规指南：2024年最新政策与实操要点</h3>
           <p>跨境电商企业税务合规要点，出口退税优化与海外仓税务规划。</p>
           <span class="article-tag">实操指南</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 875</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 949</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
@@ -361,7 +370,7 @@ layout: false
           <h3>企业重组税务规划：并购重组中的税务成本优化与风险防控</h3>
           <p>并购重组过程中的税务规划策略，降低税务成本，规避潜在风险。</p>
           <span class="article-tag">实操指南</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 732</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 630</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
@@ -375,7 +384,7 @@ layout: false
           <h3>高新技术企业税务筹划：如何用好用足高新税收优惠政策</h3>
           <p>高新技术企业资格申请要点，研发费用加计扣除实操技巧。</p>
           <span class="article-tag">政策解读</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 658</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 1,400</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
@@ -389,7 +398,7 @@ layout: false
           <h3>甲乙双视角：为什么企业需要"双重人格"的税务顾问</h3>
           <p>甲方实战经验与乙方专业训练的完美结合，为企业提供更全面的税务服务。</p>
           <span class="article-tag">行业洞察</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 591</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 809</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
@@ -403,7 +412,7 @@ layout: false
           <h3>企业税务风险管控：如何建立"看得见、防得住"的税务风险体系</h3>
           <p>企业税务风险识别与防控体系建设，从源头降低税务风险。</p>
           <span class="article-tag">实操指南</span>
-          <span class="article-views"><i class="fas fa-eye"></i> 524</span>
+          <span class="article-views"><i class="fas fa-eye"></i> 885</span>
         </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
@@ -523,16 +532,28 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')window.close
     applyFilters();
   };
 
+  window.setYearMonth = function(ym){
+    document.querySelectorAll('.filter-btn.filter-ym').forEach(function(b){ b.classList.remove('active'); });
+    var btn = document.querySelector('.filter-btn.filter-ym[data-ym="'+ym+'"]');
+    if(btn) btn.classList.add('active');
+    applyFilters();
+  };
+
   window.applyFilters = function(){
-    var sortBtn = document.querySelector('.filter-btn:not(.filter-cat).active');
+    var sortBtn = document.querySelector('.filter-btn:not(.filter-cat):not(.filter-ym).active');
     var currentSort = sortBtn ? sortBtn.getAttribute('data-sort') : 'newest';
     var catBtn = document.querySelector('.filter-btn.filter-cat.active');
     var currentCat = catBtn ? catBtn.getAttribute('data-cat') : 'all';
+    var ymBtn = document.querySelector('.filter-btn.filter-ym.active');
+    var currentYm = ymBtn ? ymBtn.getAttribute('data-ym') : 'all';
 
     var all = list.querySelectorAll('.article-item');
     var filtered = [];
     all.forEach(function(item){
-      if(currentCat === 'all' || item.getAttribute('data-category') === currentCat){
+      var matchCat = currentCat === 'all' || item.getAttribute('data-category') === currentCat;
+      var itemDate = item.getAttribute('data-date') || '';
+      var matchYm = currentYm === 'all' || itemDate.substring(0,7) === currentYm;
+      if(matchCat && matchYm){
         filtered.push(item);
       }
     });

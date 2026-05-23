@@ -9,194 +9,290 @@ title: 搜索结果 - 存勤法税
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>搜索结果 - 存勤法税</title>
-  <link rel="stylesheet" href="/cunqin_law-tax/css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+  <meta name="description" content="存勤法税全站搜索，快速查找财税法领域的专业内容">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
   <style>
-    .search-result-page { max-width: 800px; margin: 120px auto 60px; padding: 0 1.5rem; }
-    .search-result-page h1 { font-size: 1.4rem; color: var(--dt-text); margin-bottom: 0.5rem; }
-    .search-result-page .q-display { color: var(--dt-accent); }
-    .search-back { display: inline-block; margin-bottom: 1.5rem; color: var(--dt-accent); text-decoration: none; font-size: 0.92rem; }
-    .search-back:hover { text-decoration: underline; }
-    .result-count { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; }
-    .result-item { display: block; padding: 1.2rem 0; border-bottom: 1px solid var(--dt-border); text-decoration: none; color: inherit; transition: background 0.15s; }
+    :root {
+      --dt-primary: #003f6c;
+      --dt-primary-light: #1a5f7a;
+      --dt-accent: #00a19c;
+      --dt-accent-hover: #008a85;
+      --dt-text: #333;
+      --dt-text-light: #666;
+      --dt-border: #e8e8e8;
+      --dt-bg: #fff;
+      --dt-bg-light: #f8f9fa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                   "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+      color: var(--dt-text); line-height: 1.8; letter-spacing: 0.02em;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    .container-dt { max-width: 1400px; margin: 0 auto; padding: 0 1rem; }
+
+    /* 导航栏 */
+    .navbar-dt {
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      backdrop-filter: blur(10px); height: 64px; display: flex; align-items: center;
+    }
+    .nav-container { width: 100%; margin: 0 auto; padding: 0 35px; display: flex; align-items: center; justify-content: flex-start; position: relative; height: 64px; }
+    .nav-brand { display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; flex-shrink: 0; }
+    .nav-logo { height: 34px; width: auto; }
+    .nav-menu { display: flex; align-items: center; position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; gap: 1rem; }
+    .nav-menu a { display: block; padding: 0.5rem 1rem; font-size: 0.92rem; font-weight: 500; color: var(--dt-text); letter-spacing: 0.03em; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+    .nav-menu a:hover, .nav-menu a.active { color: var(--dt-accent); background: rgba(0,161,156,0.06); }
+    .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; font-size: 1.3rem; color: var(--dt-primary); }
+
+    /* 页面标题区（与法税洞察页同高 373px，内含筛选栏 + 搜索行） */
+    .page-hero {
+      background: linear-gradient(135deg, var(--dt-primary) 0%, var(--dt-primary-light) 100%);
+      color: #fff; padding: 60px 0 40px; text-align: center; min-height: 373px; height: auto;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .page-hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .page-hero .hero-sub { font-size: 1.05rem; opacity: 0.85; max-width: 840px; margin: 0 auto 1.2rem; }
+
+    /* 筛选栏 — 用于跳转回法税洞察页 */
+    .filter-bar { display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto 0.6rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.2); flex-wrap: wrap; gap: 0.8rem; }
+    .filter-bar-label { font-size: 0.85rem; color: rgba(255,255,255,0.8); font-weight: 500; white-space: nowrap; }
+    .filter-bar-buttons { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; }
+    .filter-select { padding: 0.45rem 2rem 0.45rem 0.8rem; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px; color: #fff; font-size: 0.85rem; font-family: inherit; background: rgba(255,255,255,0.12); cursor: pointer; transition: border-color 0.2s; appearance: auto; }
+    .filter-select:hover { border-color: rgba(255,255,255,0.6); }
+    .filter-select:focus { outline: none; border-color: var(--dt-accent); box-shadow: 0 0 0 2px rgba(0,163,158,0.25); }
+    .filter-select option { color: #333; background: #fff; }
+
+    /* 搜索行 */
+    .search-row { display: flex; align-items: center; max-width: 900px; margin: 0 auto; gap: 0; }
+    .search-row input { flex: 1; border: 1px solid rgba(255,255,255,0.35); border-right: none; border-radius: 4px 0 0 4px; padding: 0.55rem 1rem; font-size: 0.95rem; font-family: inherit; color: var(--dt-text); outline: none; transition: border-color 0.2s; background: #fff; }
+    .search-row input:focus { border-color: var(--dt-accent); }
+    .search-row input::placeholder { color: #bbb; }
+    .search-row-btn { background: var(--dt-accent); color: #fff; border: none; padding: 0.55rem 1.6rem; font-size: 0.95rem; font-family: inherit; cursor: pointer; border-radius: 0 4px 4px 0; transition: background 0.2s; white-space: nowrap; }
+    .search-row-btn:hover { background: #007a74; }
+
+    /* 搜索结果区 */
+    .results-section { padding: 40px 0 60px; max-width: 900px; margin: 0 auto; }
+    .result-count { color: #888; font-size: 0.9rem; margin-bottom: 1.2rem; padding: 0 1rem; }
+    .result-item { display: block; padding: 1.2rem 1rem; border-bottom: 1px solid var(--dt-border); text-decoration: none; color: inherit; transition: background 0.15s; }
     .result-item:hover { background: rgba(0,161,156,0.04); }
     .result-item h2 { font-size: 1.08rem; color: var(--dt-text); margin: 0 0 0.4rem; font-weight: 600; }
     .result-item .result-url { font-size: 0.8rem; color: #888; margin-bottom: 0.3rem; }
     .result-item .result-snippet { font-size: 0.9rem; color: #666; line-height: 1.6; }
     .no-result { text-align: center; padding: 3rem 0; color: #999; }
     .no-result i { font-size: 2.5rem; color: #ccc; margin-bottom: 1rem; display: block; }
-    .search-input-bar { display: flex; align-items: center; border: 1px solid var(--dt-border); border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem; }
-    .search-input-bar input { flex: 1; border: none; outline: none; font-size: 1rem; font-family: inherit; color: var(--dt-text); }
-    .search-input-bar button { background: var(--dt-accent); color: #fff; border: none; padding: 0.45rem 1.2rem; border-radius: 5px; cursor: pointer; font-size: 0.92rem; font-family: inherit; margin-left: 0.8rem; white-space: nowrap; }
-    .search-input-bar button:hover { background: #007a74; }
+
+    /* 页脚 */
+    .footer-dt {
+      background: var(--dt-primary);
+      color: #b0c4d8;
+      padding: 0.5rem 0;
+    }
+    .footer-copyright-dt { padding: 1rem 0; }
+    .footer-logo-dt { height: 44px; width: auto; flex-shrink: 0; }
+    .footer-bottom-dt { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 1rem; font-size: 0.85rem; color: var(--dt-text-light); }
+    .footer-bottom-dt a { color: var(--dt-primary); transition: color 0.2s; }
+    .footer-bottom-dt a:hover { color: var(--dt-accent); }
+    .footer-info-dt { display: flex; flex-direction: column; gap: 0.3rem; }
+
+    @media (max-width: 768px) {
+      .nav-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; flex-direction: column; padding: 1.5rem; gap: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+      .nav-menu.active { display: flex; }
+      .nav-mobile-btn { display: block; }
+      .page-hero h1 { font-size: 2rem; }
+      .filter-bar { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+      .results-section { padding: 20px 0 40px; }
+    }
   </style>
 </head>
 <body>
-  <!-- 导航栏 -->
-  <nav class="nav-dt">
-    <div class="nav-inner container-dt">
-      <a href="/cunqin_law-tax/" class="nav-logo"><img src="/cunqin_law-tax/images/nav-logo.png" alt="存勤法税"></a>
-      <ul class="nav-menu">
-        <li><a href="/cunqin_law-tax/">首页</a></li>
-        <li><a href="/cunqin_law-tax/about/">关于我们</a></li>
-        <li><a href="/cunqin_law-tax/services/">核心服务</a></li>
-        <li><a href="/cunqin_law-tax/cases/">客户案例</a></li>
-        <li><a href="/cunqin_law-tax/archives/">法税洞察</a></li>
-        <li><a href="/cunqin_law-tax/contact/">联系我们</a></li>
-      </ul>
-      <div class="nav-tools">
-        <button class="nav-tool-btn" onclick="openSearch()"><i class="fas fa-search"></i> 搜索</button>
-      </div>
-    </div>
-  </nav>
 
-  <div class="search-result-page">
-    <a href="/cunqin_law-tax/" class="search-back" id="searchBack"><i class="fas fa-arrow-left"></i> 返回首页</a>
-    <h1>搜索结果<span id="qDisplay" class="q-display"></span><span id="scopeLabel" style="font-size:0.85rem;color:#888;font-weight:400;margin-left:0.8rem;"></span></h1>
-    <div class="search-input-bar">
-      <input type="text" id="searchInput" placeholder="输入关键词搜索...">
-      <button onclick="doSearch()">立即搜索</button>
+<!-- 导航栏 -->
+<nav class="navbar-dt">
+  <div class="nav-container">
+    <a href="../" class="nav-brand">
+      <img src="../images/nav-logo.png" alt="存勤法税" class="nav-logo">
+      <span>-存勤<span style="color:#ff8c00;">法税</span>-</span>
+    </a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="../">首页</a></li>
+      <li><a href="../about/">关于我们</a></li>
+      <li><a href="../services/">核心服务</a></li>
+      <li><a href="../cases/">客户案例</a></li>
+      <li><a href="../archives/">法税洞察</a></li>
+      <li><a href="../contact/">联系我们</a></li>
+    </ul>
+    <div class="nav-mobile-btn" onclick="document.getElementById('navMenu').classList.toggle('active')">
+      <i class="fas fa-bars"></i>
     </div>
+  </div>
+</nav>
+
+<!-- Hero 区（与法税洞察页同高 373px，内含筛选栏 + 搜索行） -->
+<section class="page-hero">
+  <div class="container-dt">
+    <h1>搜索结果</h1>
+    <p class="hero-sub" id="heroSub">全站搜索，快速定位所需内容</p>
+    <div class="filter-bar">
+      <div class="filter-bar-buttons">
+        <span class="filter-bar-label">时间：</span>
+        <select class="filter-select" id="filterYear" onchange="goToArchives()">
+          <option value="all">全部年份</option>
+          <option value="2026">2026</option>
+          <option value="2025">2025</option>
+        </select>
+        <select class="filter-select" id="filterMonth" onchange="goToArchives()">
+          <option value="all">全部月份</option>
+          <option value="05">5月</option>
+          <option value="04">4月</option>
+          <option value="03">3月</option>
+        </select>
+        <span class="filter-bar-label" style="margin-left:1rem;">分类：</span>
+        <select class="filter-select" id="filterCategory" onchange="goToArchives()">
+          <option value="all">全部分类</option>
+          <option value="行业洞察">行业洞察</option>
+          <option value="政策解读">政策解读</option>
+          <option value="实操指南">实操指南</option>
+        </select>
+      </div>
+      <span class="filter-bar-label" id="filter-count-link" onclick="location.href='../archives/'" style="cursor:pointer;">浏览全部文章</span>
+    </div>
+    <div class="search-row">
+      <input type="text" id="searchInput" placeholder="输入关键词搜索..." onkeydown="if(event.key=='Enter')doSearch()">
+      <button class="search-row-btn" onclick="doSearch()">立即搜索</button>
+    </div>
+  </div>
+</section>
+
+<!-- 搜索结果 -->
+<section class="results-section">
+  <div style="padding: 0 1rem;">
     <div class="result-count" id="resultCount"></div>
     <div id="resultsContainer"></div>
     <div class="no-result" id="noResult" style="display:none;">
       <i class="fas fa-search"></i>
       <p>未找到与「<span id="noResultQ"></span>」相关的内容</p>
-      <p style="font-size:0.85rem;margin-top:0.5rem;">请尝试其他关键词</p>
+      <p style="font-size:0.85rem;margin-top:0.5rem;">请尝试其他关键词，或浏览<a href="../archives/" style="color:var(--dt-accent);">法税洞察</a></p>
     </div>
   </div>
+</section>
 
-  <!-- 搜索覆盖层（复用首页的） -->
-  <div class="search-overlay" id="searchOverlay">
-    <div class="search-box">
-      <div class="search-box-header">
-        <input type="text" id="searchInput2" placeholder="输入关键词搜索...">
-        <button class="search-go-btn" onclick="doSearch2()">立即搜索</button>
-        <button class="search-close-btn" onclick="closeSearch()"><i class="fas fa-times"></i></button>
-      </div>
-      <div class="search-results" id="searchResults2"></div>
-    </div>
-  </div>
+<script>
+var searchIndex = null;
+function loadSearchIndex() {
+  if (searchIndex) return;
+  fetch('/cunqin_law-tax/search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
+}
 
-  <script>
-  var searchIndex = null;
-  function loadSearchIndex() {
-    if (searchIndex) return;
-    fetch('/cunqin_law-tax/search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
+var scopeFromUrl = new URLSearchParams(window.location.search).get('scope') || '';
+
+window.doSearch = function() {
+  var q = document.getElementById('searchInput').value.trim();
+  if(!q) return;
+  var url = './?q=' + encodeURIComponent(q);
+  if(scopeFromUrl) url += '&scope=' + encodeURIComponent(scopeFromUrl);
+  window.location.href = url;
+};
+
+window.goToArchives = function() {
+  var y = document.getElementById('filterYear').value;
+  var m = document.getElementById('filterMonth').value;
+  var c = document.getElementById('filterCategory').value;
+  var url = '../archives/';
+  window.location.href = url;
+};
+
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') document.getElementById('searchInput').focus(); });
+loadSearchIndex();
+
+// 渲染搜索结果
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var qOrig = params.get('q') || '';
+  var scope = params.get('scope') || '';
+
+  // 更新 hero 副标题
+  if(scope === 'articles') {
+    document.getElementById('heroSub').textContent = '搜索范围：法税洞察及文章页';
   }
-  window.openSearch = function() {
-    document.getElementById('searchOverlay').classList.add('open');
-    document.getElementById('searchInput2').value = document.getElementById('searchInput').value;
-    document.getElementById('searchInput2').focus();
-    loadSearchIndex();
-  };
-  window.closeSearch = function() {
-    document.getElementById('searchOverlay').classList.remove('open');
-    document.getElementById('searchInput2').value = '';
-    document.getElementById('searchResults2').innerHTML = '';
-  };
-  var scopeFromUrl = new URLSearchParams(window.location.search).get('scope') || '';
-  window.doSearch = function() {
-    var q = document.getElementById('searchInput').value.trim();
-    if(!q) return;
-    var url = '/cunqin_law-tax/search.html?q=' + encodeURIComponent(q);
-    if(scopeFromUrl) url += '&scope=' + encodeURIComponent(scopeFromUrl);
-    window.location.href = url;
-  };
-  window.doSearch2 = function() {
-    var q = document.getElementById('searchInput2').value.trim();
-    if(!q) return;
-    var url = '/cunqin_law-tax/search.html?q=' + encodeURIComponent(q);
-    if(scopeFromUrl) url += '&scope=' + encodeURIComponent(scopeFromUrl);
-    window.location.href = url;
-  };
-  document.getElementById('searchInput').addEventListener('keydown', function(e){ if(e.key==='Enter') window.doSearch(); });
-  document.getElementById('searchInput2').addEventListener('keydown', function(e){ if(e.key==='Enter') window.doSearch2(); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') window.closeSearch(); });
-  loadSearchIndex();
 
-  // 渲染搜索结果
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var qOrig = params.get('q') || '';
-    var scope = params.get('scope') || '';
-    // 更新 scope 界面
-    if(scope === 'articles') {
-      document.getElementById('searchBack').setAttribute('href', '/cunqin_law-tax/archives/');
-      document.getElementById('searchBack').innerHTML = '<i class="fas fa-arrow-left"></i> 返回法税洞察';
-      document.getElementById('scopeLabel').textContent = '[法税洞察]';
-    }
-    document.getElementById('searchInput').value = qOrig;
-    if(!qOrig) { document.getElementById('resultCount').textContent = '请输入搜索关键词'; return; }
-    document.getElementById('qDisplay').textContent = '：' + qOrig;
-    document.getElementById('noResultQ').textContent = qOrig;
+  document.getElementById('searchInput').value = qOrig;
+  if(!qOrig) { document.getElementById('resultCount').textContent = '请输入搜索关键词'; return; }
+  document.getElementById('noResultQ').textContent = qOrig;
 
-    // 根据 scope 过滤结果
-    var scopePrefixes = [];
-    if(scope === 'articles') {
-      scopePrefixes = ['/cunqin_law-tax/archives/', '/cunqin_law-tax/articles/'];
-    }
+  // 根据 scope 过滤结果
+  var scopePrefixes = [];
+  if(scope === 'articles') {
+    scopePrefixes = ['/cunqin_law-tax/archives/', '/cunqin_law-tax/articles/'];
+  }
 
-    var q = qOrig.toLowerCase();
-    var escQ = qOrig.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    var hlRegex = new RegExp('(' + escQ + ')', 'gi');
-    function hl(t){
-      return hlRegex && qOrig ? t.replace(hlRegex, '<span style="color:#003f6c;font-weight:700">$1</span>') : t;
-    }
+  var q = qOrig.toLowerCase();
+  var escQ = qOrig.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  var hlRegex = new RegExp('(' + escQ + ')', 'gi');
+  function hl(t){
+    return hlRegex && qOrig ? t.replace(hlRegex, '<span style="color:#003f6c;font-weight:700">$1</span>') : t;
+  }
 
-    // 等待搜索索引加载
-    function render() {
-      if(!searchIndex) { setTimeout(render, 100); return; }
-      var results = [];
-      searchIndex.forEach(function(p){
-        // scope 过滤
-        if(scopePrefixes.length > 0) {
-          var match = false;
-          for(var i = 0; i < scopePrefixes.length; i++) {
-            if(p.url.indexOf(scopePrefixes[i]) === 0) { match = true; break; }
-          }
-          if(!match) return;
+  function render() {
+    if(!searchIndex) { setTimeout(render, 100); return; }
+    var results = [];
+    searchIndex.forEach(function(p){
+      // scope 过滤
+      if(scopePrefixes.length > 0) {
+        var match = false;
+        for(var i = 0; i < scopePrefixes.length; i++) {
+          if(p.url.indexOf(scopePrefixes[i]) === 0) { match = true; break; }
         }
-        var s = 0, tl = p.title.toLowerCase(), tx = (p.text||'').toLowerCase();
-        if(tl.indexOf(q) > -1) s += 10;
-        if(tx.indexOf(q) > -1) s += 5;
-        q.split(/\s+/).forEach(function(w){
-          if(tl.indexOf(w) > -1) s += 3;
-          if(tx.indexOf(w) > -1) s += 1;
-        });
-        if(s > 0) results.push({page: p, score: s});
-      });
-      results.sort(function(a,b){ return b.score - a.score; });
-      document.getElementById('resultCount').textContent = '找到 ' + results.length + ' 条结果' + (scope === 'articles' ? '（搜索范围：法税洞察）' : '');
-
-      if(results.length === 0) {
-        document.getElementById('noResult').style.display = 'block';
-        document.getElementById('resultsContainer').innerHTML = '';
-      } else {
-        document.getElementById('noResult').style.display = 'none';
-        document.getElementById('resultsContainer').innerHTML = results.map(function(r){
-          return '<a class="result-item" href="' + r.page.url + '">' +
-            '<h2>' + hl(r.page.title) + '</h2>' +
-            '<div class="result-url">' + r.page.url + '</div>' +
-            '<div class="result-snippet">' + hl((r.page.text||'').substring(0,150)) + '…</div>' +
-          '</a>';
-        }).join('');
+        if(!match) return;
       }
-    }
-    render();
-  })();
-  </script>
+      var s = 0, tl = p.title.toLowerCase(), tx = (p.text||'').toLowerCase();
+      if(tl.indexOf(q) > -1) s += 10;
+      if(tx.indexOf(q) > -1) s += 5;
+      q.split(/\s+/).forEach(function(w){
+        if(tl.indexOf(w) > -1) s += 3;
+        if(tx.indexOf(w) > -1) s += 1;
+      });
+      if(s > 0) results.push({page: p, score: s});
+    });
+    results.sort(function(a,b){ return b.score - a.score; });
+    var scopeNote = scope === 'articles' ? '（搜索范围：法税洞察）' : '';
+    document.getElementById('resultCount').textContent = '找到 ' + results.length + ' 条结果' + scopeNote;
 
-  <!-- 页脚 -->
+    if(results.length === 0) {
+      document.getElementById('noResult').style.display = 'block';
+      document.getElementById('resultsContainer').innerHTML = '';
+    } else {
+      document.getElementById('noResult').style.display = 'none';
+      document.getElementById('resultsContainer').innerHTML = results.map(function(r){
+        return '<a class="result-item" href="' + r.page.url + '">' +
+          '<h2>' + hl(r.page.title) + '</h2>' +
+          '<div class="result-url">' + r.page.url + '</div>' +
+          '<div class="result-snippet">' + hl((r.page.text||'').substring(0,150)) + '…</div>' +
+        '</a>';
+      }).join('');
+    }
+  }
+  render();
+})();
+</script>
+
+<!-- 页脚 -->
+<footer class="footer-dt">
   <div class="footer-copyright-dt">
     <div class="container-dt">
       <div class="footer-bottom-dt">
-        <img src="/cunqin_law-tax/images/footer-logo.png" alt="存勤法税" class="footer-logo-dt">
+        <img src="../images/footer-logo.png" alt="存勤法税" class="footer-logo-dt">
         <div class="footer-info-dt">
-          <div>© 2024-2026 存勤法税服务（广州）有限公司 | 创始人：邓达华</div>
+          <div>&copy; 2024-2026 存勤法税服务（广州）有限公司 | 创始人：邓达华</div>
         </div>
       </div>
     </div>
   </div>
+</footer>
 </body>
 </html>

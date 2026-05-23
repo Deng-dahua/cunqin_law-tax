@@ -87,6 +87,17 @@ title: 搜索结果 - 存勤法税
     .no-result { text-align: center; padding: 3rem 0; color: #999; }
     .no-result i { font-size: 2.5rem; color: #ccc; margin-bottom: 1rem; display: block; }
 
+    /* 排序按钮 */
+    .sort-bar { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; padding: 0 1rem; }
+    .sort-btn { padding: 0.35rem 1rem; border: 1px solid var(--dt-border); border-radius: 4px; background: #fff; color: var(--dt-text-light); font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+    .sort-btn:hover { border-color: var(--dt-accent); color: var(--dt-accent); }
+    .sort-btn.active { background: var(--dt-accent); color: #fff; border-color: var(--dt-accent); }
+
+    /* 结果元信息（时间 + 分类） */
+    .result-meta { font-size: 0.8rem; color: #999; margin: 0.2rem 0 0.3rem; display: flex; gap: 0.8rem; }
+    .result-meta .meta-date { color: #888; }
+    .result-meta .meta-cat { color: var(--dt-accent); }
+
     /* 页脚 */
     .footer-dt {
       background: var(--dt-primary);
@@ -191,6 +202,11 @@ title: 搜索结果 - 存勤法税
 <section class="results-section">
   <div style="padding: 0 1rem;">
     <div class="result-count" id="resultCount"></div>
+    <div class="sort-bar" id="sortBar" style="display:none;">
+      <button class="sort-btn active" data-sort="relevance" onclick="setSort('relevance')">相关度</button>
+      <button class="sort-btn" data-sort="latest" onclick="setSort('latest')">最新</button>
+      <button class="sort-btn" data-sort="hottest" onclick="setSort('hottest')">最热</button>
+    </div>
     <div id="resultsContainer"></div>
     <div class="no-result" id="noResult" style="display:none;">
       <i class="fas fa-search"></i>
@@ -202,10 +218,21 @@ title: 搜索结果 - 存勤法税
 
 <script>
 var searchIndex = null;
+var currentSort = 'relevance'; // relevance | latest | hottest
 function loadSearchIndex() {
   if (searchIndex) return;
   fetch('/cunqin_law-tax/search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
 }
+
+window.setSort = function(sortType) {
+  currentSort = sortType;
+  // 更新按钮样式
+  document.querySelectorAll('.sort-btn').forEach(function(btn){
+    btn.classList.toggle('active', btn.dataset.sort === sortType);
+  });
+  // 重新渲染当前结果
+  renderResults();
+};
 
 var scopeFromUrl = new URLSearchParams(window.location.search).get('scope') || '';
 
@@ -242,8 +269,8 @@ window.applyFilters = function() {
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') document.getElementById('searchInput').focus(); });
 loadSearchIndex();
 
-// 渲染搜索结果
-(function(){
+// 渲染搜索结果（命名函数，供 setSort 调用）
+window.renderResults = function() {
   var params = new URLSearchParams(window.location.search);
   var qOrig = params.get('q') || '';
   var scope = params.get('scope') || '';
@@ -258,15 +285,21 @@ loadSearchIndex();
     if(filterYear) labels.push(filterYear + '年');
     if(filterMonth) labels.push(filterMonth + '月');
     var label = labels.length > 0 ? labels.join(' · ') + ' — 关键词' : '搜索范围：全部文章';
-    document.getElementById('heroSub').textContent = label;
+    var heroSub = document.getElementById('heroSub');
+    if(heroSub) heroSub.textContent = label;
   }
 
   document.getElementById('searchInput').value = qOrig;
-  // 下拉框值还原（从 URL 参数还原，确保刷新后选中状态正确）
+  // 下拉框值还原
   if(filterYear) { var ySel = document.getElementById('filterYear'); if(ySel) ySel.value = filterYear; }
   if(filterMonth) { var mSel = document.getElementById('filterMonth'); if(mSel) mSel.value = filterMonth; }
   if(filterCat) { var cSel = document.getElementById('filterCategory'); if(cSel) cSel.value = filterCat; }
-  // 高级筛选：必须至少填写一个条件（关键词/年/月/分类）
+
+  // 显示/隐藏排序栏
+  var sortBar = document.getElementById('sortBar');
+  if(sortBar) sortBar.style.display = 'flex';
+
+  // 高级筛选：必须至少填写一个条件
   var hasAnyFilter = qOrig || filterYear || filterMonth || filterCat;
   if(!hasAnyFilter) {
     document.getElementById('resultCount').textContent = '请至少输入关键词或选择一个筛选条件';
@@ -289,62 +322,87 @@ loadSearchIndex();
     return hlRegex && qOrig ? t.replace(hlRegex, '<span style="color:#003f6c;font-weight:700">$1</span>') : t;
   }
 
-  function render() {
-    if(!searchIndex) { setTimeout(render, 100); return; }
-    var results = [];
-    searchIndex.forEach(function(p){
-      // scope 过滤
-      if(scopePrefixes.length > 0) {
-        var match = false;
-        for(var i = 0; i < scopePrefixes.length; i++) {
-          if(p.url.indexOf(scopePrefixes[i]) === 0) { match = true; break; }
-        }
-        if(!match) return;
+  if(!searchIndex) { setTimeout(window.renderResults, 100); return; }
+  var results = [];
+  searchIndex.forEach(function(p){
+    // scope 过滤
+    if(scopePrefixes.length > 0) {
+      var match = false;
+      for(var i = 0; i < scopePrefixes.length; i++) {
+        if(p.url.indexOf(scopePrefixes[i]) === 0) { match = true; break; }
       }
-      // 年/月/分类 二次过滤（OR 逻辑：任意一项匹配即保留）
-      var hasFilter = filterYear || filterMonth || filterCat;
-      if(hasFilter){
-        var matchYear  = !filterYear  || ((p.date||'').substring(0,4) === filterYear);
-        var matchMonth = !filterMonth || ((p.date||'').substring(5,7) === filterMonth.padStart(2,'0'));
-        var matchCat   = !filterCat  || ((p.category||'') === filterCat);
-        if(!(matchYear || matchMonth || matchCat)) return;
-      }
-      // 关键词评分（q 为空时跳过，直接按筛选条件纳入）
-      var s = 0;
-      if(qOrig){
-        var q = qOrig.toLowerCase();
-        var tl2 = p.title.toLowerCase(), tx2 = (p.text||'').toLowerCase();
-        if(tl2.indexOf(q) > -1) s += 10;
-        if(tx2.indexOf(q) > -1) s += 5;
-        q.split(/\s+/).forEach(function(w){
-          if(tl2.indexOf(w) > -1) s += 3;
-          if(tx2.indexOf(w) > -1) s += 1;
-        });
-      }
-      // q 为空时：年/月/分类任一匹配即入选（s=0 但 hasFilter 为 true）
-      // q 非空时：必须 s > 0 才入选
-      if(qOrig ? s > 0 : true) results.push({page: p, score: s});
-    });
-    results.sort(function(a,b){ return b.score - a.score; });
-    var scopeNote = scope === 'articles' ? '（搜索范围：全部文章）' : '';
-    document.getElementById('resultCount').textContent = '找到 ' + results.length + ' 条结果' + scopeNote;
-
-    if(results.length === 0) {
-      document.getElementById('noResult').style.display = 'block';
-      document.getElementById('resultsContainer').innerHTML = '';
-    } else {
-      document.getElementById('noResult').style.display = 'none';
-      document.getElementById('resultsContainer').innerHTML = results.map(function(r){
-        return '<a class="result-item" href="' + r.page.url + '">' +
-          '<h2>' + hl(r.page.title) + '</h2>' +
-          '<div class="result-url">' + r.page.url + '</div>' +
-          '<div class="result-snippet">' + hl((r.page.text||'').substring(0,150)) + '…</div>' +
-        '</a>';
-      }).join('');
+      if(!match) return;
     }
+    // 年/月/分类 二次过滤（OR 逻辑）
+    var hasFilter = filterYear || filterMonth || filterCat;
+    if(hasFilter){
+      var matchYear  = !filterYear  || ((p.date||'').substring(0,4) === filterYear);
+      var matchMonth = !filterMonth || ((p.date||'').substring(5,7) === filterMonth.padStart(2,'0'));
+      var matchCat   = !filterCat  || ((p.category||'') === filterCat);
+      if(!(matchYear || matchMonth || matchCat)) return;
+    }
+    // 关键词评分
+    var s = 0;
+    if(qOrig){
+      var q = qOrig.toLowerCase();
+      var tl2 = p.title.toLowerCase(), tx2 = (p.text||'').toLowerCase();
+      if(tl2.indexOf(q) > -1) s += 10;
+      if(tx2.indexOf(q) > -1) s += 5;
+      q.split(/\s+/).forEach(function(w){
+        if(tl2.indexOf(w) > -1) s += 3;
+        if(tx2.indexOf(w) > -1) s += 1;
+      });
+    }
+    if(qOrig ? s > 0 : true) results.push({page: p, score: s});
+  });
+
+  // 排序
+  if(currentSort === 'latest') {
+    results.sort(function(a,b){
+      var da = (a.page.date||'0000-00-00'), db = (b.page.date||'0000-00-00');
+      return db.localeCompare(da);
+    });
+  } else if(currentSort === 'hottest') {
+    // 从 text 中提取阅读数（如 "658 阅读"）
+    results.sort(function(a,b){
+      var va = 0, vb = 0;
+      var ma = (a.page.text||'').match(/(\d+)\s*阅读/);
+      var mb = (b.page.text||'').match(/(\d+)\s*阅读/);
+      if(ma) va = parseInt(ma[1]);
+      if(mb) vb = parseInt(mb[1]);
+      return vb - va;
+    });
+  } else {
+    results.sort(function(a,b){ return b.score - a.score; });
   }
-  render();
-})();
+
+  var scopeNote = scope === 'articles' ? '（搜索范围：全部文章）' : '';
+  document.getElementById('resultCount').textContent = '找到 ' + results.length + ' 条结果' + scopeNote;
+
+  if(results.length === 0) {
+    document.getElementById('noResult').style.display = 'block';
+    document.getElementById('resultsContainer').innerHTML = '';
+  } else {
+    document.getElementById('noResult').style.display = 'none';
+    document.getElementById('resultsContainer').innerHTML = results.map(function(r){
+      var meta = '';
+      if(r.page.date || r.page.category) {
+        var parts = [];
+        if(r.page.date) parts.push('<span class="meta-date">' + r.page.date + '</span>');
+        if(r.page.category) parts.push('<span class="meta-cat">' + r.page.category + '</span>');
+        meta = '<div class="result-meta">' + parts.join('') + '</div>';
+      }
+      return '<a class="result-item" href="' + r.page.url + '">' +
+        '<h2>' + hl(r.page.title) + '</h2>' +
+        meta +
+        '<div class="result-url">' + r.page.url + '</div>' +
+        '<div class="result-snippet">' + hl((r.page.text||'').substring(0,150)) + '…</div>' +
+      '</a>';
+    }).join('');
+  }
+};
+
+renderResults();
 </script>
 
 <!-- 页脚 -->

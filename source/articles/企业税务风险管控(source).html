@@ -227,6 +227,66 @@ img { max-width: 100%; display: block; }
   color: var(--dt-accent-hover);
 }
 
+/* ===== 文内搜索栏 ===== */
+    .article-search-bar {
+      position: sticky;
+      top: 64px;
+      z-index: 999;
+      background: #fff;
+      border-bottom: 1px solid var(--dt-border);
+      padding: 0.6rem 0;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    }
+    .article-search-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .article-search-inner input {
+      flex: 1;
+      max-width: 400px;
+      border: 1px solid var(--dt-border);
+      border-radius: 4px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      color: var(--dt-text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .article-search-inner input:focus { border-color: var(--dt-accent); }
+    .article-search-count {
+      font-size: 0.82rem;
+      color: var(--dt-text-light);
+      white-space: nowrap;
+    }
+    .search-nav-btn {
+      background: none;
+      border: 1px solid var(--dt-border);
+      border-radius: 4px;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      color: var(--dt-text-light);
+      font-size: 0.85rem;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .search-nav-btn:hover { border-color: var(--dt-accent); color: var(--dt-accent); }
+    .search-nav-btn:disabled { opacity: 0.35; cursor: default; }
+    mark.search-mark {
+      background: #ffe066;
+      color: inherit;
+      padding: 0 1px;
+      border-radius: 2px;
+    }
+    mark.search-mark.active {
+      background: #ff8c00;
+      color: #fff;
+    }
+
 /* ===== 文章目录（侧边栏） ===== */
 .article-layout {
   display: flex;
@@ -615,6 +675,16 @@ img { max-width: 100%; display: block; }
 
 
 </section>
+
+<!-- ===== 文内搜索栏 ===== -->
+<div class="article-search-bar" id="articleSearchBar">
+  <div class="article-search-inner">
+    <input type="text" id="articleSearchInput" placeholder="在本文中搜索关键词..." onkeydown="if(event.key==='Enter'){doArticleSearch();event.preventDefault();}" oninput="doArticleSearch()">
+    <span class="article-search-count" id="articleSearchCount"></span>
+    <button class="search-nav-btn" onclick="jumpToMatch(-1)" title="上一个" id="searchPrevBtn" disabled><i class="fas fa-chevron-up"></i></button>
+    <button class="search-nav-btn" onclick="jumpToMatch(1)" title="下一个" id="searchNextBtn" disabled><i class="fas fa-chevron-down"></i></button>
+  </div>
+</div>
 
 <!-- ===== 文章布局（目录 + 正文） ===== -->
 <div class="article-layout">
@@ -1525,6 +1595,103 @@ img { max-width: 100%; display: block; }
   window.addEventListener('resize', updateBtns);
   updateBtns();
 })();
+// ===== 文内搜索 =====
+var articleCurrentMatch = -1;
+var articleTotalMatches = 0;
+
+function doArticleSearch() {
+  var q = document.getElementById('articleSearchInput').value.trim();
+
+  // 清除旧高亮
+  var oldMarks = document.querySelectorAll('.article-body mark.search-mark');
+  oldMarks.forEach(function(m) {
+    var parent = m.parentNode;
+    parent.replaceChild(document.createTextNode(m.textContent), m);
+    parent.normalize();
+  });
+
+  articleCurrentMatch = -1;
+  articleTotalMatches = 0;
+
+  if (!q || q.length < 1) {
+    document.getElementById('articleSearchCount').textContent = '';
+    document.getElementById('searchPrevBtn').disabled = true;
+    document.getElementById('searchNextBtn').disabled = true;
+    return;
+  }
+
+  var body = document.querySelector('.article-body');
+  if (!body) return;
+
+  highlightInElement(body, q);
+
+  articleTotalMatches = document.querySelectorAll('.article-body mark.search-mark').length;
+  document.getElementById('articleSearchCount').textContent = articleTotalMatches + ' 处匹配';
+  document.getElementById('searchPrevBtn').disabled = articleTotalMatches === 0;
+  document.getElementById('searchNextBtn').disabled = articleTotalMatches === 0;
+
+  if (articleTotalMatches > 0) {
+    jumpToMatch(1);
+  }
+}
+
+function highlightInElement(element, keyword) {
+  var lowerKw = keyword.toLowerCase();
+  var walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, {
+    acceptNode: function(n) {
+      if (n.parentNode && (n.parentNode.nodeName === 'SCRIPT' || n.parentNode.nodeName === 'STYLE' || n.parentNode.nodeName === 'MARK')) {
+        return NodeFilter.FILTER_REJECT;
+      }
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+
+  var textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+  textNodes.forEach(function(node) {
+    var text = node.textContent;
+    var idx = text.toLowerCase().indexOf(lowerKw);
+    if (idx === -1) return;
+
+    var fragment = document.createDocumentFragment();
+    var lastIdx = 0;
+    while (idx !== -1) {
+      if (idx > lastIdx) {
+        fragment.appendChild(document.createTextNode(text.substring(lastIdx, idx)));
+      }
+      var mark = document.createElement('mark');
+      mark.className = 'search-mark';
+      mark.textContent = text.substring(idx, idx + keyword.length);
+      fragment.appendChild(mark);
+      lastIdx = idx + keyword.length;
+      idx = text.toLowerCase().indexOf(lowerKw, lastIdx);
+    }
+    if (lastIdx < text.length) {
+      fragment.appendChild(document.createTextNode(text.substring(lastIdx)));
+    }
+    node.parentNode.replaceChild(fragment, node);
+  });
+}
+
+function jumpToMatch(direction) {
+  var marks = document.querySelectorAll('.article-body mark.search-mark');
+  if (marks.length === 0) return;
+
+  marks.forEach(function(m) { m.classList.remove('active'); });
+
+  if (articleCurrentMatch === -1) {
+    articleCurrentMatch = direction > 0 ? 0 : marks.length - 1;
+  } else {
+    articleCurrentMatch += direction;
+    if (articleCurrentMatch >= marks.length) articleCurrentMatch = 0;
+    if (articleCurrentMatch < 0) articleCurrentMatch = marks.length - 1;
+  }
+
+  var target = marks[articleCurrentMatch];
+  target.classList.add('active');
+  target.scrollIntoView({behavior: 'smooth', block: 'center'});
+}
 </script>
 
 

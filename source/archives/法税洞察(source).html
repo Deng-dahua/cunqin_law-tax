@@ -573,7 +573,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')window.close
       });
     } else if(currentSort === 'hottest'){
       filtered.sort(function(a,b){
-        return (parseInt(b.getAttribute('data-hot'))||0) - (parseInt(a.getAttribute('data-hot'))||0);
+        return (parseInt(b.getAttribute('data-views'))||0) - (parseInt(a.getAttribute('data-views'))||0);
       });
     }
 

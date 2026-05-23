@@ -83,16 +83,6 @@ img { max-width: 100%; display: block; }
 .nav-tools { display: flex; align-items: center; gap: 0.3rem; }
 .nav-tool-btn { background: none; border: none; cursor: pointer; color: var(--dt-text-light); font-size: 0.88rem; padding: 0.35rem 0.5rem; border-radius: 4px; display: flex; align-items: center; gap: 0.3rem; font-family: inherit; white-space: nowrap; transition: color 0.2s, background 0.2s; }
 .nav-tool-btn:hover { color: var(--dt-accent); background: rgba(0,161,156,0.06); }
-.search-no-results { padding: 2rem; text-align: center; color: var(--dt-text-light); }
-/* Mobile nav */
-.nav-toggle { display: none; background: none; border: none; font-size: 1.4rem; color: var(--dt-primary); cursor: pointer; padding: 0.3rem; }
-@media (max-width: 768px) {
-  .nav-toggle { display: block; }
-  .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; flex-direction: column; padding: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-  .nav-links.open { display: flex; }
-  .nav-links a { padding: 0.75rem 1rem; width: 100%; }
-  .nav-tools { margin-left: auto; }
-}
 
 /* ===== Hero (article page) ===== */
 .article-hero {
@@ -379,6 +369,7 @@ img { max-width: 100%; display: block; }
 }
 .more-item:hover .more-arrow { transform: translateX(4px); }
 
+
     /* ===== Footer ===== */
     .footer-dt {
   background: var(--dt-primary);
@@ -411,6 +402,7 @@ img { max-width: 100%; display: block; }
     grid-template-columns: 1fr;
   }
 }
+
 
 /* ===== 延伸阅读卡片 ===== */
 .related-reading { max-width:860px; margin:3rem auto 0; }
@@ -461,6 +453,7 @@ img { max-width: 100%; display: block; }
   .related-grid { grid-template-columns:1fr; }
 }
 
+
     /* ============ 置顶/置底按钮 ============ */
     .scroll-btn { position: fixed; right: 45px; width: 44px; height: 44px; border-radius:50%; background: var(--dt-accent, #00a19c); color: #fff; border: none; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,161,156,0.35); z-index: 999; transition: all 0.3s ease; opacity: 0; visibility: hidden; }
     .scroll-btn.visible { opacity: 1; visibility: visible; }
@@ -468,9 +461,13 @@ img { max-width: 100%; display: block; }
     #btnScrollTop { bottom: 100px; }
     #btnScrollBtm { bottom: 45px; }
 
-    
+
 
     
+
+
+    
+
 
     /* ===== CTA（与首页完全一致） ===== */
     .cta-section {
@@ -599,16 +596,458 @@ img { max-width: 100%; display: block; }
       <a href="../contact/">联系我们</a>
     </div>
     <div class="nav-tools">
+      <button class="nav-tool-btn" onclick="window.location.href='/cunqin_law-tax/search.html'" title="搜索"><i class="fas fa-search"></i> 搜索</button>
     </div>
   </div>
 </nav>
 
-'}).join('')}
-});
-loadSearchIndex();
-;
-})();
+<!-- ===== Hero ===== -->
+<section class="article-hero">
+  <div class="container-dt">
+    <span class="cat-tag">政策解读</span> <span style="display:inline-block;background:#e8f5e9;color:#2e7d32;padding:0.3rem 1rem;border-radius:50px;font-size:0.82rem;margin-left:0.8rem;font-weight:600;">原创</span>
+    <h1>金税四期全面解读：企业如何从容应对"以数治税"新时代</h1>
+    <div class="art-meta">
+      <span><i class="fas fa-calendar-alt"></i> <time datetime="2026-04-15">2026-04-15</time></span>
+      <span><i class="fas fa-user-edit"></i> 邓达华丨存勤法税服务（广州）有限公司</span>
+      <span class="art-view-counter" data-slug="jinshui-siqi-yingdui"><i class="fas fa-eye"></i> <span class="view-num" id="view-jinshui-siqi-yingdui">1,208</span> 阅读</span>
+    </div>
+  </div>
+
+
+</section>
+
+<!-- ===== 文章布局（目录 + 正文） ===== -->
+<div class="article-layout">
+  <aside class="article-toc">
+    <div class="article-toc-title"><i class="fas fa-list"></i> 目录</div>
+    <ul class="article-toc-list" id="article-toc-list"></ul>
+  </aside>
+  <div class="article-main">
+
+<!-- ===== 面包屑 ===== -->
+<div style="max-width:860px;margin:0 auto;padding:0.8rem 1rem;font-size:0.85rem;color:var(--dt-text-light);">
+  <a href="../index.html" style="color:var(--dt-text-light);">首页</a> &gt;
+  <a href="../archives/" style="color:var(--dt-text-light);">法税洞察</a> &gt;
+  <span style="color:var(--dt-text);">金税四期全面解读：企业如何从容应对"以数治税"新时代</span>
+</div>
+
+<!-- ===== 正文 ===== -->
+<article class="article-body">
+<h2 id="前言">前言</h2>
+<p>金税四期已正式启动，这标志着中国税务监管正式进入&quot;以数治税&quot;的新时代。对于企业而言，这既是合规压力，也是优化管理的契机。</p>
+<p>本文将从实战角度，全面解读金税四期的核心变化，并提供可落地的应对方案。</p>
+<!-- more -->
+
+<h2 id="金税四期到底是什么？">金税四期到底是什么？</h2>
+<h3 id="与金税三期的关键区别">与金税三期的关键区别</h3>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>金税三期</th>
+<th>金税四期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>核心理念</td>
+<td>以票管税</td>
+<td>以数治税</td>
+</tr>
+<tr>
+<td>数据来源</td>
+<td>发票数据为主</td>
+<td>全域数据整合</td>
+</tr>
+<tr>
+<td>监管方式</td>
+<td>事后监管</td>
+<td>事前预防+事中监控</td>
+</tr>
+<tr>
+<td>技术手段</td>
+<td>大数据比对</td>
+<td>AI智能分析</td>
+</tr>
+<tr>
+<td>覆盖范围</td>
+<td>税务系统内部</td>
+<td>跨部门数据互通</td>
+</tr>
+</tbody></table>
+<h3 id="核心变化解析">核心变化解析</h3>
+<h4 id="1-数据整合：从发票链到数据网">1. 数据整合：从&quot;发票链&quot;到&quot;数据网&quot;</h4>
+<p>金税四期打通了以下数据通道：</p>
+<ul>
+<li>银行流水与税务申报数据比对</li>
+<li>社保、公积金与工资薪金比对</li>
+<li>海关进出口数据与税务数据联动</li>
+<li>电商平台数据与税务申报关联</li>
+</ul>
+<p><strong>实战提示</strong>：企业任何一笔资金流动，在金税四期面前都是透明的。</p>
+<h4 id="2-智能分析：从人工判断到算法识别">2. 智能分析：从&quot;人工判断&quot;到&quot;算法识别&quot;</h4>
+<p>金税四期引入AI算法，可以自动识别：</p>
+<ul>
+<li>异常发票开具行为</li>
+<li>税负率异常波动</li>
+<li>成本结构不合理变化</li>
+<li>关联企业转让定价异常</li>
+</ul>
+<p><strong>实战提示</strong>：靠&quot;技术手段&quot;调整账目的空间已越来越小。</p>
+<h4 id="3-协同监管：从单点作战到联合执法">3. 协同监管：从&quot;单点作战&quot;到&quot;联合执法&quot;</h4>
+<p>金税四期实现了与以下部门的协同：</p>
+<ul>
+<li>市场监管部门（营业执照、年报）</li>
+<li>人民银行（反洗钱、跨境资金）</li>
+<li>海关（进出口数据）</li>
+<li>外汇管理局（跨境支付）</li>
+</ul>
+<p><strong>实战提示</strong>：一次违规，可能触发多部门联合核查。</p>
+<h2 id="企业面临的五大风险领域">企业面临的五大风险领域</h2>
+<h3 id="风险一：发票管理">风险一：发票管理</h3>
+<p><strong>常见问题</strong>：</p>
+<ul>
+<li>虚构成本发票</li>
+<li>取得不符合规定的发票</li>
+<li>发票与实际业务不符</li>
+<li>异常发票（走逃、失联企业开具）</li>
+</ul>
+<p><strong>金税四期识别方式</strong>：</p>
+<pre><code>企业开票数据 + 上下游企业数据 + 行业平均值 → 异常预警
+</code></pre>
+<p><strong>应对策略</strong>：</p>
+<ol>
+<li>建立完善的发票审核流程</li>
+<li>定期筛查上游供应商的税务状态</li>
+<li>确保&quot;三流合一&quot;（合同、发票、资金）</li>
+</ol>
+<h3 id="风险二：成本费用列支">风险二：成本费用列支</h3>
+<p><strong>常见问题</strong>：</p>
+<ul>
+<li>成本与收入不匹配</li>
+<li>费用异常增长（如咨询费、服务费突增）</li>
+<li>个人消费发票报销</li>
+<li>无票成本未合规处理</li>
+</ul>
+<p><strong>金税四期识别方式</strong>：</p>
+<pre><code>企业成本结构 + 行业基准 + 历史数据 → 异常波动预警
+</code></pre>
+<p><strong>应对策略</strong>：</p>
+<ol>
+<li>建立成本核算标准化流程</li>
+<li>对异常费用项目进行专项审查</li>
+<li>及时获取合规发票</li>
+</ol>
+<h3 id="风险三：个人所得税">风险三：个人所得税</h3>
+<p><strong>常见问题</strong>：</p>
+<ul>
+<li>工资薪金拆分避税</li>
+<li>股权转让不申报</li>
+<li>股东借款长期挂账</li>
+<li>赠送礼品未代扣个税</li>
+</ul>
+<p><strong>金税四期识别方式</strong>：</p>
+<pre><code>银行流水 + 社保数据 + 个税申报 → 未申报收入预警
+</code></pre>
+<p><strong>应对策略</strong>：</p>
+<ol>
+<li>规范员工薪酬结构设计</li>
+<li>股权转让做好完税凭证</li>
+<li>股东借款及时清理</li>
+</ol>
+<h3 id="风险四：增值税申报">风险四：增值税申报</h3>
+<p><strong>常见问题</strong>：</p>
+<ul>
+<li>进项税额虚抵</li>
+<li>留抵税额长期不消化</li>
+<li>申报数据与开票数据不一致</li>
+<li>出口退税申报不实</li>
+</ul>
+<p><strong>金税四期识别方式</strong>：</p>
+<pre><code>发票数据 + 申报数据 + 财务报表 → 数据不一致预警
+</code></pre>
+<p><strong>应对策略</strong>：</p>
+<ol>
+<li>定期进行申报数据自查</li>
+<li>关注税负率波动预警</li>
+<li>出口退税业务强化管理</li>
+</ol>
+<h3 id="风险五：跨境交易">风险五：跨境交易</h3>
+<p><strong>常见问题</strong>：</p>
+<ul>
+<li>ODI备案不完整</li>
+<li>跨境支付无合规凭证</li>
+<li>转让定价不合理</li>
+<li>利润滞留境外不汇回</li>
+</ul>
+<p><strong>金税四期识别方式</strong>：</p>
+<pre><code>外汇数据 + 海关数据 + 银行流水 → 跨境异常预警
+</code></pre>
+<p><strong>应对策略</strong>：</p>
+<ol>
+<li>确保ODI备案完整合规</li>
+<li>跨境支付保留完整凭证链</li>
+<li>定期评估转让定价合理性</li>
+</ol>
+<h2 id="企业应对策略：从被动合规到主动管理">企业应对策略：从被动合规到主动管理</h2>
+<h3 id="第一步：税务健康体检">第一步：税务健康体检</h3>
+<p><strong>建议周期</strong>：年度全面体检 + 季度专项检查</p>
+<p><strong>体检维度</strong>：</p>
+<ol>
+<li>发票管理规范性</li>
+<li>成本费用合规性</li>
+<li>税务申报准确性</li>
+<li>风险内控有效性</li>
+<li>税收优惠政策运用</li>
+</ol>
+<h3 id="第二步：流程优化">第二步：流程优化</h3>
+<p><strong>重点领域</strong>：</p>
+<ul>
+<li>合同审核流程（增加税务审核节点）</li>
+<li>采购管理流程（供应商税务资质审查）</li>
+<li>费用报销流程（合规性前置审核）</li>
+<li>资金管理流程（银行流水与税务数据对应）</li>
+</ul>
+<h3 id="第三步：团队能力提升">第三步：团队能力提升</h3>
+<p><strong>培训重点</strong>：</p>
+<ul>
+<li>管理层：税务风险意识、合规决策能力</li>
+<li>财务人员：金税四期政策解读、申报规范</li>
+<li>业务人员：基本税务常识、合规意识</li>
+</ul>
+<h3 id="第四步：外部资源整合">第四步：外部资源整合</h3>
+<p><strong>专业支持</strong>：</p>
+<ul>
+<li>常年税务顾问服务</li>
+<li>重大事项专项咨询</li>
+<li>危机事件应急处理</li>
+<li>优惠政策申请辅导</li>
+</ul>
+<h2 id="金税四期下的机遇">金税四期下的机遇</h2>
+<p>危机中往往蕴含机遇。金税四期的实施，对合规企业而言是利好：</p>
+<ol>
+<li><strong>税负公平化</strong>：偷逃税企业被清出市场，合规企业竞争优势凸显</li>
+<li><strong>政策红利</strong>：合规企业更容易享受税收优惠</li>
+<li><strong>管理升级</strong>：倒逼企业提升内部管理水平</li>
+<li><strong>信用积累</strong>：良好的纳税信用带来更多便利</li>
+</ol>
+<h2 id="常见问题">常见问题</h2>
+<p><strong>问：金税四期上线后，企业最需要关注的风险是什么？</strong></p>
+<p>答：三个最核心的风险领域：① 发票合规——金税四期已将发票数据与银行流水、社保等多维度数据联网比对，异常发票几乎无处遁形；② 收入完整性——通过电商平台数据、银行流水与申报数据比对，少报收入的风险大幅增加；③ 跨境交易——外汇数据与税务数据联动后，跨境资金流动的合规要求显著提升。</p>
+<p><strong>问：金税四期对中小企业的影响大吗？</strong></p>
+<p>答：非常大。过去中小企业依赖「信息不对称」进行税务操作的空间在金税四期下急剧压缩。金税四期的AI算法会自动识别异常指标，不论企业规模大小。中小企业的正确策略是：建立基本的税务合规管理流程，定期进行税务健康检查，而不是寄希望于「没人查」。</p>
+<p><strong>问：企业现在补缴历史税款还来得及吗？</strong></p>
+<p>答：主动自查补报是降低风险的最有效途径。根据税收征管法，主动补缴税款可减轻或免除罚款。建议企业：① 先做一次全面的税务风险自查；② 对识别出的问题进行分级（紧急/重要/一般）；③ 制定补缴和整改计划；④ 在专业顾问协助下与税务机关沟通。<strong>不要等被查出来再处理。</strong></p>
+<p><strong>问：金税四期实施后，企业应该优先做哪三件事？</strong></p>
+<p>答：第一，立即进行一次税务健康体检，全面排查现有风险点；第二，建立发票管理、费用报销、合同审核三条关键业务线的税务合规流程；第三，为财务团队安排金税四期专项培训，提升全员合规意识。</p>
+<h2 id="结语">结语</h2>
+<p>金税四期不是洪水猛兽，而是市场规范化进程的里程碑。<strong>对于合规经营的企业，这是最好的时代；对于心存侥幸的企业，这是最后的警钟。</strong></p>
+<p>与其担心被&quot;秋后算账&quot;，不如主动拥抱变化，把合规管理变成企业的核心竞争力。</p>
+<hr>
+<div class="related-reading">
+    <h3 class="related-heading"><span>延伸阅读</span></h3>
+    <div class="related-grid">
+      <a href="qiye-shuiwu-fengxian.html" class="related-card">
+        <span class="related-cat">实操指南</span>
+        <div class="related-info">
+          <h4>企业税务风险管控全攻略</h4>
+          <p>建立系统性税务风险防控体系的关键路径</p>
+        </div>
+        <span class="related-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="kuajing-dianshang-shuiwu.html" class="related-card">
+        <span class="related-cat">实操指南</span>
+        <div class="related-info">
+          <h4>跨境电商税务合规指南</h4>
+          <p>解析跨境电商场景下的税务处理难点与合规要点</p>
+        </div>
+        <span class="related-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="odi-beian-quanliucheng.html" class="related-card">
+        <span class="related-cat">实操指南</span>
+        <div class="related-info">
+          <h4>ODI境外投资备案全流程指南</h4>
+          <p>从实务角度详解ODI备案要点与操作流程</p>
+        </div>
+        <span class="related-arrow"><i class="fas fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+  <div class="related-cta">
+    <p><em>如需了解更多金税四期应对策略，欢迎联系存勤法税。</em></p>
+    <p>📞 <strong>咨询热线</strong>：13556116691（微信同号）</p>
+  </div>
+
+</article>
+
+<!-- ===== 文章声明 ===== -->
+<div class="article-notice" style="max-width:860px;margin:0 auto 2rem;padding:1.2rem 1.5rem;background:var(--dt-bg-light);border-left:4px solid var(--dt-accent);border-radius:0 8px 8px 0;font-size:0.85rem;color:var(--dt-text-light);line-height:1.8;">
+  <p style="margin-bottom:0.5rem;"><strong style="color:var(--dt-primary);">原创声明：</strong>本文为存勤法税服务（广州）有限公司原创文章，作者邓达华。</p>
+  <p style="margin-bottom:0.5rem;"><strong style="color:var(--dt-primary);">免责声明：</strong>本文内容仅供一般信息参考，不构成任何形式的专业建议或服务邀约。具体税务问题请咨询专业顾问并结合企业实际情况判断。</p>
+  <p><strong style="color:var(--dt-primary);">版权声明：</strong>未经书面授权，禁止任何形式的转载、摘编或使用。</p>
+</div>
+
+  </div><!-- .article-main -->
+</div><!-- .article-layout -->
+
+<!-- ===== 更多文章 ===== -->
+<section class="more-section">
+  <div class="container-dt">
+    <div class="section-header-dt">
+      <h2>更多文章</h2>
+      <p>阅读其他精彩内容</p>
+    </div>
+    <div class="more-list">
+
+      <a href="yecai-fasui-ronghe.html" class="more-item">
+        <div class="more-cat">行业洞察</div>
+        <div class="more-info">
+          <h4>业管财税法融合：企业合规管理的五维一体新范式</h4>
+          <p>深度解读「业管财税法」五维融合理念，探索企业合规管理的新范式，帮助企业建立系统性的风险防控体系</p>
+        </div>
+        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+      <a href="odi-beian-quanliucheng.html" class="more-item">
+        <div class="more-cat">实操指南</div>
+        <div class="more-info">
+          <h4>ODI境外投资备案全流程指南：从申请到落地的实战手册</h4>
+          <p>详尽解读ODI境外直接投资备案的完整流程、所需材料、常见问题及注意事项，帮助企业合规出海</p>
+        </div>
+        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+      <a href="kuajing-dianshang-shuiwu.html" class="more-item">
+        <div class="more-cat">实操指南</div>
+        <div class="more-info">
+          <h4>跨境电商税务合规指南：2024年最新政策与实操要点</h4>
+          <p>全面解读跨境电商企业税务合规要点，涵盖出口退税、境外税务、跨境资金回流等核心问题，提供实操性解决方案</p>
+        </div>
+        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+      <a href="qiye-zhongzu-shuiwu.html" class="more-item">
+        <div class="more-cat">实操指南</div>
+        <div class="more-info">
+          <h4>企业重组税务规划：并购重组中的税务成本优化与风险防控</h4>
+          <p>深度解读企业重组中的税务规划要点，涵盖股权收购vs资产收购、特殊性税务处理、股权激励税务等核心问题</p>
+        </div>
+        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+      <a href="gaoxin-qiye-shuiwu.html" class="more-item">
+        <div class="more-cat">政策解读</div>
+        <div class="more-info">
+          <h4>高新技术企业税务筹划：如何用好用足高新税收优惠政策</h4>
+          <p>深度解读高新技术企业税收优惠政策，包括15%优惠税率、研发费用加计扣除、软件企业优惠等，提供实操性筹划建议</p>
+        </div>
+        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+      <a href="jiayi-shuangshijing.html" class="more-item">
+        <div class="more-cat">行业洞察</div>
+        <div class="more-info">
+          <h4>甲乙双视角：为什么企业需要"双重人格"的税务顾问</h4>
+          <p>深度分析"甲乙双视角"的独特价值，探讨为什么企业需要同时具备甲方实战经验和乙方专业能力的税务顾问</p>
+        </div>
+        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+      <a href="qiye-shuiwu-fengxian.html" class="more-item">
+        <div class="more-cat">实操指南</div>
+        <div class="more-info">
+          <h4>企业税务风险管控：如何建立"看得见、防得住"的税务风险体系</h4>
+          <p>系统讲解企业税务风险管理体系的建立方法，包括风险识别、评估、控制和预警，帮助企业实现税务风险可视化、可管控</p>
+        </div>
+        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="container-dt">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>准备好开启专业财税法服务？</h2>
+        <p>我们提供一对一的免费专业咨询，帮您找到最适合的解决方案</p>
+        <a href="../contact/" class="btn-dt-primary">立即咨询</a>
+      </div>
+    </div>
+  </div>
+      <!-- 微信二维码 -->
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer class="footer-dt">
+  <div class="container-dt">
+        <div class="footer-grid-dt">
+      <div class="footer-links-dt">
+        <p><span class="footer-label">快速链接</span>丨<a href="../../about/">关于我们</a> <a href="../../services/">核心服务</a> <a href="../../cases/">客户案例</a> <a href="../../archives/">法税洞察</a></p>
+        <p><span class="footer-label">服务项目</span>丨<a href="../../services/">涉税风险检查</a> <a href="../../services/">税务危机应对</a> <a href="../../services/">税务争议解决</a> <a href="../../services/">企业重组税务规划</a> <a href="../../services/">跨境投资与并购</a> <a href="../../services/">跨境法律及税务规划</a> <a href="../../services/">常年法税顾问</a></p>
+        <p><span class="footer-label">联系我们</span>丨电话：13556116691 地址：广东省广州市天河区</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="footer-copyright-dt">
+  <div class="container-dt">
+    <div class="footer-bottom-dt">
+      <img src="../images/footer-logo.png" alt="存勤法税" class="footer-logo-dt">
+      <div class="footer-info-dt">
+        <div>© 2024-2026 存勤法税服务（广州）有限公司 | 创始人：邓达华</div>
+        <div>
+        <span style="color:#5a7a9a;"></span>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    // ===== 文章目录生成与滚动监听 =====
+  (function() {
+    var tocList = document.getElementById('article-toc-list');
+    var articleBody = document.querySelector('.article-body');
+    if (!tocList || !articleBody) return;
+
+    var headings = articleBody.querySelectorAll('h2, h3');
+    if (headings.length === 0) return;
+
+    headings.forEach(function(h, i) {
+      if (!h.id) { h.id = 'section-' + i; }
+      var li = document.createElement('li');
+      li.className = 'article-toc-item' + (h.tagName === 'H3' ? ' toc-sub' : '');
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.className = 'article-toc-link' + (h.tagName === 'H3' ? ' toc-h3' : '');
+      a.textContent = h.textContent.replace(/^\d+\.?\s*/, '');
+      a.setAttribute('data-target', h.id);
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.getElementById(this.getAttribute('data-target'));
+        if (target) {
+          var offset = 80;
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    // Scroll spy
+    var tocLinks = document.querySelectorAll('.article-toc-link');
+    var observerOptions = { rootMargin: '-80px 0px -65% 0px' };
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(function(link) { link.classList.remove('active'); });
+          var activeLink = document.querySelector('.article-toc-link[data-target="' + entry.target.id + '"]');
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    headings.forEach(function(h) { observer.observe(h); });
+  })();
 </script>
+
 <script>
   /* ===== 动态阅读量计数 ===== */
   (function(){
@@ -655,6 +1094,7 @@ loadSearchIndex();
   updateBtns();
 })();
 </script>
+
 
 </body>
 </html>

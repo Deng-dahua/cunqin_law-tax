@@ -542,12 +542,15 @@ window.doSearch = function() {
     all.forEach(function(item){
       var itemCat = item.getAttribute('data-category') || '';
       var itemDate = item.getAttribute('data-date') || '';
-      var itemYear = itemDate.substring(0,4);
-      var itemMonth = itemDate.substring(5,7);
+      var itemYear = itemDate ? itemDate.substring(0,4) : '';
+      // 修复：确保月份是两位字符串（如 "03"）
+      var itemMonth = itemDate ? itemDate.substring(5,7) : '';
+      // 修复：currentMonth padStart 确保两位比较
+      var currentMonthPadded = currentMonth !== 'all' ? currentMonth.padStart(2,'0') : '';
       // 三条件 OR：任意一项匹配即保留（"all" 视为该条件自动满足）
       var matchCat = currentCat === 'all' || itemCat === currentCat;
       var matchYear = currentYear === 'all' || itemYear === currentYear;
-      var matchMonth = currentMonth === 'all' || itemMonth === currentMonth.padStart(2,'0');
+      var matchMonth = currentMonth === 'all' || itemMonth === currentMonthPadded;
       // 至少一项非"all"且匹配，或全部都是"all"
       var hasFilter = currentCat !== 'all' || currentYear !== 'all' || currentMonth !== 'all';
       var anyMatch = matchCat || matchYear || matchMonth;
@@ -578,16 +581,18 @@ window.doSearch = function() {
     if(currentPage > totalPages) currentPage = totalPages;
     if(currentPage < 1) currentPage = 1;
 
-    // 显示当前页文章
+    // 先把所有 article-item 从 DOM 移除，再按顺序重新插入（保持 filteredItems 的排序）
+    var allItems = Array.from(list.querySelectorAll('.article-item'));
+    allItems.forEach(function(item){ list.removeChild(item); });
+    window.filteredItems.forEach(function(item){ list.appendChild(item); });
+
+    // 显示当前页文章，隐藏其余
     var start = (currentPage - 1) * pageSize;
     var end = Math.min(start + pageSize, total);
-    var all = list.querySelectorAll('.article-item');
-    all.forEach(function(item){ item.style.display = 'none'; });
-    for(var i = start; i < end; i++){
-      var item = window.filteredItems[i];
-      item.style.display = '';
-      list.appendChild(item);
-    }
+    var visibleItems = list.querySelectorAll('.article-item');
+    visibleItems.forEach(function(item, idx){
+      item.style.display = (idx >= start && idx < end) ? '' : 'none';
+    });
 
     // 渲染页码条
     var pgContainer = document.getElementById('pagination');

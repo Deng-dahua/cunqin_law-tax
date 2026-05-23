@@ -193,7 +193,7 @@ title: 搜索结果 - 存勤法税
           <option value="实操指南">实操指南</option>
         </select>
       </div>
-      <a class="filter-bar-label" id="filter-count-link" href="/cunqin_law-tax/archives/" style="cursor:pointer;color:rgba(255,255,255,0.8);text-decoration:none;">浏览全部文章</a>
+      <a class="filter-bar-label" id="filter-count-link" href="../archives/" style="cursor:pointer;color:rgba(255,255,255,0.8);text-decoration:none;">浏览全部文章</a>
     </div>
     <div class="search-row">
       <input type="text" id="searchInput" placeholder="输入关键词搜索..." onkeydown="if(event.key=='Enter')doSearch()">
@@ -225,7 +225,8 @@ var searchIndex = null;
 var currentSort = 'relevance'; // relevance | latest | hottest
 function loadSearchIndex() {
   if (searchIndex) return;
-  fetch('/cunqin_law-tax/search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
+  // 用相对路径，兼容本地预览和 GitHub Pages 子目录部署
+  fetch('../search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
 }
 
 window.setSort = function(sortType) {
@@ -238,8 +239,6 @@ window.setSort = function(sortType) {
   renderResults();
 };
 
-var scopeFromUrl = new URLSearchParams(window.location.search).get('scope') || '';
-
 window.doSearch = function() {
   var q = document.getElementById('searchInput').value.trim();
   if(!q) {
@@ -247,26 +246,28 @@ window.doSearch = function() {
     applyFilters();
     return;
   }
+  // 从当前 URL 读取 scope，确保从法税洞察页跳转过来时 scope=articles 被保留
+  var currentScope = new URLSearchParams(window.location.search).get('scope') || '';
   var url = './?q=' + encodeURIComponent(q);
-  if(scopeFromUrl) url += '&scope=' + encodeURIComponent(scopeFromUrl);
+  if(currentScope) url += '&scope=' + encodeURIComponent(currentScope);
   window.location.href = url;
 };
 
-// 应用筛选条件，重新搜索（不跳转页面）
-// 从 URL 读取当前 scope，不写死
-var currentScope = new URLSearchParams(window.location.search).get('scope') || '';
+// 应用筛选条件，同页刷新（不跳转）
+// 每次都从 URL 读取 scope，不依赖外部变量
 window.applyFilters = function() {
   var y = document.getElementById('filterYear').value;
   var m = document.getElementById('filterMonth').value;
   var c = document.getElementById('filterCategory').value;
   var q = document.getElementById('searchInput').value.trim();
   var params = [];
+  // 从当前 URL 保留 scope 参数
+  var currentScope = new URLSearchParams(window.location.search).get('scope') || '';
   if(currentScope) params.push('scope=' + encodeURIComponent(currentScope));
   if(y !== 'all') params.push('year=' + encodeURIComponent(y));
   if(m !== 'all') params.push('month=' + encodeURIComponent(m));
   if(c !== 'all') params.push('cat=' + encodeURIComponent(c));
   params.push('q=' + encodeURIComponent(q));
-  // 使用 location.search 同页刷新，彻底避免路径解析问题
   window.location.search = '?' + params.join('&');
 };
 

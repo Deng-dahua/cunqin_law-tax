@@ -172,7 +172,11 @@ layout: false
     .footer-dt {
   background: var(--dt-primary);
   color: #b0c4d8;
-  padding: 0.5rem 0;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
 }
     .footer-copyright-dt { padding: 1rem 0; }
@@ -487,7 +491,7 @@ window.doSearch = function() {
   if(y !== 'all') params.push('year=' + encodeURIComponent(y));
   if(m !== 'all') params.push('month=' + encodeURIComponent(m));
   if(c !== 'all') params.push('cat=' + encodeURIComponent(c));
-  window.location.href = '/cunqin_law-tax/search/?' + params.join('&');
+  window.location.href = '../search/?' + params.join('&');
 };
 </script>
 

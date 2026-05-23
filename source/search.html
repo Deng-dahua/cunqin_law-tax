@@ -282,10 +282,14 @@ loadSearchIndex();
         }
         if(!match) return;
       }
-      // 年/月/分类 二次过滤
-      if(filterYear && (p.date||'').substring(0,4) !== filterYear) return;
-      if(filterMonth && (p.date||'').substring(5,7) !== filterMonth.padStart(2,'0')) return;
-      if(filterCat && (p.category||'') !== filterCat) return;
+      // 年/月/分类 二次过滤（OR 逻辑：任意一项匹配即保留）
+      var hasFilter = filterYear || filterMonth || filterCat;
+      if(hasFilter){
+        var matchYear  = !filterYear  || ((p.date||'').substring(0,4) === filterYear);
+        var matchMonth = !filterMonth || ((p.date||'').substring(5,7) === filterMonth.padStart(2,'0'));
+        var matchCat   = !filterCat  || ((p.category||'') === filterCat);
+        if(!(matchYear || matchMonth || matchCat)) return;
+      }
       var s = 0, tl = p.title.toLowerCase(), tx = (p.text||'').toLowerCase();
       if(tl.indexOf(q) > -1) s += 10;
       if(tx.indexOf(q) > -1) s += 5;

@@ -540,16 +540,18 @@ window.doSearch = function() {
     var all = list.querySelectorAll('.article-item');
     var filtered = [];
     all.forEach(function(item){
-      var matchCat = currentCat === 'all' || item.getAttribute('data-category') === currentCat;
+      var itemCat = item.getAttribute('data-category') || '';
       var itemDate = item.getAttribute('data-date') || '';
-      var matchYm = true;
-      if(currentYear !== 'all'){
-        matchYm = matchYm && itemDate.substring(0,4) === currentYear;
-      }
-      if(currentMonth !== 'all'){
-        matchYm = matchYm && itemDate.substring(5,7) === currentMonth.padStart(2,'0');
-      }
-      if(matchCat && matchYm){
+      var itemYear = itemDate.substring(0,4);
+      var itemMonth = itemDate.substring(5,7);
+      // 三条件 OR：任意一项匹配即保留（"all" 视为该条件自动满足）
+      var matchCat = currentCat === 'all' || itemCat === currentCat;
+      var matchYear = currentYear === 'all' || itemYear === currentYear;
+      var matchMonth = currentMonth === 'all' || itemMonth === currentMonth.padStart(2,'0');
+      // 至少一项非"all"且匹配，或全部都是"all"
+      var hasFilter = currentCat !== 'all' || currentYear !== 'all' || currentMonth !== 'all';
+      var anyMatch = matchCat || matchYear || matchMonth;
+      if(!hasFilter || anyMatch){
         filtered.push(item);
       }
     });

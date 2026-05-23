@@ -264,7 +264,7 @@ open_graph:
 
 # ========== 搜索 ==========
 search:
-  enable: true
+  enable: false
   type: local
   placeholder: 输入关键词搜索...
 

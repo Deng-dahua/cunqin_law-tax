@@ -893,7 +893,7 @@ layout: false
 var searchIndex = null;
 function loadSearchIndex() {
   if (searchIndex) return;
-  fetch('/cunqin_law-tax/search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
+  fetch('../search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
 }
 
 loadSearchIndex();

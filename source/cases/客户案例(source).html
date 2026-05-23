@@ -696,7 +696,7 @@ document.getElementById('searchInput').addEventListener('input',function(){
     });
     results.sort(function(a,b){return b.score-a.score});
     if(results.length===0){c.innerHTML='<div class="search-no-result">未找到与「'+q+'」相关的内容</div>'}
-    else{c.innerHTML=results.slice(0,12).map(function(r){return'<a class="search-result-item" href="'+r.page.url+'" style="text-decoration:none;color:inherit"><strong>'+r.page.title+'</strong><div class="search-result-url">'+r.page.url+'</div><small style="color:#999">'+r.page.text.substring(0,100)+'…</small></a>'}).join('')}
+    else{c.innerHTML=results.slice(0,12).map(function(r){return'<div class="search-result-item" onclick="window.location.href=\''+r.page.url+'\'" style="text-decoration:none;color:inherit;cursor:pointer"><strong>'+r.page.title+'</strong><div class="search-result-url">'+r.page.url+'</div><small style="color:#999">'+r.page.text.substring(0,100)+'…</small></div>'}).join('')}
   }else{
     var results=[];
     document.querySelectorAll('section, .page-hero, .hero-dt, .diff-section, .eat-section, .cities-section, .page-header').forEach(function(sec){
@@ -706,7 +706,7 @@ document.getElementById('searchInput').addEventListener('input',function(){
     var footer=document.querySelector('footer');
     if(footer&&footer.textContent.toLowerCase().indexOf(q)>-1)results.push({el:footer,title:'页脚信息',text:footer.textContent.replace(/\s+/g,' ').substring(0,120)});
     if(results.length===0){c.innerHTML='<div class="search-no-result">未找到与「'+q+'」相关的内容</div>'}
-    else{c.innerHTML=results.map(function(r,i){return'<div class="search-result-item" onclick="window._sr='+i+';window._srs['+i+'].el.scrollIntoView({behavior:\'smooth\',block:\'start\'});closeSearch()"><strong>'+(r.title||'相关内容')+'</strong><br><small style="color:#999">'+r.text+'…</small></div>'}).join('');window._srs=results}
+    else{c.innerHTML=results.map(function(r,i){return'<div class="search-result-item" onclick="(function(){var el=window._srs['+i+'].el;closeSearch();setTimeout(function(){el.scrollIntoView({behavior:\'smooth\',block:\'start\'})},50)})()" style="cursor:pointer"><strong>'+(r.title||'相关内容')+'</strong><br><small style="color:#999">'+r.text+'…</small></div>'}).join('');window._srs=results}
   }
 });
 loadSearchIndex();

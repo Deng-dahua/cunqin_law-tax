@@ -634,13 +634,10 @@ img { max-width: 100%; display: block; }
 <div class="search-overlay" id="searchOverlay">
   <div class="search-box">
     <div class="search-box-header">
-      <i class="fas fa-search" style="color:var(--dt-text-light);margin-right:0.5rem;"></i>
-      <input type="text" id="searchInput" placeholder="输入关键词搜索...">
-      <button onclick="closeSearch()"><i class="fas fa-times"></i></button>
+      <input type="text" id="searchInput" placeholder="输入关键词搜索..." onkeydown="if(event.key=='Enter')doSearch()">
+      <button class="search-go-btn" onclick="doSearch()">立即搜索</button>
+      <button class="search-close-btn" onclick="closeSearch()"><i class="fas fa-times"></i></button>
     </div>
-
-    <div class="search-results" id="searchResults"></div>
-  </div>
 </div>
 
 <!-- ===== Hero ===== -->
@@ -1189,6 +1186,12 @@ function loadSearchIndex() {
   if (searchIndex) return;
   fetch('/cunqin_law-tax/search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
 }
+window.doSearch = function() {
+  var q = document.getElementById('searchInput').value.trim();
+  if(!q) return;
+  window.location.href = '/cunqin_law-tax/search.html?q=' + encodeURIComponent(q);
+};
+
 window.openSearch = function() {
   document.getElementById('searchOverlay').classList.add('open');
   document.getElementById('searchInput').focus();
@@ -1199,7 +1202,6 @@ window.closeSearch = function() {
   document.getElementById('searchInput').value = '';
   document.getElementById('searchResults').innerHTML = '';
 };
-document.getElementById('searchInput').addEventListener('input',function(){
   var qOrig=this.value.trim(),q=qOrig.toLowerCase(),c=document.getElementById('searchResults');
   if(q.length<1){c.innerHTML='';return}
   if(!searchIndex||searchIndex.length===0){c.innerHTML='<div class="search-no-result">搜索索引加载中...</div>';return}

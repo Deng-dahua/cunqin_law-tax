@@ -216,6 +216,29 @@ layout: false
     .search-box-header input::placeholder { color: #bbb; }
     .search-box-header button { background: none; border: none; cursor: pointer; color: #999; font-size: 1.2rem; padding: 0.3rem; }
     .search-box-header button:hover { color: var(--dt-accent); }
+    .search-go-btn {
+      background: var(--dt-accent);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.92rem;
+      font-family: inherit;
+      cursor: pointer;
+      border-radius: 0 8px 8px 0;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .search-go-btn:hover { background: #007a74; }
+    .search-close-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #999;
+      font-size: 1.1rem;
+      padding: 0 0.6rem;
+    }
+    .search-close-btn:hover { color: var(--dt-accent); }
+
     .search-result-url { font-size: 0.78rem; color: #666; margin-top: 2px; }
     .search-results { max-height: 469px; overflow-y: auto; padding: 0.5rem 0; }
     .search-result-item { display: block; padding: 0.7rem 1.2rem; font-size: 0.92rem; color: var(--dt-text); cursor: pointer; border-bottom: 1px solid var(--dt-bg-light); transition: background 0.15s; }
@@ -549,12 +572,10 @@ layout: false
 <div class="search-overlay" id="searchOverlay">
   <div class="search-box">
     <div class="search-box-header">
-      <input type="text" id="searchInput" placeholder="输入关键词搜索...">
-      <button onclick="closeSearch()"><i class="fas fa-times"></i></button>
+      <input type="text" id="searchInput" placeholder="输入关键词搜索..." onkeydown="if(event.key=='Enter')doSearch()">
+      <button class="search-go-btn" onclick="doSearch()">立即搜索</button>
+      <button class="search-close-btn" onclick="closeSearch()"><i class="fas fa-times"></i></button>
     </div>
-
-    <div class="search-results" id="searchResults"></div>
-  </div>
 </div>
 
 <script>
@@ -562,6 +583,12 @@ layout: false
 function loadSearchIndex() {
   fetch('/cunqin_law-tax/search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
 }
+window.doSearch = function() {
+  var q = document.getElementById('searchInput').value.trim();
+  if(!q) return;
+  window.location.href = '/cunqin_law-tax/search.html?q=' + encodeURIComponent(q);
+};
+
 window.openSearch = function() {
   document.getElementById('searchOverlay').classList.add('open');
   document.getElementById('searchInput').focus();
@@ -571,7 +598,6 @@ window.closeSearch = function() {
   document.getElementById('searchInput').value = '';
   document.getElementById('searchResults').innerHTML = '';
 };
-document.getElementById('searchInput').addEventListener('input',function(){
   var qOrig=this.value.trim(),q=qOrig.toLowerCase(),c=document.getElementById('searchResults');
   if(q.length<1){c.innerHTML='';return}
   if(!searchIndex||searchIndex.length===0){c.innerHTML='<div class="search-no-result">搜索索引加载中...</div>';return}

@@ -1,0 +1,176 @@
+---
+layout: false
+permalink: /search/
+title: 搜索结果 - 存勤法税
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜索结果 - 存勤法税</title>
+  <link rel="stylesheet" href="/cunqin_law-tax/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+  <style>
+    .search-result-page { max-width: 800px; margin: 120px auto 60px; padding: 0 1.5rem; }
+    .search-result-page h1 { font-size: 1.4rem; color: var(--dt-text); margin-bottom: 0.5rem; }
+    .search-result-page .q-display { color: var(--dt-accent); }
+    .search-back { display: inline-block; margin-bottom: 1.5rem; color: var(--dt-accent); text-decoration: none; font-size: 0.92rem; }
+    .search-back:hover { text-decoration: underline; }
+    .result-count { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .result-item { display: block; padding: 1.2rem 0; border-bottom: 1px solid var(--dt-border); text-decoration: none; color: inherit; transition: background 0.15s; }
+    .result-item:hover { background: rgba(0,161,156,0.04); }
+    .result-item h2 { font-size: 1.08rem; color: var(--dt-text); margin: 0 0 0.4rem; font-weight: 600; }
+    .result-item .result-url { font-size: 0.8rem; color: #888; margin-bottom: 0.3rem; }
+    .result-item .result-snippet { font-size: 0.9rem; color: #666; line-height: 1.6; }
+    .no-result { text-align: center; padding: 3rem 0; color: #999; }
+    .no-result i { font-size: 2.5rem; color: #ccc; margin-bottom: 1rem; display: block; }
+    .search-input-bar { display: flex; align-items: center; border: 1px solid var(--dt-border); border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 2rem; }
+    .search-input-bar input { flex: 1; border: none; outline: none; font-size: 1rem; font-family: inherit; color: var(--dt-text); }
+    .search-input-bar button { background: var(--dt-accent); color: #fff; border: none; padding: 0.45rem 1.2rem; border-radius: 5px; cursor: pointer; font-size: 0.92rem; font-family: inherit; margin-left: 0.8rem; white-space: nowrap; }
+    .search-input-bar button:hover { background: #007a74; }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="nav-dt">
+    <div class="nav-inner container-dt">
+      <a href="/cunqin_law-tax/" class="nav-logo"><img src="/cunqin_law-tax/images/nav-logo.png" alt="存勤法税"></a>
+      <ul class="nav-menu">
+        <li><a href="/cunqin_law-tax/">首页</a></li>
+        <li><a href="/cunqin_law-tax/about/">关于我们</a></li>
+        <li><a href="/cunqin_law-tax/services/">核心服务</a></li>
+        <li><a href="/cunqin_law-tax/cases/">客户案例</a></li>
+        <li><a href="/cunqin_law-tax/archives/">法税洞察</a></li>
+        <li><a href="/cunqin_law-tax/contact/">联系我们</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="nav-tool-btn" onclick="openSearch()"><i class="fas fa-search"></i> 搜索</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="search-result-page">
+    <a href="/cunqin_law-tax/" class="search-back"><i class="fas fa-arrow-left"></i> 返回首页</a>
+    <h1>搜索结果<span id="qDisplay" class="q-display"></span></h1>
+    <div class="search-input-bar">
+      <input type="text" id="searchInput" placeholder="输入关键词搜索...">
+      <button onclick="doSearch()">立即搜索</button>
+    </div>
+    <div class="result-count" id="resultCount"></div>
+    <div id="resultsContainer"></div>
+    <div class="no-result" id="noResult" style="display:none;">
+      <i class="fas fa-search"></i>
+      <p>未找到与「<span id="noResultQ"></span>」相关的内容</p>
+      <p style="font-size:0.85rem;margin-top:0.5rem;">请尝试其他关键词</p>
+    </div>
+  </div>
+
+  <!-- 搜索覆盖层（复用首页的） -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <div class="search-box-header">
+        <input type="text" id="searchInput2" placeholder="输入关键词搜索...">
+        <button class="search-go-btn" onclick="doSearch2()">立即搜索</button>
+        <button class="search-close-btn" onclick="closeSearch()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="search-results" id="searchResults2"></div>
+    </div>
+  </div>
+
+  <script>
+  var searchIndex = null;
+  function loadSearchIndex() {
+    if (searchIndex) return;
+    fetch('/cunqin_law-tax/search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
+  }
+  window.openSearch = function() {
+    document.getElementById('searchOverlay').classList.add('open');
+    document.getElementById('searchInput2').value = document.getElementById('searchInput').value;
+    document.getElementById('searchInput2').focus();
+    loadSearchIndex();
+  };
+  window.closeSearch = function() {
+    document.getElementById('searchOverlay').classList.remove('open');
+    document.getElementById('searchInput2').value = '';
+    document.getElementById('searchResults2').innerHTML = '';
+  };
+  window.doSearch = function() {
+    var q = document.getElementById('searchInput').value.trim();
+    if(!q) return;
+    window.location.href = '/cunqin_law-tax/search.html?q=' + encodeURIComponent(q);
+  };
+  window.doSearch2 = function() {
+    var q = document.getElementById('searchInput2').value.trim();
+    if(!q) return;
+    window.location.href = '/cunqin_law-tax/search.html?q=' + encodeURIComponent(q);
+  };
+  document.getElementById('searchInput').addEventListener('keydown', function(e){ if(e.key==='Enter') window.doSearch(); });
+  document.getElementById('searchInput2').addEventListener('keydown', function(e){ if(e.key==='Enter') window.doSearch2(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') window.closeSearch(); });
+  loadSearchIndex();
+
+  // 渲染搜索结果
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var qOrig = params.get('q') || '';
+    document.getElementById('searchInput').value = qOrig;
+    if(!qOrig) { document.getElementById('resultCount').textContent = '请输入搜索关键词'; return; }
+    document.getElementById('qDisplay').textContent = '：' + qOrig;
+    document.getElementById('noResultQ').textContent = qOrig;
+
+    var q = qOrig.toLowerCase();
+    var escQ = qOrig.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    var hlRegex = new RegExp('(' + escQ + ')', 'gi');
+    function hl(t){
+      return hlRegex && qOrig ? t.replace(hlRegex, '<span style="color:#003f6c;font-weight:700">$1</span>') : t;
+    }
+
+    // 等待搜索索引加载
+    function render() {
+      if(!searchIndex) { setTimeout(render, 100); return; }
+      var results = [];
+      searchIndex.forEach(function(p){
+        var s = 0, tl = p.title.toLowerCase(), tx = (p.text||'').toLowerCase();
+        if(tl.indexOf(q) > -1) s += 10;
+        if(tx.indexOf(q) > -1) s += 5;
+        q.split(/\s+/).forEach(function(w){
+          if(tl.indexOf(w) > -1) s += 3;
+          if(tx.indexOf(w) > -1) s += 1;
+        });
+        if(s > 0) results.push({page: p, score: s});
+      });
+      results.sort(function(a,b){ return b.score - a.score; });
+      document.getElementById('resultCount').textContent = '找到 ' + results.length + ' 条结果';
+
+      if(results.length === 0) {
+        document.getElementById('noResult').style.display = 'block';
+        document.getElementById('resultsContainer').innerHTML = '';
+      } else {
+        document.getElementById('noResult').style.display = 'none';
+        document.getElementById('resultsContainer').innerHTML = results.map(function(r){
+          return '<a class="result-item" href="' + r.page.url + '">' +
+            '<h2>' + hl(r.page.title) + '</h2>' +
+            '<div class="result-url">' + r.page.url + '</div>' +
+            '<div class="result-snippet">' + hl((r.page.text||'').substring(0,150)) + '…</div>' +
+          '</a>';
+        }).join('');
+      }
+    }
+    render();
+  })();
+  </script>
+
+  <!-- 页脚 -->
+  <div class="footer-copyright-dt">
+    <div class="container-dt">
+      <div class="footer-bottom-dt">
+        <img src="/cunqin_law-tax/images/footer-logo.png" alt="存勤法税" class="footer-logo-dt">
+        <div class="footer-info-dt">
+          <div>© 2024-2026 存勤法税服务（广州）有限公司 | 创始人：邓达华</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

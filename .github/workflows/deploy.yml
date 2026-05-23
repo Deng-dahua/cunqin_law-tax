@@ -32,9 +32,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Patch theme (comment out missing _links import)
+      - name: Patch theme (ensure _links dir exists to prevent stylus import error)
         run: |
-          sed -i 's|@import "_links/\*"|// @import "_links/*"|' node_modules/hexo-theme-fluid/source/css/_pages/pages.styl
+          LINKS_DIR="node_modules/hexo-theme-fluid/source/css/_pages/_links"
+          if [ ! -d "$LINKS_DIR" ]; then
+            mkdir -p "$LINKS_DIR"
+            echo "/* placeholder */" > "$LINKS_DIR/index.styl"
+          fi
 
       - name: Build Hexo site
         run: |

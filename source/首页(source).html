@@ -85,7 +85,7 @@ layout: false
       padding: 0 35px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start; position: relative;
       height: 64px;
     }
     .nav-brand {
@@ -118,8 +118,10 @@ layout: false
     .nav-menu {
       display: flex;
       align-items: center;
-      flex: 1;
-      justify-content: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
       gap: 1rem;
     }
     .nav-menu a {

@@ -74,10 +74,10 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
 }
-.nav-container { width: 100%; margin: 0 auto; padding: 0 35px; display: flex; align-items: center; justify-content: center; height: 64px; }
+.nav-container { width: 100%; margin: 0 auto; padding: 0 35px; display: flex; align-items: center; justify-content: flex-start; position: relative; height: 64px; }
 .nav-brand { display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem; font-weight: 700; color: var(--dt-primary); letter-spacing: 0.05em; flex-shrink: 0; }
 .nav-logo { height: 34px; width: auto; }
-.nav-links { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; flex: 1; justify-content: center; }
+.nav-links { display: flex; align-items: center; gap: 0.3rem; flex-wrap: nowrap; position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
 .nav-links a { padding: 0.5rem 1rem; font-size: 0.92rem; color: var(--dt-text-light); border-radius: 6px; transition: color 0.2s, background 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--dt-accent); background: rgba(0,161,156,0.06); }
 .nav-tools { display: flex; align-items: center; gap: 0.3rem; }

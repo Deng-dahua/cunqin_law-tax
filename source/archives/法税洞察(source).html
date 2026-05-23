@@ -294,23 +294,23 @@ layout: false
   <div class="container-dt">
     <div class="filter-bar">
       <div class="filter-bar-buttons">
-        <span class="filter-bar-label">排序：</span>
-        <div class="sort-toggle" id="sortToggle">
-          <div class="sort-bg"></div>
-          <span class="on" data-sort="newest" onclick="setSort('newest')">最新</span>
-          <span data-sort="hottest" onclick="setSort('hottest')">最热</span>
-        </div>
-        <span class="filter-bar-label" style="margin-left:1rem;">分类：</span>
-        <select class="filter-select" id="filterCategory" onchange="applyFilters()">
-          <option value="all">全部分类</option>
-        </select>
-        <span class="filter-bar-label" style="margin-left:1rem;">时间：</span>
+        <span class="filter-bar-label">时间：</span>
         <select class="filter-select" id="filterYear" onchange="applyFilters()">
           <option value="all">全部年份</option>
         </select>
         <select class="filter-select" id="filterMonth" onchange="applyFilters()">
           <option value="all">全部月份</option>
         </select>
+        <span class="filter-bar-label" style="margin-left:1rem;">分类：</span>
+        <select class="filter-select" id="filterCategory" onchange="applyFilters()">
+          <option value="all">全部分类</option>
+        </select>
+        <span class="filter-bar-label" style="margin-left:1rem;">排序：</span>
+        <div class="sort-toggle" id="sortToggle">
+          <div class="sort-bg"></div>
+          <span class="on" data-sort="newest" onclick="setSort('newest')">最新</span>
+          <span data-sort="hottest" onclick="setSort('hottest')">最热</span>
+        </div>
       </div>
       <span class="filter-bar-label" id="filter-count">共 0 篇文章</span>
     </div>

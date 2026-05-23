@@ -218,15 +218,18 @@ window.doSearch = function() {
 };
 
 // 应用筛选条件，重新搜索（不跳转页面）
+// 从 URL 读取当前 scope，不写死
+var currentScope = new URLSearchParams(window.location.search).get('scope') || '';
 window.applyFilters = function() {
   var y = document.getElementById('filterYear').value;
   var m = document.getElementById('filterMonth').value;
   var c = document.getElementById('filterCategory').value;
-  var params = ['scope=articles'];
+  var q = document.getElementById('searchInput').value.trim();
+  var params = [];
+  if(currentScope) params.push('scope=' + encodeURIComponent(currentScope));
   if(y !== 'all') params.push('year=' + encodeURIComponent(y));
   if(m !== 'all') params.push('month=' + encodeURIComponent(m));
   if(c !== 'all') params.push('cat=' + encodeURIComponent(c));
-  var q = document.getElementById('searchInput').value.trim();
   params.push('q=' + encodeURIComponent(q));
   window.location.href = '/cunqin_law-tax/search/?' + params.join('&');
 };

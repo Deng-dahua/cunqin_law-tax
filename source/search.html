@@ -228,7 +228,7 @@ loadSearchIndex();
   // 根据 scope 过滤结果
   var scopePrefixes = [];
   if(scope === 'articles') {
-    scopePrefixes = ['/cunqin_law-tax/archives/', '/cunqin_law-tax/articles/'];
+    scopePrefixes = ['/cunqin_law-tax/articles/'];
   }
 
   var q = qOrig.toLowerCase();
@@ -260,7 +260,7 @@ loadSearchIndex();
       if(s > 0) results.push({page: p, score: s});
     });
     results.sort(function(a,b){ return b.score - a.score; });
-    var scopeNote = scope === 'articles' ? '（搜索范围：法税洞察）' : '';
+    var scopeNote = scope === 'articles' ? '（搜索范围：全部文章）' : '';
     document.getElementById('resultCount').textContent = '找到 ' + results.length + ' 条结果' + scopeNote;
 
     if(results.length === 0) {

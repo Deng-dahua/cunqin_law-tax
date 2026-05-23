@@ -648,8 +648,7 @@ layout: false
 <script>
 (function(){
 function loadSearchIndex() {
-  var idxUrl = new URL('./search-index.json', location.href);
-  fetch(idxUrl).then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
+  fetch('/cunqin_law-tax/search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
 }
 window.openSearch = function() {
   document.getElementById('searchOverlay').classList.add('open');

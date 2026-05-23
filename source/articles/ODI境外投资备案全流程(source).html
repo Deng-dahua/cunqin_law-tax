@@ -1186,8 +1186,7 @@ A：可以。在取得备案通知书后，可在有效期内分次汇出，但�
 var searchIndex = null;
 function loadSearchIndex() {
   if (searchIndex) return;
-  var idxUrl = new URL('./search-index.json', location.href);
-  fetch(idxUrl).then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
+  fetch('/cunqin_law-tax/search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
 }
 window.openSearch = function() {
   document.getElementById('searchOverlay').classList.add('open');

@@ -254,8 +254,15 @@ loadSearchIndex();
   }
 
   document.getElementById('searchInput').value = qOrig;
-  if(!qOrig) { document.getElementById('resultCount').textContent = '请输入搜索关键词'; return; }
-  document.getElementById('noResultQ').textContent = qOrig;
+  // 高级筛选：必须至少填写一个条件（关键词/年/月/分类）
+  var hasAnyFilter = qOrig || filterYear || filterMonth || filterCat;
+  if(!hasAnyFilter) {
+    document.getElementById('resultCount').textContent = '请至少输入关键词或选择一个筛选条件';
+    document.getElementById('noResult').style.display = 'none';
+    document.getElementById('resultsContainer').innerHTML = '';
+    return;
+  }
+  document.getElementById('noResultQ').textContent = qOrig || '[筛选条件]';
 
   // 根据 scope 过滤结果
   var scopePrefixes = [];
@@ -290,14 +297,21 @@ loadSearchIndex();
         var matchCat   = !filterCat  || ((p.category||'') === filterCat);
         if(!(matchYear || matchMonth || matchCat)) return;
       }
-      var s = 0, tl = p.title.toLowerCase(), tx = (p.text||'').toLowerCase();
-      if(tl.indexOf(q) > -1) s += 10;
-      if(tx.indexOf(q) > -1) s += 5;
-      q.split(/\s+/).forEach(function(w){
-        if(tl.indexOf(w) > -1) s += 3;
-        if(tx.indexOf(w) > -1) s += 1;
-      });
-      if(s > 0) results.push({page: p, score: s});
+      // 关键词评分（q 为空时跳过，直接按筛选条件纳入）
+      var s = 0;
+      if(qOrig){
+        var q = qOrig.toLowerCase();
+        var tl2 = p.title.toLowerCase(), tx2 = (p.text||'').toLowerCase();
+        if(tl2.indexOf(q) > -1) s += 10;
+        if(tx2.indexOf(q) > -1) s += 5;
+        q.split(/\s+/).forEach(function(w){
+          if(tl2.indexOf(w) > -1) s += 3;
+          if(tx2.indexOf(w) > -1) s += 1;
+        });
+      }
+      // q 为空时：年/月/分类任一匹配即入选（s=0 但 hasFilter 为 true）
+      // q 非空时：必须 s > 0 才入选
+      if(qOrig ? s > 0 : true) results.push({page: p, score: s});
     });
     results.sort(function(a,b){ return b.score - a.score; });
     var scopeNote = scope === 'articles' ? '（搜索范围：全部文章）' : '';

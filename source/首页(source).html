@@ -933,6 +933,7 @@ layout: false
   </div>
 </div>
 
+<script>
 (function(){
 var searchIndex = null;
 function loadSearchIndex() {
@@ -968,6 +969,7 @@ document.getElementById('searchInput').addEventListener('input',function(){
 loadSearchIndex();
 document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeSearch()});
 })();
+</script>
 
 <!-- ============ 置顶/置底按钮 ============ -->
 <button class="scroll-btn" id="btnScrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="返回顶部">↑</button>

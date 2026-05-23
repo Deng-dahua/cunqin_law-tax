@@ -2,7 +2,7 @@
 # https://fluid.dev/
 
 # ========== 全局样式 ==========
-custom_css: /css/custom.css
+custom_css:
 
 # ========== 导航栏 ==========
 navbar:
@@ -134,11 +134,11 @@ post:
     enable: true
     name: 邓达华
     description: 18年财税法实战专家
-    avatar: /images/founder.jpg
+    avatar: /images/founder-new.png
     social:
       - name: 微信
         icon: fab fa-weixin
-        link: /images/wechat-qrcode.jpg
+        link: /images/wechat-qrcode-footer.png
   reward:
     enable: false
   copyright:
@@ -237,17 +237,11 @@ footer:
   color: "#cbd5e0"
   copyright: |
     © 2024-2026 存勤法税服务（广州）有限公司 | 创始人：邓达华
-  beian: "粤ICP备XXXXXXXX号"
+  beian: ""
   social:
     - name: 微信公众号
       icon: fab fa-weixin
-      link: /images/wechat-qrcode.jpg
-    - name: 知乎专栏
-      icon: fab fa-zhihu
-      link: https://zhuanlan.zhihu.com/cunqin
-    - name: 微博
-      icon: fab fa-weibo
-      link: https://weibo.com/cunqin
+      link: /images/wechat-qrcode-footer.png
 
 # ========== SEO ==========
 seo:

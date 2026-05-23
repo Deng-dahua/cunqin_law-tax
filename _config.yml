@@ -141,9 +141,9 @@ post:
 
 # Comments
 comments:
-  enable: true
+  enable: false
   type: disqus
   shortname: cunqin-law-tax
 
 # Customization
-favicon: /images/logo.png
+favicon: /images/nav-logo.png

@@ -627,8 +627,12 @@ img { max-width: 100%; display: block; }
   <div class="search-box">
     <div class="search-box-header">
       <i class="fas fa-search" style="color:var(--dt-text-light);margin-right:0.5rem;"></i>
-      <input type="text" id="searchInput" placeholder="搜索文章..." oninput="doSearch()">
+      <input type="text" id="searchInput" placeholder="输入关键词搜索...">
       <button onclick="closeSearch()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="search-tabs" id="searchTabs">
+      <button class="search-tab active" data-scope="site">全网站</button>
+      <button class="search-tab" data-scope="page">本页面</button>
     </div>
     <div class="search-results" id="searchResults"></div>
   </div>
@@ -1080,47 +1084,66 @@ img { max-width: 100%; display: block; }
     headings.forEach(function(h) { observer.observe(h); });
   })();
 
-// 搜索功能
-  const searchIndex = [
-    {"title":"企业税务风险管控：如何建立\"看得见、防得住\"的税务风险体系","desc":"系统讲解企业税务风险管理体系的建立方法，包括风险识别、评估、控制和预警，帮助企业实现税务风险可视化、可管控","url":"qiye-shuiwu-fengxian.html","cat":"行业洞察"},
-    {"title":"甲乙双视角：为什么企业需要\"双重人格\"的税务顾问","desc":"深度分析\"甲乙双视角\"的独特价值，探讨为什么企业需要同时具备甲方实战经验和乙方专业能力的税务顾问","url":"jiayi-shuangshijing.html","cat":"专业洞察"},
-    {"title":"高新技术企业税务筹划：如何用好用足高新税收优惠政策","desc":"深度解读高新技术企业税收优惠政策，包括15%优惠税率、研发费用加计扣除、软件企业优惠等，提供实操性筹划建议","url":"gaoxin-qiye-shuiwu.html","cat":"政策解读"},
-    {"title":"企业重组税务规划：并购重组中的税务成本优化与风险防控","desc":"深度解读企业重组中的税务规划要点，涵盖股权收购vs资产收购、特殊性税务处理、股权激励税务等核心问题","url":"qiye-zhongzu-shuiwu.html","cat":"实操指南"},
-    {"title":"跨境电商税务合规指南：2024年最新政策与实操要点","desc":"全面解读跨境电商企业税务合规要点，涵盖出口退税、境外税务、跨境资金回流等核心问题，提供实操性解决方案","url":"kuajing-dianshang-shuiwu.html","cat":"行业洞察"},
-    {"title":"ODI境外投资备案全流程指南：从申请到落地的实战手册","desc":"详尽解读ODI境外直接投资备案的完整流程、所需材料、常见问题及注意事项，帮助企业合规出海","url":"odi-beian-quanliucheng.html","cat":"实操指南"},
-    {"title":"金税四期全面解读：企业如何从容应对\"以数治税\"新时代","desc":"深度解读金税四期政策要点，分析企业面临的机遇与挑战，提供切实可行的应对策略","url":"jinshui-siqi-yingdui.html","cat":"政策解读"},
-    {"title":"业管财税法融合：企业合规管理的五维一体新范式","desc":"深度解读「业管财税法」五维融合理念，探索企业合规管理的新范式，帮助企业建立系统性的风险防控体系","url":"yecai-fasui-ronghe.html","cat":"行业洞察"}
-  ];
-  function openSearch() {
-    document.getElementById('searchOverlay').classList.add('open');
-    document.getElementById('searchInput').focus();
+// 搜索功能（全网站 / 本页面）
+(function(){
+var searchScope = 'site';
+var searchIndex = null;
+var searchIndexLoaded = false;
+function loadSearchIndex() {
+  if (searchIndexLoaded) return;
+  searchIndexLoaded = true;
+  var idxUrl = new URL('/cunqin_law-tax/search-index.json', location.origin);
+  fetch(idxUrl).then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
+}
+window.openSearch = function() {
+  document.getElementById('searchOverlay').classList.add('open');
+  document.getElementById('searchInput').focus();
+  if (searchScope === 'site') loadSearchIndex();
+};
+window.closeSearch = function() {
+  document.getElementById('searchOverlay').classList.remove('open');
+  document.getElementById('searchInput').value = '';
+  document.getElementById('searchResults').innerHTML = '';
+};
+window.switchSearchTab = function(scope) {
+  searchScope = scope;
+  var tabs = document.querySelectorAll('.search-tab');
+  tabs.forEach(function(t){t.classList.toggle('active',t.getAttribute('data-scope')===scope)});
+  if (scope==='site') loadSearchIndex();
+  var inp = document.getElementById('searchInput');
+  if (inp.value.trim()) inp.dispatchEvent(new Event('input'));
+};
+document.getElementById('searchInput').addEventListener('input',function(){
+  var q=this.value.trim().toLowerCase(),c=document.getElementById('searchResults');
+  if(q.length<1){c.innerHTML='';return}
+  if(searchScope==='site'){
+    if(!searchIndex||searchIndex.length===0){c.innerHTML='<div class="search-no-result">搜索索引加载中...</div>';return}
+    var results=[];
+    searchIndex.forEach(function(p){
+      var s=0,tl=p.title.toLowerCase(),tx=p.text.toLowerCase();
+      if(tl.indexOf(q)>-1)s+=10;
+      if(tx.indexOf(q)>-1)s+=5;
+      q.split(/\s+/).forEach(function(w){if(tl.indexOf(w)>-1)s+=3;if(tx.indexOf(w)>-1)s+=1});
+      if(s>0)results.push({page:p,score:s})
+    });
+    results.sort(function(a,b){return b.score-a.score});
+    if(results.length===0){c.innerHTML='<div class="search-no-result">未找到与「'+q+'」相关的内容</div>'}
+    else{c.innerHTML=results.slice(0,12).map(function(r){return'<a class="search-result-item" href="'+r.page.url+'" style="text-decoration:none;color:inherit"><strong>'+r.page.title+'</strong><div class="search-result-url">'+r.page.url+'</div><small style="color:#999">'+r.page.text.substring(0,100)+'…</small></a>'}).join('')}
+  }else{
+    var results=[];
+    document.querySelectorAll('section, .page-hero, .hero-dt, .diff-section, .eat-section, .cities-section, .page-header').forEach(function(sec){
+      var t=sec.textContent||sec.innerText,h=sec.querySelector('h1,h2,h3,h4'),title=h?h.textContent.trim():'';
+      if(t.toLowerCase().indexOf(q)>-1)results.push({el:sec,title:title,text:t.replace(/\s+/g,' ').substring(0,120)})
+    });
+    var footer=document.querySelector('footer');
+    if(footer&&footer.textContent.toLowerCase().indexOf(q)>-1)results.push({el:footer,title:'页脚信息',text:footer.textContent.replace(/\s+/g,' ').substring(0,120)});
+    if(results.length===0){c.innerHTML='<div class="search-no-result">未找到与「'+q+'」相关的内容</div>'}
+    else{c.innerHTML=results.map(function(r,i){return'<div class="search-result-item" onclick="window._srs['+i+'].el.scrollIntoView({behavior:\'smooth\',block:\'start\'});closeSearch()"><strong>'+(r.title||'相关内容')+'</strong><br><small style="color:#999">'+r.text+'…</small></div>'}).join('');window._srs=results}
   }
-  function closeSearch() {
-    document.getElementById('searchOverlay').classList.remove('open');
-    document.getElementById('searchInput').value = '';
-    document.getElementById('searchResults').innerHTML = '';
-  }
-  function doSearch() {
-    const q = document.getElementById('searchInput').value.toLowerCase().trim();
-    const container = document.getElementById('searchResults');
-    if (!q) { container.innerHTML = ''; return; }
-    const results = searchIndex.filter(item =>
-      item.title.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q)
-    );
-    if (results.length === 0) {
-      container.innerHTML = '<div class="search-no-results">未找到相关文章</div>';
-    } else {
-      container.innerHTML = results.map(r =>
-        '<a href="' + r.url + '" class="search-result-item"><h4>' + r.title + '</h4><p>' + r.desc + '</p></a>'
-      ).join('');
-    }
-  }
-  document.addEventListener('click', function(e) {
-    if (e.target.id === 'searchOverlay') closeSearch();
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeSearch();
-  });
+});
+loadSearchIndex();
+document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeSearch()});
+})();
 </script>
 
 <script>

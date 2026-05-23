@@ -377,6 +377,11 @@ layout: false
       color: #999; font-size: 1.2rem; padding: 0.3rem;
       }
     .search-box-header button:hover { color: var(--dt-accent); }
+    .search-tabs { display: flex; border-bottom: 1px solid var(--dt-border); }
+    .search-tab { flex: 1; padding: 0.65rem 0; background: #fff; border: none; cursor: pointer; font-size: 0.9rem; font-family: inherit; color: #999; text-align: center; transition: all 0.2s; }
+    .search-tab.active { color: #003f6c; font-weight: 600; border-bottom: 2px solid #003f6c; margin-bottom: -1px; }
+    .search-tab:not(.active):hover { color: #666; background: #f8f9fa; }
+    .search-result-url { font-size: 0.78rem; color: #666; margin-top: 2px; }
     .search-results { max-height: 352px; overflow-y: auto; padding: 0.5rem 0; }
     .search-result-item {
       display: block; padding: 0.7rem 1.2rem; font-size: 0.92rem;
@@ -927,59 +932,74 @@ layout: false
       <input type="text" id="searchInput" placeholder="输入关键词搜索...">
       <button onclick="closeSearch()"><i class="fas fa-times"></i></button>
     </div>
+    <div class="search-tabs" id="searchTabs">
+      <button class="search-tab active" data-scope="site">全网站</button>
+      <button class="search-tab" data-scope="page">本页面</button>
+    </div>
     <div class="search-results" id="searchResults"></div>
   </div>
 </div>
 
 <script>
-// ============ 搜索功能 ============
-function openSearch() {
+(function(){
+var searchScope = 'site';
+var searchIndex = null;
+var searchIndexLoaded = false;
+function loadSearchIndex() {
+  if (searchIndexLoaded) return;
+  searchIndexLoaded = true;
+  var idxUrl = new URL('/cunqin_law-tax/search-index.json', location.origin);
+  fetch(idxUrl).then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
+}
+window.openSearch = function() {
   document.getElementById('searchOverlay').classList.add('open');
   document.getElementById('searchInput').focus();
-}
-function closeSearch() {
+  if (searchScope === 'site') loadSearchIndex();
+};
+window.closeSearch = function() {
   document.getElementById('searchOverlay').classList.remove('open');
   document.getElementById('searchInput').value = '';
   document.getElementById('searchResults').innerHTML = '';
-}
-document.getElementById('searchInput').addEventListener('input', function() {
-  var q = this.value.trim().toLowerCase();
-  var container = document.getElementById('searchResults');
-  if (q.length < 1) { container.innerHTML = ''; return; }
-  var sections = document.querySelectorAll('section, .hero-dt, .diff-section, .eat-section, .cities-section');
-  var results = [];
-  sections.forEach(function(sec) {
-    var text = sec.textContent || sec.innerText;
-    var heading = sec.querySelector('h1, h2, h3, h4');
-    var title = heading ? heading.textContent.trim() : '';
-    if (text.toLowerCase().indexOf(q) > -1) {
-      results.push({ el: sec, title: title, text: text.replace(/\s+/g,' ').substring(0, 120) });
-    }
-  });
-  var footer = document.querySelector('footer');
-  if (footer && footer.textContent.toLowerCase().indexOf(q) > -1) {
-    results.push({ el: footer, title: '页脚信息', text: footer.textContent.replace(/\s+/g,' ').substring(0, 120) });
-  }
-  if (results.length === 0) {
-    container.innerHTML = '<div class="search-no-result">未找到与「' + q + '」相关的内容</div>';
-  } else {
-    container.innerHTML = results.map(function(r, i) {
-      return '<div class="search-result-item" onclick="goToResult(' + i + ')"><strong>' +
-        (r.title || '相关内容') + '</strong><br><small style="color:#999">' + r.text + '…</small></div>';
-    }).join('');
-    window._searchResults = results;
+};
+window.switchSearchTab = function(scope) {
+  searchScope = scope;
+  var tabs = document.querySelectorAll('.search-tab');
+  tabs.forEach(function(t){t.classList.toggle('active',t.getAttribute('data-scope')===scope)});
+  if (scope==='site') loadSearchIndex();
+  var inp = document.getElementById('searchInput');
+  if (inp.value.trim()) inp.dispatchEvent(new Event('input'));
+};
+document.getElementById('searchInput').addEventListener('input',function(){
+  var q=this.value.trim().toLowerCase(),c=document.getElementById('searchResults');
+  if(q.length<1){c.innerHTML='';return}
+  if(searchScope==='site'){
+    if(!searchIndex||searchIndex.length===0){c.innerHTML='<div class="search-no-result">搜索索引加载中...</div>';return}
+    var results=[];
+    searchIndex.forEach(function(p){
+      var s=0,tl=p.title.toLowerCase(),tx=p.text.toLowerCase();
+      if(tl.indexOf(q)>-1)s+=10;
+      if(tx.indexOf(q)>-1)s+=5;
+      q.split(/\s+/).forEach(function(w){if(tl.indexOf(w)>-1)s+=3;if(tx.indexOf(w)>-1)s+=1});
+      if(s>0)results.push({page:p,score:s})
+    });
+    results.sort(function(a,b){return b.score-a.score});
+    if(results.length===0){c.innerHTML='<div class="search-no-result">未找到与「'+q+'」相关的内容</div>'}
+    else{c.innerHTML=results.slice(0,12).map(function(r){return'<a class="search-result-item" href="'+r.page.url+'" style="text-decoration:none;color:inherit"><strong>'+r.page.title+'</strong><div class="search-result-url">'+r.page.url+'</div><small style="color:#999">'+r.page.text.substring(0,100)+'…</small></a>'}).join('')}
+  }else{
+    var results=[];
+    document.querySelectorAll('section, .page-hero, .hero-dt, .diff-section, .eat-section, .cities-section, .page-header').forEach(function(sec){
+      var t=sec.textContent||sec.innerText,h=sec.querySelector('h1,h2,h3,h4'),title=h?h.textContent.trim():'';
+      if(t.toLowerCase().indexOf(q)>-1)results.push({el:sec,title:title,text:t.replace(/\s+/g,' ').substring(0,120)})
+    });
+    var footer=document.querySelector('footer');
+    if(footer&&footer.textContent.toLowerCase().indexOf(q)>-1)results.push({el:footer,title:'页脚信息',text:footer.textContent.replace(/\s+/g,' ').substring(0,120)});
+    if(results.length===0){c.innerHTML='<div class="search-no-result">未找到与「'+q+'」相关的内容</div>'}
+    else{c.innerHTML=results.map(function(r,i){return'<div class="search-result-item" onclick="window._srs['+i+'].el.scrollIntoView({behavior:\'smooth\',block:\'start\'});closeSearch()"><strong>'+(r.title||'相关内容')+'</strong><br><small style="color:#999">'+r.text+'…</small></div>'}).join('');window._srs=results}
   }
 });
-function goToResult(index) {
-  var result = window._searchResults[index];
-  if (result) {
-    result.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    closeSearch();
-  }
-}
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeSearch();
-});
+loadSearchIndex();
+document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeSearch()});
+})();
 
 // === 法税洞察文章计数（统计全部文章8篇） ===
 (function(){

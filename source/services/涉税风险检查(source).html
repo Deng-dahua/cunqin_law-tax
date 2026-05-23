@@ -116,6 +116,40 @@ layout: false
     .course-table th { background: var(--dt-primary); color: #fff; padding: 0.7rem 1rem; text-align: left; }
     .course-table td { padding: 0.7rem 1rem; border-bottom: 1px solid var(--dt-border); }
     .course-table tr:nth-child(even) td { background: var(--dt-bg-light); }
+    /* === 以人为本新板块 === */
+    .section-lead { text-align: center; color: var(--dt-text-light); font-size: 1.05rem; margin: -1rem 0 2rem; }
+    .pain-list-wide { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .belief-section { background: linear-gradient(135deg, var(--dt-primary) 0%, var(--dt-primary-light) 100%); color: #fff; }
+    .belief-section .section-title { color: #fff; border-bottom-color: var(--dt-accent); }
+    .belief-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 1rem; }
+    .belief-card { text-align: center; padding: 1.5rem 1rem; }
+    .belief-card .belief-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .belief-card h3 { font-size: 0.95rem; margin-bottom: 0.5rem; font-weight: 700; color: #fff; }
+    .belief-card p { font-size: 0.85rem; opacity: 0.85; line-height: 1.6; }
+    .content-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-top: 1rem; }
+    .content-item { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.8rem 1rem; background: var(--dt-bg-light); border-radius: 6px; font-size: 0.9rem; border-left: 3px solid var(--dt-accent); }
+    .content-item .ci-icon { color: var(--dt-accent); font-size: 1rem; flex-shrink: 0; margin-top: 0.15rem; }
+    .who-section { background: var(--dt-bg-light); }
+    .who-card { display: flex; gap: 2rem; align-items: center; max-width: 800px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+    .who-avatar { width: 100px; height: 100px; border-radius: 50%; background: var(--dt-primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
+    .who-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .who-info h3 { font-size: 1.2rem; color: var(--dt-primary); margin-bottom: 0.5rem; }
+    .who-info p { font-size: 0.9rem; color: var(--dt-text-light); line-height: 1.7; }
+    .who-tag { display: inline-block; background: rgba(0,161,156,0.1); color: var(--dt-accent); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.78rem; margin: 0.3rem 0.3rem 0 0; }
+    .assurance-section { background: var(--dt-bg-light); }
+    .assurance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .assurance-card { background: #fff; border-radius: 10px; padding: 2rem 1.5rem; text-align: center; border: 1px solid var(--dt-border); transition: box-shadow 0.3s; }
+    .assurance-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .assurance-card .as-icon { font-size: 2rem; color: var(--dt-accent); margin-bottom: 1rem; }
+    .assurance-card h3 { font-size: 1.05rem; color: var(--dt-primary); margin-bottom: 0.8rem; }
+    .assurance-card p { font-size: 0.88rem; color: var(--dt-text-light); line-height: 1.6; }
+    .fit-list { max-width: 700px; margin: 0 auto; }
+    .fit-item { display: flex; align-items: flex-start; gap: 0.8rem; padding: 0.8rem 1rem; margin-bottom: 0.3rem; font-size: 0.95rem; color: var(--dt-text); }
+    .fit-item .fi-marker { color: var(--dt-accent); font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
+    .gain-item { display: flex; align-items: flex-start; gap: 0.8rem; padding: 1rem 1.2rem; background: var(--dt-bg-light); border-radius: 8px; border-left: 3px solid var(--dt-accent); }
+    .gain-item .gi-icon { color: var(--dt-accent); font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .gain-item .gi-text strong { display: block; color: var(--dt-primary); font-size: 0.95rem; }
+    .gain-item .gi-text span { color: var(--dt-text-light); font-size: 0.85rem; }
     /* 更多服务 */
     .more-services { padding: 60px 0; background: var(--dt-bg-light); }
     .more-services .section-title { font-size: 1.6rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--dt-accent); display: inline-block; }
@@ -134,17 +168,20 @@ layout: false
   align-items: center;
   justify-content: center;
 }
-.cta-text { text-align: center; flex-shrink: 0; }
+    .cta-text { text-align: center; flex-shrink: 0; }
     .cta-section .container-dt { height: 100%; display: flex; align-items: center; justify-content: center; }
     .cta-section h2 { font-size: 1.8rem; font-weight: 700; line-height: 1.65; margin-bottom: 1.5rem; letter-spacing: 0.03em; }
     .cta-section p { font-size: 1.05rem; opacity: 0.88; line-height: 2.0; margin-bottom: 2rem; }
-
-.btn-dt-primary { display: inline-block; background: var(--dt-accent); color: #fff; padding: 14px 36px; border-radius: 4px; font-weight: 600; font-size: 1rem; transition: all 0.3s; border: none; cursor: pointer; }
+    .btn-dt-primary { display: inline-block; background: var(--dt-accent); color: #fff; padding: 14px 36px; border-radius: 4px; font-weight: 600; font-size: 1rem; transition: all 0.3s; border: none; cursor: pointer; }
     .btn-dt-primary:hover { background: var(--dt-accent-hover); transform: translateY(-2px); }
     .footer-dt {
   background: var(--dt-primary);
   color: #b0c4d8;
-  padding: 0.5rem 0;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
 }
     .footer-copyright-dt { padding: 1rem 0; }
@@ -158,17 +195,17 @@ layout: false
     .footer-bottom-dt a { color: var(--dt-primary); transition: color 0.2s; }
     .footer-bottom-dt a:hover { color: var(--dt-accent); }
     .footer-info-dt { display: flex; flex-direction: column; gap: 0.3rem; }
-    .pain-list-wide { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
     @media (max-width: 768px) {
       .nav-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; flex-direction: column; padding: 1.5rem; gap: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
       .nav-menu.active { display: flex; }
       .nav-toggle { display: block; }
       .page-hero h1 { font-size: 1.8rem; }
-      .scope-list, .pain-list, .pain-list-wide, .scenario-grid, .deliverable-list { grid-template-columns: 1fr; }
+      .scope-list, .pain-list, .pain-list-wide, .scenario-grid, .deliverable-list, .belief-grid, .assurance-grid, .content-grid { grid-template-columns: 1fr; }
+      .who-card { flex-direction: column; text-align: center; }
       .footer-grid-dt { display: flex; flex-direction: column; gap: 0.6rem; align-items: center; }
       .footer-logo-dt { height: 44px; width: auto; flex-shrink: 0; }
-    .footer-bottom-dt { flex-direction: column; gap: 0.6rem; text-align: center; align-items: center; }
-    .footer-info-dt { align-items: center; }
+      .footer-bottom-dt { flex-direction: column; gap: 0.6rem; text-align: center; align-items: center; }
+      .footer-info-dt { align-items: center; }
     }
     /* ========== 搜索覆盖层 ========== */
     .search-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 2000; align-items: flex-start; justify-content: center; padding-top: 120px; }
@@ -291,26 +328,61 @@ layout: false
     <p class="hero-desc">涉税风险检查是存勤法税为企业提供的税务健康体检服务。通过对企业涉税业务进行全面、系统的梳理，识别潜在的税务风险点，出具专业的风险评估报告，并提出切实可行的整改建议。</p>
   </div>
 </section>
+
+<!-- ① 你正在面对的 -->
 <section class="section-dt">
   <div class="container-dt">
-    <h2 class="section-title">客户痛点</h2>
+    <h2 class="section-title">你正在面对的</h2>
+    <p class="section-lead">这些问题，你是不是也遇到过？</p>
     <div class="pain-list-wide">
-      <div class="pain-item"><p>每年按时申报按时缴税为什么税局一查还是一大堆问题</p></div>
-      <div class="pain-item"><p>财务说没问题税局说有问题到底谁说得对</p></div>
-      <div class="pain-item"><p>同行都被查了我们会不会也被盯上</p></div>
-      <div class="pain-item"><p>老板只关心少交税不关心风险业务乱拿发票财务背锅</p></div>
-      <div class="pain-item"><p>供应商不要发票价格便宜但成本无法税前扣除</p></div>
-      <div class="pain-item"><p>促销返利买一赠一税务处理不统一引发少缴税风险</p></div>
-      <div class="pain-item"><p>老板从公司借款长期不还被视同分红补缴个税</p></div>
-      <div class="pain-item"><p>研发费用加计扣除归集不规范面临补税和滞纳金</p></div>
-      <div class="pain-item"><p>跨境关联交易定价不合理被税局调整补税</p></div>
-      <div class="pain-item"><p>知道有风险但不知道怎么防税局来检查不知道怎么应对</p></div>
+      <div class="pain-item"><p>你按时申报按时缴税，税局一查还是一大堆问题，到底哪里出了岔子？</p></div>
+      <div class="pain-item"><p>你的财务说没问题，税局说有问题，两边说法不一样，你该信谁？</p></div>
+      <div class="pain-item"><p>同行被查了，你也开始担心——下一个会不会轮到你？</p></div>
+      <div class="pain-item"><p>业务部门乱拿发票冲成本，出了事却是你在兜底</p></div>
+      <div class="pain-item"><p>供应商不开发票价低，但你成本没法税前扣除，省钱还是埋雷？</p></div>
+      <div class="pain-item"><p>促销返利、买一赠一，税务处理五花八门，你也不确定做得对不对</p></div>
+      <div class="pain-item"><p>你从公司借了钱一直没还，不知道可能被视同分红补缴个税</p></div>
+      <div class="pain-item"><p>研发费用加计扣除归集不规范，你不知道什么时候会被追缴</p></div>
+      <div class="pain-item"><p>你和境外关联方有交易，定价合不合理，税局会不会找上门？</p></div>
+      <div class="pain-item"><p>你知道有风险，但不知道从哪防起，也不知道税局来查怎么应对</p></div>
     </div>
   </div>
 </section>
+
+<!-- ② 我们相信的 -->
+<section class="section-dt belief-section">
+  <div class="container-dt">
+    <h2 class="section-title">我们相信的</h2>
+    <div class="belief-grid">
+      <div class="belief-card">
+        <div class="belief-icon">🛡️</div>
+        <h3>不赚带着隐患的钱</h3>
+        <p>合法的钱才睡得安稳。违法违规的事，给再多也不做。</p>
+      </div>
+      <div class="belief-card">
+        <div class="belief-icon">🔍</div>
+        <h3>预防比补救便宜</h3>
+        <p>花一块钱做体检，省十块钱交罚款。风险要走在税局前面。</p>
+      </div>
+      <div class="belief-card">
+        <div class="belief-icon">💬</div>
+        <h3>说人话，办实事</h3>
+        <p>不堆砌术语吓唬你，把复杂的税法讲成你能懂的话。</p>
+      </div>
+      <div class="belief-card">
+        <div class="belief-icon">🤝</div>
+        <h3>甲方出身，懂你的难</h3>
+        <p>我们坐过你的位子，知道你的压力从哪来。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ③ 我们怎么帮你 -->
 <section class="section-dt">
   <div class="container-dt">
-    <h2 class="section-title">服务流程</h2>
+    <h2 class="section-title">我们怎么帮你</h2>
+    <h3 class="section-subtitle">服务流程</h3>
     <div class="flow-steps">
       <div class="flow-step">
         <div class="step-num">01</div>
@@ -362,45 +434,93 @@ layout: false
         </ul>
       </div>
     </div>
-  </div>
-</section>
-<section class="section-dt">
-  <div class="container-dt">
-    <h2 class="section-title">核心价值</h2>
-    <table class="value-table">
-      <thead><tr><th style="width:25%">价值维度</th><th>具体体现</th></tr></thead>
-      <tbody>
-        <tr><td><strong>避免补税罚款</strong></td><td>早发现早整改，避免被税局查处</td></tr>
-        <tr><td><strong>降低税务成本</strong></td><td>合规前提下的税负优化</td></tr>
-        <tr><td><strong>提升内部管理</strong></td><td>完善发票管理、报销规范等内控流程</td></tr>
-        <tr><td><strong>防范老板风险</strong></td><td>让老板了解个人行为的税务后果</td></tr>
-        <tr><td><strong>从容应对检查</strong></td><td>建立税务自查机制</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-<section class="section-dt">
-  <div class="container-dt">
-    <h2 class="section-title">适用场景</h2>
-    <div class="scenario-grid">
-      <div class="scenario-tag">年度常规体检<br><small style="color:var(--dt-text-light);font-size:0.78rem;">每年做一次税务健康检查</small></div>
-      <div class="scenario-tag">重大变化前后<br><small style="color:var(--dt-text-light);font-size:0.78rem;">业务模式调整、股权变更、融资前</small></div>
-      <div class="scenario-tag">迎接税务检查<br><small style="color:var(--dt-text-light);font-size:0.78rem;">在税局正式进场前先自查一遍</small></div>
-      <div class="scenario-tag">新业务开展<br><small style="color:var(--dt-text-light);font-size:0.78rem;">进入新行业、新市场前评估涉税风险</small></div>
-      <div class="scenario-tag">高管离任审计<br><small style="color:var(--dt-text-light);font-size:0.78rem;">财务负责人或老板离任前的税务合规审查</small></div>
-      <div class="scenario-tag">IPO筹备期<br><small style="color:var(--dt-text-light);font-size:0.78rem;">上市前规范化整改的最后冲刺</small></div>
+    <h3 class="section-subtitle">具体帮你做这些</h3>
+    <div class="content-grid">
+      <div class="content-item"><span class="ci-icon">&#10003;</span><span>全面梳理你的涉税业务流程，找出薄弱环节</span></div>
+      <div class="content-item"><span class="ci-icon">&#10003;</span><span>逐税种逐业务线排查风险点，不留死角</span></div>
+      <div class="content-item"><span class="ci-icon">&#10003;</span><span>核对财务账簿与申报数据，发现账税差异</span></div>
+      <div class="content-item"><span class="ci-icon">&#10003;</span><span>检查发票真实性、合法性、合规性</span></div>
+      <div class="content-item"><span class="ci-icon">&#10003;</span><span>评估关联交易定价是否合理</span></div>
+      <div class="content-item"><span class="ci-icon">&#10003;</span><span>分析税收优惠政策使用是否准确、充分</span></div>
+      <div class="content-item"><span class="ci-icon">&#10003;</span><span>出具风险等级分级的《税务风险检查报告》</span></div>
+      <div class="content-item"><span class="ci-icon">&#10003;</span><span>针对每个风险点给出具体可操作的整改方案</span></div>
+      <div class="content-item"><span class="ci-icon">&#10003;</span><span>提供整改操作指引和模板，你不用从零摸索</span></div>
+      <div class="content-item"><span class="ci-icon">&#10003;</span><span>后续跟踪整改效果，复检确认风险已消除</span></div>
     </div>
   </div>
 </section>
+
+<!-- ④ 谁来帮你 -->
+<section class="section-dt who-section">
+  <div class="container-dt">
+    <h2 class="section-title">谁来帮你</h2>
+    <div class="who-card">
+      <div class="who-avatar">
+        <img src="../images/founder-new.png" alt="邓达华">
+      </div>
+      <div class="who-info">
+        <h3>邓达华</h3>
+        <p>存勤法税创始人，<strong>18年财税法实战经验</strong>。14年甲方经历——先后在德尔惠、酷狗音乐、侨银环保、绿瘦健康担任财务税务核心岗位；4年乙方深耕——为制造、电商、环保、消费品等行业提供专业服务。</p>
+        <div>
+          <span class="who-tag">14年甲方视角</span>
+          <span class="who-tag">4年乙方专业</span>
+          <span class="who-tag">懂业务更懂你的难</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ 你会得到的 -->
 <section class="section-dt">
   <div class="container-dt">
-    <h2 class="section-title">服务成果</h2>
-    <div class="deliverable-list">
-      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《税务风险检查报告》</span></div>
-      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《风险整改建议书》</span></div>
-      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>《常用税务合规指引》</span></div>
-      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>关键岗位税务培训（可选）</span></div>
-      <div class="deliverable-item"><span class="dl-icon">&#10003;</span><span>后续整改跟踪服务</span></div>
+    <h2 class="section-title">你会得到的</h2>
+    <div class="deliverable-list" style="grid-template-columns:1fr;max-width:700px;margin:0 auto;">
+      <div class="gain-item"><span class="gi-icon">&#10003;</span><div class="gi-text"><strong>《税务风险检查报告》</strong><span>所有风险点一目了然，按高危、中危、低危分级，每个风险点标注税种、金额区间和法规依据</span></div></div>
+      <div class="gain-item"><span class="gi-icon">&#10003;</span><div class="gi-text"><strong>《风险整改建议书》</strong><span>告诉你每个问题怎么改，区分"必须立即整改"和"可逐步整改"，附操作指引和模板</span></div></div>
+      <div class="gain-item"><span class="gi-icon">&#10003;</span><div class="gi-text"><strong>《常用税务合规指引》</strong><span>日常操作有章可循，降低你的合规试错成本</span></div></div>
+      <div class="gain-item"><span class="gi-icon">&#10003;</span><div class="gi-text"><strong>关键岗位税务培训（可选）</strong><span>让你的财务团队知道哪些能做、哪些不能做</span></div></div>
+      <div class="gain-item"><span class="gi-icon">&#10003;</span><div class="gi-text"><strong>后续整改跟踪服务</strong><span>不是交完报告就走人，我们陪你到风险真正消除</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ 你的安心保障 -->
+<section class="section-dt assurance-section">
+  <div class="container-dt">
+    <h2 class="section-title">你的安心保障</h2>
+    <div class="assurance-grid">
+      <div class="assurance-card">
+        <div class="as-icon">🔒</div>
+        <h3>严格保密</h3>
+        <p>你的经营数据、财务信息、税务情况，我们视同自己的秘密，绝不外泄。</p>
+      </div>
+      <div class="assurance-card">
+        <div class="as-icon">🚫</div>
+        <h3>服务有红线</h3>
+        <p>违法违规的事，给再多钱也不做。我们有明确的执业底线，不会为利益折腰。</p>
+      </div>
+      <div class="assurance-card">
+        <div class="as-icon">✅</div>
+        <h3>不满意可终止</h3>
+        <p>项目制签约，阶段性验收。如果你对某个阶段不满意，可以随时叫停。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ 适合你吗 -->
+<section class="section-dt">
+  <div class="container-dt">
+    <h2 class="section-title">适合你吗</h2>
+    <p class="section-lead">如果以下任意一条说的是你，这个服务就适合你</p>
+    <div class="fit-list">
+      <div class="fit-item"><span class="fi-marker">▸</span><span>你的企业年营收超过2000万，但从来没有做过系统的税务体检</span></div>
+      <div class="fit-item"><span class="fi-marker">▸</span><span>你最近准备融资、上市，或者有投资人进场做尽调</span></div>
+      <div class="fit-item"><span class="fi-marker">▸</span><span>你感觉账务不太清晰，但说不出具体哪里有问题</span></div>
+      <div class="fit-item"><span class="fi-marker">▸</span><span>你的同行最近被查了，你想提前防范</span></div>
+      <div class="fit-item"><span class="fi-marker">▸</span><span>你刚接手一家公司，想摸清税务底子</span></div>
+      <div class="fit-item"><span class="fi-marker">▸</span><span>新业务上线前，想评估涉税风险再行动</span></div>
     </div>
   </div>
 </section>
@@ -426,13 +546,12 @@ layout: false
   <div class="container-dt">
     <div class="cta-inner">
       <div class="cta-text">
-        <h2>准备好开启专业财税法服务？</h2>
-        <p>具体服务方案将根据企业实际情况定制，欢迎联系我们的专业顾问</p>
-        <a href="https://deng-dahua.github.io/cunqin_law-tax/" class="btn-dt-primary">立即咨询</a>
+        <h2>税局来查之前，先给自己做一次体检</h2>
+        <p>早发现早整改，让合规成为你的护城河</p>
+        <a href="https://deng-dahua.github.io/cunqin_law-tax/" class="btn-dt-primary">预约免费初诊</a>
       </div>
     </div>
   </div>
-      <!-- 微信二维码 -->
 </section>
 <footer class="footer-dt">
   <div class="container-dt">
@@ -472,7 +591,6 @@ layout: false
 </div>
 
 <script>
-// ============ 搜索功能 ============
 function openSearch() {
   document.getElementById('searchOverlay').classList.add('open');
   document.getElementById('searchInput').focus();
@@ -526,7 +644,6 @@ document.addEventListener('keydown', function(e) {
 <button class="scroll-btn" id="btnScrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="返回顶部">↑</button>
 <button class="scroll-btn" id="btnScrollBtm" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})" title="前往底部">↓</button>
 <script>
-// 置顶/置底按钮显隐逻辑
 (function(){
   var btnTop = document.getElementById('btnScrollTop');
   var btnBtm = document.getElementById('btnScrollBtm');
@@ -534,18 +651,10 @@ document.addEventListener('keydown', function(e) {
     var scrollY = window.scrollY || document.documentElement.scrollTop;
     var winH = window.innerHeight;
     var docH = document.documentElement.scrollHeight;
-    // 置顶按钮：滚动超过一屏后显示
-    if (scrollY > winH * 0.5) {
-      btnTop.classList.add('visible');
-    } else {
-      btnTop.classList.remove('visible');
-    }
-    // 置底按钮：不在底部时显示
-    if (scrollY + winH < docH - 100) {
-      btnBtm.classList.add('visible');
-    } else {
-      btnBtm.classList.remove('visible');
-    }
+    if (scrollY > winH * 0.5) { btnTop.classList.add('visible'); }
+    else { btnTop.classList.remove('visible'); }
+    if (scrollY + winH < docH - 100) { btnBtm.classList.add('visible'); }
+    else { btnBtm.classList.remove('visible'); }
   }
   window.addEventListener('scroll', updateBtns);
   window.addEventListener('resize', updateBtns);

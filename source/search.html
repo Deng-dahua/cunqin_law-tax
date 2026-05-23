@@ -97,6 +97,7 @@ title: 搜索结果 - 存勤法税
     .result-meta { font-size: 0.8rem; color: #999; margin: 0.2rem 0 0.3rem; display: flex; gap: 0.8rem; }
     .result-meta .meta-date { color: #888; }
     .result-meta .meta-cat { color: var(--dt-accent); }
+    .result-meta .meta-views { color: #e67e22; }
 
     /* 页脚 */
     .footer-dt {
@@ -386,10 +387,13 @@ window.renderResults = function() {
     document.getElementById('noResult').style.display = 'none';
     document.getElementById('resultsContainer').innerHTML = results.map(function(r){
       var meta = '';
-      if(r.page.date || r.page.category) {
+      if(r.page.date || r.page.category || (r.page.text||'').match(/(\d+)\s*阅读/)) {
         var parts = [];
         if(r.page.date) parts.push('<span class="meta-date">' + r.page.date + '</span>');
         if(r.page.category) parts.push('<span class="meta-cat">' + r.page.category + '</span>');
+        // 提取阅读数
+        var mv = (r.page.text||'').match(/(\d+)\s*阅读/);
+        if(mv) parts.push('<span class="meta-views">' + mv[1] + ' 阅读</span>');
         meta = '<div class="result-meta">' + parts.join('') + '</div>';
       }
       return '<a class="result-item" href="' + r.page.url + '">' +

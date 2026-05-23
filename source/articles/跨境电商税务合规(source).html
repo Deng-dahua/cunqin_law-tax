@@ -277,22 +277,13 @@ img { max-width: 100%; display: block; }
     .search-nav-btn:hover { border-color: var(--dt-accent); color: var(--dt-accent); }
     .search-nav-btn:disabled { opacity: 0.35; cursor: default; }
     .article-search-back {
-      background: none;
-      border: 1px solid var(--dt-accent);
-      border-radius: 4px;
-      padding: 0.3rem 0.8rem;
-      cursor: pointer;
-      color: var(--dt-accent);
       font-size: 0.85rem;
-      font-family: inherit;
-      transition: all 0.2s;
+      color: var(--dt-text-light);
+      cursor: pointer;
       white-space: nowrap;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
+      transition: color 0.2s;
     }
-    .article-search-back:hover { background: var(--dt-accent); color: #fff; }
+    .article-search-back:hover { color: var(--dt-accent); }
     mark.search-mark {
       background: #ffe066;
       color: inherit;
@@ -692,7 +683,7 @@ img { max-width: 100%; display: block; }
     <span class="article-search-count" id="articleSearchCount"></span>
     <button class="search-nav-btn" onclick="jumpToMatch(-1)" title="上一个" id="searchPrevBtn" disabled><i class="fas fa-chevron-up"></i></button>
     <button class="search-nav-btn" onclick="jumpToMatch(1)" title="下一个" id="searchNextBtn" disabled><i class="fas fa-chevron-down"></i></button>
-    <a href="../archives/" class="article-search-back"><i class="fas fa-arrow-left"></i> 返回</a>
+    <span class="article-search-back" onclick="location.href='../archives/'">浏览全部文章</span>
   </div>
 </div>
 

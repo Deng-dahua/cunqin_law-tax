@@ -4,186 +4,186 @@
 
   <!-- 首页 -->
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/</loc>
+    <loc>https://cunqin.tax/</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/"/>
   </url>
 
   <!-- 关于我们 -->
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/about/</loc>
+    <loc>https://cunqin.tax/about/</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/about/"/>
   </url>
 
   <!-- 核心服务 -->
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/services/</loc>
+    <loc>https://cunqin.tax/services/</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/services/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/"/>
   </url>
 
   <!-- 10 个服务子页 -->
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/services/s01-tax-risk-check.html</loc>
+    <loc>https://cunqin.tax/services/s01-tax-risk-check.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/services/s01-tax-risk-check.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s01-tax-risk-check.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/services/s02-tax-crisis-response.html</loc>
+    <loc>https://cunqin.tax/services/s02-tax-crisis-response.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/services/s02-tax-crisis-response.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s02-tax-crisis-response.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/services/s03-odi-outbound-investment.html</loc>
+    <loc>https://cunqin.tax/services/s03-odi-outbound-investment.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/services/s03-odi-outbound-investment.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s03-odi-outbound-investment.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/services/s04-restructuring-tax-planning.html</loc>
+    <loc>https://cunqin.tax/services/s04-restructuring-tax-planning.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/services/s04-restructuring-tax-planning.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s04-restructuring-tax-planning.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/services/s05-cross-border-legal-tax.html</loc>
+    <loc>https://cunqin.tax/services/s05-cross-border-legal-tax.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/services/s05-cross-border-legal-tax.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s05-cross-border-legal-tax.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/services/s06-revenue-growth-strategy.html</loc>
+    <loc>https://cunqin.tax/services/s06-revenue-growth-strategy.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/services/s06-revenue-growth-strategy.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s06-revenue-growth-strategy.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/services/s07-profit-growth-system.html</loc>
+    <loc>https://cunqin.tax/services/s07-profit-growth-system.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/services/s07-profit-growth-system.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s07-profit-growth-system.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/services/s08-budget-management-system.html</loc>
+    <loc>https://cunqin.tax/services/s08-budget-management-system.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/services/s08-budget-management-system.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s08-budget-management-system.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/services/s09-fiscal-internal-control.html</loc>
+    <loc>https://cunqin.tax/services/s09-fiscal-internal-control.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/services/s09-fiscal-internal-control.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s09-fiscal-internal-control.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/services/s10-custom-tax-training.html</loc>
+    <loc>https://cunqin.tax/services/s10-custom-tax-training.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/services/s10-custom-tax-training.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s10-custom-tax-training.html"/>
   </url>
 
   <!-- 客户案例 -->
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/cases/</loc>
+    <loc>https://cunqin.tax/cases/</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/cases/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/cases/"/>
   </url>
 
   <!-- 法税洞察 -->
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/archives/</loc>
+    <loc>https://cunqin.tax/archives/</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/archives/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/archives/"/>
   </url>
 
   <!-- 联系我们 -->
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/contact/</loc>
+    <loc>https://cunqin.tax/contact/</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/contact/"/>
   </url>
 
   <!-- 8 篇文章 -->
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/articles/jinshui-siqi-yingdui.html</loc>
+    <loc>https://cunqin.tax/articles/jinshui-siqi-yingdui.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/articles/jinshui-siqi-yingdui.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/jinshui-siqi-yingdui.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/articles/qiye-shuiwu-fengxian.html</loc>
+    <loc>https://cunqin.tax/articles/qiye-shuiwu-fengxian.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/articles/qiye-shuiwu-fengxian.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qiye-shuiwu-fengxian.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/articles/jiayi-shuangshijing.html</loc>
+    <loc>https://cunqin.tax/articles/jiayi-shuangshijing.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/articles/jiayi-shuangshijing.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/jiayi-shuangshijing.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/articles/qiye-zhongzu-shuiwu.html</loc>
+    <loc>https://cunqin.tax/articles/qiye-zhongzu-shuiwu.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/articles/qiye-zhongzu-shuiwu.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qiye-zhongzu-shuiwu.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/articles/yecai-fasui-ronghe.html</loc>
+    <loc>https://cunqin.tax/articles/yecai-fasui-ronghe.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/articles/yecai-fasui-ronghe.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/yecai-fasui-ronghe.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/articles/kuajing-dianshang-shuiwu.html</loc>
+    <loc>https://cunqin.tax/articles/kuajing-dianshang-shuiwu.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/articles/kuajing-dianshang-shuiwu.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/kuajing-dianshang-shuiwu.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/articles/gaoxin-qiye-shuiwu.html</loc>
+    <loc>https://cunqin.tax/articles/gaoxin-qiye-shuiwu.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/articles/gaoxin-qiye-shuiwu.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/gaoxin-qiye-shuiwu.html"/>
   </url>
   <url>
-    <loc>https://deng-dahua.github.io/cunqin_law-tax/articles/odi-beian-quanliucheng.html</loc>
+    <loc>https://cunqin.tax/articles/odi-beian-quanliucheng.html</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://deng-dahua.github.io/cunqin_law-tax/articles/odi-beian-quanliucheng.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/odi-beian-quanliucheng.html"/>
   </url>
 
 </urlset>

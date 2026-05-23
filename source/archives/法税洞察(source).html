@@ -293,10 +293,12 @@ layout: false
         <button class="filter-btn filter-btn-neutral active" data-sort="newest" onclick="setSort('newest')">最新</button>
         <button class="filter-btn" data-sort="hottest" onclick="setSort('hottest')">最热</button>
         <span class="filter-bar-label" style="margin-left:1rem;">分类：</span>
-        <button class="filter-btn filter-cat filter-btn-neutral active" data-cat="all" onclick="setCategory('all')">全部</button>
-        <button class="filter-btn filter-cat" data-cat="实操指南" onclick="setCategory('实操指南')">实操指南</button>
-        <button class="filter-btn filter-cat" data-cat="政策解读" onclick="setCategory('政策解读')">政策解读</button>
-        <button class="filter-btn filter-cat" data-cat="行业洞察" onclick="setCategory('行业洞察')">行业洞察</button>
+        <select class="filter-select" id="filterCategory" onchange="applyFilters()">
+          <option value="all">全部分类</option>
+          <option value="实操指南">实操指南</option>
+          <option value="政策解读">政策解读</option>
+          <option value="行业洞察">行业洞察</option>
+        </select>
         <span class="filter-bar-label" style="margin-left:1rem;">时间：</span>
         <select class="filter-select" id="filterYear" onchange="applyFilters()">
           <option value="all">全部年份</option>
@@ -522,16 +524,16 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')window.close
   filterCount.textContent = '共 '+items.length+' 篇文章';
 
   window.setSort = function(mode){
-    document.querySelectorAll('.filter-btn:not(.filter-cat)').forEach(function(b){ b.classList.remove('active'); });
-    var btn = document.querySelector('.filter-btn:not(.filter-cat)[data-sort="'+mode+'"]');
+    document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+    var btn = document.querySelector('.filter-btn[data-sort="'+mode+'"]');
     if(btn) btn.classList.add('active');
     applyFilters();
   };
 
   window.setCategory = function(cat){
-    document.querySelectorAll('.filter-btn.filter-cat').forEach(function(b){ b.classList.remove('active'); });
-    var btn = document.querySelector('.filter-btn.filter-cat[data-cat="'+cat+'"]');
-    if(btn) btn.classList.add('active');
+    // 废弃：改用 select 下拉框
+    var sel = document.getElementById('filterCategory');
+    if(sel) sel.value = cat;
     applyFilters();
   };
 
@@ -541,10 +543,10 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')window.close
   };
 
   window.applyFilters = function(){
-    var sortBtn = document.querySelector('.filter-btn:not(.filter-cat):not(.filter-ym).active');
+    var sortBtn = document.querySelector('.filter-btn.active');
     var currentSort = sortBtn ? sortBtn.getAttribute('data-sort') : 'newest';
-    var catBtn = document.querySelector('.filter-btn.filter-cat.active');
-    var currentCat = catBtn ? catBtn.getAttribute('data-cat') : 'all';
+    var catSel = document.getElementById('filterCategory');
+    var currentCat = catSel ? catSel.value : 'all';
     var yearSel = document.getElementById('filterYear');
     var monthSel = document.getElementById('filterMonth');
     var currentYear = yearSel ? yearSel.value : 'all';

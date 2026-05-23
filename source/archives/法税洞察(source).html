@@ -553,22 +553,18 @@ window.doSearch = function() {
     filterCount.textContent = '共 '+filtered.length+' 篇文章';
   };
 
-  // 初始化年月下拉选项
+  // 初始化年/月下拉选项（固定选项，不从文章动态提取）
   (function initYearMonth(){
     var yearSel = document.getElementById('filterYear');
     var monthSel = document.getElementById('filterMonth');
     var catSel = document.getElementById('filterCategory');
-    // 从文章数据中提取所有出现过的年份
-    var years = {};
-    items.forEach(function(item){
-      var d = item.getAttribute('data-date') || '';
-      if(d.length >= 4) years[d.substring(0,4)] = true;
-    });
-    Object.keys(years).sort().forEach(function(y){
+    // 年份：从2026年起
+    var curYear = new Date().getFullYear();
+    for(var y = curYear; y >= 2026; y--){
       var opt = document.createElement('option');
-      opt.value = y; opt.textContent = y + ' 年';
+      opt.value = String(y); opt.textContent = y + ' 年';
       yearSel.appendChild(opt);
-    });
+    }
     // 月份 1-12
     for(var m = 1; m <= 12; m++){
       var opt = document.createElement('option');

@@ -137,6 +137,12 @@ layout: false
     .filter-btn.active:not(.filter-btn-neutral) { background: var(--dt-accent); color: #fff; border-color: var(--dt-accent); }
     .filter-btn-neutral.active { background: #f0f2f5; color: var(--dt-text); border-color: #d0d4da; }
     .filter-btn-neutral:hover { border-color: #a0a8b4; color: var(--dt-text); }
+    /* 排序滑动切换 */
+    .sort-toggle { position: relative; display: inline-flex; border-radius: 6px; overflow: hidden; border: 1px solid var(--dt-border); background: var(--dt-bg-light); white-space: nowrap; user-select: none; }
+    .sort-toggle .sort-bg { position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: var(--dt-accent); border-radius: 5px; transition: left 0.3s ease; z-index: 1; }
+    .sort-toggle.right .sort-bg { left: 50%; }
+    .sort-toggle span { position: relative; z-index: 2; padding: 0.5rem 1.4rem; font-size: 0.88rem; color: var(--dt-text-light); cursor: pointer; transition: color 0.3s; }
+    .sort-toggle span.on { color: #fff; }
     .filter-select { padding: 0.5rem 2rem 0.5rem 0.8rem; border: 1px solid var(--dt-border); border-radius: 4px; color: var(--dt-text); font-size: 0.88rem; font-family: inherit; background: #fff; cursor: pointer; transition: border-color 0.2s; appearance: auto; }
     .filter-select:hover { border-color: var(--dt-accent); }
     .filter-select:focus { outline: none; border-color: var(--dt-accent); box-shadow: 0 0 0 2px rgba(0,163,158,0.15); }
@@ -290,8 +296,11 @@ layout: false
       <span class="filter-bar-label" id="filter-count">共 0 篇文章</span>
       <div class="filter-bar-buttons">
         <span class="filter-bar-label">排序：</span>
-        <button class="filter-btn filter-btn-neutral active" data-sort="newest" onclick="setSort('newest')">最新</button>
-        <button class="filter-btn" data-sort="hottest" onclick="setSort('hottest')">最热</button>
+        <div class="sort-toggle" id="sortToggle">
+          <div class="sort-bg"></div>
+          <span class="on" data-sort="newest" onclick="setSort('newest')">最新</span>
+          <span data-sort="hottest" onclick="setSort('hottest')">最热</span>
+        </div>
         <span class="filter-bar-label" style="margin-left:1rem;">分类：</span>
         <select class="filter-select" id="filterCategory" onchange="applyFilters()">
           <option value="all">全部分类</option>
@@ -521,9 +530,14 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')window.close
   filterCount.textContent = '共 '+items.length+' 篇文章';
 
   window.setSort = function(mode){
-    document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
-    var btn = document.querySelector('.filter-btn[data-sort="'+mode+'"]');
-    if(btn) btn.classList.add('active');
+    var toggle = document.getElementById('sortToggle');
+    if(mode === 'hottest'){
+      toggle.classList.add('right');
+      toggle.querySelectorAll('span').forEach(function(s){ s.classList.toggle('on', s.getAttribute('data-sort')==='hottest'); });
+    } else {
+      toggle.classList.remove('right');
+      toggle.querySelectorAll('span').forEach(function(s){ s.classList.toggle('on', s.getAttribute('data-sort')==='newest'); });
+    }
     applyFilters();
   };
 
@@ -540,8 +554,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')window.close
   };
 
   window.applyFilters = function(){
-    var sortBtn = document.querySelector('.filter-btn.active');
-    var currentSort = sortBtn ? sortBtn.getAttribute('data-sort') : 'newest';
+    var onSpan = document.querySelector('#sortToggle span.on');
+    var currentSort = onSpan ? onSpan.getAttribute('data-sort') : 'newest';
     var catSel = document.getElementById('filterCategory');
     var currentCat = catSel ? catSel.value : 'all';
     var yearSel = document.getElementById('filterYear');

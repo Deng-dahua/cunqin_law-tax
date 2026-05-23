@@ -630,10 +630,7 @@ img { max-width: 100%; display: block; }
       <input type="text" id="searchInput" placeholder="输入关键词搜索...">
       <button onclick="closeSearch()"><i class="fas fa-times"></i></button>
     </div>
-    <div class="search-tabs" id="searchTabs">
-      <button class="search-tab active" data-scope="site" onclick="switchSearchTab('site')">全网站</button>
-      <button class="search-tab" data-scope="page">本页面</button>
-    </div>
+
     <div class="search-results" id="searchResults"></div>
   </div>
 </div>
@@ -1516,68 +1513,44 @@ img { max-width: 100%; display: block; }
     headings.forEach(function(h) { observer.observe(h); });
   })();
 
-// 搜索功能（全网站 / 本页面）
+<script>
 (function(){
-var searchScope = 'site';
 var searchIndex = null;
-var searchIndexLoaded = false;
 function loadSearchIndex() {
-  if (searchIndexLoaded) return;
-  searchIndexLoaded = true;
-  var idxUrl = new URL('/cunqin_law-tax/search-index.json', location.origin);
+  if (searchIndex) return;
+  var idxUrl = new URL('./search-index.json', location.href);
   fetch(idxUrl).then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
 }
 window.openSearch = function() {
   document.getElementById('searchOverlay').classList.add('open');
   document.getElementById('searchInput').focus();
-  if (searchScope === 'site') loadSearchIndex();
+  loadSearchIndex();
 };
 window.closeSearch = function() {
   document.getElementById('searchOverlay').classList.remove('open');
   document.getElementById('searchInput').value = '';
   document.getElementById('searchResults').innerHTML = '';
 };
-window.switchSearchTab = function(scope) {
-  searchScope = scope;
-  var tabs = document.querySelectorAll('.search-tab');
-  tabs.forEach(function(t){t.classList.toggle('active',t.getAttribute('data-scope')===scope)});
-  if (scope==='site') loadSearchIndex();
-  var inp = document.getElementById('searchInput');
-  if (inp.value.trim()) inp.dispatchEvent(new Event('input'));
-};
 document.getElementById('searchInput').addEventListener('input',function(){
   var q=this.value.trim().toLowerCase(),c=document.getElementById('searchResults');
   if(q.length<1){c.innerHTML='';return}
-  if(searchScope==='site'){
-    if(!searchIndex||searchIndex.length===0){c.innerHTML='<div class="search-no-result">搜索索引加载中...</div>';return}
-    var results=[];
-    searchIndex.forEach(function(p){
-      var s=0,tl=p.title.toLowerCase(),tx=p.text.toLowerCase();
-      if(tl.indexOf(q)>-1)s+=10;
-      if(tx.indexOf(q)>-1)s+=5;
-      q.split(/\s+/).forEach(function(w){if(tl.indexOf(w)>-1)s+=3;if(tx.indexOf(w)>-1)s+=1});
-      if(s>0)results.push({page:p,score:s})
-    });
-    results.sort(function(a,b){return b.score-a.score});
-    if(results.length===0){c.innerHTML='<div class="search-no-result">未找到与「'+q+'」相关的内容</div>'}
-    else{c.innerHTML=results.slice(0,12).map(function(r){return'<div class="search-result-item" onclick="window.location.href=\''+r.page.url+'\'" style="text-decoration:none;color:inherit;cursor:pointer"><strong>'+r.page.title+'</strong><div class="search-result-url">'+r.page.url+'</div><small style="color:#999">'+r.page.text.substring(0,100)+'…</small></div>'}).join('')}
-  }else{
-    var results=[];
-    document.querySelectorAll('section, .page-hero, .hero-dt, .diff-section, .eat-section, .cities-section, .page-header').forEach(function(sec){
-      var t=sec.textContent||sec.innerText,h=sec.querySelector('h1,h2,h3,h4'),title=h?h.textContent.trim():'';
-      if(t.toLowerCase().indexOf(q)>-1)results.push({el:sec,title:title,text:t.replace(/\s+/g,' ').substring(0,120)})
-    });
-    var footer=document.querySelector('footer');
-    if(footer&&footer.textContent.toLowerCase().indexOf(q)>-1)results.push({el:footer,title:'页脚信息',text:footer.textContent.replace(/\s+/g,' ').substring(0,120)});
-    if(results.length===0){c.innerHTML='<div class="search-no-result">未找到与「'+q+'」相关的内容</div>'}
-    else{c.innerHTML=results.map(function(r,i){return'<div class="search-result-item" onclick="window._srs['+i+'].el.scrollIntoView({behavior:\'smooth\',block:\'start\'});closeSearch()"><strong>'+(r.title||'相关内容')+'</strong><br><small style="color:#999">'+r.text+'…</small></div>'}).join('');window._srs=results}
-  }
+  if(!searchIndex||searchIndex.length===0){c.innerHTML='<div class="search-no-result">搜索索引加载中...</div>';return}
+  var results=[];
+  searchIndex.forEach(function(p){
+    var s=0,tl=p.title.toLowerCase(),tx=p.text.toLowerCase();
+    if(tl.indexOf(q)>-1)s+=10;
+    if(tx.indexOf(q)>-1)s+=5;
+    q.split(/\s+/).forEach(function(w){if(tl.indexOf(w)>-1)s+=3;if(tx.indexOf(w)>-1)s+=1});
+    if(s>0)results.push({page:p,score:s})
+  });
+  results.sort(function(a,b){return b.score-a.score});
+  if(results.length===0){c.innerHTML='<div class="search-no-result">未找到与「'+q+'」相关的内容</div>'}
+  else{c.innerHTML=results.slice(0,12).map(function(r){return'<div class="search-result-item" onclick="window.location.href=''+r.page.url+''" style="text-decoration:none;color:inherit;cursor:pointer"><strong>'+r.page.title+'</strong><div class="search-result-url">'+r.page.url+'</div><small style="color:#999">'+r.page.text.substring(0,100)+'…</small></div>'}).join('')}
 });
 loadSearchIndex();
 document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeSearch()});
 })();
 </script>
-
 <script>
   /* ===== 动态阅读量计数 ===== */
   (function(){

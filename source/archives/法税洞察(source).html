@@ -279,7 +279,6 @@ layout: false
     </div>
     <!-- 筛选器 -->
     <div style="display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center;">
-      <span style="font-size:0.85rem;color:#666;">筛选：</span>
       <select id="filterYear" onchange="applyFilters()" style="padding:0.35rem 0.5rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.85rem;font-family:inherit;color:#333;background:#fff;">
         <option value="">全部年度</option>
       </select>
@@ -569,6 +568,7 @@ layout: false
     </div>
 </div>
 </section>
+<div id="paginationContainer"></div>
 
 <section class="cta-section">
   <div class="container-dt">
@@ -704,8 +704,12 @@ layout: false
 
 
 <script>
-// ===== 法税洞察页 筛选 + 搜索 =====
+// ===== 法税洞察页 筛选 + 搜索 + 分页 =====
 (function(){
+  var PAGE_SIZE = 10;
+  var currentPage = 1;
+  var currentFiltered = [];
+
   // 动态填充年份下拉
   var items = document.querySelectorAll('#articleList .article-item');
   var years = new Set();
@@ -714,74 +718,161 @@ layout: false
   var ysel = document.getElementById('filterYear');
   if(ysel) ys.forEach(function(y){ var o=document.createElement('option'); o.value=y; o.textContent=y+'年'; ysel.appendChild(o); });
 
-  applyFilters();
+  function getFilteredItems(){
+    var year     = (document.getElementById('filterYear')||{}).value || '';
+    var month    = (document.getElementById('filterMonth')||{}).value || '';
+    var category = (document.getElementById('filterCategory')||{}).value || '';
+    var sort     = (document.getElementById('filterSort')||{}).value || 'date-desc';
+    var list     = document.getElementById('articleList');
+    if(!list) return [];
+
+    var all = Array.from(list.querySelectorAll('.article-item'));
+
+    var filtered = all.filter(function(it){
+      var d = it.getAttribute('data-date')||'';
+      var c = it.getAttribute('data-category')||'';
+      if(year && d.substring(0,4)!=year) return false;
+      if(month && d.substring(5,7)!=month) return false;
+      if(category && c!=category) return false;
+      return true;
+    });
+
+    // 搜索过滤
+    var q = ((document.getElementById('archivesSearchInput')||{}).value||'').trim().toLowerCase();
+    if(q){
+      filtered = filtered.filter(function(it){
+        var t = ((it.querySelector('h3')||{}).textContent||'').toLowerCase();
+        var p = ((it.querySelector('p')||{}).textContent||'').toLowerCase();
+        return t.indexOf(q)!=-1 || p.indexOf(q)!=-1;
+      });
+    }
+
+    // 排序
+    filtered.sort(function(a,b){
+      var da=(a.getAttribute('data-date')||''); var db=(b.getAttribute('data-date')||'');
+      var va=parseInt(a.getAttribute('data-views'))||0; var vb=parseInt(b.getAttribute('data-views'))||0;
+      if(sort=='date-desc') return db.localeCompare(da);
+      if(sort=='date-asc')  return da.localeCompare(db);
+      if(sort=='views-desc') return vb-va;
+      if(sort=='views-asc')  return va-vb;
+      return 0;
+    });
+
+    return filtered;
+  }
+
+  function renderPage(){
+    var list = document.getElementById('articleList');
+    if(!list) return;
+    var totalPages = Math.max(1, Math.ceil(currentFiltered.length / PAGE_SIZE));
+    if(currentPage > totalPages) currentPage = totalPages;
+    if(currentPage < 1) currentPage = 1;
+
+    var startIdx = (currentPage - 1) * PAGE_SIZE;
+    var endIdx   = startIdx + PAGE_SIZE;
+
+    // 隐藏所有
+    var all = list.querySelectorAll('.article-item');
+    all.forEach(function(it){ it.style.display='none'; });
+    // 显示当前页
+    currentFiltered.forEach(function(it, idx){
+      if(idx >= startIdx && idx < endIdx) it.style.display='';
+    });
+
+    // 重排 DOM（按排序后的顺序）
+    currentFiltered.forEach(function(it){ list.appendChild(it); });
+
+    // 结果计数
+    var cnt = document.getElementById('filterResultCount');
+    if(cnt){
+      if(currentFiltered.length > PAGE_SIZE){
+        cnt.textContent = '第 '+currentPage+'/'+totalPages+' 页，共 '+currentFiltered.length+' 篇文章';
+      } else {
+        cnt.textContent = '共 '+currentFiltered.length+' 篇文章';
+      }
+    }
+
+    renderPagination(totalPages);
+    // 平滑滚动到列表顶部
+    try { list.scrollIntoView({ behavior:'smooth', block:'start' }); } catch(e){}
+  }
+
+  function renderPagination(totalPages){
+    var container = document.getElementById('paginationContainer');
+    if(!container) return;
+    if(totalPages <= 1){ container.innerHTML=''; return; }
+
+    var html = '<div style="display:flex;justify-content:center;align-items:center;gap:0.4rem;padding:1.5rem 0;flex-wrap:wrap;">';
+
+    // 上一页
+    if(currentPage > 1){
+      html += '<a href="javascript:void(0)" onclick="goToPage('+(currentPage-1)+')" style="padding:0.35rem 0.7rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.82rem;color:#666;background:#fff;cursor:pointer;text-decoration:none;">上一页</a>';
+    }
+
+    // 页码按钮（最多显示5个）
+    var startP = Math.max(1, currentPage - 2);
+    var endP   = Math.min(totalPages, startP + 4);
+    if(endP - startP < 4) startP = Math.max(1, endP - 4);
+
+    if(startP > 1){
+      html += '<a href="javascript:void(0)" onclick="goToPage(1)" style="padding:0.35rem 0.7rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.82rem;color:#666;background:#fff;cursor:pointer;text-decoration:none;">1</a>';
+      if(startP > 2) html += '<span style="color:#ccc;font-size:0.82rem;">…</span>';
+    }
+    for(var i=startP;i<=endP;i++){
+      if(i===currentPage){
+        html += '<span style="padding:0.35rem 0.7rem;border:1px solid var(--dt-accent,#00a19c);border-radius:4px;font-size:0.82rem;color:#fff;background:var(--dt-accent,#00a19c);font-weight:600;">'+i+'</span>';
+      } else {
+        html += '<a href="javascript:void(0)" onclick="goToPage('+i+')" style="padding:0.35rem 0.7rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.82rem;color:#666;background:#fff;cursor:pointer;text-decoration:none;">'+i+'</a>';
+      }
+    }
+    if(endP < totalPages){
+      if(endP < totalPages-1) html += '<span style="color:#ccc;font-size:0.82rem;">…</span>';
+      html += '<a href="javascript:void(0)" onclick="goToPage('+totalPages+')" style="padding:0.35rem 0.7rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.82rem;color:#666;background:#fff;cursor:pointer;text-decoration:none;">'+totalPages+'</a>';
+    }
+
+    // 下一页
+    if(currentPage < totalPages){
+      html += '<a href="javascript:void(0)" onclick="goToPage('+(currentPage+1)+')" style="padding:0.35rem 0.7rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.82rem;color:#666;background:#fff;cursor:pointer;text-decoration:none;">下一页</a>';
+    }
+
+    html += '</div>';
+    container.innerHTML = html;
+  }
+
+  // 全局函数
+  window.applyFilters = function(){
+    currentPage = 1;
+    currentFiltered = getFilteredItems();
+    renderPage();
+  };
+
+  window.doArchivesSearch = function(){
+    var q = ((document.getElementById('archivesSearchInput')||{}).value||'').trim().toLowerCase();
+    if(!q){ window.clearArchivesSearch(); return; }
+    currentPage = 1;
+    currentFiltered = getFilteredItems();
+    renderPage();
+  };
+
+  window.clearArchivesSearch = function(){
+    var inp = document.getElementById('archivesSearchInput');
+    if(inp) inp.value='';
+    ['filterYear','filterMonth','filterCategory','filterSort'].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.value = id=='filterSort'?'date-desc':'';
+    });
+    window.applyFilters();
+  };
+
+  window.goToPage = function(p){
+    currentPage = p;
+    renderPage();
+  };
+
+  // 初始化
+  currentFiltered = getFilteredItems();
+  renderPage();
 })();
-
-function applyFilters(){
-  var year    = (document.getElementById('filterYear')||{}).value || '';
-  var month   = (document.getElementById('filterMonth')||{}).value || '';
-  var category= (document.getElementById('filterCategory')||{}).value || '';
-  var sort    = (document.getElementById('filterSort')||{}).value || 'date-desc';
-  var list    = document.getElementById('articleList');
-  if(!list) return;
-
-  var items = Array.from(list.querySelectorAll('.article-item'));
-
-  // 过滤
-  var filtered = items.filter(function(it){
-    var d = it.getAttribute('data-date')||'';
-    var c = it.getAttribute('data-category')||'';
-    if(year && d.substring(0,4)!==year) return false;
-    if(month && d.substring(5,7)!==month) return false;
-    if(category && c!==category) return false;
-    return true;
-  });
-
-  // 排序
-  filtered.sort(function(a,b){
-    var da=(a.getAttribute('data-date')||''); var db=(b.getAttribute('data-date')||'');
-    var va=parseInt(a.getAttribute('data-views'))||0; var vb=parseInt(b.getAttribute('data-views'))||0;
-    if(sort==='date-desc') return db.localeCompare(da);
-    if(sort==='date-asc')  return da.localeCompare(db);
-    if(sort==='views-desc') return vb-va;
-    if(sort==='views-asc')  return va-vb;
-    return 0;
-  });
-
-  // 重排 DOM
-  items.forEach(function(it){ it.style.display='none'; });
-  filtered.forEach(function(it){ it.style.display=''; list.appendChild(it); });
-
-  var cnt = document.getElementById('filterResultCount');
-  if(cnt) cnt.textContent = '共 '+filtered.length+' 篇文章';
-}
-
-function doArchivesSearch(){
-  var q = (document.getElementById('archivesSearchInput')||{}).value||'';
-  q = q.trim().toLowerCase();
-  var items = document.querySelectorAll('#articleList .article-item');
-  if(!q){ clearArchivesSearch(); return; }
-  var visible = 0;
-  items.forEach(function(it){
-    var t = ((it.querySelector('h3')||{}).textContent||'').toLowerCase();
-    var p = ((it.querySelector('p')||{}).textContent||'').toLowerCase();
-    var show = t.indexOf(q)!==-1 || p.indexOf(q)!==-1;
-    it.style.display = show?'':'none';
-    if(show) visible++;
-  });
-  var cnt = document.getElementById('filterResultCount');
-  if(cnt) cnt.textContent = '搜索到 '+visible+' 篇文章';
-}
-
-function clearArchivesSearch(){
-  var inp = document.getElementById('archivesSearchInput');
-  if(inp) inp.value='';
-  ['filterYear','filterMonth','filterCategory','filterSort'].forEach(function(id){
-    var el = document.getElementById(id);
-    if(el) el.value = id==='filterSort'?'date-desc':'';
-  });
-  applyFilters();
-}
 </script>
 
 </body>

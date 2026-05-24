@@ -234,7 +234,6 @@ window.setSort = function(sortType) {
   // 更新按钮样式
   document.querySelectorAll('.sort-btn').forEach(function(btn){
     btn.classList.toggle('active', btn.dataset.sort === sortType);
-  });
   // 重新渲染当前结果
   renderResults();
 };
@@ -356,17 +355,14 @@ window.renderResults = function() {
       q.split(/\s+/).forEach(function(w){
         if(tl2.indexOf(w) > -1) s += 3;
         if(tx2.indexOf(w) > -1) s += 1;
-      });
     }
     if(qOrig ? s > 0 : true) results.push({page: p, score: s});
-  });
 
   // 排序
   if(currentSort === 'latest') {
     results.sort(function(a,b){
       var da = (a.page.date||'0000-00-00'), db = (b.page.date||'0000-00-00');
       return db.localeCompare(da);
-    });
   } else if(currentSort === 'hottest') {
     // 从 text 中提取阅读数（如 "658 阅读"）
     results.sort(function(a,b){
@@ -376,7 +372,6 @@ window.renderResults = function() {
       if(ma) va = parseInt(ma[1]);
       if(mb) vb = parseInt(mb[1]);
       return vb - va;
-    });
   } else {
     results.sort(function(a,b){ return b.score - a.score; });
   }
@@ -406,7 +401,6 @@ window.renderResults = function() {
         '<div class="result-url">' + r.page.url + '</div>' +
         '<div class="result-snippet">' + hl((r.page.text||'').substring(0,150)) + '…</div>' +
       '</a>';
-    }).join('');
   }
 };
 

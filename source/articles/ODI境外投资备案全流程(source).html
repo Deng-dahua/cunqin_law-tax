@@ -1200,10 +1200,8 @@ A：可以。在取得备案通知书后，可在有效期内分次汇出，但�
           var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
           window.scrollTo({ top: top, behavior: 'smooth' });
         }
-      });
       li.appendChild(a);
       tocList.appendChild(li);
-    });
 
     // Scroll spy
     var tocLinks = document.querySelectorAll('.article-toc-link');
@@ -1215,7 +1213,6 @@ A：可以。在取得备案通知书后，可在有效期内分次汇出，但�
           var activeLink = document.querySelector('.article-toc-link[data-target="' + entry.target.id + '"]');
           if (activeLink) activeLink.classList.add('active');
         }
-      });
     }, observerOptions);
 
     headings.forEach(function(h) { observer.observe(h); });
@@ -1280,7 +1277,6 @@ function doArticleSearch() {
     var parent = m.parentNode;
     parent.replaceChild(document.createTextNode(m.textContent), m);
     parent.normalize();
-  });
 
   articleCurrentMatch = -1;
   articleTotalMatches = 0;
@@ -1316,7 +1312,6 @@ function highlightInElement(element, keyword) {
       }
       return NodeFilter.FILTER_ACCEPT;
     }
-  });
 
   var textNodes = [];
   while (walker.nextNode()) textNodes.push(walker.currentNode);
@@ -1343,7 +1338,6 @@ function highlightInElement(element, keyword) {
       fragment.appendChild(document.createTextNode(text.substring(lastIdx)));
     }
     node.parentNode.replaceChild(fragment, node);
-  });
 }
 
 function jumpToMatch(direction) {

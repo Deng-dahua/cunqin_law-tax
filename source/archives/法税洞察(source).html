@@ -151,7 +151,7 @@ layout: false
     .footer-links-dt p a:hover { color: var(--dt-accent); }
     .footer-label { color: #fff; font-weight: 600; font-size: 0.88rem; font-size: 0.88rem; }
     .footer-service-items { color: #b0c4d8; font-size: 0.88rem; }
-    .footer-links-dt { margin-left: -3cm; }
+    .footer-links-dt { }
     .footer-service-row { display: flex; align-items: flex-start; gap: 0; line-height: 2.85; }
     .footer-service-row .footer-label { flex-shrink: 0; }
     .footer-service-pipe { flex-shrink: 0; width: 0; border-left: 1px solid #5a7a9a; margin: 0.35em 0.65em; align-self: stretch; }
@@ -930,10 +930,6 @@ layout: false
     }
 
     renderPagination(totalPages);
-    // 平滑滚动到列表顶部（仅翻页/筛选时，初始加载不滚动）
-    if (!isInitialLoad) {
-      try { list.scrollIntoView({ behavior:'smooth', block:'start' }); } catch(e){}
-    }
   }
 
   function renderPagination(totalPages){
@@ -1006,13 +1002,12 @@ layout: false
   window.goToPage = function(p){
     currentPage = p;
     renderPage();
+    try { document.getElementById('articleList').scrollIntoView({ behavior:'smooth', block:'start' }); } catch(e){}
   };
 
   // 初始化
-  var isInitialLoad = true;
   currentFiltered = getFilteredItems();
   renderPage();
-  isInitialLoad = false;
 })();
 </script>
 

@@ -1021,7 +1021,7 @@ A：可以。在取得备案通知书后，可在有效期内分次汇出，但�
 </ol>
 <hr>
 <div class="related-reading">
-    <h3 class="related-heading"><span>延伸阅读</span></h3>
+    <h3 id="延伸阅读" class="related-heading"><span>延伸阅读</span>
     <div class="related-grid">
       <a href="kuajing-dianshang-shuiwu.html" class="related-card">
         <span class="related-cat">实操指南</span>
@@ -1070,7 +1070,7 @@ A：可以。在取得备案通知书后，可在有效期内分次汇出，但�
 <section class="more-section">
   <div class="container-dt">
     <div class="section-header-dt">
-      <h2>更多文章</h2>
+      <h2 id="更多文章">更多文章
       <p>阅读其他精彩内容</p>
     </div>
     <div class="more-list">
@@ -1143,7 +1143,7 @@ A：可以。在取得备案通知书后，可在有效期内分次汇出，但�
   <div class="container-dt">
     <div class="cta-inner">
       <div class="cta-text">
-        <h2>准备好开启专业财税法服务？</h2>
+        <h2 id="准备好开启专业财税法服务">准备好开启专业财税法服务？
         <p>我们提供一对一的免费专业咨询，帮您找到最适合的解决方案</p>
         <a href="../contact/" class="btn-dt-primary">立即咨询</a>
       </div>
@@ -1182,7 +1182,7 @@ A：可以。在取得备案通知书后，可在有效期内分次汇出，但�
 </div>
 
 <script>
-    // ===== 文章目录生成与滚动监听 =====
+        // ===== 文章目录生成与滚动监听 =====
   (function() {
     var tocList = document.getElementById('article-toc-list');
     var articleBody = document.querySelector('.article-body');
@@ -1208,8 +1208,10 @@ A：可以。在取得备案通知书后，可在有效期内分次汇出，但�
           var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
           window.scrollTo({ top: top, behavior: 'smooth' });
         }
+      });
       li.appendChild(a);
       tocList.appendChild(li);
+    });
 
     // Scroll spy
     var tocLinks = document.querySelectorAll('.article-toc-link');
@@ -1221,11 +1223,11 @@ A：可以。在取得备案通知书后，可在有效期内分次汇出，但�
           var activeLink = document.querySelector('.article-toc-link[data-target="' + entry.target.id + '"]');
           if (activeLink) activeLink.classList.add('active');
         }
+      });
     }, observerOptions);
 
     headings.forEach(function(h) { observer.observe(h); });
-  })();
-</script>
+  })();</script>
 
 <script>
   /* ===== 动态阅读量计数 ===== */

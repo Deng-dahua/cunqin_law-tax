@@ -101,6 +101,14 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s10-custom-tax-training.html"/>
   </url>
 
+  <url>
+    <loc>https://cunqin.tax/services/s11-annual-tax-legal-advisory.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s11-annual-tax-legal-advisory.html"/>
+  </url>
+
   <!-- 客户案例 -->
   <url>
     <loc>https://cunqin.tax/cases/</loc>

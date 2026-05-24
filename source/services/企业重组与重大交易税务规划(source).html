@@ -93,9 +93,9 @@ layout: false
     .section-dt:nth-child(even) { background: var(--dt-bg-light); }
     .section-title { font-size: 1.6rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--dt-accent); display: inline-block; }
     .section-subtitle { font-size: 1.2rem; font-weight: 700; color: var(--dt-primary); margin: 2rem 0 1rem; padding-left: 0.8rem; border-left: 3px solid var(--dt-accent); }
-    .scope-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-top: 1.5rem; }
+    .scope-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; margin-top: 1.5rem; }
     .scope-item { background: var(--dt-bg-light); padding: 1rem 1.2rem; border-radius: 6px; font-size: 0.92rem; border-left: 3px solid var(--dt-accent); line-height: 1.6; }
-    .pain-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .pain-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
     .pain-item { border: 1px solid var(--dt-border); padding: 1.2rem 1.5rem; border-radius: 8px; position: relative; }
     .pain-item::before { content: '\201C'; position: absolute; top: -12px; left: 12px; font-size: 2rem; color: var(--dt-accent); opacity: 0.3; line-height: 1; }
     .pain-item p { font-size: 0.92rem; color: var(--dt-text); line-height: 1.7; font-style: italic; }
@@ -111,7 +111,7 @@ layout: false
     .scenario-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
     .scenario-tag { background: var(--dt-bg-light); border: 1px solid var(--dt-border); padding: 0.8rem 1rem; border-radius: 6px; text-align: center; font-size: 0.88rem; color: var(--dt-text); transition: all 0.2s; }
     .scenario-tag:hover { border-color: var(--dt-accent); color: var(--dt-accent); }
-    .deliverable-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+    .deliverable-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; }
     .deliverable-item { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.8rem 1rem; background: var(--dt-bg-light); border-radius: 6px; font-size: 0.9rem; }
     .deliverable-item .dl-icon { color: var(--dt-accent); font-size: 1rem; flex-shrink: 0; margin-top: 0.15rem; }
     .course-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
@@ -120,7 +120,7 @@ layout: false
     .course-table tr:nth-child(even) td { background: var(--dt-bg-light); }
     /* === 以人为本新板块 === */
     .section-lead { text-align: center; color: var(--dt-text-light); font-size: 1.05rem; margin: -1rem 0 2rem; }
-    .pain-list-wide { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .pain-list-wide { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
     .belief-section { background: var(--dt-bg-light); color: #000; }
     .belief-section .section-title { color: #003f6c; border-bottom-color: var(--dt-accent); }
     .belief-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 1rem; }
@@ -128,7 +128,7 @@ layout: false
     .belief-card .belief-icon { font-size: 2rem; margin-bottom: 0.8rem; }
     .belief-card h3 { font-size: 0.95rem; margin-bottom: 0.5rem; font-weight: 700; color: #000; }
     .belief-card p { font-size: 0.85rem; line-height: 1.6; }
-    .content-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-top: 1rem; }
+    .content-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; margin-top: 1rem; }
     .content-item { display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.8rem 1rem; background: var(--dt-bg-light); border-radius: 6px; font-size: 0.9rem; border-left: 3px solid var(--dt-accent); }
     .content-item .ci-icon { color: var(--dt-accent); font-size: 1rem; flex-shrink: 0; margin-top: 0.15rem; }
     .who-section { background: var(--dt-bg-light); }
@@ -155,11 +155,13 @@ layout: false
     /* 更多服务 */
     .more-services { padding: 60px 0; background: var(--dt-bg-light); }
     .more-services .section-title { font-size: 1.6rem; font-weight: 700; color: var(--dt-primary); margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--dt-accent); display: inline-block; }
-    .more-services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; max-width: 900px; margin: 0 auto; }
+    .more-services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; max-width: 900px; margin: 0 auto; }
     .more-services-grid a { display: block; padding: 1rem 1.2rem; border: 1px solid var(--dt-border); border-radius: 6px; color: var(--dt-text); transition: all 0.2s; font-size: 0.92rem; text-decoration: none; }
     .more-services-grid a:hover { border-color: var(--dt-accent); color: var(--dt-accent); background: rgba(0,161,156,0.03); }
     .more-services-grid a.current { border-color: var(--dt-accent); background: rgba(0,161,156,0.06); color: var(--dt-accent); font-weight: 600; pointer-events: none; cursor: default; }
     .more-services-grid a .svc-num { color: var(--dt-accent); font-size: 0.75rem; margin-right: 0.5rem; font-weight: 600; }
+    @media (max-width: 968px) { .more-services-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 640px) { .more-services-grid { grid-template-columns: repeat(2, 1fr); } }
     .cta-section {
   position: relative;
   position: relative;

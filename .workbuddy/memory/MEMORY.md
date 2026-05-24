@@ -1,5 +1,11 @@
 # 存勤法税项目长期记忆
 
+## ⚠️ URL 列表铁律（2026-05-24 确立）
+- **给用户列 URL 之前，必须先读 `source/sitemap.xml` 核对**——凭记忆列 URL 必然出错
+- **文章 URL 用的是拼音 slug**（如 `jinshui-siqi-yingdui.html`），不是中文文件名
+- **服务子页 URL** 格式：`services/s01-xxx.html` 至 `s10-xxx.html`
+- **禁止凭记忆、凭推理列 URL**，必须以 sitemap 为唯一事实来源
+
 ## ⚠️ 批量编辑铁律（2026-05-22）
 - **严禁用 PowerShell 批量编辑含中文的 UTF-8 文件**——会导致中文乱码
 - 需要批量编辑时，用 Python 脚本（`encoding="utf-8"`），绝不用 PowerShell
@@ -26,7 +32,7 @@
 ## 项目概览
 - **公司**：存勤法税服务（广州）有限公司
 - **创始人**：邓达华，18年财税法实战经验（14年甲方+4年乙方）
-- **官网**：https://deng-dahua.github.io/cunqin_law-tax/
+- **官网**：https://cunqin.tax
 - **GitHub**：Deng-dahua/cunqin_law-tax
 - **仓库路径**：`C:/Users/26726/WorkBuddy/2026-05-20-21-20-24/`
 
@@ -37,7 +43,7 @@
 - **推送方式**：SSH（国内网络更稳定）
 
 ## SEO/GEO 配置
-- **Base URL**: `https://deng-dahua.github.io/cunqin_law-tax`
+- **Base URL**: `https://cunqin.tax`
 - **全站 24 页均已配置**: Schema.org JSON-LD, Open Graph, Canonical URL, Twitter Card, Meta Keywords, hreflang, Apple Touch Icon, PWA Meta, time datetime
 - **Sitemap**: `source/sitemap.xml` (24 URLs), `source/robots.txt` 已引用
 - **Atom Feed**: `source/atom.xml` (8 entries)
@@ -61,12 +67,11 @@
 - 微信二维码图片：`source/images/wechat-qrcode.png`（透明PNG，125×125px），用于首页和联系我们页
 - 导航栏统一使用 `nav-logo.png`，页脚统一使用 `footer-logo.png`
 
-## ⚠️ 导航链接铁律（2026-05-22）
-- **严禁在非首页使用绝对路径**：GitHub Pages 托管在 `deng-dahua.github.io/cunqin_law-tax/` 子目录下
+## ⚠️ 导航链接铁律（2026-05-22，2026-05-24 更新）
+- **域名已切换为 cunqin.tax**，所有绝对路径使用 `https://cunqin.tax/...`
 - 首页（`source/` 根）：使用相对路径如 `about/`、`services/`、`contact/`
 - 深度 1 页面（`source/about/`、`source/services/` 等）：使用 `../about/`、`../services/`、`../`（首页）
 - 深度 2 页面（`source/articles/`）：使用 `../../about/`、`../../services/`、`../../`（首页）
-- 绝对路径 `/about/` 会被解析为 `deng-dahua.github.io/about/` → 404
 
 ## 文件命名规则（2026-05-22 确立）
 - **source/ 源文件**：中文描述名 + `(source)` 后缀，如 `首页(source).html`、`高新技术企业税务规划(source).html`

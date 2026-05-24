@@ -49,7 +49,7 @@ from pathlib import Path
 # 配置
 SOURCE = Path(r'C:\Users\26726\WorkBuddy\2026-05-20-21-20-24\source')
 EXPECTED_DOMAIN = 'cunqin.tax'
-BAIDU_TOKEN = 'codeva-MMFsum3pdD'
+BAIDU_TOKEN = 'codeva-9SPpSVW5X6'
 
 TOTAL_CHECKS = 26
 errors = []

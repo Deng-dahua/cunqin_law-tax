@@ -1327,6 +1327,7 @@ function doArticleSearch() {
     var parent = m.parentNode;
     parent.replaceChild(document.createTextNode(m.textContent), m);
     parent.normalize();
+  });
 
   articleCurrentMatch = -1;
   articleTotalMatches = 0;
@@ -1362,32 +1363,40 @@ function highlightInElement(element, keyword) {
       }
       return NodeFilter.FILTER_ACCEPT;
     }
+  }, false);
 
   var textNodes = [];
-  while (walker.nextNode()) textNodes.push(walker.currentNode);
+  var node;
+  while (node = walker.nextNode()) {
+    if (node.nodeValue.toLowerCase().indexOf(lowerKw) >= 0) {
+      textNodes.push(node);
+    }
+  }
 
-  textNodes.forEach(function(node) {
-    var text = node.textContent;
-    var idx = text.toLowerCase().indexOf(lowerKw);
-    if (idx === -1) return;
+  var escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  var regex = new RegExp('(' + escaped + ')', 'gi');
 
-    var fragment = document.createDocumentFragment();
+  textNodes.forEach(function(textNode) {
+    var frag = document.createDocumentFragment();
     var lastIdx = 0;
-    while (idx !== -1) {
-      if (idx > lastIdx) {
-        fragment.appendChild(document.createTextNode(text.substring(lastIdx, idx)));
+    var text = textNode.nodeValue;
+    var match;
+    while ((match = regex.exec(text)) !== null) {
+      if (match.index > lastIdx) {
+        frag.appendChild(document.createTextNode(text.substring(lastIdx, match.index)));
       }
       var mark = document.createElement('mark');
       mark.className = 'search-mark';
-      mark.textContent = text.substring(idx, idx + keyword.length);
-      fragment.appendChild(mark);
-      lastIdx = idx + keyword.length;
-      idx = text.toLowerCase().indexOf(lowerKw, lastIdx);
+      mark.textContent = match[0];
+      frag.appendChild(mark);
+      lastIdx = regex.lastIndex;
     }
     if (lastIdx < text.length) {
-      fragment.appendChild(document.createTextNode(text.substring(lastIdx)));
+      frag.appendChild(document.createTextNode(text.substring(lastIdx)));
     }
-    node.parentNode.replaceChild(fragment, node);
+    textNode.parentNode.replaceChild(frag, textNode);
+    regex.lastIndex = 0;
+  });
 }
 
 function jumpToMatch(direction) {
@@ -1396,20 +1405,19 @@ function jumpToMatch(direction) {
 
   marks.forEach(function(m) { m.classList.remove('active'); });
 
-  if (articleCurrentMatch === -1) {
-    articleCurrentMatch = direction > 0 ? 0 : marks.length - 1;
-  } else {
-    articleCurrentMatch += direction;
-    if (articleCurrentMatch >= marks.length) articleCurrentMatch = 0;
-    if (articleCurrentMatch < 0) articleCurrentMatch = marks.length - 1;
-  }
+  articleCurrentMatch += direction;
+  if (articleCurrentMatch >= marks.length) articleCurrentMatch = 0;
+  if (articleCurrentMatch < 0) articleCurrentMatch = marks.length - 1;
 
-  var target = marks[articleCurrentMatch];
-  target.classList.add('active');
-  target.scrollIntoView({behavior: 'smooth', block: 'center'});
+  var currentMark = marks[articleCurrentMatch];
+  currentMark.classList.add('active');
+
+  var offset = 120;
+  var top = currentMark.getBoundingClientRect().top + window.pageYOffset - offset;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+
+  document.getElementById('articleSearchCount').textContent = (articleCurrentMatch + 1) + '/' + articleTotalMatches + ' \u5904\u5339\u914d';
 }
 </script>
-
-
 </body>
 </html>

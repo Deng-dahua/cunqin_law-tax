@@ -265,11 +265,201 @@ layout: false
 
 </section>
 
+<!-- ===== 筛选与搜索栏 ===== -->
+<section class="filter-search-section" style="background:#f8f9fa;padding:1.2rem 0;border-bottom:1px solid #e8e8e8;">
+  <div class="container-dt" style="max-width:900px;margin:0 auto;padding:0 1rem;">
+    <!-- 搜索框 -->
+    <div style="display:flex;gap:0.5rem;margin-bottom:1rem;align-items:center;">
+      <input type="text" id="archivesSearchInput" placeholder="搜索文章关键词..." style="flex:1;padding:0.5rem 0.8rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.9rem;font-family:inherit;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#00a19c'" onblur="this.style.borderColor='#e8e8e8'">
+      <button onclick="doArchivesSearch()" style="background:var(--dt-accent,#00a19c);color:#fff;border:none;padding:0.5rem 1.2rem;border-radius:4px;cursor:pointer;font-size:0.9rem;font-family:inherit;white-space:nowrap;">立即搜索</button>
+      <button onclick="clearArchivesSearch()" style="background:none;border:1px solid #e8e8e8;padding:0.5rem 0.8rem;border-radius:4px;cursor:pointer;font-size:0.85rem;font-family:inherit;color:#666;white-space:nowrap;">清除</button>
+    </div>
+    <!-- 筛选器 -->
+    <div style="display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center;">
+      <span style="font-size:0.85rem;color:#666;">筛选：</span>
+      <select id="filterYear" onchange="applyFilters()" style="padding:0.35rem 0.5rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.85rem;font-family:inherit;color:#333;background:#fff;">
+        <option value="">全部年度</option>
+      </select>
+      <select id="filterMonth" onchange="applyFilters()" style="padding:0.35rem 0.5rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.85rem;font-family:inherit;color:#333;background:#fff;">
+        <option value="">全部月份</option>
+        <option value="01">1月</option>
+        <option value="02">2月</option>
+        <option value="03">3月</option>
+        <option value="04">4月</option>
+        <option value="05">5月</option>
+        <option value="06">6月</option>
+        <option value="07">7月</option>
+        <option value="08">8月</option>
+        <option value="09">9月</option>
+        <option value="10">10月</option>
+        <option value="11">11月</option>
+        <option value="12">12月</option>
+      </select>
+      <select id="filterCategory" onchange="applyFilters()" style="padding:0.35rem 0.5rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.85rem;font-family:inherit;color:#333;background:#fff;">
+        <option value="">全部分类</option>
+        <option value="政策解读">政策解读</option>
+        <option value="实操指南">实操指南</option>
+        <option value="行业洞察">行业洞察</option>
+      </select>
+      <select id="filterSort" onchange="applyFilters()" style="padding:0.35rem 0.5rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.85rem;font-family:inherit;color:#333;background:#fff;">
+        <option value="date-desc">最新发布</option>
+        <option value="date-asc">最早发布</option>
+        <option value="views-desc">阅读最多</option>
+        <option value="views-asc">阅读最少</option>
+      </select>
+      <span id="filterResultCount" style="font-size:0.82rem;color:#999;margin-left:auto;"></span>
+    </div>
+  </div>
+</section>
+
 <section class="section-dt">
   <div class="container-dt">
     <div class="article-list" id="articleList">
 
-      <a href="../articles/yecai-fasui-ronghe.html" class="article-item">
+            <a href="../articles/shuiwu-jicha-2026-yujing.html" class="article-item" data-date="2026-05-20" data-category="实操指南" data-views="100">
+        <div class="article-date">
+          <div class="day">20</div>
+          <div class="month">2026.05</div>
+        </div>
+        <div class="article-content">
+          <h3>2026年税务稽查重点预警与企业自查应对策略</h3>
+          <p>前言：2026税务稽查新常态2026年，中国税务稽查进入了一个全新的阶段。金税四期全面运行，“以数治税”从理念落地为精准的执法工具。国家税务总局明确提出2026</p>
+          <span class="article-tag">实操指南</span>
+</div>
+        <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+
+      <a href="../articles/zhuanrang-dingjia-guanlian-jiaoyi.html" class="article-item" data-date="2026-05-20" data-category="实操指南" data-views="100">
+        <div class="article-date">
+          <div class="day">20</div>
+          <div class="month">2026.05</div>
+        </div>
+        <div class="article-content">
+          <h3>转让定价与关联交易反避税实战指南</h3>
+          <p>前言：转让定价为何成为稽查重灾区近年来，转让定价（TransferPricing）已经从国际税务领域的一个专业话题，变成了国内税务稽查的高频关键词。国家税务总局</p>
+          <span class="article-tag">实操指南</span>
+</div>
+        <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+
+      <a href="../articles/xin-gongsifa-shijiao-shuiwu.html" class="article-item" data-date="2026-05-20" data-category="政策解读" data-views="100">
+        <div class="article-date">
+          <div class="day">20</div>
+          <div class="month">2026.05</div>
+        </div>
+        <div class="article-content">
+          <h3>新公司法注册资本实缴的税务影响与合规路径</h3>
+          <p>前言：新公司法核心变化速览2023年12月30日，第十四届全国人大常委会审议通过了新修订的《中华人民共和国公司法》，自2024年7月1日起施行。本次修订是公司法</p>
+          <span class="article-tag">政策解读</span>
+</div>
+        <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+
+      <a href="../articles/guquan-jili-shuiwu-guihua.html" class="article-item" data-date="2026-05-20" data-category="实操指南" data-views="100">
+        <div class="article-date">
+          <div class="day">20</div>
+          <div class="month">2026.05</div>
+        </div>
+        <div class="article-content">
+          <h3>股权激励全周期税务规划：从授予到退出的合规策略</h3>
+          <p>前言：股权激励的税务“坑”有多大股权激励被越来越多的企业视为吸引和留住核心人才的“终极武器”。一份好的股权激励方案，不仅能让员工分享企业成长的红利，更能将个人利</p>
+          <span class="article-tag">实操指南</span>
+</div>
+        <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+
+      <a href="../articles/linghuo-yonggong-shuiwu-hegui.html" class="article-item" data-date="2026-05-21" data-category="实操指南" data-views="100">
+        <div class="article-date">
+          <div class="day">21</div>
+          <div class="month">2026.05</div>
+        </div>
+        <div class="article-content">
+          <h3>平台经济时代灵活用工的税务合规与风险管控</h3>
+          <p>前言：平台经济税务监管新时代中国平台经济从业者已超过2亿人，外卖骑手、网约车司机、直播主播、自由设计师……灵活用工已成为数字经济时代的新型劳动形态。然而，伴随规</p>
+          <span class="article-tag">实操指南</span>
+</div>
+        <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+
+      <a href="../articles/shudian-fapiao-quanmian-shishi.html" class="article-item" data-date="2026-05-21" data-category="政策解读" data-views="100">
+        <div class="article-date">
+          <div class="day">21</div>
+          <div class="month">2026.05</div>
+        </div>
+        <div class="article-content">
+          <h3>数电发票全面实施：企业应对策略与实操指南</h3>
+          <p>前言：发票的“数字化革命”发票，作为商业交易的“身份证”和税务管理的“核心凭证”，正在经历一场根本性的变革。从纸质发票到电子发票，再到如今的全面数字化的电子发票</p>
+          <span class="article-tag">政策解读</span>
+</div>
+        <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+
+      <a href="../articles/zengzhishuifa-shishi-yingdui.html" class="article-item" data-date="2026-05-21" data-category="政策解读" data-views="100">
+        <div class="article-date">
+          <div class="day">21</div>
+          <div class="month">2026.05</div>
+        </div>
+        <div class="article-content">
+          <h3>增值税法正式实施：企业影响与应对指南</h3>
+          <p>前言：增值税正式入法的里程碑意义2024年12月25日，第十四届全国人大常委会第十三次会议通过了《中华人民共和国增值税法》，并于2026年1月1日正式实施。这意</p>
+          <span class="article-tag">政策解读</span>
+</div>
+        <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+
+      <a href="../articles/duidu-xieyi-shuiwu-chuli.html" class="article-item" data-date="2026-05-21" data-category="实操指南" data-views="100">
+        <div class="article-date">
+          <div class="day">21</div>
+          <div class="month">2026.05</div>
+        </div>
+        <div class="article-content">
+          <h3>对赌协议税务处理全解析：从签订到履行的合规路径</h3>
+          <p>前言：对赌协议的税务“灰色地带”对赌协议（ValueAdjustmentMechanism，简称VAM），又称估值调整机制，是私募股权投资和并购交易中最常见的条</p>
+          <span class="article-tag">实操指南</span>
+</div>
+        <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+
+      <a href="../articles/jiazu-caifu-chuancheng-shuiwu.html" class="article-item" data-date="2026-05-22" data-category="行业洞察" data-views="100">
+        <div class="article-date">
+          <div class="day">22</div>
+          <div class="month">2026.05</div>
+        </div>
+        <div class="article-content">
+          <h3>家族财富传承中的税务考量与规划策略</h3>
+          <p>传承时代的税务挑战中国改革开放四十余年，第一代创业者已集体进入60岁以上的传承窗口期。据多家研究机构估算，未来十年中国将有超过300万亿元的家庭财富面临代际交接</p>
+          <span class="article-tag">行业洞察</span>
+</div>
+        <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+
+      <a href="../articles/jianzi-chezi-shuiwu-chuli.html" class="article-item" data-date="2026-05-22" data-category="实操指南" data-views="100">
+        <div class="article-date">
+          <div class="day">22</div>
+          <div class="month">2026.05</div>
+        </div>
+        <div class="article-content">
+          <h3>企业减资撤资全套税务处理指南</h3>
+          <p>减资为何成为高频操作2024年7月1日，新修订的《公司法》正式实施，其中最受关注的变革之一是有限责任公司注册资本认缴期限从"无期限"缩短为5年。这一规定直接影响</p>
+          <span class="article-tag">实操指南</span>
+</div>
+        <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+
+      <a href="../articles/zhuanjing-texin-shuishou-youhui.html" class="article-item" data-date="2026-05-22" data-category="政策解读" data-views="100">
+        <div class="article-date">
+          <div class="day">22</div>
+          <div class="month">2026.05</div>
+        </div>
+        <div class="article-content">
+          <h3>专精特新企业税收优惠政策深度解读</h3>
+          <p>专精特新企业的政策风口近年来，"专精特新"已成为中国经济政策中出现频率最高的关键词之一。从2021年中央政治局会议提出"培育一批专精特新中小企业"，到2022年</p>
+          <span class="article-tag">政策解读</span>
+</div>
+        <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
+      </a>
+
+<a href="../articles/yecai-fasui-ronghe.html" class="article-item" data-date="2026-05-05" data-category="行业洞察" data-views="1523">
         <div class="article-date">
           <div class="day">05</div>
           <div class="month">2026.05</div>
@@ -282,7 +472,7 @@ layout: false
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/jinshui-siqi-yingdui.html" class="article-item">
+      <a href="../articles/jinshui-siqi-yingdui.html" class="article-item" data-date="2026-04-15" data-category="政策解读" data-views="1208">
         <div class="article-date">
           <div class="day">15</div>
           <div class="month">2026.04</div>
@@ -295,7 +485,7 @@ layout: false
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/odi-beian-quanliucheng.html" class="article-item">
+      <a href="../articles/odi-beian-quanliucheng.html" class="article-item" data-date="2026-03-30" data-category="实操指南" data-views="986">
         <div class="article-date">
           <div class="day">30</div>
           <div class="month">2026.03</div>
@@ -308,7 +498,7 @@ layout: false
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/kuajing-dianshang-shuiwu.html" class="article-item">
+      <a href="../articles/kuajing-dianshang-shuiwu.html" class="article-item" data-date="2026-03-15" data-category="实操指南" data-views="875">
         <div class="article-date">
           <div class="day">15</div>
           <div class="month">2026.03</div>
@@ -321,7 +511,7 @@ layout: false
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/qiye-zhongzu-shuiwu.html" class="article-item">
+      <a href="../articles/qiye-zhongzu-shuiwu.html" class="article-item" data-date="2026-02-28" data-category="实操指南" data-views="1102">
         <div class="article-date">
           <div class="day">28</div>
           <div class="month">2026.02</div>
@@ -334,7 +524,7 @@ layout: false
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/gaoxin-qiye-shuiwu.html" class="article-item">
+      <a href="../articles/gaoxin-qiye-shuiwu.html" class="article-item" data-date="2026-02-12" data-category="政策解读" data-views="1340">
         <div class="article-date">
           <div class="day">12</div>
           <div class="month">2026.02</div>
@@ -347,7 +537,7 @@ layout: false
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/jiayi-shuangshijing.html" class="article-item">
+      <a href="../articles/jiayi-shuangshijing.html" class="article-item" data-date="2026-01-28" data-category="行业洞察" data-views="967">
         <div class="article-date">
           <div class="day">28</div>
           <div class="month">2026.01</div>
@@ -360,7 +550,7 @@ layout: false
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/qiye-shuiwu-fengxian.html" class="article-item">
+      <a href="../articles/qiye-shuiwu-fengxian.html" class="article-item" data-date="2026-01-15" data-category="实操指南" data-views="1089">
         <div class="article-date">
           <div class="day">15</div>
           <div class="month">2026.01</div>
@@ -441,6 +631,88 @@ layout: false
 </script>
 
 
+
+
+<script>
+// ===== 法税洞察页 筛选 + 搜索 =====
+(function(){
+  // 动态填充年份下拉
+  var items = document.querySelectorAll('#articleList .article-item');
+  var years = new Set();
+  items.forEach(function(it){ var d=it.getAttribute('data-date')||''; if(d.length>=4) years.add(d.substring(0,4)); });
+  var ys = Array.from(years).sort().reverse();
+  var ysel = document.getElementById('filterYear');
+  if(ysel) ys.forEach(function(y){ var o=document.createElement('option'); o.value=y; o.textContent=y+'年'; ysel.appendChild(o); });
+
+  applyFilters();
+})();
+
+function applyFilters(){
+  var year    = (document.getElementById('filterYear')||{}).value || '';
+  var month   = (document.getElementById('filterMonth')||{}).value || '';
+  var category= (document.getElementById('filterCategory')||{}).value || '';
+  var sort    = (document.getElementById('filterSort')||{}).value || 'date-desc';
+  var list    = document.getElementById('articleList');
+  if(!list) return;
+
+  var items = Array.from(list.querySelectorAll('.article-item'));
+
+  // 过滤
+  var filtered = items.filter(function(it){
+    var d = it.getAttribute('data-date')||'';
+    var c = it.getAttribute('data-category')||'';
+    if(year && d.substring(0,4)!==year) return false;
+    if(month && d.substring(5,7)!==month) return false;
+    if(category && c!==category) return false;
+    return true;
+  });
+
+  // 排序
+  filtered.sort(function(a,b){
+    var da=(a.getAttribute('data-date')||''); var db=(b.getAttribute('data-date')||'');
+    var va=parseInt(a.getAttribute('data-views'))||0; var vb=parseInt(b.getAttribute('data-views'))||0;
+    if(sort==='date-desc') return db.localeCompare(da);
+    if(sort==='date-asc')  return da.localeCompare(db);
+    if(sort==='views-desc') return vb-va;
+    if(sort==='views-asc')  return va-vb;
+    return 0;
+  });
+
+  // 重排 DOM
+  items.forEach(function(it){ it.style.display='none'; });
+  filtered.forEach(function(it){ it.style.display=''; list.appendChild(it); });
+
+  var cnt = document.getElementById('filterResultCount');
+  if(cnt) cnt.textContent = '共 '+filtered.length+' 篇文章';
+}
+
+function doArchivesSearch(){
+  var q = (document.getElementById('archivesSearchInput')||{}).value||'';
+  q = q.trim().toLowerCase();
+  var items = document.querySelectorAll('#articleList .article-item');
+  if(!q){ clearArchivesSearch(); return; }
+  var visible = 0;
+  items.forEach(function(it){
+    var t = ((it.querySelector('h3')||{}).textContent||'').toLowerCase();
+    var p = ((it.querySelector('p')||{}).textContent||'').toLowerCase();
+    var show = t.indexOf(q)!==-1 || p.indexOf(q)!==-1;
+    it.style.display = show?'':'none';
+    if(show) visible++;
+  });
+  var cnt = document.getElementById('filterResultCount');
+  if(cnt) cnt.textContent = '搜索到 '+visible+' 篇文章';
+}
+
+function clearArchivesSearch(){
+  var inp = document.getElementById('archivesSearchInput');
+  if(inp) inp.value='';
+  ['filterYear','filterMonth','filterCategory','filterSort'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.value = id==='filterSort'?'date-desc':'';
+  });
+  applyFilters();
+}
+</script>
 
 </body>
 </html>

@@ -803,8 +803,10 @@ layout: false
     }
 
     renderPagination(totalPages);
-    // 平滑滚动到列表顶部
-    try { list.scrollIntoView({ behavior:'smooth', block:'start' }); } catch(e){}
+    // 平滑滚动到列表顶部（仅翻页/筛选时，初始加载不滚动）
+    if (!isInitialLoad) {
+      try { list.scrollIntoView({ behavior:'smooth', block:'start' }); } catch(e){}
+    }
   }
 
   function renderPagination(totalPages){
@@ -880,8 +882,10 @@ layout: false
   };
 
   // 初始化
+  var isInitialLoad = true;
   currentFiltered = getFilteredItems();
   renderPage();
+  isInitialLoad = false;
 })();
 </script>
 

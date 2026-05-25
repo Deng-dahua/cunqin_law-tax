@@ -3,8 +3,14 @@
 ## ⚠️ URL 列表铁律（2026-05-24 确立）
 - **给用户列 URL 之前，必须先读 `source/sitemap.xml` 核对**——凭记忆列 URL 必然出错
 - **文章 URL 用的是拼音 slug**（如 `jinshui-siqi-yingdui.html`），不是中文文件名
-- **服务子页 URL** 格式：`services/s01-xxx.html` 至 `s10-xxx.html`
+- **服务子页 URL** 格式：`services/s01-xxx.html` 至 `s11-xxx.html`（2026-05-24 更新：从10项增至11项）
 - **禁止凭记忆、凭推理列 URL**，必须以 sitemap 为唯一事实来源
+
+## ⚠️ JS 搜索代码完整性检查（2026-05-24 确立）
+- **每次修改文章JS后必须检查**：`highlightInElement` 函数体是否完整、`jumpToMatch` 是否存在、`doArticleSearch` 中 forEach 是否闭合
+- **createTreeWalker修复必须验证**：不能仅替换单个参数就结束，需确认整个函数体未被截断
+- **检查方法**：`grep -c 'jumpToMatch' source/articles/*.html` 应为19（当前19篇文章）
+- **检查方法**：`grep -c 'while (node = walker.nextNode())' source/articles/*.html` 应为19
 
 ## ⚠️ 批量编辑铁律（2026-05-22）
 - **严禁用 PowerShell 批量编辑含中文的 UTF-8 文件**——会导致中文乱码
@@ -64,6 +70,9 @@
   - `footer-logo.png`（页脚 LOGO）
   - `company-logo.png`（公司 LOGO）
   - `founder-new.png`（创始人照片，2026-05-22 添加）
+- 源码文章数：19篇（source/articles/），全站HTML：36个
+- 文章JSON生成工具：`tools/generate_articles.py`（从JSON批量生成HTML）
+- 索引更新工具：`tools/update_indexes.py`（法税洞察页+search-index+sitemap同步）
 - 微信二维码图片：`source/images/wechat-qrcode.png`（透明PNG，125×125px），用于首页和联系我们页
 - 导航栏统一使用 `nav-logo.png`，页脚统一使用 `footer-logo.png`
 
@@ -126,10 +135,19 @@
 - **URL格式**：统一使用 `./` 开头的站点相对路径（与 permalink frontmatter 对齐）
 - 涉及24个HTML文件 + 1个JSON索引文件
 
+## 搜索引擎收录状态（2026-05-24）
+
+| 平台 | 验证 | Sitemap | URL推送 | 备注 |
+|------|------|---------|---------|------|
+| Bing | ✅ Meta标签 | ✅ 27 URLs, 0错误 | ✅ 24条已推送 | 国内可访问 |
+| 百度 | ✅ Meta标签 `codeva-9SPpSVW5X6` | ❌ 无ICP备案 | ⚠️ 日限10条，剩14条待推 | API token: SWGy4vjzNfOGuuLt |
+| GSC | ❌ | - | - | 需翻墙 |
+
 ## 待办事项
 - [ ] 替换所有不存在的banner图片（取消注释对应配置行并放入实际图片）
 - [ ] 配置百度统计ID
 - [ ] 配置Google Analytics ID
 - [ ] 修改备案号（当前为占位符）
-- [ ] 提交sitemap到百度搜索资源平台和Google Search Console
+- [ ] 百度：每日手动提交 10 条 URL（剩余 14 条），持续至全站收录
+- [ ] GSC：翻墙后添加站点 + 提交 sitemap
 - [ ] 持续发布GEO文章（已规划15篇）

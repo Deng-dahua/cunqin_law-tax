@@ -99,7 +99,7 @@ layout: false
     .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--dt-accent); margin: 1rem auto 0; border-radius: 2px; }
 
     /* 文章列表 */
-    .article-list { max-width: 900px; margin: 0 auto; }
+    .article-list { max-width: 900px; margin: 0 0 0 10rem; }
     .article-item {
       display: flex; gap: 1.5rem; padding: 1.8rem 0; border-bottom: 1px solid var(--dt-border);
       transition: all 0.2s; align-items: flex-start;
@@ -109,11 +109,12 @@ layout: false
     .article-content h3 { font-size: 1.15rem; color: var(--dt-primary); margin-bottom: 0.5rem; transition: color 0.2s; }
     .article-item:hover .article-content h3 { color: var(--dt-accent); }
     .article-content p { color: var(--dt-text-light); font-size: 0.9rem; line-height: 1.7; }
-    .article-tag { display: inline-block; background: var(--dt-bg-light); color: var(--dt-accent); padding: 2px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; margin-top: 0.5rem; }
-    .article-meta-row { display: flex; align-items: center; gap: 0.8rem; margin-top: 0.5rem; flex-wrap: wrap; }
-    .article-date-text { font-size: 0.78rem; color: #999; white-space: nowrap; }
-    .article-views { display: inline-flex; align-items: center; gap: 0.25rem; font-size: 0.78rem; color: #aaa; white-space: nowrap; }
-    .article-views i { font-size: 0.7rem; }
+    .article-tag { display: inline-block; background: rgba(0,161,156,0.08); color: var(--dt-accent); padding: 2px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+    .article-meta-row { display: flex; align-items: center; gap: 1rem; margin-top: 0.6rem; flex-wrap: wrap; }
+    .article-date-text { font-size: 0.78rem; color: #999; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.3rem; }
+    .article-date-text i { font-size: 0.72rem; color: #bbb; }
+    .article-views { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; color: #aaa; white-space: nowrap; }
+    .article-views i { font-size: 0.72rem; }
     .article-arrow { color: var(--dt-accent); font-size: 1.2rem; opacity: 0; transition: opacity 0.2s; align-self: center; }
     .article-item:hover .article-arrow { opacity: 1; }
 
@@ -324,357 +325,513 @@ layout: false
   <div class="container-dt">
     <div class="article-list" id="articleList">
 
-            <a href="../articles/shuiwu-jicha-2026-yujing.html" class="article-item" data-date="2026-05-20" data-category="实操指南" data-views="394">
+            <a href="../articles/2026年税务稽查重点预警(source).html" class="article-item" data-date="2026-05-20" data-category="实操指南" data-views="394">
         <div class="article-content">
           <h3>2026年税务稽查重点预警与企业自查应对策略</h3>
-          <p>前言：2026税务稽查新常态2026年，中国税务稽查进入了一个全新的阶段。金税四期全面运行，“以数治税”从理念落地为精准的执法工具。国家税务总局明确提出2026</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <p>2026年税务稽查全面升级，金税四期以数治税精准打击。本文深度解析2026年税务稽查8大重点领域，附企业自查清单与分步应对策略，帮助企业主动合规、降低稽查风险。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.20</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 394</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/zhuanrang-dingjia-guanlian-jiaoyi.html" class="article-item" data-date="2026-05-20" data-category="实操指南" data-views="213">
+      <a href="../articles/转让定价与关联交易反避税实战指南(source).html" class="article-item" data-date="2026-05-20" data-category="实操指南" data-views="213">
         <div class="article-content">
           <h3>转让定价与关联交易反避税实战指南</h3>
-          <p>前言：转让定价为何成为稽查重灾区近年来，转让定价（TransferPricing）已经从国际税务领域的一个专业话题，变成了国内税务稽查的高频关键词。国家税务总局</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <p>转让定价是近年来税务稽查的高频领域。本文详解独立交易原则、转让定价方法选择、同期资料准备、特别纳税调整应对，帮助企业建立合规的关联交易管理体系，防范跨境反避税风险。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.20</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 213</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/xin-gongsifa-shijiao-shuiwu.html" class="article-item" data-date="2026-05-20" data-category="政策解读" data-views="183">
+      <a href="../articles/新公司法注册资本实缴的税务影响(source).html" class="article-item" data-date="2026-05-20" data-category="政策解读" data-views="183">
         <div class="article-content">
           <h3>新公司法注册资本实缴的税务影响与合规路径</h3>
-          <p>前言：新公司法核心变化速览2023年12月30日，第十四届全国人大常委会审议通过了新修订的《中华人民共和国公司法》，自2024年7月1日起施行。本次修订是公司法</p>
-          <span class="article-tag">政策解读</span>
-</div>
+          <p>2024年新《公司法》正式实施，注册资本5年实缴制全面落地。本文深度解析新公司法下实缴出资的8大税务影响，涵盖知识产权出资避坑、减资税务处理、未实缴后果等核心问题。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">政策解读</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.20</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 183</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/guquan-jili-shuiwu-guihua.html" class="article-item" data-date="2026-05-20" data-category="实操指南" data-views="392">
+      <a href="../articles/股权激励全周期税务规划(source).html" class="article-item" data-date="2026-05-20" data-category="实操指南" data-views="392">
         <div class="article-content">
           <h3>股权激励全周期税务规划：从授予到退出的合规策略</h3>
-          <p>前言：股权激励的税务“坑”有多大股权激励被越来越多的企业视为吸引和留住核心人才的“终极武器”。一份好的股权激励方案，不仅能让员工分享企业成长的红利，更能将个人利</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <p>股权激励是企业吸引人才的核心工具，但税务处理不当可能吞噬大半收益。本文覆盖股票期权、限制性股票、员工持股计划等全类型，详解授予/行权/退出三阶段税务规划策略。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.20</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 392</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/linghuo-yonggong-shuiwu-hegui.html" class="article-item" data-date="2026-05-21" data-category="实操指南" data-views="430">
+      <a href="../articles/平台经济灵活用工的税务合规(source).html" class="article-item" data-date="2026-05-21" data-category="实操指南" data-views="430">
         <div class="article-content">
           <h3>平台经济时代灵活用工的税务合规与风险管控</h3>
-          <p>前言：平台经济税务监管新时代中国平台经济从业者已超过2亿人，外卖骑手、网约车司机、直播主播、自由设计师……灵活用工已成为数字经济时代的新型劳动形态。然而，伴随规</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <p>2025年《互联网平台企业涉税信息报送规定》正式实施，灵活用工税务监管全面升级。本文深度解析平台经济下灵活用工的个税代扣代缴、反向开票、社保合规等核心问题，提供全流程税务合规方案。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.21</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 430</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/shudian-fapiao-quanmian-shishi.html" class="article-item" data-date="2026-05-21" data-category="政策解读" data-views="256">
+      <a href="../articles/数电发票全面实施企业应对(source).html" class="article-item" data-date="2026-05-21" data-category="政策解读" data-views="256">
         <div class="article-content">
           <h3>数电发票全面实施：企业应对策略与实操指南</h3>
-          <p>前言：发票的“数字化革命”发票，作为商业交易的“身份证”和税务管理的“核心凭证”，正在经历一场根本性的变革。从纸质发票到电子发票，再到如今的全面数字化的电子发票</p>
-          <span class="article-tag">政策解读</span>
-</div>
+          <p>数电发票（全电发票）2025年全面覆盖所有行业。本文详解数电发票与传统电子发票的核心差异、企业系统升级路径、发票管理流程再造及风险防控要点，帮助企业平稳过渡到数电发票时代。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">政策解读</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.21</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 256</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/zengzhishuifa-shishi-yingdui.html" class="article-item" data-date="2026-05-21" data-category="政策解读" data-views="403">
+      <a href="../articles/增值税法正式实施企业影响(source).html" class="article-item" data-date="2026-05-21" data-category="政策解读" data-views="403">
         <div class="article-content">
           <h3>增值税法正式实施：企业影响与应对指南</h3>
-          <p>前言：增值税正式入法的里程碑意义2024年12月25日，第十四届全国人大常委会第十三次会议通过了《中华人民共和国增值税法》，并于2026年1月1日正式实施。这意</p>
-          <span class="article-tag">政策解读</span>
-</div>
+          <p>《增值税法》2026年1月1日正式实施，从“条例”升级为“法律”带来一系列重大变化。本文逐条解析增值税法的核心变化、对企业税负的实际影响，以及企业应做好的5项合规准备。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">政策解读</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.21</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 403</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/duidu-xieyi-shuiwu-chuli.html" class="article-item" data-date="2026-05-21" data-category="实操指南" data-views="353">
+      <a href="../articles/对赌协议税务处理全解析(source).html" class="article-item" data-date="2026-05-21" data-category="实操指南" data-views="353">
         <div class="article-content">
           <h3>对赌协议税务处理全解析：从签订到履行的合规路径</h3>
-          <p>前言：对赌协议的税务“灰色地带”对赌协议（ValueAdjustmentMechanism，简称VAM），又称估值调整机制，是私募股权投资和并购交易中最常见的条</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <p>对赌协议在并购交易中广泛使用，但税务处理一直是实务难点。本文系统梳理业绩补偿、股权回购、现金补偿等对赌条款的税务处理规则，结合最新案例提供合规解决方案。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.21</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 353</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/jiazu-caifu-chuancheng-shuiwu.html" class="article-item" data-date="2026-05-22" data-category="行业洞察" data-views="495">
+      <a href="../articles/家族财富传承税务考量与规划(source).html" class="article-item" data-date="2026-05-22" data-category="行业洞察" data-views="495">
         <div class="article-content">
           <h3>家族财富传承中的税务考量与规划策略</h3>
-          <p>传承时代的税务挑战中国改革开放四十余年，第一代创业者已集体进入60岁以上的传承窗口期。据多家研究机构估算，未来十年中国将有超过300万亿元的家庭财富面临代际交接</p>
-          <span class="article-tag">行业洞察</span>
-</div>
+          <p>中国第一代企业家进入大规模传承期，财富传承中的税务问题日益突出。本文系统梳理股权传承、不动产传承、家族信托等场景下的税务考量，提供资产架构优化和代际传承的合规税务方案。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">行业洞察</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.22</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 495</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/jianzi-chezi-shuiwu-chuli.html" class="article-item" data-date="2026-05-22" data-category="实操指南" data-views="416">
+      <a href="../articles/企业减资撤资全套税务处理指南(source).html" class="article-item" data-date="2026-05-22" data-category="实操指南" data-views="416">
         <div class="article-content">
           <h3>企业减资撤资全套税务处理指南</h3>
-          <p>减资为何成为高频操作2024年7月1日，新修订的《公司法》正式实施，其中最受关注的变革之一是有限责任公司注册资本认缴期限从"无期限"缩短为5年。这一规定直接影响</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <p>新公司法实施后，减资成为企业调整资本结构的高频操作。本文全面解析减资的6种情形、各情形下的企业所得税和个人所得税处理规则、撤资退出的税务最优路径，附实操案例。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.22</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 416</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/zhuanjing-texin-shuishou-youhui.html" class="article-item" data-date="2026-05-22" data-category="政策解读" data-views="443">
+      <a href="../articles/专精特新企业税收优惠政策深度解读(source).html" class="article-item" data-date="2026-05-22" data-category="政策解读" data-views="443">
         <div class="article-content">
           <h3>专精特新企业税收优惠政策深度解读</h3>
-          <p>专精特新企业的政策风口近年来，"专精特新"已成为中国经济政策中出现频率最高的关键词之一。从2021年中央政治局会议提出"培育一批专精特新中小企业"，到2022年</p>
-          <span class="article-tag">政策解读</span>
-</div>
+          <p>专精特新企业是国家重点扶持对象，享有多层次叠加税收优惠。本文系统梳理国家级小巨人、省级专精特新企业的税收优惠体系，对比与高新技术企业优惠的差异，提供优惠申请与合规管理指南。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">政策解读</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.22</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 443</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-<a href="../articles/yecai-fasui-ronghe.html" class="article-item" data-date="2026-05-05" data-category="行业洞察" data-views="1523">
+<a href="../articles/业管财税法五维融合(source).html" class="article-item" data-date="2026-05-05" data-category="行业洞察" data-views="1523">
         <div class="article-content">
           <h3>业管财税法融合：企业合规管理的五维一体新范式</h3>
-          <p>从业务模式设计到管理体系建设，五维一体系统解决企业合规难题。</p>
-          <span class="article-tag">行业洞察</span>
-</div>
+          <p>深度解读「业管财税法」五维融合理念：业务、管理、财务、税务、法务五大维度的系统整合方法论。打破企业部门壁垒，从业务源头到最终税务申报构建全链条合规风险防控体系，帮助企业建立跨职能高效协同的财税管理新范式。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">行业洞察</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.05</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 1523</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/jinshui-siqi-yingdui.html" class="article-item" data-date="2026-04-15" data-category="政策解读" data-views="1208">
+      <a href="../articles/金税四期全面解读(source).html" class="article-item" data-date="2026-04-15" data-category="政策解读" data-views="1208">
         <div class="article-content">
           <h3>金税四期全面解读：企业如何从容应对"以数治税"新时代</h3>
-          <p>金税四期核心变化解析，企业合规应对策略与实操指南。</p>
-          <span class="article-tag">政策解读</span>
-</div>
+          <p>金税四期全面解读与应对策略：从发票电子化改革趋势、大数据风险画像机制、全税种联动监控原理三个维度，深入剖析金税四期对企业财税管理的实质性影响，提供发票管理升级路径、业务合规整改方案、风险自查机制建设等实操应对指南。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">政策解读</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.04.15</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 1208</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/odi-beian-quanliucheng.html" class="article-item" data-date="2026-03-30" data-category="实操指南" data-views="986">
+      <a href="../articles/ODI境外投资备案全流程(source).html" class="article-item" data-date="2026-03-30" data-category="实操指南" data-views="986">
         <div class="article-content">
           <h3>ODI境外投资备案全流程指南：从申请到落地的实战手册</h3>
-          <p>境外直接投资备案的完整流程、材料清单与常见问题解答。</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <p>ODI境外投资备案全流程深度指南：逐项详解发改委立项、商务部备案、外汇局登记三部门审批要点与材料清单，涵盖备案时限与催办技巧、常见驳回原因与整改方案、境外公司注册与运营合规，存勤法税18年实战专家助企业合规出海不走弯路。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.03.30</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 986</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/kuajing-dianshang-shuiwu.html" class="article-item" data-date="2026-03-15" data-category="实操指南" data-views="875">
+      <a href="../articles/跨境电商税务合规(source).html" class="article-item" data-date="2026-03-15" data-category="实操指南" data-views="875">
         <div class="article-content">
           <h3>跨境电商税务合规指南：2024年最新政策与实操要点</h3>
-          <p>跨境电商企业税务合规要点，出口退税优化与海外仓税务规划。</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <p>跨境电商税务合规全攻略：详解出口退税实操要点与高频风险防范、境外公司税务申报规范、跨境资金合规回流路径设计、转让定价同期文档准备，为跨境电商企业提供从交易架构设计到日常税务申报的一站式合规解决方案。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.03.15</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 875</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/qiye-zhongzu-shuiwu.html" class="article-item" data-date="2026-02-28" data-category="实操指南" data-views="1102">
+      <a href="../articles/企业重组税务规划(source).html" class="article-item" data-date="2026-02-28" data-category="实操指南" data-views="1102">
         <div class="article-content">
           <h3>企业重组税务规划：并购重组中的税务成本优化与风险防控</h3>
-          <p>并购重组过程中的税务规划策略，降低税务成本，规避潜在风险。</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <p>企业重组税务规划深度指南：全面解析股权收购与资产收购的税务处理差异、特殊性税务处理适用条件与备案材料要求、股权激励个人所得税与企业所得税处理等核心问题，帮助企业在并购重组中合法降低整体税负、规避潜在税务风险。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.02.28</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 1102</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/gaoxin-qiye-shuiwu.html" class="article-item" data-date="2026-02-12" data-category="政策解读" data-views="1340">
+      <a href="../articles/高新技术企业税务规划(source).html" class="article-item" data-date="2026-02-12" data-category="政策解读" data-views="1340">
         <div class="article-content">
           <h3>高新技术企业税务筹划：如何用好用足高新税收优惠政策</h3>
-          <p>高新技术企业资格申请要点，研发费用加计扣除实操技巧。</p>
-          <span class="article-tag">政策解读</span>
-</div>
+          <p>高新技术企业税务规划全攻略：详解15%企业所得税优惠税率认定条件与资格维护要点、研发费用加计扣除归集实操规范、软件企业与技术先进型企业叠加优惠策略，帮助企业最大化享受税收红利、稳妥应对高新资格复审抽查。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">政策解读</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.02.12</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 1340</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/jiayi-shuangshijing.html" class="article-item" data-date="2026-01-28" data-category="行业洞察" data-views="967">
+      <a href="../articles/甲乙双视角税务顾问(source).html" class="article-item" data-date="2026-01-28" data-category="行业洞察" data-views="967">
         <div class="article-content">
           <h3>甲乙双视角：为什么企业需要"双重人格"的税务顾问</h3>
-          <p>甲方实战经验与乙方专业训练的完美结合，为企业提供更全面的税务服务。</p>
-          <span class="article-tag">行业洞察</span>
-</div>
+          <p>为什么企业需要「甲乙双视角」税务顾问？深度分析同时拥有14年甲方企业财税实战经验与4年乙方专业服务能力的独特优势，揭示业财法税五维融合如何帮助企业做出更务实、更安全、更具前瞻性的财税管理决策。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">行业洞察</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.01.28</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 967</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/qiye-shuiwu-fengxian.html" class="article-item" data-date="2026-01-15" data-category="实操指南" data-views="1089">
+      <a href="../articles/企业税务风险管控(source).html" class="article-item" data-date="2026-01-15" data-category="实操指南" data-views="1089">
         <div class="article-content">
           <h3>企业税务风险管控：如何建立"看得见、防得住"的税务风险体系</h3>
-          <p>企业税务风险识别与防控体系建设，从源头降低税务风险。</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <p>企业税务风险管控体系搭建全案指南：从税务风险识别、量化评估、分级控制到智能预警，构建可落地可追溯的税务内控机制。结合金税四期大数据监管背景，帮助企业实现税务风险看得见、防得住，建立主动防御型税务合规管理体系。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.01.15</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 1089</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
     </div>
 
 
-      <a href="../articles/qiyesuodeshui-huisuan-qingjiao.html" class="article-item" data-date="2026-05-10" data-category="实操指南" data-views="856">
+      <a href="../articles/qiyesuodeshui-huisuan-qingjiao.html"企业所得税汇算清缴实务指南：从填报到筹划的全流程解析>
         <div class="article-content">
-          <h3>企业所得税汇算清缴全攻略：从准备到申报的实操指南</h3>
-          <p>企业所得税汇算清缴是企业每年最重要的税务工作之一。本文从实战角度，系统讲解汇算清缴的全流程操作要点、常见错误规避、税前扣除凭证管理、税收优惠享受条件等核心内容，…</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <h3>企业所得税汇算清缴实务指南：从填报到筹划的全流程解析</h3>
+          <p>企业所得税汇算清缴是企业年度财税工作的重中之重。本文系统梳理收入确认、税前扣除、资产损失及优惠备案等关键环节的处理要点，为华南地区企业顺利完成汇算清缴提供全程指导。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.10</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 856</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/yanfa-feiyong-jiakou-kouchu.html" class="article-item" data-date="2026-05-09" data-category="政策解读" data-views="723">
+      <a href="../articles/yanfa-feiyong-jiakou-kouchu.html"研发费用加计扣除实操全攻略：从立项到申报的合规路径>
         <div class="article-content">
-          <h3>研发费用加计扣除政策全解析：企业如何合规享受税收优惠</h3>
-          <p>研发费用加计扣除是国家鼓励技术创新的核心税收优惠政策之一。本文全面梳理研发费用加计扣除的政策演变、适用条件、归集范围、核算要求及税务风险管理要点，帮助企业最大化…</p>
-          <span class="article-tag">政策解读</span>
-</div>
+          <h3>研发费用加计扣除实操全攻略：从立项到申报的合规路径</h3>
+          <p>研发费用加计扣除是力度最大的企业所得税优惠之一。本文深度解析适用条件、归集口径、辅助账管理及留存备查要求，为粤港澳大湾区科技创新企业充分享受政策红利提供权威指引。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">政策解读</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.09</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 723</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/qiye-kuisun-mibu-guize.html" class="article-item" data-date="2026-05-08" data-category="政策解读" data-views="612">
+      <a href="../articles/qiye-kuisun-mibu-guize.html"企业所得税亏损弥补规则深度解析：年限、顺序与筹划空间>
         <div class="article-content">
-          <h3>企业亏损弥补规则详解：跨年度亏损结转的税务处理</h3>
-          <p>企业亏损弥补是企业所得税汇算清缴中的高频难点问题。本文系统讲解亏损弥补的基本规则、结转年限、特殊性税务处理、企业重组中的亏损结转等核心内容，帮助企业合规进行亏损…</p>
-          <span class="article-tag">政策解读</span>
-</div>
+          <h3>企业所得税亏损弥补规则深度解析：年限、顺序与筹划空间</h3>
+          <p>企业亏损弥补规则看似简单，实操中却暗藏诸多陷阱。本文全面解读五年结转、高新技术企业延长至十年等特殊规则，为广州地区企业财税人员提供精准的税务处理指引。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">政策解读</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.08</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 612</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/chengben-feiyong-shuiwu-hegui.html" class="article-item" data-date="2026-05-07" data-category="实操指南" data-views="934">
+      <a href="../articles/chengben-feiyong-shuiwu-hegui.html"成本费用税前扣除合规管理：凭证、标准与风险排查>
         <div class="article-content">
-          <h3>企业成本费用的税务合规管理：从凭证到扣除的全流程管控</h3>
-          <p>成本费用是企业税前扣除的核心内容，也是税务稽查的高风险领域。本文从发票管理、税前扣除凭证、费用归集、跨期费用处理等维度，系统讲解成本费用的税务合规管理要点。</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <h3>成本费用税前扣除合规管理：凭证、标准与风险排查</h3>
+          <p>成本费用税前扣除是企业所得税管理的核心环节。本文系统解析四大扣除要件、各费用项目扣除标准及金税四期下的风险新特征，为广州及粤港澳大湾区企业提供合规管理实操指引。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.07</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 934</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/zhongxiao-qiye-shuishou-youhui.html" class="article-item" data-date="2026-05-06" data-category="政策解读" data-views="1567">
+      <a href="../articles/zhongxiao-qiye-shuishou-youhui.html"中小企业税收优惠政策全景解读：让每一分优惠都落到实处>
         <div class="article-content">
-          <h3>中小企业税收优惠政策全景解读：2024年最新政策汇编</h3>
-          <p>中小企业是我国经济的重要组成部分，享受多项税收优惠政策。本文全面梳理小型微利企业所得税优惠、增值税小规模纳税人优惠、六税两费减免等最新政策，帮助企业充分享受税收…</p>
-          <span class="article-tag">政策解读</span>
-</div>
+          <h3>中小企业税收优惠政策全景解读：让每一分优惠都落到实处</h3>
+          <p>中小企业税收优惠政策体系庞杂、更新频繁。本文全面整理小微企业所得税减免、增值税小规模纳税人优惠及六税两费减半等核心政策，为广东地区中小企业提供系统化的税务优惠指南。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">政策解读</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.06</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 1567</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/geren-suodeshui-huisuan-qingjiao.html" class="article-item" data-date="2026-05-05" data-category="实操指南" data-views="2145">
+      <a href="../articles/geren-suodeshui-huisuan-qingjiao.html"个人所得税汇算清缴关键要点：从申报到退税的全流程指南>
         <div class="article-content">
-          <h3>个人所得税综合所得汇算清缴指南：从专项附加扣除到纳税申报</h3>
-          <p>个人所得税综合所得汇算清缴关系到每一位纳税人的切身利益。本文系统讲解汇算范围、专项附加扣除填报、年终奖计税方式选择、异议申诉处理等核心内容，帮助纳税人高效完成汇…</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <h3>个人所得税汇算清缴关键要点：从申报到退税的全流程指南</h3>
+          <p>个人所得税汇算清缴实操指南：覆盖综合所得预扣预缴、专项附加扣除最新政策、境外所得抵免及补退税流程解析，为广东地区纳税人提供全面、准确的申报指导。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.05</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 2145</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/guquan-zhuantang-geren-suodeshui.html" class="article-item" data-date="2026-05-04" data-category="政策解读" data-views="1089">
+      <a href="../articles/guquan-zhuantang-geren-suodeshui.html"股权转让个人所得税筹划实务：定价、申报与风险防控>
         <div class="article-content">
-          <h3>股权激励个人所得税全解析：从授予、行权到转让的税务处理</h3>
-          <p>股权激励是企业吸引和留住核心人才的重要工具，但其个人所得税处理十分复杂。本文系统讲解股票期权、限制性股票、股票增值权的个税处理规则，帮助企业和个人合规纳税、优化…</p>
-          <span class="article-tag">政策解读</span>
-</div>
+          <h3>股权转让个人所得税筹划实务：定价、申报与风险防控</h3>
+          <p>自然人股权转让涉及复杂的个人所得税处理。本文全面解析转让收入核定、原值确认、纳税时点及地点规则，并结合金税四期大数据监控特点，为广州地区投资者提供税务合规指引。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">政策解读</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.04</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 1089</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/guquan-daichi-shuiwu-fengxian.html" class="article-item" data-date="2026-05-03" data-category="实操指南" data-views="876">
+      <a href="../articles/guquan-daichi-shuiwu-fengxian.html"股权代持的税务风险与合规处理：还原、分红与转让的完整方案>
         <div class="article-content">
-          <h3>股权转让的税务风险与合规策略：企业股东和个人股东的差异处理</h3>
-          <p>股权转让是企业重组和个人财富管理中的高频交易行为，也是税务稽查的重点领域。本文深入分析企业股东和个人股东股权转让的税务处理差异、合理性原则适用、反避税条款触发条…</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <h3>股权代持的税务风险与合规处理：还原、分红与转让的完整方案</h3>
+          <p>股权代持在实务中极为普遍但税务风险不容忽视。本文系统解析显名与隐名股东的税务处理规则、代持还原的税务成本及增值税风险，为大湾区企业提供股权架构合规方案。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.03</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 876</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/gongzixinjin-gerensuodeshui-chouhua.html" class="article-item" data-date="2026-05-02" data-category="实操指南" data-views="1324">
+      <a href="../articles/gongzixinjin-gerensuodeshui-chouhua.html"工资薪金个人所得税筹划策略：薪酬结构、福利与激励的税务优化>
         <div class="article-content">
-          <h3>工资薪金个人所得税筹划：从税前扣除到年终奖的合规优化</h3>
-          <p>工资薪金个人所得税与每位员工息息相关，也是企业薪酬设计中的核心税务议题。本文系统讲解工资薪金的税前扣除项目、年终奖计税方式选择、股权激励配合、补充养老保险的税务…</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <h3>工资薪金个人所得税筹划策略：薪酬结构、福利与激励的税务优化</h3>
+          <p>工资薪金个人所得税筹划深度解析：对比全年一次性奖金单独计税与并入综合所得的税负差异，剖析大湾区人才政策下的个税优惠空间及合规筹划策略。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.02</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 1324</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/gudong-hongli-shuiwu-chouhua.html" class="article-item" data-date="2026-05-01" data-category="实操指南" data-views="756">
+      <a href="../articles/gudong-hongli-shuiwu-chouhua.html"股东分红与薪酬的税务优化：利润分配、借款与费用报销的合规路径>
         <div class="article-content">
-          <h3>股东分红个人所得税税务筹划：从分红到股权转让的税负优化路径</h3>
-          <p>股东分红个人所得税税率高达20%，是企业股东和高净值个人关注的核心税务问题。本文系统讲解分红个税的基本规则、合理避税路径、先分红后转让与先转让后分红的税负比较、…</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <h3>股东分红与薪酬的税务优化：利润分配、借款与费用报销的合规路径</h3>
+          <p>股东分红与薪酬的税负优化策略全解析：对比两种方式的综合税负差异，深度剖析合法合规的利润分配路径及股东借款、费用报销的合规边界，为华南地区民营企业主提供实操指引。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.05.01</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 756</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/xukai-fapiao-falv-houguo.html" class="article-item" data-date="2026-04-30" data-category="政策解读" data-views="1890">
+      <a href="../articles/xukai-fapiao-falv-houguo.html"虚开发票的法律后果与防范指南：从行政责任到刑事风险的全面警示>
         <div class="article-content">
-          <h3>虚开发票的法律后果与防范：从行政处罚到刑事责任的全景解析</h3>
-          <p>虚开发票是中国税务机关重点打击的税收违法行为，涉及行政责任、刑事责任和信用惩戒多重后果。本文系统讲解虚开发票的认定标准、法律后果、相关人员责任划分、企业防范体系…</p>
-          <span class="article-tag">政策解读</span>
-</div>
+          <h3>虚开发票的法律后果与防范指南：从行政责任到刑事风险的全面警示</h3>
+          <p>虚开增值税专用发票是涉税刑事风险的重灾区。本文全面解析虚开的认定标准、行政与刑事法律后果、善意取得虚开发票的处理及企业防范策略，为广东地区企业敲响合规警钟。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">政策解读</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.04.30</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 1890</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/shuiwu-xingzheng-fuyi.html" class="article-item" data-date="2026-04-29" data-category="实操指南" data-views="645">
+      <a href="../articles/shuiwu-xingzheng-fuyi.html"税务行政复议实战指南：程序、策略与权利救济>
         <div class="article-content">
-          <h3>税务行政复议实务指南：从申请到决定的全流程解析</h3>
-          <p>税务行政复议是纳税人权利救济的重要途径，也是化解税务争议的首选方式。本文系统讲解税务行政复议的申请条件、时限要求、证据准备、复议决定类型及后续救济途径，帮助企业…</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <h3>税务行政复议实战指南：程序、策略与权利救济</h3>
+          <p>企业对税务机关处理决定不服时，税务行政复议是重要救济渠道。本文详解复议申请条件、期限、审理程序及常见争议焦点，为广州及大湾区企业维护合法权益提供实务操作指南。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.04.29</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 645</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/yinhua-shuifa-shishi-yaodian.html" class="article-item" data-date="2026-04-28" data-category="政策解读" data-views="1087">
+      <a href="../articles/yinhua-shuifa-shishi-yaodian.html"印花税法实施要点与合规管理：应税凭证、税率变化与申报实务>
         <div class="article-content">
-          <h3>印花税法实施要点解读：企业合同管理的税务合规新动向</h3>
-          <p>《中华人民共和国印花税法》已于2022年7月1日正式实施，标志着印花税立法取得重大进展。本文系统解读印花税法的主要变化、应税合同范围、计税依据确定、免税优惠及企…</p>
-          <span class="article-tag">政策解读</span>
-</div>
+          <h3>印花税法实施要点与合规管理：应税凭证、税率变化与申报实务</h3>
+          <p>新印花税法已于2022年7月1日正式实施。本文逐条解读新法核心变化：税目简并、计税依据明确化、申报期限调整等，帮助广州地区企业全面掌握合规要点，规避申报风险。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">政策解读</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.04.28</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 1087</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/zengzhishui-liudi-tuishui.html" class="article-item" data-date="2026-04-27" data-category="政策解读" data-views="1456">
+      <a href="../articles/zengzhishui-liudi-tuishui.html"增值税留抵退税实操指南：条件、计算与风险防控>
         <div class="article-content">
-          <h3>增值税留抵退税政策详解：企业如何合规申请并防范税务风险</h3>
-          <p>增值税留抵退税政策是近年来力度最大的减税政策之一，对缓解企业资金压力、优化现金流具有重要意义。本文系统讲解留抵退税的申请条件、计算方式、申报流程及税务风险管理要…</p>
-          <span class="article-tag">政策解读</span>
-</div>
+          <h3>增值税留抵退税实操指南：条件、计算与风险防控</h3>
+          <p>增值税留抵退税是当前减税降费的重要举措。本文系统梳理增量留抵退税与存量留抵退税的适用条件、计算方法和申请流程，帮助大湾区企业用好用足退税红利，缓解资金压力。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">政策解读</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.04.27</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 1456</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/chukou-tuishui-hegui-fengkong.html" class="article-item" data-date="2026-04-26" data-category="实操指南" data-views="978">
+      <a href="../articles/chukou-tuishui-hegui-fengkong.html"出口退税合规与风险防范：从申报到稽查的全链条管理>
         <div class="article-content">
-          <h3>出口退税合规与风险防控：从备案到申报的全流程管理</h3>
-          <p>出口退税是外贸企业最重要的税收优惠政策之一，但合规要求极高，风险管控难度大。本文系统讲解出口退税的备案管理、单证准备、申报流程、函调配合及风险防控体系建设，帮助…</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <h3>出口退税合规与风险防范：从申报到稽查的全链条管理</h3>
+          <p>出口退税合规风控全解析：从基本原理到申报实务，深度剖析高风险行为识别与防控策略，解读金税四期下出口退税全链条监控机制，面向华南地区外贸企业提供专业指引。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.04.26</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 978</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/CRS-kuajing-zichan-shenbao.html" class="article-item" data-date="2026-04-25" data-category="行业洞察" data-views="1567">
+      <a href="../articles/CRS-kuajing-zichan-shenbao.html"CRS框架下跨境资产申报与合规：信息交换机制与中国居民应对策略>
         <div class="article-content">
-          <h3>CRS与跨境资产申报：高净值人群的税务合规新挑战</h3>
-          <p>CRS（共同申报准则）的全球推行，标志着跨境资产信息透明化进入新阶段。对于拥有境外资产的高净值人群而言，合规申报已成为不可回避的义务。本文系统讲解CRS的运行机…</p>
-          <span class="article-tag">行业洞察</span>
-</div>
+          <h3>CRS框架下跨境资产申报与合规：信息交换机制与中国居民应对策略</h3>
+          <p>CRS共同申报准则对跨境资产配置影响深远。本文系统讲解CRS运作机制、中国实施要点、高净值人士申报义务及合规规划路径，为大湾区跨境企业与个人提供专业分析。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">行业洞察</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.04.25</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 1567</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/hehuo-qiye-shuiwu-jiexi.html" class="article-item" data-date="2026-04-24" data-category="实操指南" data-views="834">
+      <a href="../articles/hehuo-qiye-shuiwu-jiexi.html"合伙企业税务处理深度解析：先分后税、穿透原则与筹划空间>
         <div class="article-content">
-          <h3>合伙企业税务实务全解析：从先分后税到合伙人所得税</h3>
-          <p>合伙企业以其灵活的组织形式和税收穿透特性，成为股权投资、员工持股平台、家族办公室等场景的首选载体。但其税务处理规则独特，易产生理解偏差。本文系统讲解合伙企业的税…</p>
-          <span class="article-tag">实操指南</span>
-</div>
+          <h3>合伙企业税务处理深度解析：先分后税、穿透原则与筹划空间</h3>
+          <p>企业合伙经营中的税务处理复杂性常被低估。本文从合伙人层面深度解析所得性质穿透、费用扣除与亏损弥补规则，帮助华南地区合伙制企业理清税务合规思路。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">实操指南</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.04.24</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 834</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/IPO-shuiwu-hegui-jiagou.html" class="article-item" data-date="2026-04-23" data-category="行业洞察" data-views="1123">
+      <a href="../articles/IPO-shuiwu-hegui-jiagou.html"IPO税务合规与架构设计：上市前必须解决的六大税务问题>
         <div class="article-content">
-          <h3>IPO过程中的税务合规与架构优化：从上市前税务体检到上市后税务管理</h3>
-          <p>IPO是企业发展的重要里程碑，但税务合规问题往往是上市审核中的高频问询事项。本文系统讲解IPO过程中税务合规的自查要点、历史税务风险清理、股权架构税务优化、上市…</p>
-          <span class="article-tag">行业洞察</span>
-</div>
+          <h3>IPO税务合规与架构设计：上市前必须解决的六大税务问题</h3>
+          <p>IPO过程中税务合规是审核红线之一。本文系统梳理上市前税务健康体检要点、历史遗留问题清理路径、股权架构重组涉税处理，为粤港澳大湾区拟上市企业提供全流程税务规划框架。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">行业洞察</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.04.23</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 1123</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/simu-jijin-shuiwu-chouhua.html" class="article-item" data-date="2026-04-22" data-category="行业洞察" data-views="967">
+      <a href="../articles/simu-jijin-shuiwu-chouhua.html"私募基金税务筹划要点：基金架构、收益分配与投资人税负优化>
         <div class="article-content">
-          <h3>私募投资基金税务筹划：从产品架构到投资人纳税的全流程管理</h3>
-          <p>私募基金行业税务处理复杂，涉及基金管理人、基金产品、投资人三方的税务协调。本文系统讲解私募基金的主要产品架构（公司型、合伙型、契约型）的税务差异、增值税与所得税…</p>
-          <span class="article-tag">行业洞察</span>
-</div>
+          <h3>私募基金税务筹划要点：基金架构、收益分配与投资人税负优化</h3>
+          <p>私募基金全生命周期税务规划是机构竞争力的核心要素。本文从基金架构选择、LP与GP税务筹划、投资收益确认及退出环节税负优化等维度，为粤港澳大湾区私募机构提供专业税务解决方案。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">行业洞察</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.04.22</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 967</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
-      <a href="../articles/shuzihua-shuiwu-guanli-zhuanxing.html" class="article-item" data-date="2026-04-21" data-category="行业洞察" data-views="734">
+      <a href="../articles/shuzihua-shuiwu-guanli-zhuanxing.html"数字化税务管理转型路径：从手工申报到智能风控的进化之路>
         <div class="article-content">
-          <h3>企业税务管理数字化转型：从Excel到智能税务系统的升级路径</h3>
-          <p>金税四期的全面推开，对企业税务管理的数字化水平提出了更高要求。本文系统讲解企业税务管理数字化的驱动因素、技术路径、系统选型、实施步骤及与财务系统、业务系统的集成…</p>
-          <span class="article-tag">行业洞察</span>
-</div>
+          <h3>数字化税务管理转型路径：从手工申报到智能风控的进化之路</h3>
+          <p>数字经济背景下企业税务管理面临深刻变革。本文系统分析电子发票、大数据风控、智能申报等趋势对企业税务的影响，为华南地区企业规划数字化转型路径提供策略建议。</p>
+          <div class="article-meta-row">
+            <span class="article-tag">行业洞察</span>
+            <span class="article-date-text"><i class="fas fa-calendar-alt"></i> 2026.04.21</span>
+            <span class="article-views"><i class="fas fa-eye"></i> 734</span>
+          </div>
+        </div>
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
 
@@ -765,12 +922,12 @@ layout: false
 
 
 <script>
-// ===== 阅读量显示 + 实际点击追踪 =====
+// ===== 点击阅读量追踪（日期和阅读量已硬编码在HTML中） =====
 (function(){
   var STORAGE_KEY = 'cunqin_article_clicks';
   var items = document.querySelectorAll('#articleList .article-item');
 
-  // 读取 localStorage 中的点击记录
+  // 读取 localStorage 中的点击记录，累加到已显示的阅读量
   var clickMap = {};
   try {
     var raw = localStorage.getItem(STORAGE_KEY);
@@ -780,50 +937,19 @@ layout: false
   items.forEach(function(it){
     var href = it.getAttribute('href') || '';
     var slug = href.replace(/.*\//, '').replace(/\.html$/, '');
-
-    var baseViews = parseInt(it.getAttribute('data-views')) || 0;
     var realClicks = parseInt(clickMap[slug]) || 0;
-    var total = baseViews + realClicks;
-
-    // 更新 data-views 为实际总数（排序用）
-    it.setAttribute('data-views', total);
-
-    // 注入阅读量 badge
-    var content = it.querySelector('.article-content');
-    if (!content) return;
-
-    var tag = content.querySelector('.article-tag');
-
-    // 日期文字（从 data-date 提取）
-    var dateStr = (it.getAttribute('data-date') || '').replace(/-/g, '.');
-    var dateSpan = document.createElement('span');
-    dateSpan.className = 'article-date-text';
-    dateSpan.textContent = dateStr;
-
-    var viewsSpan = document.createElement('span');
-    viewsSpan.className = 'article-views';
-    viewsSpan.innerHTML = '<i class="fas fa-eye"></i> ' + formatViews(total);
-
-    if (tag) {
-      var row = content.querySelector('.article-meta-row');
-      if (!row) {
-        row = document.createElement('div');
-        row.className = 'article-meta-row';
-        tag.parentNode.insertBefore(row, tag);
-        row.appendChild(tag);
+    if (realClicks > 0) {
+      var baseViews = parseInt(it.getAttribute('data-views')) || 0;
+      var total = baseViews + realClicks;
+      it.setAttribute('data-views', total);
+      // 更新页面显示的阅读量
+      var viewsEl = it.querySelector('.article-views');
+      if (viewsEl) {
+        var n = total;
+        viewsEl.innerHTML = '<i class="fas fa-eye"></i> ' + (n >= 10000 ? (n/10000).toFixed(1) + '万' : n.toLocaleString());
       }
-      row.appendChild(dateSpan);
-      row.appendChild(viewsSpan);
-    } else {
-      content.appendChild(dateSpan);
-      content.appendChild(viewsSpan);
     }
   });
-
-  function formatViews(n) {
-    if (n >= 10000) return (n / 10000).toFixed(1) + '万';
-    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  }
 
   // 点击文章记录到 localStorage
   items.forEach(function(it){

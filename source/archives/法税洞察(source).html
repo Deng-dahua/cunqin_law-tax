@@ -831,7 +831,6 @@ layout: false
         <div class="article-arrow"><i class="fas fa-chevron-right"></i></div>
       </a>
     </div>
-    <div id="paginationContainer"></div>
   </div>
 </main>
 
@@ -966,7 +965,7 @@ layout: false
 <script>
 // ===== 法税洞察页 筛选 + 搜索 + 分页 =====
 (function(){
-  var PAGE_SIZE = 10;
+  var PAGE_SIZE = 999;
   var currentPage = 1;
   var currentFiltered = [];
 
@@ -1045,56 +1044,8 @@ layout: false
     // 结果计数
     var cnt = document.getElementById('filterResultCount');
     if(cnt){
-      if(currentFiltered.length > PAGE_SIZE){
-        cnt.textContent = '第 '+currentPage+'/'+totalPages+' 页，共 '+currentFiltered.length+' 篇文章';
-      } else {
-        cnt.textContent = '共 '+currentFiltered.length+' 篇文章';
-      }
+      cnt.textContent = '共 '+currentFiltered.length+' 篇文章';
     }
-
-    renderPagination(totalPages);
-  }
-
-  function renderPagination(totalPages){
-    var container = document.getElementById('paginationContainer');
-    if(!container) return;
-    if(totalPages <= 1){ container.innerHTML=''; return; }
-
-    var html = '<div style="display:flex;justify-content:center;align-items:center;gap:0.4rem;padding:1.5rem 0;flex-wrap:wrap;">';
-
-    // 上一页
-    if(currentPage > 1){
-      html += '<a href="javascript:void(0)" onclick="goToPage('+(currentPage-1)+')" style="padding:0.35rem 0.7rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.82rem;color:#666;background:#fff;cursor:pointer;text-decoration:none;">上一页</a>';
-    }
-
-    // 页码按钮（最多显示5个）
-    var startP = Math.max(1, currentPage - 2);
-    var endP   = Math.min(totalPages, startP + 4);
-    if(endP - startP < 4) startP = Math.max(1, endP - 4);
-
-    if(startP > 1){
-      html += '<a href="javascript:void(0)" onclick="goToPage(1)" style="padding:0.35rem 0.7rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.82rem;color:#666;background:#fff;cursor:pointer;text-decoration:none;">1</a>';
-      if(startP > 2) html += '<span style="color:#ccc;font-size:0.82rem;">…</span>';
-    }
-    for(var i=startP;i<=endP;i++){
-      if(i===currentPage){
-        html += '<span style="padding:0.35rem 0.7rem;border:1px solid var(--dt-accent,#00a19c);border-radius:4px;font-size:0.82rem;color:#fff;background:var(--dt-accent,#00a19c);font-weight:600;">'+i+'</span>';
-      } else {
-        html += '<a href="javascript:void(0)" onclick="goToPage('+i+')" style="padding:0.35rem 0.7rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.82rem;color:#666;background:#fff;cursor:pointer;text-decoration:none;">'+i+'</a>';
-      }
-    }
-    if(endP < totalPages){
-      if(endP < totalPages-1) html += '<span style="color:#ccc;font-size:0.82rem;">…</span>';
-      html += '<a href="javascript:void(0)" onclick="goToPage('+totalPages+')" style="padding:0.35rem 0.7rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.82rem;color:#666;background:#fff;cursor:pointer;text-decoration:none;">'+totalPages+'</a>';
-    }
-
-    // 下一页
-    if(currentPage < totalPages){
-      html += '<a href="javascript:void(0)" onclick="goToPage('+(currentPage+1)+')" style="padding:0.35rem 0.7rem;border:1px solid #e8e8e8;border-radius:4px;font-size:0.82rem;color:#666;background:#fff;cursor:pointer;text-decoration:none;">下一页</a>';
-    }
-
-    html += '</div>';
-    container.innerHTML = html;
   }
 
   // 全局函数
@@ -1125,7 +1076,6 @@ layout: false
   window.goToPage = function(p){
     currentPage = p;
     renderPage();
-    try { document.getElementById('articleList').scrollIntoView({ behavior:'smooth', block:'start' }); } catch(e){}
   };
 
   // 初始化

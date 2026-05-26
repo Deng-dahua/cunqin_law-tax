@@ -1216,70 +1216,48 @@ img { max-width: 100%; display: block; }
       <h2 id="更多文章">更多文章
       <p>阅读其他精彩内容</p>
     </div>
-    <div class="more-list">
-
-      
-
-      <a href="gaoxin-qiye-shuiwu.html" class="more-item">
-        <div class="more-cat">政策解读</div>
-        <div class="more-info">
-          <h4>高新技术企业税务筹划：如何用好用足高新税收优惠政策</h4>
-          <p>深度解读高新技术企业税收优惠政策，包括15%优惠税率、研发费用加计扣除、软件企业优惠等，提供实操性筹划建议</p>
-        </div>
-        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
-      </a>
-      <a href="qiye-shuiwu-fengxian.html" class="more-item">
-        <div class="more-cat">实操指南</div>
-        <div class="more-info">
-          <h4>企业税务风险管控：如何建立"看得见、防得住"的税务风险体系</h4>
-          <p>系统讲解企业税务风险管理体系的建立方法，包括风险识别、评估、控制和预警，帮助企业实现税务风险可视化、可管控</p>
-        </div>
-        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
-      </a>
-      <a href="odi-beian-quanliucheng.html" class="more-item">
-        <div class="more-cat">实操指南</div>
-        <div class="more-info">
-          <h4>ODI境外投资备案全流程指南：从申请到落地的实战手册</h4>
-          <p>详尽解读ODI境外直接投资备案的完整流程、所需材料、常见问题及注意事项，帮助企业合规出海</p>
-        </div>
-        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
-      </a>
-      <a href="jinshui-siqi-yingdui.html" class="more-item">
-        <div class="more-cat">政策解读</div>
-        <div class="more-info">
-          <h4>金税四期全面解读：企业如何从容应对"以数治税"新时代</h4>
-          <p>深度解读金税四期政策要点，分析企业面临的机遇与挑战，提供切实可行的应对策略</p>
-        </div>
-        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
-      </a>
-      <a href="yecai-fasui-ronghe.html" class="more-item">
-        <div class="more-cat">行业洞察</div>
-        <div class="more-info">
-          <h4>业管财税法融合：企业合规管理的五维一体新范式</h4>
-          <p>深度解读「业管财税法」五维融合理念，探索企业合规管理的新范式，帮助企业建立系统性的风险防控体系</p>
-        </div>
-        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
-      </a>
-      <a href="jiayi-shuangshijing.html" class="more-item">
-        <div class="more-cat">行业洞察</div>
-        <div class="more-info">
-          <h4>甲乙双视角：为什么企业需要"双重人格"的税务顾问</h4>
-          <p>深度分析"甲乙双视角"的独特价值，探讨为什么企业需要同时具备甲方实战经验和乙方专业能力的税务顾问</p>
-        </div>
-        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
-      </a>
-      <a href="kuajing-dianshang-shuiwu.html" class="more-item">
-        <div class="more-cat">实操指南</div>
-        <div class="more-info">
-          <h4>跨境电商税务合规指南：2024年最新政策与实操要点</h4>
-          <p>全面解读跨境电商企业税务合规要点，涵盖出口退税、境外税务、跨境资金回流等核心问题，提供实操性解决方案</p>
-        </div>
-        <div class="more-arrow"><i class="fas fa-chevron-right"></i></div>
-      </a>
-    
-  </div>
+    <div class="more-list" id="more-list">
+      <!-- 动态加载中... -->
+    </div>
+    <p style="text-align:center;font-size:0.85rem;color:var(--dt-text-light);margin-top:1.2rem;">共 <span id="more-total">0</span> 篇文章</p>
   </div>
 </section>
+
+<!-- ===== 更多文章动态加载 ===== -->
+<script>
+(function(){
+  var list = document.getElementById('more-list');
+  var totalEl = document.getElementById('more-total');
+  var currentPath = window.location.pathname;
+  var currentSlug = currentPath.split('/').pop();
+  fetch('/cunqin_law-tax/home-insights.json')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      totalEl.textContent = data.total;
+      var others = data.articles.filter(function(a){
+        return !a.url.endsWith(currentSlug);
+      });
+      var top5 = others.slice(0, 5);
+      var html = '';
+      top5.forEach(function(a){
+        var href = '/cunqin_law-tax/' + a.url;
+        html += '<a href="' + href + '" class="more-item">';
+        html += '<div class="more-cat">' + a.category + '</div>';
+        html += '<div class="more-info">';
+        html += '<h4>' + a.title + '</h4>';
+        html += '<p>' + a.excerpt + '</p>';
+        html += '</div>';
+        html += '<div class="more-arrow"><i class="fas fa-chevron-right"></i></div>';
+        html += '</a>';
+      });
+      list.innerHTML = html;
+    })
+    .catch(function(){
+      list.innerHTML = '<p style="text-align:center;color:#999;">文章加载中，请稍候...</p>';
+    });
+})();
+</script>
+
 
 <!-- ===== CTA ===== -->
 <section class="cta-section">

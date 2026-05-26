@@ -974,7 +974,7 @@ Day 7+:   跟进检查结论 → 如有异议准备陈述申辩
   var totalEl = document.getElementById('more-total');
   var currentPath = window.location.pathname;
   var currentSlug = currentPath.split('/').pop();
-  fetch('/cunqin_law-tax/home-insights.json')
+  fetch('/home-insights.json')
     .then(function(r){ return r.json(); })
     .then(function(data){
       totalEl.textContent = data.total;
@@ -984,7 +984,7 @@ Day 7+:   跟进检查结论 → 如有异议准备陈述申辩
       var top5 = others.slice(0, 5);
       var html = '';
       top5.forEach(function(a){
-        var href = '/cunqin_law-tax/' + a.url;
+        var href = '/' + a.url;
         html += '<a href="' + href + '" class="more-item">';
         html += '<div class="more-cat">' + a.category + '</div>';
         html += '<div class="more-info">';

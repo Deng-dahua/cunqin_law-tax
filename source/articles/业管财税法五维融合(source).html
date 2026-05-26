@@ -957,7 +957,7 @@ img { max-width: 100%; display: block; }
   var totalEl = document.getElementById('more-total');
   var currentPath = window.location.pathname;
   var currentSlug = currentPath.split('/').pop();
-  fetch('/cunqin_law-tax/home-insights.json')
+  fetch('/home-insights.json')
     .then(function(r){ return r.json(); })
     .then(function(data){
       totalEl.textContent = data.total;
@@ -967,7 +967,7 @@ img { max-width: 100%; display: block; }
       var top5 = others.slice(0, 5);
       var html = '';
       top5.forEach(function(a){
-        var href = '/cunqin_law-tax/' + a.url;
+        var href = '/' + a.url;
         html += '<a href="' + href + '" class="more-item">';
         html += '<div class="more-cat">' + a.category + '</div>';
         html += '<div class="more-info">';

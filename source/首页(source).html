@@ -883,30 +883,16 @@ layout: false
   </div>
 </section>
 
-<!-- ============ 最新文章 ============ -->
+<!-- ============ 法税洞察 ============ -->
 <section class="section-dt">
   <div class="container-dt">
     <div class="section-header-dt">
       <h2>法税洞察</h2>
-      <p id="insight-count-desc" style="font-size:0.95rem; color:var(--dt-text-light); margin-top:0.3rem;">共0篇精选文章</p>
-      <p>深度解读财税政策与实操要点</p>
+      <p id="insight-count-desc" style="font-size:0.95rem; color:var(--dt-text-light); margin-top:0.3rem;">共 <span id="insight-total">0</span> 篇文章</p>
+      <p>热度最高的深度解读，洞悉财税法前沿动态</p>
     </div>
-    <div class="posts-list-dt">
-      <div class="post-item-dt">
-        <div class="post-meta-dt">2026-05-05 · 行业洞察</div>
-        <h3><a href="articles/yecai-fasui-ronghe.html">业管财税法融合：企业合规管理的五维一体新范式</a></h3>
-        <p class="post-excerpt">深度解读「业管财税法」五维融合理念，探索企业合规管理的新范式。从业务、管理、财务、税务、法律五个维度，系统解决企业合规难题。</p>
-      </div>
-      <div class="post-item-dt">
-        <div class="post-meta-dt">2026-04-15 · 政策解读</div>
-        <h3><a href="articles/jinshui-siqi-yingdui.html">金税四期全面解读：企业如何从容应对"以数治税"新时代</a></h3>
-        <p class="post-excerpt">深度解读金税四期政策要点，分析企业面临的机遇与挑战，提供实用的合规建议。</p>
-      </div>
-      <div class="post-item-dt">
-        <div class="post-meta-dt">2026-03-30 · 实操指南</div>
-        <h3><a href="articles/odi-beian-quanliucheng.html">ODI境外投资备案全流程指南</a></h3>
-        <p class="post-excerpt">详尽解读ODI境外直接投资备案的完整流程、所需材料、常见问题及注意事项。</p>
-      </div>
+    <div class="posts-list-dt" id="home-insights-list">
+      <!-- 动态加载中... -->
     </div>
     <div class="text-center-dt mt-4-dt">
       <a href="archives/" class="btn-dt-secondary">阅读更多文章</a>
@@ -995,15 +981,29 @@ layout: false
   </div>
 </div>
 
+<!-- ============ 法税洞察动态加载 ============ -->
 <script>
 (function(){
-var searchIndex = null;
-function loadSearchIndex() {
-  if (searchIndex) return;
-  fetch('../search-index.json').then(function(r){return r.json()}).then(function(d){searchIndex=d}).catch(function(){searchIndex=[]});
-}
-
-loadSearchIndex();
+  var list = document.getElementById('home-insights-list');
+  var totalEl = document.getElementById('insight-total');
+  fetch('home-insights.json')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      totalEl.textContent = data.total;
+      var top5 = data.articles.slice(0, 5);
+      var html = '';
+      top5.forEach(function(a){
+        html += '<div class="post-item-dt">';
+        html += '<div class="post-meta-dt">' + a.category + ' · ' + a.date + ' · ' + a.views.toLocaleString() + ' 阅读</div>';
+        html += '<h3><a href="' + a.url + '">' + a.title + '</a></h3>';
+        html += '<p class="post-excerpt">' + a.excerpt + '</p>';
+        html += '</div>';
+      });
+      list.innerHTML = html;
+    })
+    .catch(function(){
+      list.innerHTML = '<p style="text-align:center;color:#999;">文章加载中，请稍候...</p>';
+    });
 })();
 </script>
 

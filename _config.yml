@@ -45,6 +45,8 @@ skip_render:
   - "services/s09-fiscal-internal-control.html"
   - "services/s10-custom-tax-training.html"
   - "services/s11-annual-tax-legal-advisory.html"
+  - "home-insights.json"
+  - "search-index.json"
 
 # Writing
 new_post_name: :title.md

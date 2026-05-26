@@ -1103,12 +1103,17 @@ img { max-width: 100%; display: block; }
 
     headings.forEach(function(h, i) {
       if (!h.id) { h.id = 'section-' + i; }
+      var text = h.textContent.replace(/^\d+\.?\s*/, '');
+      // 跳过结语章节
+      if (h.id === '结语' || text === '结语') return;
+      var isH3 = h.tagName === 'H3';
+      var isRelated = h.classList.contains('related-heading');
       var li = document.createElement('li');
-      li.className = 'article-toc-item' + (h.tagName === 'H3' ? ' toc-sub' : '');
+      li.className = 'article-toc-item' + (isH3 && !isRelated ? ' toc-sub' : '');
       var a = document.createElement('a');
       a.href = '#' + h.id;
-      a.className = 'article-toc-link' + (h.tagName === 'H3' ? ' toc-h3' : '');
-      a.textContent = h.textContent.replace(/^\d+\.?\s*/, '');
+      a.className = 'article-toc-link' + (isH3 && !isRelated ? ' toc-h3' : '');
+      a.textContent = text;
       a.setAttribute('data-target', h.id);
       a.addEventListener('click', function(e) {
         e.preventDefault();

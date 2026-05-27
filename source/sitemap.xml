@@ -136,7 +136,7 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/contact/"/>
   </url>
 
-  <!-- 8 篇文章 -->
+  <!-- 40 篇文章 -->
   <url>
     <loc>https://cunqin.tax/articles/jinshui-siqi-yingdui.html</loc>
     <lastmod>2026-05-24</lastmod>
@@ -422,4 +422,12 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/shuzihua-shuiwu-guanli-zhuanxing.html"/>
   </url>
 
+
+  <url>
+    <loc>https://cunqin.tax/articles/guquan-jiagou-shuiwu-chouhua.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/guquan-jiagou-shuiwu-chouhua.html"/>
+  </url>
 </urlset>

@@ -9,8 +9,31 @@
 ## ⚠️ JS 搜索代码完整性检查（2026-05-24 确立）
 - **每次修改文章JS后必须检查**：`highlightInElement` 函数体是否完整、`jumpToMatch` 是否存在、`doArticleSearch` 中 forEach 是否闭合
 - **createTreeWalker修复必须验证**：不能仅替换单个参数就结束，需确认整个函数体未被截断
-- **检查方法**：`grep -c 'jumpToMatch' source/articles/*.html` 应为19（当前19篇文章）
-- **检查方法**：`grep -c 'while (node = walker.nextNode())' source/articles/*.html` 应为19
+- **检查方法**：`grep -c 'jumpToMatch' source/articles/*.html` 应为 4（每篇 4，全站 62×4=248）
+- **检查方法**：`grep -c 'while (node = walker.nextNode())' source/articles/*.html` 应为 1（每篇 1，全站 62）
+
+## ⚠️ 文章格式铁律（2026-05-27 确立，2026-05-27 更新）
+- **参考模板**：`source/articles/企业税务风险管控(source).html`，新增/修改文章必须以此为格式基准
+- **延伸阅读 H3 必须闭合**：`<h3 id="延伸阅读" class="related-heading"><span>延伸阅读</span></h3>`（不得缺 `</h3>`）
+- **延伸阅读卡片数 ≥ 3**：每篇文章延伸阅读至少 3 篇关联文章，不足时自动补充
+- **related-cta 必须含大湾区提示**：`对于广州及粤港澳大湾区企业而言，提前做好税务合规布局，是在复杂监管环境下稳健经营的关键。`
+- **标准 Skill**：`.workbuddy/skills/cunqin-article-standard/`，含验证脚本 `validate_article.py --all`
+- **每次操作后必须运行验证**，确保 jumpToMatch=4、createTreeWalker=1、Article≥1、FAQPage≥1、H3闭合=1、大湾区提示≥1
+
+## ⚠️ GEO 合规要求（2026-05-27 确立）
+- **每次修改后必须跑 `python tools/geo_audit.py`（或 skill 脚本），确认 0 ERROR 0 WARNING**
+- **og:description 长度 120-160 字符**：客观、信息丰富、含关键词，不带营销腔
+- **meta description 与 og:description 保持一致**
+- **twitter:description 为简短版（≤100 字符）**
+- **baidu-site-verification token**：`codeva-9SPpSVW5X6`（不是 `codeva-MMFsum3pdD`）
+- **排除模板文件**：`_article_list_generated.html`、`_article_list_new.html` 不参与 GEO 审计
+- **keywords 格式**：`存勤法税 + 邓达华 + 业管财税法 + 财税顾问 + 税务筹划`（品牌词 5 件套）+ 主题词 3-5 个 + 地域词 1-2 个
+
+## ⚠️ 文章库存管理（2026-05-27 确立）
+- **全站共 62 篇**文章，法税洞察页显示 62 篇（此前误显示 59 篇——缺失 3 篇已补齐）
+- **home-insights.json**：62 篇文章元数据，按 views 降序排列
+- **search-index.json**：79 条（含非文章页），用于全站搜索
+- **新增文章后必须同步更新**：法税洞察页（HTML 条目 + article-item）+ home-insights.json + search-index.json + sitemap.xml + atom.xml
 
 ## ⚠️ 批量编辑铁律（2026-05-22）
 - **严禁用 PowerShell 批量编辑含中文的 UTF-8 文件**——会导致中文乱码
@@ -22,8 +45,8 @@
 - **一改到底**：不要等用户提醒"放不下了"才改容器宽度，一次性做完关联修改
 - **视觉效果先于执行**：每次布局修改前先问自己——改完好看吗？比例协调吗？留白舒服吗？主动建议优化，不只是机械执行数值变更
 
-## ⚠️ JS fetch/跳转路径铁律（2026-05-23 确立）
-- **JS 中 fetch() 和 window.location.href 必须用站内绝对路径**：`/cunqin_law-tax/xxx.json` 或 `/cunqin_law-tax/about/`
+## ⚠️ JS fetch/跳转路径铁律（2026-05-23 确立，2026-05-26 更新）
+- **JS 中 fetch() 和 window.location.href 必须用站内绝对路径**：`/xxx.json` 或 `/about/`（站点 `root: /`，域名 cunqin.tax）
 - **严禁在 JS 中用 `./` 相对路径**：`new URL('./x.json', location.href)` 和 `window.location.href = './x/'` 在子目录页面会解析到错误路径
 - **HTML `src`/`href` 属性中的 `../` 是正确且必要的**（浏览器原生解析），不要混淆
 
@@ -70,9 +93,11 @@
   - `footer-logo.png`（页脚 LOGO）
   - `company-logo.png`（公司 LOGO）
   - `founder-new.png`（创始人照片，2026-05-22 添加）
-- 源码文章数：19篇（source/articles/），全站HTML：36个
+- 源码文章数：39篇（source/articles/），全站HTML：36个
 - 文章JSON生成工具：`tools/generate_articles.py`（从JSON批量生成HTML）
 - 索引更新工具：`tools/update_indexes.py`（法税洞察页+search-index+sitemap同步）
+- **首页热门文章工具**：`tools/build_home_insights.py`（从archives页提取39篇文章含views → `source/home-insights.json`，首页JS动态加载Top5）
+- **home-insights.json**：`source/` 根目录，含全部文章元数据（title/url/date/category/views/excerpt），按views降序排列，已加入 skip_render
 - 微信二维码图片：`source/images/wechat-qrcode.png`（透明PNG，125×125px），用于首页和联系我们页
 - 导航栏统一使用 `nav-logo.png`，页脚统一使用 `footer-logo.png`
 

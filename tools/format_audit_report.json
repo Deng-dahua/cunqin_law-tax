@@ -1,8 +1,8 @@
 {
-  "total_files": 65,
+  "total_files": 67,
   "articles": 0,
   "services": 0,
-  "other": 65,
+  "other": 67,
   "var_signatures": {
     "('dt-accent', 'dt-accent-hover', 'dt-bg', 'dt-bg-light', 'dt-border', 'dt-primary', 'dt-primary-light', 'dt-text', 'dt-text-light')": [
       "search.html",
@@ -43,10 +43,12 @@
       "articles\\家族财富传承税务考量与规划(source).html",
       "articles\\对赌协议税务处理全解析(source).html",
       "articles\\平台经济灵活用工的税务合规(source).html",
+      "articles\\房地产企业税务筹划(source).html",
       "articles\\数电发票全面实施企业应对(source).html",
       "articles\\新公司法注册资本实缴的税务影响(source).html",
       "articles\\甲乙双视角税务顾问(source).html",
       "articles\\税收协定待遇申请实务指南(source).html",
+      "articles\\股东借款税务风险(source).html",
       "articles\\股权架构全解析与税务规划(source).html",
       "articles\\股权激励全周期税务规划(source).html",
       "articles\\跨境电商税务合规(source).html",
@@ -888,6 +890,26 @@
     },
     {
       "type": "NAV_DIFFER",
+      "file": "articles\\房地产企业税务筹划(source).html",
+      "class": "nav-container",
+      "expected": "width: 100%;\n      margin: 0 auto;\n      padding: 0 35px;\n  ",
+      "actual": "width: 100%; margin: 0 auto; padding: 0 35px; display: flex;"
+    },
+    {
+      "type": "NAV_DIFFER",
+      "file": "articles\\房地产企业税务筹划(source).html",
+      "class": "nav-brand",
+      "expected": "display: flex;\n      align-items: center;\n      gap: 0.5rem;",
+      "actual": "display: flex; align-items: center; gap: 0.5rem; font-size: "
+    },
+    {
+      "type": "NAV_MISSING",
+      "file": "articles\\房地产企业税务筹划(source).html",
+      "class": "nav-menu",
+      "detail": "Class not found"
+    },
+    {
+      "type": "NAV_DIFFER",
       "file": "articles\\数电发票全面实施企业应对(source).html",
       "class": "nav-container",
       "expected": "width: 100%;\n      margin: 0 auto;\n      padding: 0 35px;\n  ",
@@ -963,6 +985,26 @@
     {
       "type": "NAV_MISSING",
       "file": "articles\\税收协定待遇申请实务指南(source).html",
+      "class": "nav-menu",
+      "detail": "Class not found"
+    },
+    {
+      "type": "NAV_DIFFER",
+      "file": "articles\\股东借款税务风险(source).html",
+      "class": "nav-container",
+      "expected": "width: 100%;\n      margin: 0 auto;\n      padding: 0 35px;\n  ",
+      "actual": "width: 100%; margin: 0 auto; padding: 0 35px; display: flex;"
+    },
+    {
+      "type": "NAV_DIFFER",
+      "file": "articles\\股东借款税务风险(source).html",
+      "class": "nav-brand",
+      "expected": "display: flex;\n      align-items: center;\n      gap: 0.5rem;",
+      "actual": "display: flex; align-items: center; gap: 0.5rem; font-size: "
+    },
+    {
+      "type": "NAV_MISSING",
+      "file": "articles\\股东借款税务风险(source).html",
       "class": "nav-menu",
       "detail": "Class not found"
     },

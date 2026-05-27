@@ -1077,8 +1077,7 @@ Day 7+:   跟进检查结论 → 如有异议准备陈述申辩
     headings.forEach(function(h, i) {
       if (!h.id) { h.id = 'section-' + i; }
       var text = h.textContent.replace(/^\d+\.?\s*/, '');
-      // 跳过结语章节
-      if (h.id === '结语' || text === '结语') return;
+
       var isH3 = h.tagName === 'H3';
       var isRelated = h.classList.contains('related-heading');
       var li = document.createElement('li');

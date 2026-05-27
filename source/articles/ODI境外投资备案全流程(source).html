@@ -1260,8 +1260,7 @@ A：可以。在取得备案通知书后，可在有效期内分次汇出，但�
     headings.forEach(function(h, i) {
       if (!h.id) { h.id = 'section-' + i; }
       var text = h.textContent.replace(/^\d+\.?\s*/, '');
-      // 跳过结语章节
-      if (h.id === '结语' || text === '结语') return;
+
       var isH3 = h.tagName === 'H3';
       var isRelated = h.classList.contains('related-heading');
       var li = document.createElement('li');

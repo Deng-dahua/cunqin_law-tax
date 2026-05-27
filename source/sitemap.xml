@@ -471,4 +471,22 @@
   </url>
 
 
+
+  <!-- Article -->
+  <url>
+    <loc>https://cunqin.tax/articles/fangdichan-qiye-shuiwu-chouhua.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/fangdichan-qiye-shuiwu-chouhua.html"/>
+  </url>
+
+  <!-- Article -->
+  <url>
+    <loc>https://cunqin.tax/articles/gudong-jiekuan-shuiwu-fengxian.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/gudong-jiekuan-shuiwu-fengxian.html"/>
+  </url>
 </urlset>

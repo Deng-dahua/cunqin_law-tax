@@ -383,7 +383,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.95rem;
 }
 .more-list {
-  max-width: 860px;
+  max-width: 960px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -428,9 +428,12 @@ img { max-width: 100%; display: block; }
 .more-info p {
   font-size: 0.85rem;
   color: var(--dt-text-light);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+}
+.more-views {
+  font-size: 0.75rem;
+  color: var(--dt-text-light);
+  font-weight: 400;
+  margin-left: 0.6rem;
 }
 .more-arrow {
   flex-shrink: 0;
@@ -1045,7 +1048,7 @@ img { max-width: 100%; display: block; }
         html += '<a href="' + href + '" class="more-item">';
         html += '<div class="more-cat">' + a.category + '</div>';
         html += '<div class="more-info">';
-        html += '<h4>' + a.title + '</h4>';
+        html += '<h4>' + a.title + '<span class="more-views">' + a.views + ' 阅读</span></h4>';
         html += '<p>' + a.excerpt + '</p>';
         html += '</div>';
         html += '<div class="more-arrow"><i class="fas fa-chevron-right"></i></div>';

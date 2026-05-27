@@ -93,7 +93,7 @@ img { max-width: 100%; display: block; }
   text-align: center;
   color: #fff;
   min-height: 373px;
-  height: 373px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,13 +110,27 @@ img { max-width: 100%; display: block; }
   margin-bottom: 1.2rem;
 }
 .article-hero h1 {
-  font-size: clamp(1.3rem, 2.8vw, 1.95rem);
+  font-size: clamp(1.15rem, 2.5vw, 1.75rem);
   font-weight: 700;
   line-height: 1.35;
   margin-bottom: 1rem;
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
+  white-space: nowrap;
+}
+
+/* Hero subtitle for colon-split long titles */
+.article-hero .hero-subtitle {
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  font-weight: 400;
+  opacity: 0.88;
+  margin-top: -0.1rem;
+  margin-bottom: 1.2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.45;
 }
 .article-hero .art-meta {
   display: flex; align-items: center; justify-content: center; gap: 1.5rem;
@@ -928,11 +942,11 @@ img { max-width: 100%; display: block; }
         </div>
         <span class="related-arrow"><i class="fas fa-arrow-right"></i></span>
       </a>
-      <a href="qiye-shuiwu-fengxian.html" class="related-card">
-        <span class="related-cat">实操指南</span>
+      <a href="shuiwu-jicha-2026-yujing.html" class="related-card">
+        <span class="related-cat">风险预警</span>
         <div class="related-info">
-          <h4>企业税务风险识别、评估与应对体系</h4>
-          <p>企业税务风险的分类与识别方法、风险评估标准、风险应对策略及税务管理体系的搭建</p>
+          <h4>2026年税务稽查方向与高风险领域分析</h4>
+          <p>税务稽查的大数据选案机制、重点行业与事项的稽查关注点及企业自查清单</p>
         </div>
         <span class="related-arrow"><i class="fas fa-arrow-right"></i></span>
       </a>

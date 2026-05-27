@@ -524,10 +524,30 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+    <url>
+    <loc>https://cunqin.tax/articles/qiye-shuiwu-jiankang-tijian.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qiye-shuiwu-jiankang-tijian.html"/>
+  </url>
   <url>
+    <loc>https://cunqin.tax/articles/sihu-shoukuan-bujiu-zhinan.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/sihu-shoukuan-bujiu-zhinan.html"/>
+  </url>
+  <url>
+    <loc>https://cunqin.tax/articles/shuiwu-jicha-yingdui-shouce.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/shuiwu-jicha-yingdui-shouce.html"/>
+  </url>
+<url>
     <loc>https://cunqin.tax/articles/jianyi-jinshui-vs-yiban-jinshui.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>

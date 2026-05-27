@@ -5,7 +5,8 @@ with open('source/archives/法税洞察(source).html', 'r', encoding='utf-8') as
     content = f.read()
 
 # 提取每个 article-item
-pattern = r'<a href="([^"]+)" class="article-item" data-date="([^"]+)" data-category="([^"]+)" data-views="(\d+)">\s*<div class="article-content">\s*<h3>(.+?)</h3>\s*<p>(.+?)</p>'
+# 兼容两种结构：有 <div class="article-date"> 的新文章和无 date 块的老文章
+pattern = r'<a href="([^"]+)" class="article-item" data-date="([^"]+)" data-category="([^"]+)" data-views="(\d+)">(?:\s*<div class="article-date">.*?</div>)?\s*<div class="article-content">\s*<h3>(.+?)</h3>\s*<p>(.+?)</p>'
 matches = re.findall(pattern, content, re.DOTALL)
 
 articles = []

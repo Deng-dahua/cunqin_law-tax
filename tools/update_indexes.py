@@ -13,16 +13,18 @@ SOURCE_DIR = os.path.join(BASE_DIR, 'source')
 JSON_DIR = os.path.join(BASE_DIR, 'tools')
 ARTICLES_DIR = os.path.join(SOURCE_DIR, 'articles')
 SITE_URL = 'https://cunqin.tax'
-TODAY = '2026-05-24'
+TODAY = '2026-05-27'
 
 
 def load_articles():
-    """Load all 11 new articles from JSON"""
+    """Load all new articles from JSON batch files"""
     articles = []
-    for batch in ['articles_batch1.json', 'articles_batch2.json', 'articles_batch3.json']:
+    batch_files = ['articles_batch1.json', 'articles_batch2.json', 'articles_batch3.json', 'geo_articles_batch1.json']
+    for batch in batch_files:
         path = os.path.join(JSON_DIR, batch)
-        with open(path, 'r', encoding='utf-8') as f:
-            articles.extend(json.load(f))
+        if os.path.exists(path):
+            with open(path, 'r', encoding='utf-8') as f:
+                articles.extend(json.load(f))
     return articles
 
 
@@ -99,7 +101,7 @@ def update_archives_page(articles):
     with open(page_path, 'w', encoding='utf-8') as f:
         f.write(new_content)
     
-    print(f'  ✅ 法税洞察页：插入 {len(cards)} 个新文章卡片')
+    print(f'  [OK] 法税洞察页：插入 {len(cards)} 个新文章卡片')
     return True
 
 
@@ -125,7 +127,7 @@ def update_search_index(articles):
     with open(index_path, 'w', encoding='utf-8') as f:
         json.dump(index, f, ensure_ascii=False, indent=2)
     
-    print(f'  ✅ search-index.json：新增 {len(articles)} 条，共 {len(index)} 条')
+    print(f'  [OK] search-index.json：新增 {len(articles)} 条，共 {len(index)} 条')
 
 
 def update_sitemap(articles):
@@ -162,7 +164,7 @@ def update_sitemap(articles):
     
     # Count total URLs
     url_count = new_content.count('<loc>')
-    print(f'  ✅ sitemap.xml：新增 {len(articles)} 条，共 {url_count} 条')
+    print(f'  [OK] sitemap.xml：新增 {len(articles)} 条，共 {url_count} 条')
 
 
 def apply_skip_render():
@@ -174,16 +176,16 @@ def apply_skip_render():
     # Check if articles/ is already in skip_render
     if 'articles/' in content:
         # Already covers all articles in the directory
-        print('  ✅ skip_render：articles/ 已配置，无需修改')
+        print('  [OK] skip_render：articles/ 已配置，无需修改')
         return
     
     # Need to add articles/ to skip_render
     # Find the skip_render section
     skip_match = re.search(r'skip_render:.*?(?=\n\w|\Z)', content, re.DOTALL)
     if skip_match:
-        print('  ⚠️  skip_render 需要手动检查（articles目录可能未列入）')
+        print('  [WARN]  skip_render 需要手动检查（articles目录可能未列入）')
     else:
-        print('  ⚠️  未找到 skip_render 配置')
+        print('  [WARN]  未找到 skip_render 配置')
 
 
 def main():
@@ -207,7 +209,7 @@ def main():
     print('\n4. Checking skip_render...')
     apply_skip_render()
     
-    print('\n✅ All indexes updated!')
+    print('\n[OK] All indexes updated!')
 
 
 if __name__ == '__main__':

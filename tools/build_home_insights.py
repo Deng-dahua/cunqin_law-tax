@@ -35,7 +35,7 @@ output = {
 with open('source/home-insights.json', 'w', encoding='utf-8') as f:
     json.dump(output, f, ensure_ascii=False, indent=2)
 
-print(f'✅ 提取 {len(articles)} 篇文章 → source/home-insights.json')
+print(f'[OK] 提取 {len(articles)} 篇文章 → source/home-insights.json')
 print(f'   Top 5:')
 for a in articles[:5]:
     print(f'   {a["views"]:>5}  {a["title"][:40]}')

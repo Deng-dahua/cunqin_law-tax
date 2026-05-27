@@ -136,7 +136,7 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/contact/"/>
   </url>
 
-  <!-- 40 篇文章 -->
+  <!-- 45 篇文章 -->
   <url>
     <loc>https://cunqin.tax/articles/jinshui-siqi-yingdui.html</loc>
     <lastmod>2026-05-24</lastmod>
@@ -430,4 +430,45 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/guquan-jiagou-shuiwu-chouhua.html"/>
   </url>
+  <url>
+    <loc>https://cunqin.tax/articles/tudi-zengzhishui-qingsuan-chouhua.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/tudi-zengzhishui-qingsuan-chouhua.html"/>
+  </url>
+
+  <url>
+    <loc>https://cunqin.tax/articles/gongsi-zhuxiao-qingsuan-shuiwu.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/gongsi-zhuxiao-qingsuan-shuiwu.html"/>
+  </url>
+
+  <url>
+    <loc>https://cunqin.tax/articles/fei-huobi-zichan-touzi-shuiwu.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/fei-huobi-zichan-touzi-shuiwu.html"/>
+  </url>
+
+  <url>
+    <loc>https://cunqin.tax/articles/guanlianfang-jiekuan-shuiwu.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/guanlianfang-jiekuan-shuiwu.html"/>
+  </url>
+
+  <url>
+    <loc>https://cunqin.tax/articles/shuishou-xieding-daiyu-shenqing.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/shuishou-xieding-daiyu-shenqing.html"/>
+  </url>
+
+
 </urlset>

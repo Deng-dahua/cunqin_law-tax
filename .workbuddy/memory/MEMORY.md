@@ -20,6 +20,12 @@
 - **标准 Skill**：`.workbuddy/skills/cunqin-article-standard/`，含验证脚本 `validate_article.py --all`
 - **每次操作后必须运行验证**，确保 jumpToMatch=4、createTreeWalker=1、Article≥1、FAQPage≥1、H3闭合=1、大湾区提示≥1
 
+## ⚠️ 触发词：-成交-（2026-05-27 确立）
+- **用户输入「-成交-」时**，立即恢复 P0 成交转化优化工作：
+  - P0-1：补齐 sameAs 外部链接（需用户提供企查查/天眼查/百度百科/知乎/LinkedIn 等平台 URL）
+  - P0-2：添加社会证明板块（关于我们页新增：服务企业Logo墙 + 量化数据卡片 + 行业认可）
+- 两个 P0 任务的详细方案已记录在 Task #367 和 #368 中
+
 ## ⚠️ GEO 合规要求（2026-05-27 确立）
 - **每次修改后必须跑 `python tools/geo_audit.py`（或 skill 脚本），确认 0 ERROR 0 WARNING**
 - **og:description 长度 120-160 字符**：客观、信息丰富、含关键词，不带营销腔

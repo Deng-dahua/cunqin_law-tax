@@ -728,9 +728,7 @@ img { max-width: 100%; display: block; }
     <h1>契税政策全面解读：征税范围、税率优惠与实务操作</h1>
     <div class="art-meta">
       <span><i class="fas fa-calendar-alt"></i> <time datetime="2026-05-27">2026-05-27</time></span>
-      <span><i class="fas fa-user-edit"></i> 邓达华丨存勤法税服务（广州）有限公司</span>
-      <span class="art-view-counter" data-slug="qishui-zhengce-jiedu"><i class="fas fa-eye"></i> <span class="view-num" id="view-qishui-zhengce-jiedu">410</span> 阅读</span>
-    </div>
+      <span><i class="fas fa-user-edit"></i> 邓达华丨存勤法税服务（广州）有限公司</span>    </div>
   </div>
 
 
@@ -1082,18 +1080,7 @@ img { max-width: 100%; display: block; }
     headings.forEach(function(h) { observer.observe(h); });
   })();</script>
 
-<script>
-  /* ===== 实时阅读量统计（countapi.xyz） ===== */
-  (function(){
-    var slug = 'qishui-zhengce-jiedu';
-    var el = document.getElementById('view-' + slug);
-    if (!el) return;
-    el.textContent = '0';
-    fetch('https://api.countapi.xyz/hit/cunqin-tax/' + slug)
-      .then(function(r){ return r.json(); })
-      .then(function(d){ el.textContent = d.value.toLocaleString(); })
-      .catch(function(){});
-  })();
+<script>})();
 </script>
 
 <!-- ============ 置顶/置底按钮 ============ -->

@@ -727,9 +727,7 @@ img { max-width: 100%; display: block; }
     <h1>税务行政复议实战指南：程序、策略与权利救济</h1>
     <div class="art-meta">
       <span><i class="fas fa-calendar-alt"></i> <time datetime="2026-05-03">2026-05-03</time></span>
-      <span><i class="fas fa-user-edit"></i> 邓达华丨存勤法税服务（广州）有限公司</span>
-      <span class="art-view-counter" data-slug="shuiwu-xingzheng-fuyi"><i class="fas fa-eye"></i> <span class="view-num" id="view-shuiwu-xingzheng-fuyi">1,261</span> 阅读</span>
-    </div>
+      <span><i class="fas fa-user-edit"></i> 邓达华丨存勤法税服务（广州）有限公司</span>    </div>
   </div>
 
 
@@ -1124,18 +1122,7 @@ img { max-width: 100%; display: block; }
     headings.forEach(function(h) { observer.observe(h); });
   })();</script>
 
-<script>
-  /* ===== 实时阅读量统计（countapi.xyz） ===== */
-  (function(){
-    var slug = 'shuiwu-xingzheng-fuyi';
-    var el = document.getElementById('view-' + slug);
-    if (!el) return;
-    el.textContent = '0';
-    fetch('https://api.countapi.xyz/hit/cunqin-tax/' + slug)
-      .then(function(r){ return r.json(); })
-      .then(function(d){ el.textContent = d.value.toLocaleString(); })
-      .catch(function(){});
-  })();
+<script>})();
 </script>
 
 <!-- ============ 置顶/置底按钮 ============ -->

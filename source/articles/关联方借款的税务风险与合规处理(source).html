@@ -708,9 +708,7 @@ img { max-width: 100%; display: block; }
     <h1>关联方借款的税务风险与合规处理</h1>
     <div class="art-meta">
       <span><i class="fas fa-calendar-alt"></i> <time datetime="2026-04-10">2026-04-10</time></span>
-      <span><i class="fas fa-user-edit"></i> 邓达华丨存勤法税服务（广州）有限公司</span>
-      <span class="art-view-counter" data-slug="guanlianfang-jiekuan-shuiwu"><i class="fas fa-eye"></i> <span class="view-num" id="view-guanlianfang-jiekuan-shuiwu">1,290</span> 阅读</span>
-    </div>
+      <span><i class="fas fa-user-edit"></i> 邓达华丨存勤法税服务（广州）有限公司</span>    </div>
   </div>
 
 
@@ -978,18 +976,7 @@ img { max-width: 100%; display: block; }
     headings.forEach(function(h) { observer.observe(h); });
   })();</script>
 
-<script>
-  /* ===== 实时阅读量统计（countapi.xyz） ===== */
-  (function(){
-    var slug = 'guanlianfang-jiekuan-shuiwu';
-    var el = document.getElementById('view-' + slug);
-    if (!el) return;
-    el.textContent = '0';
-    fetch('https://api.countapi.xyz/hit/cunqin-tax/' + slug)
-      .then(function(r){ return r.json(); })
-      .then(function(d){ el.textContent = d.value.toLocaleString(); })
-      .catch(function(){});
-  })();
+<script>})();
 </script>
 
 <!-- ============ 置顶/置底按钮 ============ -->

@@ -832,9 +832,7 @@ img { max-width: 100%; display: block; }
     <p class="hero-subtitle">对中国出口企业的多维度影响与应对策略</p>
     <div class="art-meta">
       <span><i class="fas fa-calendar-alt"></i> <time datetime="2026-05-27">2026-05-27</time></span>
-      <span><i class="fas fa-user-edit"></i> 邓达华丨存勤法税服务（广州）有限公司</span>
-      <span class="art-view-counter" data-slug="tan-guan-shui-cbam-chukou"><i class="fas fa-eye"></i> <span class="view-num" id="view-tan-guan-shui-cbam-chukou">200</span> 阅读</span>
-    </div>
+      <span><i class="fas fa-user-edit"></i> 邓达华丨存勤法税服务（广州）有限公司</span>    </div>
   </div>
 
 
@@ -1089,18 +1087,7 @@ img { max-width: 100%; display: block; }
     headings.forEach(function(h) { observer.observe(h); });
   })();</script>
 
-<script>
-  /* ===== 实时阅读量统计（countapi.xyz） ===== */
-  (function(){
-    var slug = 'jinshui-siqi-yingdui';
-    var el = document.getElementById('view-' + slug);
-    if (!el) return;
-    el.textContent = '0';
-    fetch('https://api.countapi.xyz/hit/cunqin-tax/' + slug)
-      .then(function(r){ return r.json(); })
-      .then(function(d){ el.textContent = d.value.toLocaleString(); })
-      .catch(function(){});
-  })();
+<script>})();
 </script>
 
 <!-- ============ 置顶/置底按钮 ============ -->

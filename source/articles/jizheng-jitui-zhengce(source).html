@@ -1094,30 +1094,19 @@ img { max-width: 100%; display: block; }
   })();</script>
 
 <script>
-  /* ===== 动态阅读量计数 ===== */
+  /* ===== 实时阅读量统计（countapi.xyz） ===== */
   (function(){
     var slug = 'jizheng-jitui-zhengce';
-    var base = 150;
-    var storageKey = 'cq_view_' + slug;
-    var sessionKey = 'cq_sess_' + slug;
     var el = document.getElementById('view-' + slug);
     if (!el) return;
-
-    // 从localStorage获取当前计数
-    var stored = localStorage.getItem(storageKey);
-    var count = stored ? Math.max(base, parseInt(stored, 10)) : base;
-
-    // 新会话则递增
-    if (!sessionStorage.getItem(sessionKey)) {
-      count += 1;
-      localStorage.setItem(storageKey, count);
-      sessionStorage.setItem(sessionKey, '1');
-    }
-
-    // 格式化并显示
-    el.textContent = count.toLocaleString();
+    el.textContent = '0';
+    fetch('https://api.countapi.xyz/hit/cunqin-tax/' + slug)
+      .then(function(r){ return r.json(); })
+      .then(function(d){ el.textContent = d.value.toLocaleString(); })
+      .catch(function(){});
   })();
 </script>
+
 <!-- ============ 置顶/置底按钮 ============ -->
 <button class="scroll-btn" id="btnScrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="返回顶部">↑</button>
 <button class="scroll-btn" id="btnScrollBtm" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})" title="前往底部">↓</button>

@@ -6,17 +6,20 @@
 - **服务子页 URL** 格式：`services/s01-xxx.html` 至 `s11-xxx.html`（2026-05-24 更新：从10项增至11项）
 - **禁止凭记忆、凭推理列 URL**，必须以 sitemap 为唯一事实来源
 
-## ⚠️ 阅读量 localStorage 覆盖铁律（2026-05-29 确立）
-- **文章页阅读量JS必须用 `Math.max(base, parseInt(stored, 10))`**，绝不能仅用 `stored ? parseInt(stored, 10) : base`
-- 原因：localStorage 缓存旧值会无视更新后的 base，导致页面永远显示旧数字（如首页2298 vs 文章页1213）
-- **修复后逻辑**：base > stored → 用 base（服务器真实值优先）；stored ≥ base → 用 stored（保留本地递增）
-- **验证命令**：`grep -r 'Math\.max(base, parseInt(stored' source/articles/ | wc -l` 应等于文章总数
+## ⚠️ 阅读量实时计数铁律（2026-05-30 确立，取代静态base方案）
+- **全站77篇文章使用 countapi.xyz 实时计数**：`fetch('https://api.countapi.xyz/hit/cunqin-tax/' + slug)`
+- **namespace**：`cunqin-tax`，**key**：文章 slug
+- **兜底机制**：API 不可用时显示 `0`，不做虚假本地递增
+- **验证命令**：`grep -r 'countapi.xyz' source/articles/ | wc -l` 应等于 77
+- **严禁**手动修改阅读量，一切以 countapi.xyz 返回的真实值为准
+- **home-insights.json**：views 字段=0（用于首页排序参考），实际数值由线上 API 返回
+- **开发/本地预览注意**：本地 file:// 协议下 fetch 跨域可能失败，显示 0 属于正常兜底行为
 
 ## ⚠️ JS 搜索代码完整性检查（2026-05-24 确立）
 - **每次修改文章JS后必须检查**：`highlightInElement` 函数体是否完整、`jumpToMatch` 是否存在、`doArticleSearch` 中 forEach 是否闭合
 - **createTreeWalker修复必须验证**：不能仅替换单个参数就结束，需确认整个函数体未被截断
-- **检查方法**：`grep -c 'jumpToMatch' source/articles/*.html` 应为 4（每篇 4，全站 62×4=248）
-- **检查方法**：`grep -c 'while (node = walker.nextNode())' source/articles/*.html` 应为 1（每篇 1，全站 62）
+- **检查方法**：`grep -c 'jumpToMatch' source/articles/*.html` 应为 4（每篇 4，全站 77×4=308）
+- **检查方法**：`grep -c 'while (node = walker.nextNode())' source/articles/*.html` 应为 1（每篇 1，全站 77）
 
 ## ⚠️ 文章格式铁律（2026-05-27 确立，2026-05-27 更新）
 - **参考模板**：`source/articles/企业税务风险管控(source).html`，新增/修改文章必须以此为格式基准
@@ -41,10 +44,10 @@
 - **排除模板文件**：`_article_list_generated.html`、`_article_list_new.html` 不参与 GEO 审计
 - **keywords 格式**：`存勤法税 + 邓达华 + 业管财税法 + 财税顾问 + 税务筹划`（品牌词 5 件套）+ 主题词 3-5 个 + 地域词 1-2 个
 
-## ⚠️ 文章库存管理（2026-05-27 确立）
-- **全站共 62 篇**文章，法税洞察页显示 62 篇（此前误显示 59 篇——缺失 3 篇已补齐）
-- **home-insights.json**：62 篇文章元数据，按 views 降序排列
-- **search-index.json**：79 条（含非文章页），用于全站搜索
+## ⚠️ 文章库存管理（2026-05-27 确立，2026-05-30 更新）
+- **全站共 77 篇**文章，法税洞察页显示 77 篇
+- **home-insights.json**：77 篇文章元数据，按 views 降序排列
+- **search-index.json**：114 条（含非文章页），用于全站搜索
 - **新增文章后必须同步更新**：法税洞察页（HTML 条目 + article-item）+ home-insights.json + search-index.json + sitemap.xml + atom.xml
 
 ## ⚠️ 批量编辑铁律（2026-05-22）

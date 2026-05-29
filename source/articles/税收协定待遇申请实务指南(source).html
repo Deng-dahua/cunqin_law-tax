@@ -989,7 +989,7 @@ img { max-width: 100%; display: block; }
     if (!el) return;
 
     var stored = localStorage.getItem(storageKey);
-    var count = stored ? parseInt(stored, 10) : base;
+    var count = stored ? Math.max(base, parseInt(stored, 10)) : base;
 
     if (!sessionStorage.getItem(sessionKey)) {
       count += 1;

@@ -100,10 +100,10 @@ layout: false
     .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--dt-accent); margin: 1rem auto 0; border-radius: 2px; }
     .section-intro { text-align: center; max-width: 700px; margin: 0 auto 3rem; color: var(--dt-text-light); font-size: 1.05rem; }
     /* 服务目录 */
-    .service-dir { max-width: 900px; margin: 0 auto 3rem; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6rem; }
-    .service-dir a { display: block; text-align: center; padding: 0.6rem 0.5rem; background: var(--dt-bg-light); border: 1px solid var(--dt-border); border-radius: 6px; font-size: 0.82rem; color: var(--dt-text); transition: all 0.2s; }
+    .service-dir { max-width: 960px; margin: 0 auto 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+    .service-dir a { display: block; text-align: center; padding: 0.85rem 0.6rem; background: var(--dt-bg-light); border: 1px solid var(--dt-border); border-radius: 6px; font-size: 1rem; color: var(--dt-text); transition: all 0.2s; }
     .service-dir a:hover { border-color: var(--dt-accent); color: var(--dt-accent); background: rgba(0,161,156,0.04); }
-    .service-dir a .dir-num { display: block; font-size: 0.7rem; color: var(--dt-accent); margin-bottom: 0.15rem; font-weight: 600; }
+    .service-dir a .dir-num { display: block; font-size: 0.78rem; color: var(--dt-accent); margin-bottom: 0.2rem; font-weight: 600; }
     /* 服务详情按钮 */
     .service-card-footer { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px dashed var(--dt-border); display: flex; justify-content: flex-end; }
     .btn-detail { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.5rem 1.2rem; background: transparent; border: 1px solid var(--dt-accent); color: var(--dt-accent); border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.2s; }
@@ -193,7 +193,8 @@ layout: false
       .nav-mobile-btn { display: block; }
       .page-hero h1 { font-size: 2rem; }
       .service-grid { grid-template-columns: 1fr; }
-      .service-dir { grid-template-columns: repeat(2, 1fr); }
+      .service-dir { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+      .service-dir a { font-size: 0.9rem; padding: 0.7rem 0.4rem; }
       .feat-grid { grid-template-columns: repeat(2, 1fr); }
       .client-type-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid-dt { display: flex; flex-direction: column; gap: 0.6rem; align-items: center; }

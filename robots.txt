@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /draft/
+Disallow: /temp/
+
+Sitemap: https://cunqin.tax/sitemap.xml

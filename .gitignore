@@ -29,6 +29,13 @@ public/
 # WorkBuddy
 .workbuddy/
 
+# Python
+__pycache__/
+*.pyc
+
+# Backup
+tools_backup_*/
+
 # Hexo
 db.json
 _posts-backup/

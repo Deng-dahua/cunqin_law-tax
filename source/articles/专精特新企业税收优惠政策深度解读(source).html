@@ -457,7 +457,6 @@ img { max-width: 100%; display: block; }
 }
 .more-item:hover .more-arrow { transform: translateX(4px); }
 
-
     /* ===== Footer ===== */
     .footer-dt {
   background: var(--dt-primary);
@@ -498,7 +497,6 @@ img { max-width: 100%; display: block; }
     grid-template-columns: 1fr;
   }
 }
-
 
 /* ===== 延伸阅读卡片 ===== */
 .related-reading { max-width:860px; margin:3rem auto 0; }
@@ -549,7 +547,6 @@ img { max-width: 100%; display: block; }
   .related-grid { grid-template-columns:1fr; }
 }
 
-
     /* ============ 置顶/置底按钮 ============ */
     .scroll-btn { position: fixed; right: 45px; width: 44px; height: 44px; border-radius:50%; background: var(--dt-accent, #00a19c); color: #fff; border: none; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,161,156,0.35); z-index: 999; transition: all 0.3s ease; opacity: 0; visibility: hidden; }
     .scroll-btn.visible { opacity: 1; visibility: visible; }
@@ -557,13 +554,9 @@ img { max-width: 100%; display: block; }
     #btnScrollTop { bottom: 100px; }
     #btnScrollBtm { bottom: 45px; }
 
-
-
     
 
-
     
-
 
     /* ===== CTA（与首页完全一致） ===== */
     .cta-section {
@@ -652,8 +645,6 @@ img { max-width: 100%; display: block; }
   }
 ]
   </script>
-
-
 
 <script type="application/ld+json">
 [
@@ -790,7 +781,6 @@ img { max-width: 100%; display: block; }
   </div>
 </nav>
 
-
 <main>
 
 <!-- ===== Hero ===== -->
@@ -802,7 +792,6 @@ img { max-width: 100%; display: block; }
       <span><i class="fas fa-calendar-alt"></i> <time datetime="2026-05-22">2026-05-22</time></span>
       <span><i class="fas fa-user-edit"></i> 邓达华丨存勤法税服务（广州）有限公司</span>    </div>
   </div>
-
 
 </section>
 <!-- ===== 文内搜索栏 ===== -->
@@ -816,7 +805,6 @@ img { max-width: 100%; display: block; }
   </div>
 </div>
 
-
 <!-- ===== 文章布局（目录 + 正文） ===== -->
 <div class="article-layout">
   <aside class="article-toc">
@@ -824,7 +812,6 @@ img { max-width: 100%; display: block; }
     <ul class="article-toc-list" id="article-toc-list"></ul>
   </aside>
   <div class="article-main">
-
 
 <!-- ===== 面包屑 ===== -->
 <div style="max-width:860px;margin:0 auto;padding:0.8rem 1rem;font-size:0.85rem;color:var(--dt-text-light);">
@@ -1046,7 +1033,6 @@ img { max-width: 100%; display: block; }
 <p>存勤法税深耕财税领域多年，深知<strong>"业管财税法一体化"</strong>的重要性。专精特新企业的税收优惠不是孤立的财务问题，而是与企业战略、技术研发、知识产权管理、人才激励等紧密相连的系统性工程。建议企业在政策红利窗口期内，尽早行动、规范管理，将政策优势转化为真正的竞争优势。</p>
 <p>如果您正在筹备专精特新认定，或希望优化已有的税收优惠方案，欢迎联系存勤法税，我们提供一对一的专业咨询服务，帮助您的企业实现政策红利的最大化。</p>
 
-
 <div class="related-reading">
     <h3 id="延伸阅读" class="related-heading"><span>延伸阅读</span></h3>
     <div class="related-grid">
@@ -1084,7 +1070,6 @@ img { max-width: 100%; display: block; }
   </div>
 
 </article>
-
 
 <!-- ===== 文章声明 ===== -->
 <div class="article-notice" style="max-width:860px;margin:0 auto 2rem;padding:1.2rem 1.5rem;background:var(--dt-bg-light);border-left:4px solid var(--dt-accent);border-radius:0 8px 8px 0;font-size:0.85rem;color:var(--dt-text-light);line-height:1.8;">
@@ -1144,7 +1129,6 @@ img { max-width: 100%; display: block; }
     });
 })();
 </script>
-
 
 <!-- ===== CTA ===== -->
 <section class="cta-section">
@@ -1387,5 +1371,40 @@ function jumpToMatch(direction) {
   document.getElementById('articleSearchCount').textContent = (articleCurrentMatch + 1) + '/' + articleTotalMatches + ' \u5904\u5339\u914d';
 }
 </script>
+      
+
+      <!-- ========== 阅读量统计(不蒜子) ========== -->
+      <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      <script>
+      (function(){
+        // 不蒜子会自动处理 class="busuanzi" 的 span
+        // 这里手动触发一次阅读量 +1
+        var slug = location.pathname.substring(location.pathname.lastIndexOf('/')+1).replace('.html','');
+        // 不蒜子支持自定义 key
+        if (window.busuanzi) {
+          // 已经加载完成，直接更新
+          updateViews();
+        } else {
+          window.addEventListener('busuanzi:loaded', updateViews);
+        }
+        function updateViews() {
+          // 找到页面上的阅读量显示元素
+          var spans = document.querySelectorAll('.busuanzi');
+          // 不蒜子会自动填充这些 span，无需手动处理
+        }
+        // 页面加载时触发计数（不蒜子自动处理）
+        // 手动在 meta 区域插入显示元素
+        var meta = document.querySelector('.article-meta');
+        if (meta && !document.getElementById('busuanzi_container_page_pv')) {
+          var el = document.createElement('span');
+          el.id = 'busuanzi_container_page_pv';
+          el.className = 'busuanzi-container';
+          el.innerHTML = ' <i class="fas fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_page_pv">0</span> 阅读';
+          meta.appendChild(el);
+        }
+      })();
+      </script>
+      <!-- ========== 阅读量统计结束 ========== -->
+
 </body>
 </html>

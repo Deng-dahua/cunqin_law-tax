@@ -150,3 +150,11 @@ comments:
 
 # Customization
 favicon: /images/nav-logo.png
+
+# Deployment
+# Hexo Deployer Git (https://github.com/hexojs/hexo-deployer-git)
+deploy:
+  type: git
+  repo: git@github.com:Deng-dahua/cunqin_law-tax.git
+  branch: gh-pages
+  message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"

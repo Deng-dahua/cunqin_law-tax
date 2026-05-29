@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- 首页 -->
-  <url>
+<url>
     <loc>https://cunqin.tax/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -17,528 +15,528 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/about/"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/services/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/services/s01-tax-risk-check.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s01-tax-risk-check.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/services/s02-tax-crisis-response.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s02-tax-crisis-response.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/services/s03-odi-outbound-investment.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s03-odi-outbound-investment.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/services/s04-restructuring-tax-planning.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s04-restructuring-tax-planning.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/services/s05-cross-border-legal-tax.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s05-cross-border-legal-tax.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/services/s06-revenue-growth-strategy.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s06-revenue-growth-strategy.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/services/s07-profit-growth-system.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s07-profit-growth-system.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/services/s08-budget-management-system.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s08-budget-management-system.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/services/s09-fiscal-internal-control.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s09-fiscal-internal-control.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/services/s10-custom-tax-training.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s10-custom-tax-training.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/services/s11-annual-tax-legal-advisory.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/services/s11-annual-tax-legal-advisory.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/cases/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/cases/"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/archives/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/archives/"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/contact/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/contact/"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/jinshui-siqi-yingdui.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/jinshui-siqi-yingdui.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/qiye-shuiwu-fengxian.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qiye-shuiwu-fengxian.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/jiayi-shuangshijing.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/jiayi-shuangshijing.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/qiye-zhongzu-shuiwu.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qiye-zhongzu-shuiwu.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/yecai-fasui-ronghe.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/yecai-fasui-ronghe.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/kuajing-dianshang-shuiwu.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/kuajing-dianshang-shuiwu.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/gaoxin-qiye-shuiwu.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/gaoxin-qiye-shuiwu.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/odi-beian-quanliucheng.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/odi-beian-quanliucheng.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/shuiwu-jicha-2026-yujing.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/zhuanrang-dingjia-guanlian-jiaoyi.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/xin-gongsifa-shijiao-shuiwu.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/guquan-jili-shuiwu-guihua.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/linghuo-yonggong-shuiwu-hegui.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/shudian-fapiao-quanmian-shishi.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/zengzhishuifa-shishi-yingdui.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/duidu-xieyi-shuiwu-chuli.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/jiazu-caifu-chuancheng-shuiwu.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/jianzi-chezi-shuiwu-chuli.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/zhuanjing-texin-shuishou-youhui.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/qiyesuodeshui-huisuan-qingjiao.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qiyesuodeshui-huisuan-qingjiao.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/yanfa-feiyong-jiakou-kouchu.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/yanfa-feiyong-jiakou-kouchu.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/qiye-kuisun-mibu-guize.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qiye-kuisun-mibu-guize.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/chengben-feiyong-shuiwu-hegui.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/chengben-feiyong-shuiwu-hegui.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/zhongxiao-qiye-shuishou-youhui.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/zhongxiao-qiye-shuishou-youhui.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/geren-suodeshui-huisuan-qingjiao.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/geren-suodeshui-huisuan-qingjiao.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/guquan-zhuantang-geren-suodeshui.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/guquan-zhuantang-geren-suodeshui.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/guquan-daichi-shuiwu-fengxian.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/guquan-daichi-shuiwu-fengxian.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/gongzixinjin-gerensuodeshui-chouhua.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/gongzixinjin-gerensuodeshui-chouhua.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/gudong-hongli-shuiwu-chouhua.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/gudong-hongli-shuiwu-chouhua.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/xukai-fapiao-falv-houguo.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/xukai-fapiao-falv-houguo.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/shuiwu-xingzheng-fuyi.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/shuiwu-xingzheng-fuyi.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/yinhua-shuifa-shishi-yaodian.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/yinhua-shuifa-shishi-yaodian.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/zengzhishui-liudi-tuishui.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/zengzhishui-liudi-tuishui.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/chukou-tuishui-hegui-fengkong.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/chukou-tuishui-hegui-fengkong.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/CRS-kuajing-zichan-shenbao.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/CRS-kuajing-zichan-shenbao.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/hehuo-qiye-shuiwu-jiexi.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/hehuo-qiye-shuiwu-jiexi.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/IPO-shuiwu-hegui-jiagou.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/IPO-shuiwu-hegui-jiagou.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/simu-jijin-shuiwu-chouhua.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/simu-jijin-shuiwu-chouhua.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/shuzihua-shuiwu-guanli-zhuanxing.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/shuzihua-shuiwu-guanli-zhuanxing.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/guquan-jiagou-shuiwu-chouhua.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/guquan-jiagou-shuiwu-chouhua.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/tudi-zengzhishui-qingsuan-chouhua.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/tudi-zengzhishui-qingsuan-chouhua.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/gongsi-zhuxiao-qingsuan-shuiwu.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/gongsi-zhuxiao-qingsuan-shuiwu.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/fei-huobi-zichan-touzi-shuiwu.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/fei-huobi-zichan-touzi-shuiwu.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/guanlianfang-jiekuan-shuiwu.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/guanlianfang-jiekuan-shuiwu.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/shuishou-xieding-daiyu-shenqing.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/shuishou-xieding-daiyu-shenqing.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/fangdichan-qiye-shuiwu-chouhua.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/fangdichan-qiye-shuiwu-chouhua.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/gudong-jiekuan-shuiwu-fengxian.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/gudong-jiekuan-shuiwu-fengxian.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/ziranren-guquan-zhuanrang-heding-chazhang.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/geti-gongshanghu-gerenduquan-shuiwu.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/nianzhongjiang-jishui-xuanze.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/shuiwu-zhuxiao-quanliucheng.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/fapiao-hongchong-zuofei-diu-shi.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/zhibo-daihuo-wanghong-shuiwu.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/nashui-xinyong-dengji-xiufu.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/dawanqu-geshui-butie.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/hainan-ziyougang-shuangshiwu.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/shebao-rushui-xinchou-guihua.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/qiyesuodeshui-yujiao-huisuan-chayi.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/geren-zonghesuode-huisuan-qingxing.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/jingwai-suode-dijiang-zhinan.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/tan-guan-shui-cbam-chukou.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-    <url>
+<url>
     <loc>https://cunqin.tax/articles/qiye-shuiwu-jiankang-tijian.html</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qiye-shuiwu-jiankang-tijian.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/sihu-shoukuan-bujiu-zhinan.html</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/sihu-shoukuan-bujiu-zhinan.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/shuiwu-jicha-yingdui-shouce.html</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -551,160 +549,102 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/xiaofeishui-shuiwu-guihua.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/xiaofeishui-shuiwu-guihua.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/qishui-zhengce-jiedu.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qishui-zhengce-jiedu.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/ziyuanshui-huanbao-shuiwu.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/ziyuanshui-huanbao-shuiwu.html"/>
   </url>
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/qiye-fenli-shuiwu-chuli.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qiye-fenli-shuiwu-chuli.html"/>
   </url>
-  <url>
-    <loc>https://cunqin.tax/articles/xiaofeishui-shuiwu-guihua.html</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/xiaofeishui-shuiwu-guihua.html"/>
-  </url>
-  <url>
-    <loc>https://cunqin.tax/articles/qishui-zhengce-jiedu.html</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qishui-zhengce-jiedu.html"/>
-  </url>
-  <url>
-    <loc>https://cunqin.tax/articles/ziyuanshui-huanbao-shuiwu.html</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/ziyuanshui-huanbao-shuiwu.html"/>
-  </url>
-  <url>
-    <loc>https://cunqin.tax/articles/qiye-fenli-shuiwu-chuli.html</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qiye-fenli-shuiwu-chuli.html"/>
-  </url>
-  <url>
-    <loc>https://cunqin.tax/articles/xiaofeishui-shuiwu-guihua.html</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/xiaofeishui-shuiwu-guihua.html"/>
-  </url>
-  <url>
-    <loc>https://cunqin.tax/articles/qishui-zhengce-jiedu.html</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qishui-zhengce-jiedu.html"/>
-  </url>
-  <url>
-    <loc>https://cunqin.tax/articles/ziyuanshui-huanbao-shuiwu.html</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/ziyuanshui-huanbao-shuiwu.html"/>
-  </url>
-  <url>
-    <loc>https://cunqin.tax/articles/qiye-fenli-shuiwu-chuli.html</loc>
-    <lastmod>2026-05-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qiye-fenli-shuiwu-chuli.html"/>
-  </url>
-
-  <!-- Article -->
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/beps-2.0-qiye-yingdui.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/beps-2.0-qiye-yingdui.html"/>
   </url>
-
-  <!-- Article -->
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/jinrong-qiye-shuiwu-hegui.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/jinrong-qiye-shuiwu-hegui.html"/>
   </url>
-
-  <!-- Article -->
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/jizheng-jitui-zhengce.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/jizheng-jitui-zhengce.html"/>
   </url>
-
-  <!-- Article -->
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/keji-chengguo-zhuanhua-shuiwu.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/keji-chengguo-zhuanhua-shuiwu.html"/>
   </url>
-
-  <!-- Article -->
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/kuajing-fuwu-maoyi-shuiwu.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/kuajing-fuwu-maoyi-shuiwu.html"/>
   </url>
-
-  <!-- Article -->
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/qianshui-guanli-jiuji.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/qianshui-guanli-jiuji.html"/>
   </url>
-
-  <!-- Article -->
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/zhizaoye-shuiwu-chouhua.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/zhizaoye-shuiwu-chouhua.html"/>
   </url>
-
-  <!-- Article -->
-  <url>
+<url>
     <loc>https://cunqin.tax/articles/zhuanrang-dingjia-tongqi-ziliao.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/articles/zhuanrang-dingjia-tongqi-ziliao.html"/>
+  </url>
+  <url>
+    <loc>https://cunqin.tax/about/deng-dahua/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/about/deng-dahua/"/>
+  </url>
+  <url>
+    <loc>https://cunqin.tax/search/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cunqin.tax/search/"/>
   </url>
 </urlset>

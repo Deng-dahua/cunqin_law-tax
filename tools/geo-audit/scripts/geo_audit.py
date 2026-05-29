@@ -41,7 +41,7 @@ from pathlib import Path
 # 配置
 SOURCE = Path(r'C:\Users\26726\WorkBuddy\2026-05-20-21-20-24\source')
 EXPECTED_DOMAIN = 'cunqin.tax'
-BAIDU_TOKEN = 'codeva-MMFsum3pdD'
+BAIDU_TOKEN = 'codeva-9SPpSVW5X6'
 
 TOTAL_CHECKS = 19
 errors = []
@@ -59,7 +59,7 @@ def find_html_files():
     for root, dirs, filenames in os.walk(SOURCE):
         dirs[:] = [d for d in dirs if d not in ('.git', 'node_modules', '.workbuddy')]
         for f in filenames:
-            if f.endswith('.html'):
+            if f.endswith('.html') and f not in ('_article_list_generated.html', '_article_list_new.html'):
                 files.append(Path(root) / f)
     return sorted(files)
 

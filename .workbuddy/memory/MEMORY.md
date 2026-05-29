@@ -6,6 +6,12 @@
 - **服务子页 URL** 格式：`services/s01-xxx.html` 至 `s11-xxx.html`（2026-05-24 更新：从10项增至11项）
 - **禁止凭记忆、凭推理列 URL**，必须以 sitemap 为唯一事实来源
 
+## ⚠️ 阅读量 localStorage 覆盖铁律（2026-05-29 确立）
+- **文章页阅读量JS必须用 `Math.max(base, parseInt(stored, 10))`**，绝不能仅用 `stored ? parseInt(stored, 10) : base`
+- 原因：localStorage 缓存旧值会无视更新后的 base，导致页面永远显示旧数字（如首页2298 vs 文章页1213）
+- **修复后逻辑**：base > stored → 用 base（服务器真实值优先）；stored ≥ base → 用 stored（保留本地递增）
+- **验证命令**：`grep -r 'Math\.max(base, parseInt(stored' source/articles/ | wc -l` 应等于文章总数
+
 ## ⚠️ JS 搜索代码完整性检查（2026-05-24 确立）
 - **每次修改文章JS后必须检查**：`highlightInElement` 函数体是否完整、`jumpToMatch` 是否存在、`doArticleSearch` 中 forEach 是否闭合
 - **createTreeWalker修复必须验证**：不能仅替换单个参数就结束，需确认整个函数体未被截断

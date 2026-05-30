@@ -176,7 +176,17 @@ layout: false
     .footer-info-dt { align-items: center; }
     }
 
-    /* ============ 置顶/置底按钮 ============ */
+
+    /* ============ 分页 ============ */
+    .paging-wrap { display: flex; align-items: center; justify-content: center; gap: 0.4rem; margin: 2.5rem auto 1rem; font-family: inherit; }
+    .paging-btn { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; height: 36px; padding: 0 0.5rem; border: 1px solid #ddd; border-radius: 4px; background: #fff; color: #333; font-size: 0.88rem; cursor: pointer; transition: all 0.2s; text-decoration: none; }
+    .paging-btn:hover { border-color: #00a19c; color: #00a19c; background: #f0fffe; }
+    .paging-btn.disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+    .paging-btn.current { background: var(--dt-accent,#00a19c); color: #fff; border-color: #00a19c; font-weight: 600; }
+    .paging-info { font-size: 0.82rem; color: #999; margin-left: 0.5rem; white-space: nowrap; }
+    .paging-nav { display: inline-flex; align-items: center; gap: 0.3rem; }
+
+
     .scroll-btn { position: fixed; right: 45px; width: 44px; height: 44px; border-radius:50%; background: var(--dt-accent, #00a19c); color: #fff; border: none; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,161,156,0.35); z-index: 999; transition: all 0.3s ease; opacity: 0; visibility: hidden; }
     .scroll-btn.visible { opacity: 1; visibility: visible; }
     .scroll-btn:hover { background: var(--dt-accent-hover, #007a75); transform: scale(1.1); box-shadow: 0 6px 20px rgba(0,161,156,0.5); }
@@ -1259,7 +1269,7 @@ layout: false
 <script>
 // ===== 法税洞察页 筛选 + 搜索 + 分页 =====
 (function(){
-  var PAGE_SIZE = 999;
+  var PAGE_SIZE = 10;
   var currentPage = 1;
   var currentFiltered = [];
 
@@ -1331,6 +1341,40 @@ layout: false
 
     // 重排 DOM（按排序后的顺序）
     currentFiltered.forEach(function(it){ list.appendChild(it); });
+
+    // ===== 分页渲染 =====
+    var pagingWrap = document.getElementById('pagingWrap');
+    var pagingNums = document.getElementById('pagingNums');
+    var pagingInfo = document.getElementById('pagingInfo');
+    var pagingPrev = document.getElementById('pagingPrev');
+    var pagingNext = document.getElementById('pagingNext');
+    if(pagingNums) {
+      var totalPages = Math.max(1, Math.ceil(currentFiltered.length / PAGE_SIZE));
+      var html = '';
+      var maxShow = 5;
+      var startPage = Math.max(1, currentPage - Math.floor(maxShow / 2));
+      var endPage = Math.min(totalPages, startPage + maxShow - 1);
+      if(endPage - startPage < maxShow - 1) startPage = Math.max(1, endPage - maxShow + 1);
+      for(var p = startPage; p <= endPage; p++) {
+        html += '<a class="paging-btn' + (p === currentPage ? ' current' : '') + '" href="javascript:void(0)" onclick="goToPage(' + p + ')">' + p + '</a>';
+      }
+      pagingNums.innerHTML = html;
+    }
+    if(pagingInfo) {
+      var tp = Math.max(1, Math.ceil(currentFiltered.length / PAGE_SIZE));
+      pagingInfo.textContent = '第 ' + currentPage + ' / ' + tp + ' 页，共 ' + currentFiltered.length + ' 篇文章';
+    }
+    if(pagingPrev) {
+      pagingPrev.classList.toggle('disabled', currentPage <= 1);
+    }
+    if(pagingNext) {
+      var tp2 = Math.max(1, Math.ceil(currentFiltered.length / PAGE_SIZE));
+      pagingNext.classList.toggle('disabled', currentPage >= tp2);
+    }
+    if(pagingWrap) {
+      var totalPagesAll = Math.max(1, Math.ceil(currentFiltered.length / PAGE_SIZE));
+      pagingWrap.style.display = totalPagesAll > 1 ? '' : 'none';
+    }
 
     // 结果计数
     var cnt = document.getElementById('filterResultCount');

@@ -995,23 +995,12 @@ layout: false
       top5.forEach(function(a){
         var slug = a.url.split('/').pop().replace('.html','');
         html += '<div class="post-item-dt" data-slug="' + slug + '">';
-        html += '<div class="post-meta-dt">' + a.category + ' · ' + a.date + ' · <span class="post-views">—</span>次阅读</div>';
+        html += '<div class="post-meta-dt">' + a.category + ' · ' + a.date + '</div>';
         html += '<h3><a href="' + a.url + '">' + a.title + '</a></h3>';
         html += '<p class="post-excerpt">' + a.excerpt + '</p>';
         html += '</div>';
       });
       list.innerHTML = html;
-      // 异步获取实时阅读量（countapi.xyz）
-      top5.forEach(function(a){
-        var slug = a.url.split('/').pop().replace('.html','');
-        fetch('https://api.countapi.xyz/get/cunqin-tax/' + encodeURIComponent(slug))
-          .then(function(r){ return r.json(); })
-          .then(function(d){
-            var el = list.querySelector('[data-slug="' + slug + '"] .post-views');
-            if (el && d && d.value !== undefined) { el.textContent = d.value; }
-          })
-          .catch(function(){}); // 静默降级，保留占位符
-      });
     })
     .catch(function(){
       list.innerHTML = '<p style="text-align:center;color:#999;">文章加载中，请稍候...</p>';

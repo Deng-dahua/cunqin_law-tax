@@ -1206,20 +1206,6 @@ function jumpToMatch(direction) {
 }
 </script>
 
-<script>
-(function(){
-  var viewEl = document.getElementById('articleViewCount');
-  if (!viewEl) return;
-  var path = window.location.pathname;
-  var slug = path.split('/').filter(Boolean).pop().replace('.html','');
-  if (!slug) { viewEl.textContent = '0'; return; }
-  // hit: increment counter
-  fetch('https://api.countapi.xyz/hit/cunqin-tax/' + encodeURIComponent(slug))
-    .then(function(r){ return r.json(); })
-    .then(function(d){ viewEl.textContent = (d && d.value) ? d.value : '0'; })
-    .catch(function(){ viewEl.textContent = '0'; });
-})();
-</script>
 
 </body>
 </html>

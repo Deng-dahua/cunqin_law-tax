@@ -698,7 +698,8 @@ img { max-width: 100%; display: block; }
     <h1>税收协定待遇申请实务指南</h1>
     <div class="art-meta">
       <span><i class="fas fa-calendar-alt"></i> <time datetime="2026-04-16">2026-04-16</time></span>
-      <span><i class="fas fa-user-edit"></i> 邓达华丨存勤法税服务（广州）有限公司</span>    </div>
+      <span><i class="fas fa-user-edit"></i> 邓达华丨存勤法税服务（广州）有限公司</span>    <span><i class="fas fa-eye"></i> <span id="articleViewCount">...</span> 次阅读</span>
+    </div>
   </div>
 
 </section>
@@ -1091,6 +1092,21 @@ function jumpToMatch(direction) {
 
   document.getElementById('articleSearchCount').textContent = (articleCurrentMatch + 1) + '/' + articleTotalMatches + ' \u5904\u5339\u914d';
 }
+</script>
+
+<script>
+(function(){
+  var viewEl = document.getElementById('articleViewCount');
+  if (!viewEl) return;
+  var path = window.location.pathname;
+  var slug = path.split('/').filter(Boolean).pop().replace('.html','');
+  if (!slug) { viewEl.textContent = '0'; return; }
+  // hit: increment counter
+  fetch('https://api.countapi.xyz/hit/cunqin-tax/' + encodeURIComponent(slug))
+    .then(function(r){ return r.json(); })
+    .then(function(d){ viewEl.textContent = (d && d.value) ? d.value : '0'; })
+    .catch(function(){ viewEl.textContent = '0'; });
+})();
 </script>
 
 </body>

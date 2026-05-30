@@ -31,8 +31,8 @@ layout: false
 <meta name="twitter:title" content="存勤法税服务（广州）有限公司 — 「业管财税法」五维融合">
 <meta name="twitter:description" content="「业管财税法」五维融合 — 甲乙双视角实战派。拥有18年财税法实战经验，专注为企业提供涉税风险检查、税务危机应对与争议解决、跨境投资与并购（企业出海ODI备案）、企业重组税务规划等专业服务">
 <meta name="twitter:image" content="https://cunqin.tax/images/nav-logo.webp">
-  <title>存勤法税 — 业管财税法五维融合，为企业提供全方位财税解决方案 - 存勤法税服务（广州）有限公司</title>
-  <meta name="description" content="存勤法税服务（广州）有限公司，由拥有18年财税法实战经验的邓达华创立，独创「业管财税法」五维融合方法论。专注涉税风险检查、税务危机应对与争议解决、跨境投资并购ODI备案、企业重组税务规划、高新技术企业税务筹划、跨境电商合规等一站式专业财税法服务。">
+  <title>存勤法税官网 — 业管财税法五维融合，为企业提供全方位财税解决方案 - 存勤法税服务（广州）有限公司</title>
+  <meta name="description" content="18年财税法实战经验，甲乙双视角，为企业提供涉税风险检查、税务危机应对、企业重组税务规划、ODI备案、财税合规体系建设等可落地专业服务。">
   <link rel="icon" href="images/nav-logo.webp" type="image/webp">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
   <style>
@@ -981,7 +981,7 @@ layout: false
   </div>
 </div>
 
-<!-- ============ 法税洞察动态加载 ============ -->
+<!-- ============ 法税洞察动态加载（实时阅读量） ============ -->
 <script>
 (function(){
   var list = document.getElementById('home-insights-list');
@@ -993,13 +993,25 @@ layout: false
       var top5 = data.articles.slice(0, 5);
       var html = '';
       top5.forEach(function(a){
-        html += '<div class="post-item-dt">';
-        html += '<div class="post-meta-dt">' + a.category + ' · ' + a.date + '</div>';
+        var slug = a.url.split('/').pop().replace('.html','');
+        html += '<div class="post-item-dt" data-slug="' + slug + '">';
+        html += '<div class="post-meta-dt">' + a.category + ' · ' + a.date + ' · <span class="post-views">—</span>次阅读</div>';
         html += '<h3><a href="' + a.url + '">' + a.title + '</a></h3>';
         html += '<p class="post-excerpt">' + a.excerpt + '</p>';
         html += '</div>';
       });
       list.innerHTML = html;
+      // 异步获取实时阅读量（countapi.xyz）
+      top5.forEach(function(a){
+        var slug = a.url.split('/').pop().replace('.html','');
+        fetch('https://api.countapi.xyz/get/cunqin-tax/' + encodeURIComponent(slug))
+          .then(function(r){ return r.json(); })
+          .then(function(d){
+            var el = list.querySelector('[data-slug="' + slug + '"] .post-views');
+            if (el && d && d.value !== undefined) { el.textContent = d.value; }
+          })
+          .catch(function(){}); // 静默降级，保留占位符
+      });
     })
     .catch(function(){
       list.innerHTML = '<p style="text-align:center;color:#999;">文章加载中，请稍候...</p>';

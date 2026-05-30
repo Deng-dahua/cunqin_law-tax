@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+  <id>tag:cunqin.tax,2026:feed</id>
+  <title>存勤法税 — 业管财税法五维融合</title>
+  <subtitle>存勤法税服务（广州）有限公司 — 专业法税洞察，助力企业合规经营</subtitle>
+  <link href="https://cunqin.tax/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://cunqin.tax/" rel="alternate" type="text/html"/>
+  <updated>2026-05-31T00:25:14+08:00</updated>
+  <author>
+    <name>邓达华</name>
+    <email>contact@cunqin.tax</email>
+    <uri>https://cunqin.tax/about/deng-dahua/</uri>
+  </author>
+  <rights>Copyright &amp;copy; 2026 存勤法税服务（广州）有限公司</rights>
+  <generator uri="https://cunqin.tax">存勤法税 CMS</generator>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:beps-2.0-qiye-yingdui</id>
+    <title>BEPS 2.0双支柱方案深度解析：全球最低税规则、企业影响与应对策略</title>
+    <link href="https://cunqin.tax/articles/beps-2.0-qiye-yingdui.html" rel="alternate" type="text/html"/>
+    <published>2026-05-28T00:00:00+08:00</published>
+    <updated>2026-05-28T00:00:00+08:00</updated>
+    <summary type="html">全面解读BEPS 2.0双支柱方案核心规则：支柱二的全球最低税（15%有效税率）、收入纳入规则（IIR）和低税利润规则（UTPR）的运作机制，支柱一的金额A与金额B规则。分析对中国走出去企业、粤港澳大湾区跨国集团和外商投资企业的具体影响，提供从影响评估到合规体系建设的全流程应对策略。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:jinrong-qiye-shuiwu-hegui</id>
+    <title>金融企业税务合规管理要点：银行业、保险业、资管行业核心税务风险全解析</title>
+    <link href="https://cunqin.tax/articles/jinrong-qiye-shuiwu-hegui.html" rel="alternate" type="text/html"/>
+    <published>2026-05-28T00:00:00+08:00</published>
+    <updated>2026-05-28T00:00:00+08:00</updated>
+    <summary type="html">全面解析金融企业税务合规核心要点：贷款损失准备金扣除条件、金融商品转让增值税处理、保险企业手续费及佣金扣除限额、资管产品增值税纳税人认定与申报规则。结合广州及大湾区金融业监管实践，帮助银行、保险、证券、基金等金融机构识别和管理重大税务风险。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:jizheng-jitui-zhengce</id>
+    <title>增值税即征即退政策应用实务：软件企业、资源综合利用、安置残疾人退税全攻略</title>
+    <link href="https://cunqin.tax/articles/jizheng-jitui-zhengce.html" rel="alternate" type="text/html"/>
+    <published>2026-05-28T00:00:00+08:00</published>
+    <updated>2026-05-28T00:00:00+08:00</updated>
+    <summary type="html">全面解析增值税即征即退三大核心领域：软件企业和集成电路产业的即征即退条件与退税额计算（实际税负超3%部分即征即退）、资源综合利用产品即征即退的目录管理与技术标准、安置残疾人就业的即征即退限额与条件。结合广州和大湾区产业特点，帮助相关企业准确适用政策、优化退税管理、防范退税款被追回的风险。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:keji-chengguo-zhuanhua-shuiwu</id>
+    <title>科技成果转化中的税务处理：技术入股、转让与许可的税收优惠全解析</title>
+    <link href="https://cunqin.tax/articles/keji-chengguo-zhuanhua-shuiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-05-28T00:00:00+08:00</published>
+    <updated>2026-05-28T00:00:00+08:00</updated>
+    <summary type="html">全面解析科技成果转化三大模式的税务处理：技术入股递延纳税的条件与操作、技术转让所得减免企业所得税的适用范围（500万以内免税+超额减半）、技术许可收入的税务定性。结合大湾区科技创新实践，帮助高校、科研院所和科技企业合法合规地最大化技术转化税收红利，规避操作失误带来的潜在税务风险。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:kuajing-fuwu-maoyi-shuiwu</id>
+    <title>跨境服务贸易税务合规要点：增值税、预提所得税与常设机构风险防控全解析</title>
+    <link href="https://cunqin.tax/articles/kuajing-fuwu-maoyi-shuiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-05-28T00:00:00+08:00</published>
+    <updated>2026-05-28T00:00:00+08:00</updated>
+    <summary type="html">全面解析跨境服务贸易四大税务维度：跨境服务的增值税纳税地点与免税规则、非居民企业的预提所得税扣缴义务、常设机构认定的风险红线、税收协定待遇的申请策略。结合粤港澳大湾区跨境服务频繁的特点和数字经济时代的服务贸易新业态，帮助企业建立跨境服务贸易的税务风险管理体系。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:qianshui-guanli-jiuji</id>
+    <title>欠税管理与救济途径：从欠税成因到清缴策略的完整解决方案</title>
+    <link href="https://cunqin.tax/articles/qianshui-guanli-jiuji.html" rel="alternate" type="text/html"/>
+    <published>2026-05-28T00:00:00+08:00</published>
+    <updated>2026-05-28T00:00:00+08:00</updated>
+    <summary type="html">企业欠税不仅是财务问题，更是经营风险和法律风险的叠加。本文从欠税成因分析入手，系统讲解欠税清缴的合法策略，包括延期缴纳申请、分期清缴方案、税收强制执行应对，以及税务行政复议和诉讼等法律救济途径。结合广州及大湾区企业实际场景，提供从危机处理到长期税务健康管理的完整框架，帮助企业主动化解欠税风险。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:zhizaoye-shuiwu-chouhua</id>
+    <title>制造业企业税务筹划全案：研发优惠、加速折旧与全流程节税策略</title>
+    <link href="https://cunqin.tax/articles/zhizaoye-shuiwu-chouhua.html" rel="alternate" type="text/html"/>
+    <published>2026-05-28T00:00:00+08:00</published>
+    <updated>2026-05-28T00:00:00+08:00</updated>
+    <summary type="html">制造业企业全面税务筹划方案：高新技术企业认定与维护、研发费用加计扣除全流程管理、固定资产加速折旧政策适用、先进制造业增值税加计抵减、地方税收优惠组合运用。结合广州制造业转型升级及粤港澳大湾区产业政策背景，为企业提供系统化节税策略和可落地的实施方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:zhuanrang-dingjia-tongqi-ziliao</id>
+    <title>转让定价同期资料准备实务指南：主体文档、本地文档与国别报告全解析</title>
+    <link href="https://cunqin.tax/articles/zhuanrang-dingjia-tongqi-ziliao.html" rel="alternate" type="text/html"/>
+    <published>2026-05-28T00:00:00+08:00</published>
+    <updated>2026-05-28T00:00:00+08:00</updated>
+    <summary type="html">全面解读转让定价同期资料准备的合规要求：主体文档、本地文档和国别报告三类资料的适用门槛、准备内容、报送时限和常见风险点。结合粤港澳大湾区跨境关联交易监管实践，从门槛判断到文档架构，帮助企业高效完成同期资料准备工作，有效规避转让定价调查风险。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:qishui-zhengce-jiedu</id>
+    <title>契税政策全面解读：征税范围、税率、优惠与实务操作指南</title>
+    <link href="https://cunqin.tax/articles/qishui-zhengce-jiedu.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">契税政策全面解读：征税范围、税率、优惠与实务操作指南。全面解读契税法核心制度，涵盖土地使用权出让、房屋买卖赠与的征收规则、法定税率与优惠税率适用、计税依据确定等实操要点，帮助广州粤港澳大湾区企业准确把握契税申报要点。，适用于各类不动产交易与企业重组场景。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:qiye-fenli-shuiwu-chuli</id>
+    <title>企业分立税务处理全攻略：所得税、增值税、契税、印花税政策详解</title>
+    <link href="https://cunqin.tax/articles/qiye-fenli-shuiwu-chuli.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">企业分立税务处理全攻略：所得税、增值税、契税、印花税政策详解。全面解析企业分立的税务处理规则，涵盖存续分立与新设分立两种形式、企业所得税特殊性税务处理适用条件、增值税及契税免税规则，适用于集团重组与业务分立场景。，帮助企业在重组分立中实现节税与合规平衡。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:xiaofeishui-shuiwu-guihua</id>
+    <title>消费税税务规划全攻略：征税范围、纳税筹划与合规管理</title>
+    <link href="https://cunqin.tax/articles/xiaofeishui-shuiwu-guihua.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">消费税税务规划全攻略：征税范围、纳税筹划与合规管理指南。全面解读消费税征税范围、税率结构及纳税筹划策略，涵盖烟酒、化妆品、汽车、成品油、高档手表等15类应税消费品，结合广州及大湾区企业实际案例，适合生产型和贸易型企业参考借鉴。，帮助企业合法合规降低消费税负与稽查风险。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:ziyuanshui-huanbao-shuiwu</id>
+    <title>资源税与环境保护税实务指南：征税规则、申报要点与企业合规管理</title>
+    <link href="https://cunqin.tax/articles/ziyuanshui-huanbao-shuiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">系统讲解资源税与环境保护税两大绿色税种：资源税的征税范围（能源矿产、金属矿产、非金属矿产、水气矿产、盐）、从价与从量计征规则；环境保护税的四大应税污染物（大气、水、固体废物、噪声）及计税方法。帮助广州及大湾区企业准确把握两大绿色税种的申报与合规要求。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:geren-zonghesuode-huisuan-qingxing</id>
+    <title>个税综合所得汇算全场景指南：10种常见情形的退税补税判断</title>
+    <link href="https://cunqin.tax/articles/geren-zonghesuode-huisuan-qingxing.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">个税综合所得汇算清缴中，什么情况下可以退税、什么情况需要补税？本文梳理10种最常见的汇算情形，从工资薪金+劳务报酬到多处收入、专项扣除遗漏，提供逐场景的判断标准和操作指引。每年3月到6月，个税APP的年度汇算清缴入口一开放，朋友圈里就分成了两派——&quot;开心，退了</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:geti-gongshanghu-gerenduquan-shuiwu</id>
+    <title>个体工商户与个人独资企业税务全攻略：注册类型选择与税负优化</title>
+    <link href="https://cunqin.tax/articles/geti-gongshanghu-gerenduquan-shuiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">个体工商户和个人独资企业如何选择？核定征收即将全面取消？经营所得汇算清缴怎么做？本文从注册类型选择、增值税小规模纳税人政策、个人所得税经营所得计算、核定征收与查账征收的差异、大湾区实操经验等维度，为企业主提供完整的个体工商户/个独企业税务合规与税负优化方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:qiyesuodeshui-yujiao-huisuan-chayi</id>
+    <title>预缴偏差过大怎么办？企业所得税预缴与汇算清缴差异调整指南</title>
+    <link href="https://cunqin.tax/articles/qiyesuodeshui-yujiao-huisuan-chayi.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">企业所得税季度预缴与年度汇算清缴之间常出现显著差异，预缴不足面临滞纳金风险，预缴过多则占用企业资金。本文详解差异常见原因、调整方法、退税流程和合规策略。每到年底，财务人员最头疼的工作不是结账，而是&quot;怎么跟老板解释——账上明明亏损，为什么还要补税几十万？</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:qiye-shuiwu-jiankang-tijian</id>
+    <title>企业税务健康体检清单：30个指标自查你的公司有没有税务问题</title>
+    <link href="https://cunqin.tax/articles/qiye-shuiwu-jiankang-tijian.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">企业税务健康体检30项指标清单：从税负率、发票管理、收入成本匹配、关联交易到优惠资质维护，逐项标注红黄绿风险等级。附查出问题后的处理优先级与行动指南，帮助企业主在税务风险爆发前主动发现隐患。适用于广州及粤港澳大湾区的各类行业企业年度税务自查。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:fapiao-hongchong-zuofei-diu-shi</id>
+    <title>发票红冲/作废/丢失实操：传统发票与数电发票的全场景应对</title>
+    <link href="https://cunqin.tax/articles/fapiao-hongchong-zuofei-diu-shi.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">发票开错了怎么红冲？跨月发票还能作废吗？发票丢失了如何处理？数电发票与传统发票的红冲流程有何不同？本文提供发票全生命周期异常处理的完整实操指南，涵盖数电发票时代的最新操作规范、税务申报影响和高频风险场景。发票是企业经营的&quot;法定货币&quot;，但发票管理也是日常财税工作</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:jingwai-suode-dijiang-zhinan</id>
+    <title>境外所得税收抵免全解析：抵免限额计算、申报流程与常见误区</title>
+    <link href="https://cunqin.tax/articles/jingwai-suode-dijiang-zhinan.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">企业或个人从境外取得所得，如何避免国际双重征税？本文详解境外所得税收抵免的两种方式（分国不分项、综合抵免）、抵免限额计算、超限额结转规则以及申报实操要点。越来越多的中国企业出海，越来越多的个人持有海外资产——全球化时代的&quot;境外所得&quot;不再是个别巨头的专利。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:dawanqu-geshui-butie</id>
+    <title>大湾区个税补贴实操：境外高端人才与紧缺人才的认定与申请</title>
+    <link href="https://cunqin.tax/articles/dawanqu-geshui-butie.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">大湾区个人所得税补贴政策对境外高端人才和紧缺人才给予实际税负超过15%部分的财政补贴。本文详解人才认定标准、申请流程、所需材料清单、常见被拒原因和实操避坑指南，帮助外籍高管和港澳人才顺利申请个税补贴。粤港澳大湾区作为国家级战略，自2019年起实施境外高端人才和</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:nianzhongjiang-jishui-xuanze</id>
+    <title>年终奖个税最优选择：单独计税与并入综合所得的决策框架</title>
+    <link href="https://cunqin.tax/articles/nianzhongjiang-jishui-xuanze.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">年终奖是单独计税还是并入综合所得更划算？本文提供不同收入档位（年薪10万-100万+）的最优年终奖金额区间矩阵，结合2026年最新个税政策，通过决策框架和计算案例帮助企业主和高管做出最优惠选择。每年11月到次年3月，&quot;年终奖怎么发最省税&quot;是企业主、财务总监和高</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:fangdichan-qiye-shuiwu-chouhua</id>
+    <title>房地产企业全流程税务筹划：从拿地到清盘的税负优化策略</title>
+    <link href="https://cunqin.tax/articles/fangdichan-qiye-shuiwu-chouhua.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">房地产企业全流程税务管理，覆盖拿地阶段契税与拆迁补偿、开发建设成本归集与分摊、预售销售增值税预缴、竣工交付收入确认及项目清算三大税种汇算。文章系统讲解增值税、土地增值税与企业所得税的筹划要点，结合广州及大湾区开发项目实务，为企业提供全周期税负优化与合规管理方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:hainan-ziyougang-shuangshiwu</id>
+    <title>海南自贸港双15%税收优惠实操：从注册到享受的全流程与风险底线</title>
+    <link href="https://cunqin.tax/articles/hainan-ziyougang-shuangshiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">海南自贸港企业所得税15%和个人所得税15%的&quot;双15%&quot;优惠吸引了大量企业注册，但&quot;实质性运营&quot;成为成败关键。本文详解双15%政策的适用条件、实质性运营的判定标准、申请流程、被否案例分析，以及海南与大湾区的政策对比选择框架。海南自贸港&quot;双15%&quot;——企业所得</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:zhibo-daihuo-wanghong-shuiwu</id>
+    <title>直播/网红/MCN税务合规：收入类型划分、工作室模式与风险红线</title>
+    <link href="https://cunqin.tax/articles/zhibo-daihuo-wanghong-shuiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">直播带货和网红经济的税务合规是近年税务稽查的高频领域。本文从主播收入类型划分（工资薪金/劳务报酬/经营所得）、MCN机构扣缴义务、工作室模式的风险与合规路径、高收入筹划红线等维度，系统解析文娱行业的个人所得税合规要点。从2018年范冰冰案到2021年薇娅案，文</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:tan-guan-shui-cbam-chukou</id>
+    <title>CBAM来了！六大高碳行业的税务合规挑战与中国企业的应对路径</title>
+    <link href="https://cunqin.tax/articles/tan-guan-shui-cbam-chukou.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">欧盟CBAM碳边境调节机制2026年正式进入征收阶段，钢铁、铝、水泥、化肥、电力和氢六大行业率先受影响。本文深度解读CBAM的运行机制、对中国出口企业的税务与合规影响，以及企业应采取的应对策略。2026年1月1日，欧盟碳边境调节机制（CBAM）正式进入征收阶段</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:shebao-rushui-xinchou-guihua</id>
+    <title>社保入税下的薪酬合规规划：工资总额、社保基数与税务最优方案</title>
+    <link href="https://cunqin.tax/articles/shebao-rushui-xinchou-guihua.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">社保入税后，税务机关全面掌握企业工资数据和社保缴费数据，&quot;低基数缴费&quot;的风险骤增。本文从工资总额的组成解析、社保缴费基数的合规确定、薪酬结构的优化调整（基本工资+绩效+补贴+福利的配比）等维度，在合规框架内为企业提供薪酬规划的优化方案。社保入税（社会保险费征收</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:sihu-shoukuan-bujiu-zhinan</id>
+    <title>私户收款被查怎么办？金税四期下的补救窗口期与合规路径全解析</title>
+    <link href="https://cunqin.tax/articles/sihu-shoukuan-bujiu-zhinan.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">金税四期银行流水与税务申报自动比对后，私户收款成为税务稽查第一入口。本文详解补救窗口期、主动补申报操作流程、过渡期合规方案与长期转型路径，覆盖建筑、贸易、餐饮等高频行业，帮助企业主在风险爆发前完成合规转型。适用于广州及粤港澳大湾区各类型企业。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:shuiwu-zhuxiao-quanliucheng</id>
+    <title>税务注销全流程实操：从清税证明到非正常户解除的一站式指南</title>
+    <link href="https://cunqin.tax/articles/shuiwu-zhuxiao-quanliucheng.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">公司注销前必须先完成税务注销，但&quot;清税证明怎么办&quot;&quot;即办注销需要什么条件&quot;&quot;非正常户怎么恢复正常&quot;是企业主最头疼的问题。本文提供税务注销的全场景实操指南，涵盖简易注销、一般注销、跨区迁移、非正常户恢复四类场景的时间线与Checklist。在中国，公司注销遵循&quot;</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:shuiwu-jicha-yingdui-shouce</id>
+    <title>税务稽查应对实战手册：从收到稽查通知书到结案的每一步</title>
+    <link href="https://cunqin.tax/articles/shuiwu-jicha-yingdui-shouce.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">收到税务稽查通知书后的全流程应对指南：从黄金24小时紧急响应、现场检查配合策略、主动补税窗口期判断，到罚款滞纳金协商技巧与行政复议路径，每一步都有章可循。覆盖2026年稽查新规与真实案例，帮助企业在被查时从容应对、最大限度降低损失。是广州企业税务合规必备指南。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:jianyi-jinshui-vs-yiban-jinshui</id>
+    <title>选对计税方法可大幅降低税负——简易计税与一般计税的全面比较</title>
+    <link href="https://cunqin.tax/articles/jianyi-jinshui-vs-yiban-jinshui.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">增值税简易计税和一般计税怎么选？两种方式的核心差异、适用条件、税负测算方法和转换限制是什么？本文通过多个行业的实际案例，帮你做出最优选择。&quot;我是小规模纳税人还是一般纳税人？&quot;&quot;选了简易计税还能改吗？&quot;&quot;这个项目用什么计税方式最省税？&quot;我是小规模纳税人还是一般纳</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:nashui-xinyong-dengji-xiufu</id>
+    <title>纳税信用等级全解析：评定指标、D级影响与修复实操路径</title>
+    <link href="https://cunqin.tax/articles/nashui-xinyong-dengji-xiufu.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">纳税信用等级直接影响企业的发票领用、出口退税、税收优惠享受和融资贷款。从A级到D级，评价指标有哪些？D级如何修复？本文提供完整的纳税信用等级评定标准解析、扣分项目清单、D级修复的操作路径和常见被降级场景的预警方案。纳税信用等级是企业的一张&quot;税务身份证&quot;。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:gudong-jiekuan-shuiwu-fengxian</id>
+    <title>股东借款的税务风险与合规方案</title>
+    <link href="https://cunqin.tax/articles/gudong-jiekuan-shuiwu-fengxian.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">股东从公司借款涉及增值税视同销售认定、个人所得税视同分红触发条件及企业所得税关联交易调整等多重税务风险。文章结合新公司法五年注册资本实缴制度与财税〔2003〕158号文规定，分析年末未归还借款的税务处理时机与合规借款架构设计，为企业和股东提供资金往来的税务安全方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:ziranren-guquan-zhuanrang-heding-chazhang</id>
+    <title>自然人股权转让个税全解析：核定征收与查账征收的路径选择</title>
+    <link href="https://cunqin.tax/articles/ziranren-guquan-zhuanrang-heding-chazhang.html" rel="alternate" type="text/html"/>
+    <published>2026-05-27T00:00:00+08:00</published>
+    <updated>2026-05-27T00:00:00+08:00</updated>
+    <summary type="html">自然人股权转让涉及的个人所得税如何计算？核定征收与查账征收哪种方式更节税？本文结合国家税务总局2014年第67号公告，系统解析股权转让收入核定、原值确认、低价转让风险应对等核心问题，附真实场景税负对比与合规操作建议。在创业生态中，股权转让是企业重组、股东退出、</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:guquan-daichi-shuiwu-fengxian</id>
+    <title>股权代持的税务风险与合规处理：还原、分红与转让的完整方案</title>
+    <link href="https://cunqin.tax/articles/guquan-daichi-shuiwu-fengxian.html" rel="alternate" type="text/html"/>
+    <published>2026-05-24T00:00:00+08:00</published>
+    <updated>2026-05-24T00:00:00+08:00</updated>
+    <summary type="html">股权代持在实务中极为普遍但税务风险不容忽视。本文系统解析显名与隐名股东的税务处理规则、代持还原的税务成本及增值税风险，为大湾区企业提供股权架构合规方案。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:guquan-zhuantang-geren-suodeshui</id>
+    <title>股权转让个人所得税筹划实务：定价、申报与风险防控</title>
+    <link href="https://cunqin.tax/articles/guquan-zhuantang-geren-suodeshui.html" rel="alternate" type="text/html"/>
+    <published>2026-05-22T00:00:00+08:00</published>
+    <updated>2026-05-22T00:00:00+08:00</updated>
+    <summary type="html">自然人股权转让涉及复杂的个人所得税处理。本文全面解析转让收入核定、原值确认、纳税时点及地点规则，并结合金税四期大数据监控特点，为广州地区投资者提供税务合规指引。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:zhuanjing-texin-shuishou-youhui</id>
+    <title>专精特新企业税收优惠政策深度解读</title>
+    <link href="https://cunqin.tax/articles/zhuanjing-texin-shuishou-youhui.html" rel="alternate" type="text/html"/>
+    <published>2026-05-22T00:00:00+08:00</published>
+    <updated>2026-05-22T00:00:00+08:00</updated>
+    <summary type="html">专精特新企业是国家重点扶持对象，享有多层次叠加税收优惠。本文系统梳理国家级小巨人、省级专精特新企业的税收优惠体系，对比与高新技术企业优惠的差异，提供优惠申请与合规管理指南。专精特新企业的政策风口近年来，&quot;专精特新&quot;已成为中国经济政策中出现频率最高的关键词之一。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:jianzi-chezi-shuiwu-chuli</id>
+    <title>企业减资撤资全套税务处理指南</title>
+    <link href="https://cunqin.tax/articles/jianzi-chezi-shuiwu-chuli.html" rel="alternate" type="text/html"/>
+    <published>2026-05-22T00:00:00+08:00</published>
+    <updated>2026-05-22T00:00:00+08:00</updated>
+    <summary type="html">新公司法实施后，减资成为企业调整资本结构的高频操作。本文全面解析减资的6种情形、各情形下的企业所得税和个人所得税处理规则、撤资退出的税务最优路径，附实操案例。减资为何成为高频操作2024年7月1日，新修订的《公司法》正式实施，其中最受关注的变革之一是有限责任公</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:jiazu-caifu-chuancheng-shuiwu</id>
+    <title>家族财富传承中的税务考量与规划策略</title>
+    <link href="https://cunqin.tax/articles/jiazu-caifu-chuancheng-shuiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-05-22T00:00:00+08:00</published>
+    <updated>2026-05-22T00:00:00+08:00</updated>
+    <summary type="html">中国第一代企业家进入大规模传承期，财富传承中的税务问题日益突出。本文系统梳理股权传承、不动产传承、家族信托等场景下的税务考量，提供资产架构优化和代际传承的合规税务方案。传承时代的税务挑战中国改革开放四十余年，第一代创业者已集体进入60岁以上的传承窗口期。据多家</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:zengzhishuifa-shishi-yingdui</id>
+    <title>增值税法正式实施：企业影响与应对指南</title>
+    <link href="https://cunqin.tax/articles/zengzhishuifa-shishi-yingdui.html" rel="alternate" type="text/html"/>
+    <published>2026-05-21T00:00:00+08:00</published>
+    <updated>2026-05-21T00:00:00+08:00</updated>
+    <summary type="html">《增值税法》2026年1月1日正式实施，从“条例”升级为“法律”带来一系列重大变化。本文逐条解析增值税法的核心变化、对企业税负的实际影响，以及企业应做好的5项合规准备。前言：增值税正式入法的里程碑意义2024年12月25日，第十四届全国人大常委会第十三次会议通</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:duidu-xieyi-shuiwu-chuli</id>
+    <title>对赌协议税务处理全解析：从签订到履行的合规路径</title>
+    <link href="https://cunqin.tax/articles/duidu-xieyi-shuiwu-chuli.html" rel="alternate" type="text/html"/>
+    <published>2026-05-21T00:00:00+08:00</published>
+    <updated>2026-05-21T00:00:00+08:00</updated>
+    <summary type="html">对赌协议在并购交易中广泛使用，但税务处理一直是实务难点。本文系统梳理业绩补偿、股权回购、现金补偿等对赌条款的税务处理规则，结合最新案例提供合规解决方案。前言：对赌协议的税务“灰色地带”对赌协议（ValueAdjustmentMechanism，简称VAM），又</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:linghuo-yonggong-shuiwu-hegui</id>
+    <title>平台经济时代灵活用工的税务合规与风险管控</title>
+    <link href="https://cunqin.tax/articles/linghuo-yonggong-shuiwu-hegui.html" rel="alternate" type="text/html"/>
+    <published>2026-05-21T00:00:00+08:00</published>
+    <updated>2026-05-21T00:00:00+08:00</updated>
+    <summary type="html">2025年《互联网平台企业涉税信息报送规定》正式实施，灵活用工税务监管全面升级。本文深度解析平台经济下灵活用工的个税代扣代缴、反向开票、社保合规等核心问题，提供全流程税务合规方案。前言：平台经济税务监管新时代中国平台经济从业者已超过2亿人，外卖骑手、网约车司机</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:shudian-fapiao-quanmian-shishi</id>
+    <title>数电发票全面实施：企业应对策略与实操指南</title>
+    <link href="https://cunqin.tax/articles/shudian-fapiao-quanmian-shishi.html" rel="alternate" type="text/html"/>
+    <published>2026-05-21T00:00:00+08:00</published>
+    <updated>2026-05-21T00:00:00+08:00</updated>
+    <summary type="html">数电发票（全电发票）2025年全面覆盖所有行业。本文详解数电发票与传统电子发票的核心差异、企业系统升级路径、发票管理流程再造及风险防控要点，帮助企业平稳过渡到数电发票时代。前言：发票的“数字化革命”发票，作为商业交易的“身份证”和税务管理的“核心凭证”，正在经</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:shuiwu-jicha-2026-yujing</id>
+    <title>2026年税务稽查重点预警与企业自查应对策略</title>
+    <link href="https://cunqin.tax/articles/shuiwu-jicha-2026-yujing.html" rel="alternate" type="text/html"/>
+    <published>2026-05-20T00:00:00+08:00</published>
+    <updated>2026-05-20T00:00:00+08:00</updated>
+    <summary type="html">2026年税务稽查全面升级，金税四期以数治税精准打击。本文深度解析2026年税务稽查8大重点领域，附企业自查清单与分步应对策略，帮助企业主动合规、降低稽查风险。前言：2026税务稽查新常态2026年，中国税务稽查进入了一个全新的阶段。金税四期全面运行，“以数治</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:geren-suodeshui-huisuan-qingjiao</id>
+    <title>个人所得税汇算清缴关键要点：从申报到退税的全流程指南</title>
+    <link href="https://cunqin.tax/articles/geren-suodeshui-huisuan-qingjiao.html" rel="alternate" type="text/html"/>
+    <published>2026-05-20T00:00:00+08:00</published>
+    <updated>2026-05-20T00:00:00+08:00</updated>
+    <summary type="html">个人所得税汇算清缴实操指南：覆盖综合所得预扣预缴、专项附加扣除最新政策、境外所得抵免及补退税流程解析，为广东地区纳税人提供全面、准确的申报指导。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:xin-gongsifa-shijiao-shuiwu</id>
+    <title>新公司法注册资本实缴的税务影响与合规路径</title>
+    <link href="https://cunqin.tax/articles/xin-gongsifa-shijiao-shuiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-05-20T00:00:00+08:00</published>
+    <updated>2026-05-20T00:00:00+08:00</updated>
+    <summary type="html">2024年新《公司法》正式实施，注册资本5年实缴制全面落地。本文深度解析新公司法下实缴出资的8大税务影响，涵盖知识产权出资避坑、减资税务处理、未实缴后果等核心问题。前言：新公司法核心变化速览2023年12月30日，第十四届全国人大常委会审议通过了新修订的《中华</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:guquan-jili-shuiwu-guihua</id>
+    <title>股权激励全周期税务规划：从授予到退出的合规策略</title>
+    <link href="https://cunqin.tax/articles/guquan-jili-shuiwu-guihua.html" rel="alternate" type="text/html"/>
+    <published>2026-05-20T00:00:00+08:00</published>
+    <updated>2026-05-20T00:00:00+08:00</updated>
+    <summary type="html">股权激励是企业吸引人才的核心工具，但税务处理不当可能吞噬大半收益。本文覆盖股票期权、限制性股票、员工持股计划等全类型，详解授予/行权/退出三阶段税务规划策略。前言：股权激励的税务“坑”有多大股权激励被越来越多的企业视为吸引和留住核心人才的“终极武器”。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:zhuanrang-dingjia-guanlian-jiaoyi</id>
+    <title>转让定价与关联交易反避税实战指南</title>
+    <link href="https://cunqin.tax/articles/zhuanrang-dingjia-guanlian-jiaoyi.html" rel="alternate" type="text/html"/>
+    <published>2026-05-20T00:00:00+08:00</published>
+    <updated>2026-05-20T00:00:00+08:00</updated>
+    <summary type="html">转让定价是近年来税务稽查的高频领域。本文详解独立交易原则、转让定价方法选择、同期资料准备、特别纳税调整应对，帮助企业建立合规的关联交易管理体系，防范跨境反避税风险。前言：转让定价为何成为稽查重灾区近年来，转让定价（TransferPricing）已经从国际税务</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:zhongxiao-qiye-shuishou-youhui</id>
+    <title>中小企业税收优惠政策全景解读：让每一分优惠都落到实处</title>
+    <link href="https://cunqin.tax/articles/zhongxiao-qiye-shuishou-youhui.html" rel="alternate" type="text/html"/>
+    <published>2026-05-18T00:00:00+08:00</published>
+    <updated>2026-05-18T00:00:00+08:00</updated>
+    <summary type="html">中小企业税收优惠政策体系庞杂、更新频繁。本文全面整理小微企业所得税减免、增值税小规模纳税人优惠及六税两费减半等核心政策，为广东地区中小企业提供系统化的税务优惠指南。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:chengben-feiyong-shuiwu-hegui</id>
+    <title>成本费用税前扣除合规管理：凭证、标准与风险排查</title>
+    <link href="https://cunqin.tax/articles/chengben-feiyong-shuiwu-hegui.html" rel="alternate" type="text/html"/>
+    <published>2026-05-16T00:00:00+08:00</published>
+    <updated>2026-05-16T00:00:00+08:00</updated>
+    <summary type="html">成本费用税前扣除是企业所得税管理的核心环节。本文系统解析四大扣除要件、各费用项目扣除标准及金税四期下的风险新特征，为广州及粤港澳大湾区企业提供合规管理实操指引。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:qiye-kuisun-mibu-guize</id>
+    <title>企业所得税亏损弥补规则深度解析：年限、顺序与筹划空间</title>
+    <link href="https://cunqin.tax/articles/qiye-kuisun-mibu-guize.html" rel="alternate" type="text/html"/>
+    <published>2026-05-14T00:00:00+08:00</published>
+    <updated>2026-05-14T00:00:00+08:00</updated>
+    <summary type="html">企业亏损弥补规则看似简单，实操中却暗藏诸多陷阱。本文全面解读五年结转、高新技术企业延长至十年等特殊规则，为广州地区企业财税人员提供精准的税务处理指引。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:yanfa-feiyong-jiakou-kouchu</id>
+    <title>研发费用加计扣除实操全攻略：从立项到申报的合规路径</title>
+    <link href="https://cunqin.tax/articles/yanfa-feiyong-jiakou-kouchu.html" rel="alternate" type="text/html"/>
+    <published>2026-05-12T00:00:00+08:00</published>
+    <updated>2026-05-12T00:00:00+08:00</updated>
+    <summary type="html">研发费用加计扣除是力度最大的企业所得税优惠之一。本文深度解析适用条件、归集口径、辅助账管理及留存备查要求，为粤港澳大湾区科技创新企业充分享受政策红利提供权威指引。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:qiyesuodeshui-huisuan-qingjiao</id>
+    <title>企业所得税汇算清缴实务指南：从填报到筹划的全流程解析</title>
+    <link href="https://cunqin.tax/articles/qiyesuodeshui-huisuan-qingjiao.html" rel="alternate" type="text/html"/>
+    <published>2026-05-10T00:00:00+08:00</published>
+    <updated>2026-05-10T00:00:00+08:00</updated>
+    <summary type="html">企业所得税汇算清缴是企业年度财税工作的重中之重。本文系统梳理收入确认、税前扣除、资产损失及优惠备案等关键环节的处理要点，为华南地区企业顺利完成汇算清缴提供全程指导。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:chukou-tuishui-hegui-fengkong</id>
+    <title>出口退税合规与风险防范：从申报到稽查的全链条管理</title>
+    <link href="https://cunqin.tax/articles/chukou-tuishui-hegui-fengkong.html" rel="alternate" type="text/html"/>
+    <published>2026-05-09T00:00:00+08:00</published>
+    <updated>2026-05-09T00:00:00+08:00</updated>
+    <summary type="html">出口退税合规风控全解析：从基本原理到申报实务，深度剖析高风险行为识别与防控策略，解读金税四期下出口退税全链条监控机制，面向华南地区外贸企业提供专业指引。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:zengzhishui-liudi-tuishui</id>
+    <title>增值税留抵退税实操指南：条件、计算与风险防控</title>
+    <link href="https://cunqin.tax/articles/zengzhishui-liudi-tuishui.html" rel="alternate" type="text/html"/>
+    <published>2026-05-07T00:00:00+08:00</published>
+    <updated>2026-05-07T00:00:00+08:00</updated>
+    <summary type="html">增值税留抵退税是当前减税降费的重要举措。本文系统梳理增量留抵退税与存量留抵退税的适用条件、计算方法和申请流程，帮助大湾区企业用好用足退税红利，缓解资金压力。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:yinhua-shuifa-shishi-yaodian</id>
+    <title>印花税法实施要点与合规管理：应税凭证、税率变化与申报实务</title>
+    <link href="https://cunqin.tax/articles/yinhua-shuifa-shishi-yaodian.html" rel="alternate" type="text/html"/>
+    <published>2026-05-05T00:00:00+08:00</published>
+    <updated>2026-05-05T00:00:00+08:00</updated>
+    <summary type="html">新印花税法已于2022年7月1日正式实施。本文逐条解读新法核心变化：税目简并、计税依据明确化、申报期限调整等，帮助广州地区企业全面掌握合规要点，规避申报风险。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:yecai-fasui-ronghe</id>
+    <title>业管财税法融合：企业合规管理的五维一体化落地新范式</title>
+    <link href="https://cunqin.tax/articles/yecai-fasui-ronghe.html" rel="alternate" type="text/html"/>
+    <published>2026-05-05T00:00:00+08:00</published>
+    <updated>2026-05-05T00:00:00+08:00</updated>
+    <summary type="html">深度解读「业管财税法」五维融合理念：业务、管理、财务、税务、法务五大维度的系统整合方法论。打破企业部门壁垒，从业务源头到最终税务申报构建全链条合规风险防控体系，帮助企业建立跨职能高效协同的财税管理新范式。探索五维融合如何为企业财税管理带来质的飞跃。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:shuiwu-xingzheng-fuyi</id>
+    <title>税务行政复议实战指南：程序、策略与权利救济</title>
+    <link href="https://cunqin.tax/articles/shuiwu-xingzheng-fuyi.html" rel="alternate" type="text/html"/>
+    <published>2026-05-03T00:00:00+08:00</published>
+    <updated>2026-05-03T00:00:00+08:00</updated>
+    <summary type="html">企业对税务机关处理决定不服时，税务行政复议是重要救济渠道。本文详解复议申请条件、期限、审理程序及常见争议焦点，为广州及大湾区企业维护合法权益提供实务操作指南。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:xukai-fapiao-falv-houguo</id>
+    <title>虚开发票的法律后果与防范指南：从行政责任到刑事风险的全面警示</title>
+    <link href="https://cunqin.tax/articles/xukai-fapiao-falv-houguo.html" rel="alternate" type="text/html"/>
+    <published>2026-05-01T00:00:00+08:00</published>
+    <updated>2026-05-01T00:00:00+08:00</updated>
+    <summary type="html">虚开增值税专用发票是涉税刑事风险的重灾区。本文全面解析虚开的认定标准、行政与刑事法律后果、善意取得虚开发票的处理及企业防范策略，为广东地区企业敲响合规警钟。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:gudong-hongli-shuiwu-chouhua</id>
+    <title>股东分红与薪酬的税务优化：利润分配、借款与费用报销的合规路径</title>
+    <link href="https://cunqin.tax/articles/gudong-hongli-shuiwu-chouhua.html" rel="alternate" type="text/html"/>
+    <published>2026-04-30T00:00:00+08:00</published>
+    <updated>2026-04-30T00:00:00+08:00</updated>
+    <summary type="html">股东分红与薪酬的税负优化策略全解析：对比两种方式的综合税负差异，深度剖析合法合规的利润分配路径及股东借款、费用报销的合规边界，为华南地区民营企业主提供实操指引。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:gongzixinjin-gerensuodeshui-chouhua</id>
+    <title>工资薪金个人所得税筹划策略：薪酬结构、福利与激励的税务优化</title>
+    <link href="https://cunqin.tax/articles/gongzixinjin-gerensuodeshui-chouhua.html" rel="alternate" type="text/html"/>
+    <published>2026-04-28T00:00:00+08:00</published>
+    <updated>2026-04-28T00:00:00+08:00</updated>
+    <summary type="html">工资薪金个人所得税筹划深度解析：对比全年一次性奖金单独计税与并入综合所得的税负差异，剖析大湾区人才政策下的个税优惠空间及合规筹划策略。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:simu-jijin-shuiwu-chouhua</id>
+    <title>私募基金税务筹划要点：基金架构、收益分配与投资人税负优化</title>
+    <link href="https://cunqin.tax/articles/simu-jijin-shuiwu-chouhua.html" rel="alternate" type="text/html"/>
+    <published>2026-04-26T00:00:00+08:00</published>
+    <updated>2026-04-26T00:00:00+08:00</updated>
+    <summary type="html">私募基金全生命周期税务规划是机构竞争力的核心要素。本文从基金架构选择、LP与GP税务筹划、投资收益确认及退出环节税负优化等维度，为粤港澳大湾区私募机构提供专业税务解决方案。存勤法税（广州）由邓达华创立，深耕华南地区企业财税服务市场已18年。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:IPO-shuiwu-hegui-jiagou</id>
+    <title>IPO税务合规与架构设计：上市前必须解决的六大税务问题</title>
+    <link href="https://cunqin.tax/articles/IPO-shuiwu-hegui-jiagou.html" rel="alternate" type="text/html"/>
+    <published>2026-04-24T00:00:00+08:00</published>
+    <updated>2026-04-24T00:00:00+08:00</updated>
+    <summary type="html">IPO过程中税务合规是审核红线之一。本文系统梳理上市前税务健康体检要点、历史遗留问题清理路径、股权架构重组涉税处理，为粤港澳大湾区拟上市企业提供全流程税务规划框架。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:guquan-jiagou-shuiwu-chouhua</id>
+    <title>股权架构全解析与税务规划 — 从持股方式到落地执行的专业指南</title>
+    <link href="https://cunqin.tax/articles/guquan-jiagou-shuiwu-chouhua.html" rel="alternate" type="text/html"/>
+    <published>2026-04-24T00:00:00+08:00</published>
+    <updated>2026-04-24T00:00:00+08:00</updated>
+    <summary type="html">IPO过程中税务合规是审核红线之一。本文系统梳理上市前税务健康体检要点、历史遗留问题清理路径、股权架构重组涉税处理，为粤港澳大湾区拟上市企业提供全流程税务规划框架。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:hehuo-qiye-shuiwu-jiexi</id>
+    <title>合伙企业税务处理深度解析：先分后税、穿透原则与筹划空间</title>
+    <link href="https://cunqin.tax/articles/hehuo-qiye-shuiwu-jiexi.html" rel="alternate" type="text/html"/>
+    <published>2026-04-22T00:00:00+08:00</published>
+    <updated>2026-04-22T00:00:00+08:00</updated>
+    <summary type="html">企业合伙经营中的税务处理复杂性常被低估。本文从合伙人层面深度解析所得性质穿透、费用扣除与亏损弥补规则，帮助华南地区合伙制企业理清税务合规思路。存勤法税（广州）深耕粤港澳大湾区财税服务市场18年，以业管财税法融合方法论为华南企业提供专业解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:CRS-kuajing-zichan-shenbao</id>
+    <title>CRS框架下跨境资产申报与合规：信息交换机制与中国居民应对策略</title>
+    <link href="https://cunqin.tax/articles/CRS-kuajing-zichan-shenbao.html" rel="alternate" type="text/html"/>
+    <published>2026-04-20T00:00:00+08:00</published>
+    <updated>2026-04-20T00:00:00+08:00</updated>
+    <summary type="html">CRS共同申报准则对跨境资产配置影响深远。本文系统讲解CRS运作机制、中国实施要点、高净值人士申报义务及合规规划路径，为大湾区跨境企业与个人提供专业分析。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:shuzihua-shuiwu-guanli-zhuanxing</id>
+    <title>数字化税务管理转型路径：从手工申报到智能风控的进化之路</title>
+    <link href="https://cunqin.tax/articles/shuzihua-shuiwu-guanli-zhuanxing.html" rel="alternate" type="text/html"/>
+    <published>2026-04-18T00:00:00+08:00</published>
+    <updated>2026-04-18T00:00:00+08:00</updated>
+    <summary type="html">数字经济背景下企业税务管理面临深刻变革。本文系统分析电子发票、大数据风控、智能申报等趋势对企业税务的影响，为华南地区企业规划数字化转型路径提供策略建议。——本文由存勤法税服务（广州）有限公司创始人邓达华撰写。存勤法税深耕粤港澳大湾区企业财税服务市场，以业管财税法五维融合为核心方法论，为华南地区企业提供可落地的专业税务解决方案。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:shuishou-xieding-daiyu-shenqing</id>
+    <title>税收协定待遇申请实务指南</title>
+    <link href="https://cunqin.tax/articles/shuishou-xieding-daiyu-shenqing.html" rel="alternate" type="text/html"/>
+    <published>2026-04-16T00:00:00+08:00</published>
+    <updated>2026-04-16T00:00:00+08:00</updated>
+    <summary type="html">税收协定待遇申请涉及受益所有人身份判定、股息利息特许权使用费优惠税率适用条件、申请材料准备及税务机关审核流程。文章结合中国对外签订的双边税收协定体系，系统梳理事后管理风险与争议解决路径，为广州及大湾区企业跨境投资与支付业务提供全面实务操作指引。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:jinshui-siqi-yingdui</id>
+    <title>金税四期全面解读：企业如何从容应对以数治税新时代的全面策略</title>
+    <link href="https://cunqin.tax/articles/jinshui-siqi-yingdui.html" rel="alternate" type="text/html"/>
+    <published>2026-04-15T00:00:00+08:00</published>
+    <updated>2026-04-15T00:00:00+08:00</updated>
+    <summary type="html">金税四期全面解读与应对策略：从发票电子化改革趋势、大数据风险画像机制、全税种联动监控原理三个维度，深入剖析金税四期对企业财税管理的实质性影响，提供发票管理升级路径、业务合规整改方案、风险自查机制建设等实操应对指南。面对金税四期，企业需要的不是恐慌，而是专业的合规升级路径。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:guanlianfang-jiekuan-shuiwu</id>
+    <title>关联方借款的税务风险与合规处理</title>
+    <link href="https://cunqin.tax/articles/guanlianfang-jiekuan-shuiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-04-10T00:00:00+08:00</published>
+    <updated>2026-04-10T00:00:00+08:00</updated>
+    <summary type="html">关联方借款涉及债资比（2:1/5:1）限制、利率独立交易原则、统借统还增值税免税条件及转让定价调整等多重税务规则。文章结合广州及大湾区实务案例，系统分析利息税前扣除的合规要点与资本弱化特别纳税调整的风险应对方案，为企业集团内部资金往来提供规范化税务处理参考。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:fei-huobi-zichan-touzi-shuiwu</id>
+    <title>非货币性资产投资的税务处理</title>
+    <link href="https://cunqin.tax/articles/fei-huobi-zichan-touzi-shuiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-04-02T00:00:00+08:00</published>
+    <updated>2026-04-02T00:00:00+08:00</updated>
+    <summary type="html">非货币性资产投资涉及资产评估作价、企业所得税递延纳税政策适用、五年分期缴纳操作要点及增值税土地增值税等多税种联动处理。文章结合财税〔2015〕41号文与国家税务总局公告，分析技术成果入股优惠与知识产权出资税务要求，为广州及大湾区企业投资架构设计提供税务参考。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:odi-beian-quanliucheng</id>
+    <title>ODI境外投资备案全流程指南：从申请到落地的实战操作手册</title>
+    <link href="https://cunqin.tax/articles/odi-beian-quanliucheng.html" rel="alternate" type="text/html"/>
+    <published>2026-03-30T00:00:00+08:00</published>
+    <updated>2026-03-30T00:00:00+08:00</updated>
+    <summary type="html">ODI境外投资备案全流程深度指南：逐项详解发改委立项、商务部备案、外汇局登记三部门审批要点与材料清单，涵盖备案时限与催办技巧、常见驳回原因与整改方案、境外公司注册与运营合规，存勤法税18年实战专家助企业合规出海不走弯路。拨开ODI备案迷雾，让出海第一步走对、走稳。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:gongsi-zhuxiao-qingsuan-shuiwu</id>
+    <title>公司注销清算的税务处理全流程</title>
+    <link href="https://cunqin.tax/articles/gongsi-zhuxiao-qingsuan-shuiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-03-22T00:00:00+08:00</published>
+    <updated>2026-03-22T00:00:00+08:00</updated>
+    <summary type="html">公司注销清算涉及清算所得税计算、资产处置涉税处理、股东剩余财产分配个税定性及简易注销程序适用条件。文章结合广州及粤港澳大湾区企业注销实务，系统分析各环节税务处理规则与潜在风险防范，为企业提供注销清算的全流程税务合规方案与系统性筹划操作策略。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:tudi-zengzhishui-qingsuan-chouhua</id>
+    <title>土地增值税清算实务与筹划策略</title>
+    <link href="https://cunqin.tax/articles/tudi-zengzhishui-qingsuan-chouhua.html" rel="alternate" type="text/html"/>
+    <published>2026-03-18T00:00:00+08:00</published>
+    <updated>2026-03-18T00:00:00+08:00</updated>
+    <summary type="html">土地增值税清算涉及清算条件触发时点判定、扣除项目归集与审核标准、成本分摊方法选择及普通住宅免税政策运用。文章结合广东省清算口径与广州房地产开发实务，系统分析土地增值税的税务处理规则与筹划空间，为房地产企业清算阶段提供切实可行的税负优化思路。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:kuajing-dianshang-shuiwu</id>
+    <title>跨境电商税务合规指南：2025年最新出口退税政策与实操要点全解</title>
+    <link href="https://cunqin.tax/articles/kuajing-dianshang-shuiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-03-15T00:00:00+08:00</published>
+    <updated>2026-03-15T00:00:00+08:00</updated>
+    <summary type="html">跨境电商税务合规全攻略：详解出口退税实操要点与高频风险防范、境外公司税务申报规范、跨境资金合规回流路径设计、转让定价同期文档准备，为跨境电商企业提供从交易架构设计到日常税务申报的一站式合规解决方案。跨境电商做大做强的税务必修课，助您规避海外税务陷阱、实现合规出海。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:qiye-zhongzu-shuiwu</id>
+    <title>企业重组税务规划指南：并购重组中的税务成本优化与风险防控策略</title>
+    <link href="https://cunqin.tax/articles/qiye-zhongzu-shuiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-02-28T00:00:00+08:00</published>
+    <updated>2026-02-28T00:00:00+08:00</updated>
+    <summary type="html">企业重组税务规划深度指南：全面解析股权收购与资产收购的税务处理差异、特殊性税务处理适用条件与备案材料要求、股权激励个人所得税与企业所得税处理等核心问题，帮助企业在并购重组中合法降低整体税负、规避潜在税务风险。在企业重组的关键时刻，税务规划决定交易成败与最终收益。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:gaoxin-qiye-shuiwu</id>
+    <title>高新技术企业税务筹划实操：研发费用加计扣除与高新资质维护全攻略</title>
+    <link href="https://cunqin.tax/articles/gaoxin-qiye-shuiwu.html" rel="alternate" type="text/html"/>
+    <published>2026-02-12T00:00:00+08:00</published>
+    <updated>2026-02-12T00:00:00+08:00</updated>
+    <summary type="html">高新技术企业税务规划全攻略：详解15%企业所得税优惠税率认定条件与资格维护要点、研发费用加计扣除归集实操规范、软件企业与技术先进型企业叠加优惠策略，帮助企业最大化享受税收红利、稳妥应对高新资格复审抽查。政策红利稍纵即逝，专业筹划才能稳享税收优惠。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:jiayi-shuangshijing</id>
+    <title>甲乙双视角：为什么企业需要&quot;双重人格&quot;的税务顾问</title>
+    <link href="https://cunqin.tax/articles/jiayi-shuangshijing.html" rel="alternate" type="text/html"/>
+    <published>2026-01-28T00:00:00+08:00</published>
+    <updated>2026-01-28T00:00:00+08:00</updated>
+    <summary type="html">为什么企业需要「甲乙双视角」税务顾问？深度分析同时拥有14年甲方企业财税实战经验与4年乙方专业服务能力的独特优势，揭示业财法税五维融合如何帮助企业做出更务实、更安全、更具前瞻性的财税管理决策。存勤法税独家方法论深度剖析，助您选对税务顾问少走弯路。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:cunqin.tax,2026:article:qiye-shuiwu-fengxian</id>
+    <title>企业税务风险管控全攻略：建立看得见、防得住的税务风险防控体系</title>
+    <link href="https://cunqin.tax/articles/qiye-shuiwu-fengxian.html" rel="alternate" type="text/html"/>
+    <published>2026-01-15T00:00:00+08:00</published>
+    <updated>2026-01-15T00:00:00+08:00</updated>
+    <summary type="html">企业税务风险管控体系搭建全案指南：从税务风险识别、量化评估、分级控制到智能预警，构建可落地可追溯的税务内控机制。结合金税四期大数据监管背景，帮助企业实现税务风险看得见、防得住，建立主动防御型税务合规管理体系。让企业税务管理从被动应对转向主动防御。</summary>
+    <author>
+      <name>邓达华</name>
+    </author>
+  </entry>
+</feed>

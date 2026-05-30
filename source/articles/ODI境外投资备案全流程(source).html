@@ -443,12 +443,6 @@ img { max-width: 100%; display: block; }
   font-size: 0.85rem;
   color: var(--dt-text-light);
 }
-.more-views {
-  font-size: 0.75rem;
-  color: var(--dt-text-light);
-  font-weight: 400;
-  margin-left: 0.6rem;
-}
 .more-arrow {
   flex-shrink: 0;
   color: var(--dt-accent);
@@ -1178,7 +1172,7 @@ A：可以。在取得备案通知书后，可在有效期内分次汇出，但�
         html += '<a href="' + href + '" class="more-item">';
         html += '<div class="more-cat">' + a.category + '</div>';
         html += '<div class="more-info">';
-        html += '<h4>' + a.title + '<span class="more-views">' + a.views + ' 阅读</span></h4>';
+        html += '<h4>' + a.title + '</h4>';
         html += '<p>' + a.excerpt + '</p>';
         html += '</div>';
         html += '<div class="more-arrow"><i class="fas fa-chevron-right"></i></div>';

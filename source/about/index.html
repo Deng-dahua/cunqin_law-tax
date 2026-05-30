@@ -124,6 +124,21 @@ layout: false
     .founder-img img { max-width: none; width: auto; height: 179px; border-radius: 8px; }
     .founder-info h3 { font-size: 1.5rem; color: var(--dt-primary); margin-bottom: 0.5rem; }
     .founder-info .role { color: var(--dt-accent); font-weight: 600; margin-bottom: 0; font-size: 1.05rem; }
+    .founder-info .desc { font-size: 0.9rem; color: var(--dt-text-light); line-height: 1.7; }
+
+    /* 创始人数据统计 */
+    .founder-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 1.5rem; }
+    .founder-stat-item { text-align: center; padding: 1.2rem 0.5rem; background: var(--dt-bg-light); border-radius: 8px; }
+    .founder-stat-num { font-size: 1.8rem; font-weight: 800; color: var(--dt-accent); line-height: 1.2; }
+    .founder-stat-label { font-size: 0.82rem; color: var(--dt-text-light); margin-top: 0.3rem; }
+
+    /* 创始人时间线 */
+    .founder-timeline { margin-top: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--dt-accent); }
+    .founder-timeline-item { position: relative; padding: 0.5rem 0 0.5rem 1.2rem; }
+    .founder-timeline-item::before { content: ''; position: absolute; left: -1.75rem; top: 0.7rem; width: 12px; height: 12px; border-radius: 50%; background: var(--dt-accent); }
+    .founder-timeline-year { font-weight: 700; color: var(--dt-primary); font-size: 0.95rem; }
+    .founder-timeline-text { font-size: 0.88rem; color: var(--dt-text-light); line-height: 1.6; }
+
     .founder-info ul { list-style: none; }
     .founder-info li { padding: 0.35rem 0; color: var(--dt-text); position: relative; padding-left: 1.5rem; font-size: 0.92rem; white-space: nowrap; }
     .founder-info li::before { content: '●'; position: absolute; left: 0; color: var(--dt-accent); font-size: 0.6rem; top: 0.75rem; }
@@ -383,6 +398,40 @@ layout: false
           <li>存勤法税服务（广州）有限公司 创始人/总经理</li>
           <li>资深财税培训讲师，中税网金牌讲师，深耕财税法培训与咨询</li>
         </ul>
+        <!-- 创始人执业数据 -->
+        <div class="founder-stats">
+          <div class="founder-stat-item">
+            <div class="founder-stat-num">18年</div>
+            <div class="founder-stat-label">财税法实战经验</div>
+          </div>
+          <div class="founder-stat-item">
+            <div class="founder-stat-num">80+</div>
+            <div class="founder-stat-label">服务企业客户</div>
+          </div>
+          <div class="founder-stat-item">
+            <div class="founder-stat-num">5000万</div>
+            <div class="founder-stat-label">累计帮助节税</div>
+          </div>
+          <div class="founder-stat-item">
+            <div class="founder-stat-num">30+</div>
+            <div class="founder-stat-label">覆盖城市</div>
+          </div>
+        </div>
+        <!-- 职业历程 -->
+        <div class="founder-timeline">
+          <div class="founder-timeline-item">
+            <div class="founder-timeline-year">2008 - 2022</div>
+            <div class="founder-timeline-text">甲方企业：曾任德尔惠运动、酷狗音乐集团、侨银环保股份、绿瘦健康集团财务税务核心岗位</div>
+          </div>
+          <div class="founder-timeline-item">
+            <div class="founder-timeline-year">2022 - 2024</div>
+            <div class="founder-timeline-text">乙方专业：北京市盈科（广州）律师事务所法税服务团队组建者</div>
+          </div>
+          <div class="founder-timeline-item">
+            <div class="founder-timeline-year">2024 - 至今</div>
+            <div class="founder-timeline-text">创立存勤法税服务（广州）有限公司，专注业管财税法五维融合服务</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

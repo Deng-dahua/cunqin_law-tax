@@ -28,8 +28,6 @@ i18n_dir: :lang
 skip_render:
   - "*.xml"
   - "robots.txt"
-  - "index.html"
-  - "about/index.html"
   - "services/index.html"
   - "cases/index.html"
   - "archives/index.html"

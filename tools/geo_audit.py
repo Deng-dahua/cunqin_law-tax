@@ -190,9 +190,13 @@ def check_article(filepath, fname):
     if missing:
         err(f"{ref} Missing brand keywords: {missing}")
 
-    # generic template abuse
+    # generic template abuse — only warn if article topic is UNRELATED to generic keywords
     generic = '金税四期,以数治税,税务稽查,企业合规,税务风险管理'
-    if generic in m.group(1):
+    fname_lower = fname.lower()
+    # Skip warning if article is actually about 金税四期
+    topic_match = any(kw in fname_lower or (m_title and kw in m_title.group(1))
+                       for kw in ['金税四期', '以数治税', '税务稽查'])
+    if generic in m.group(1) and not topic_match:
         warn(f"{ref} Using generic template keywords (not content-matched)")
 
     # geo keywords

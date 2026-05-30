@@ -1197,40 +1197,6 @@ function jumpToMatch(direction) {
   document.getElementById('articleSearchCount').textContent = (articleCurrentMatch + 1) + '/' + articleTotalMatches + ' \u5904\u5339\u914d';
 }
 </script>
-      
-
-      <!-- ========== 阅读量统计(不蒜子) ========== -->
-      <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-      <script>
-      (function(){
-        // 不蒜子会自动处理 class="busuanzi" 的 span
-        // 这里手动触发一次阅读量 +1
-        var slug = location.pathname.substring(location.pathname.lastIndexOf('/')+1).replace('.html','');
-        // 不蒜子支持自定义 key
-        if (window.busuanzi) {
-          // 已经加载完成，直接更新
-          updateViews();
-        } else {
-          window.addEventListener('busuanzi:loaded', updateViews);
-        }
-        function updateViews() {
-          // 找到页面上的阅读量显示元素
-          var spans = document.querySelectorAll('.busuanzi');
-          // 不蒜子会自动填充这些 span，无需手动处理
-        }
-        // 页面加载时触发计数（不蒜子自动处理）
-        // 手动在 meta 区域插入显示元素
-        var meta = document.querySelector('.article-meta');
-        if (meta && !document.getElementById('busuanzi_container_page_pv')) {
-          var el = document.createElement('span');
-          el.id = 'busuanzi_container_page_pv';
-          el.className = 'busuanzi-container';
-          el.innerHTML = ' <i class="fas fa-eye"></i> <span class="busuanzi-value" id="busuanzi_value_page_pv">0</span> 阅读';
-          meta.appendChild(el);
-        }
-      })();
-      </script>
-      <!-- ========== 阅读量统计结束 ========== -->
 
 </body>
 </html>
